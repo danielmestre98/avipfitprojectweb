@@ -41,12 +41,12 @@ include_once( 'nav.php' );
 				
 			}?>
 			<p><img src="../fotos/<?=$foto?>" width="70" height="70" alt=""></p>
-			<form id="exercicio_cadastro" action="novos_dep" enctype="multipart/form-data" method="post">
+			<form id="exercicio_cadastro" action="../lib/aprovacao_dep.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							Nome</label>
-							<input type="text" hidden="true" value="<?=$cpf?>"</input>
+							<input type="text" hidden="true" name="cpf" value="<?=$cpf?>"</input>
 					<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
 				</div>
@@ -59,9 +59,9 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade"><red>*</red>Aprovação</label>
-						<select required class="form-control" name="" id="aprovacao">
+						<select required class="form-control" name="aprovacao" id="aprovacao">
 							<option hidden="true" value=""><?=$status?></option>
-							<option >Aprovado</option>
+							<option>Aprovado</option>
 							<option>Cancelado</option>
 						</select>
 					</div>
