@@ -4,13 +4,13 @@ include_once( 'nav.php' );
 <!doctype html>
 <html>
 <head>
-<script>
-	jQuery( function ( $ ) {
-		$( document ).ready( function () {
-			$( "#depoimentos" ).addClass( "active" );
+	<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				$( "#depoimentos" ).addClass( "active" );
+			} );
 		} );
-	} );
-</script>
+	</script>
 	<meta charset="utf-8">
 	<title>AVIPfit - Cadastro</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
@@ -22,7 +22,7 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Gerenciar depoimentos</h1>
+			<h1>Gerenciar depoimentos</h1>
 			<br>
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
@@ -31,16 +31,9 @@ include_once( 'nav.php' );
 						<th class='col'>Nome</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>
-				
+
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Daniel Mestre Loureiro</td>
-						<td>Aprovado</td>
-						<td><a href="aprovacao_dep" title="Visualizar"><i class="far fa-eye"></i></a></td>
-					</tr>
-				</tbody>
 
 			</table>
 			<br>
@@ -70,7 +63,7 @@ include_once( 'nav.php' );
 			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
 				$( "#divt" ).removeClass( "container-fluid p-5" );
 			}
-			
+
 			$( '#tabela' ).DataTable( {
 
 				"bLengthChange": false,
@@ -78,7 +71,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					searchPlaceholder: "Nome, status (Aprovado ou pendente)",
+
 					"infoFiltered": "(filtrado de _MAX_ registro totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
@@ -92,8 +85,18 @@ include_once( 'nav.php' );
 					"emptyTable": "Nenhum registro"
 
 				},
+				"sAjaxSource": "../lib/consulta_depoimentos.php",
 				"responsive": true,
-
+				"columns": [ {
+					data: 'nome'
+				}, {
+					data: 'status'
+				}, {
+					data: null,
+					render: function ( data, type, row ) {
+						return '<a title="Visualizar" href="aprovacao_dep.php?cpf=' + row.cpf +'"><i class="far fa-eye"></i>'
+					}
+				} ],
 				"autoWidth": false,
 				"bProcessing": true,
 				columnDefs: [ {
@@ -108,38 +111,33 @@ include_once( 'nav.php' );
 					}, {
 						"width": '20%',
 						"targets": 2
-					},{
+					}, {
 						"orderable": false,
 						"targets": 1
-					},{
+					}, {
 						"orderable": false,
 						"targets": 2
 					}
 
 
 
-				],initComplete: function () {
-					$( '.dataTables_filter input[type="search"]' ).css( {
-						'width': '630px',
-						'display': 'inline-block'
-					} );
-				}
+				]
 
 
 
 			} );
 
-			
+
 		} );
 	</script>
 
 	<script>
-		function confirma(dia, horario, filial){
+		function confirma( dia, horario, filial ) {
 			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
-					window.location="../lib/deletar_evento.php?dia="+dia+"&horario="+horario+"&filial="+filial
+				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
 			} else {
 				return false
-				
+
 			}
 		}
 	</script>
