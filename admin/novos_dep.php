@@ -12,7 +12,7 @@ include_once( 'nav.php' );
 		} );
 	</script>
 	<meta charset="utf-8">
-	<title>AVIPfit - Cadastro</title>
+	<title>AVIPfit - Depoimentos</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
 	<link rel="stylesheet" href="../css/responsive.dataTables.min.css">
 	<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
