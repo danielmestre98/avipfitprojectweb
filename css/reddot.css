@@ -1,0 +1,13 @@
+/* CSS Document */
+
+red{
+	color: red;
+	font-weight: bold;
+}
+
+.popover {
+	background-color: tomato;
+}
+
+.popover .arrow::after {border-bottom-color: tomato; }
+.popover-content {background-color: tomato;}
