@@ -24,9 +24,9 @@ include_once( 'nav.php' );
 			</p>
 		<?php 
 		include('../conectar.php');
-		$sql = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Pendente'";
+		$sql = "SELECT * FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Pendente'";
 		$result = mysqli_query($conn, $sql) or die ( mysqli_error($conn));
-		if ( mysqli_num_rows( $resulted ) >= 1 ) {
+		if ( mysqli_num_rows( $result ) >= 1 ) {
 		
 		?>
 			<a class="btn btn-primary" href="novos_dep">Gerenciar depoimentos <span class="badge badge-light">Novos</span></a>
@@ -39,8 +39,9 @@ include_once( 'nav.php' );
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado'";
-			$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+			$sql2 = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado'";
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+			
 			while ( $row = mysqli_fetch_array( $result ) ) {
 			?>
 				<p><img src="../fotos/<?=$row['foto']?>" width="70" height="70" alt=""> <h3><?=$row['nome']?></h3></p>

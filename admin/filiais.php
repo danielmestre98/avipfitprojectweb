@@ -21,10 +21,26 @@ include_once( 'nav.php' );
 			<p><h1>Filiais</h1></p>
 			<br>
 			<br>
-			<p><h3>Americana</h3></p>
+			<?php
+			require( '../conectar.php' );
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+			
+			while ( $row = mysqli_fetch_array( $result ) ) {
+			?>
+				<p><h3><?=$row['cidade'] ?></h3></p>
+				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
+				<p>Telefone <?=$row['telefone']?></p>
+				<br><br>
+				
+		
+		
+		
+			<?php	
+			}
+			mysqli_close( $conn );
 
-			<p>R. Operário Osvaldo dos Santos, 460 - Jardim Colina, Americana - SP, 13478-230</p>
-			<p>Telefone: (19) 99610-9854</p>
+			?>
 			<p><img src="../img/mapa.png" width="100%" alt=""></p>
 
 		</div>
