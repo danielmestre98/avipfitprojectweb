@@ -30,7 +30,7 @@ include_once( 'nav.php' );
 			?>
 				<p><h3><?=$row['cidade'] ?></h3></p>
 				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
-				<p>Telefone <?=$row['telefone']?></p>
+				<p>Telefone: <?=$row['telefone']?></p>
 				<br><br>
 				
 		

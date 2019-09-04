@@ -18,15 +18,33 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container">
-			<p><h1 align="center">Parceiros</h1></p>
+			<p><h1>Parceiros</h1></p>
+		
 		<a class="btn btn-primary" href="novo_parceiro">Novo <i class="fas fa-plus"></i></a>
 			<br>
 			<br>
-			<p><img src="../fotos/padrao.jpg" width="70" height="70" alt=""> <h3>Centro de estética</h3></p>
+		<?php
+			require( '../conectar.php' );
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro";
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+			
+			while ( $row = mysqli_fetch_array( $result ) ) {
+			?>
+				<p><img width="70" height="70" src="../fotos/<?=$row['foto']?>" alt=""><h3><?=$row['nome'] ?></h3></p>
+				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
+				<p>Telefone: <?=$row['telefone']?></p>
+				<a class="btn btn-primary btn-sm" href="editar_parceiro?cnpj=<?=$row['cnpj']?>">Editar <i class="fas fa-edit"></i></a>
+				<button class="btn btn-primary btn-sm" onClick="confirma('<?=$row['cnpj']?>')">Excluir <i class="far fa-trash-alt"></i></button>	
+				<br><br>
+					
+		
+		
+			<?php	
+			}
+			mysqli_close( $conn );
 
-			<p>Av. de Cillo, 1500 - Novo Mundo, Americana - SP, 13588-270</p>
-			<p>Telefone: (19) 3875-9878</p>
-	<a class="btn btn-primary btn-sm" href="editar_parceiro">Editar <i class="fas fa-edit"></i></a> <button class="btn btn-primary btn-sm" onClick="confirma()">Excluir <i class="far fa-trash-alt"></i></button>
+			?>
+
 
 
 		</div>
@@ -36,9 +54,9 @@ include_once( 'nav.php' );
 	<!-- page-content" -->
 </body>
 	<script>
-		function confirma(){
+		function confirma(escolha){
 			if ( window.confirm( " Tem certeza que deseja excluir esse parceiro?" ) ) {
-					window.location="parceiros"
+					window.location="../lib/excluir_parceiro?cnpj="+escolha
 			} else {
 				return false
 				

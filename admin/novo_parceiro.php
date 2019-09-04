@@ -23,13 +23,13 @@ include_once( 'nav.php' );
 		<div class="container">
 			<h1 align="center">Cadastro de parceiro</h1>
 			<br>
-			<form id="colab_cadastro" action="parceiros" enctype="multipart/form-data" method="post">
+			<form id="novo_parceiro" action="../lib/novo_parceiro" enctype="multipart/form-data" method="post">
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade">
 							<red>*</red>Nome</label>
-						<input type="text" required name="nome" class="form-control" id="input_nome">
+						<input type="text" placeholder="Nome" required name="nome" class="form-control" id="input_nome">
 					</div>
 					
 				</div>
@@ -37,12 +37,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
-							<input type="text" required name="cnpj" class="form-control" id="input_cnpj">
+							<input type="text" placeholder="__.___.___/____-__" required name="cnpj" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">
 						<label for="email">
 							<red>*</red>E-mail</label>
-						<input type="text" required name="email" class="form-control" id="input_email">
+						<input type="text" placeholder="exemplo@exemplo.com" required name="email" class="form-control" id="input_email">
 					</div>
 				</div>
 				<div class="form-row">
@@ -87,7 +87,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" required name="telefone" class="form-control" id="input_telefone">
+						<input type="text" placeholder="(99)99999999" required name="telefone" class="form-control" id="input_telefone">
 					</div>
 				</div>
 
@@ -115,8 +115,8 @@ include_once( 'nav.php' );
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
-				var $seuCampoCpf = $( "#input_CPF" );
-				$seuCampoCpf.mask( '000.000.000-00', {
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
 					reverse: false
 				} );
 
