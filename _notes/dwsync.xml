@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name=".gitattributes" server="files.000webhost.com/public_html/" local="132118981132181041" remote="132120879000000000" Dst="1" />
-<file name=".htaccess" server="files.000webhost.com/public_html/" local="131909198369615962" remote="132120384600000000" Dst="1" />
-<file name="agendamento.php" server="files.000webhost.com/public_html/" local="132045930610000000" remote="132120385200000000" Dst="1" />
-<file name="codigo.php" server="files.000webhost.com/public_html/" local="132045927018374164" remote="132120385200000000" Dst="1" />
-<file name="conectar.php" server="files.000webhost.com/public_html/" local="132012040553146848" remote="132120883200000000" Dst="1" />
-<file name="consulta.html" server="files.000webhost.com/public_html/" local="131989724960000000" remote="132120385200000000" Dst="1" />
-<file name="depoimentos.php" server="files.000webhost.com/public_html/" local="132041183560915826" remote="132120385200000000" Dst="1" />
-<file name="filiais.php" server="files.000webhost.com/public_html/" local="132120031107680138" remote="132120385200000000" Dst="1" />
-<file name="index.php" server="files.000webhost.com/public_html/" local="132046020559897957" remote="132120385200000000" Dst="1" />
-<file name="login.php" server="files.000webhost.com/public_html/" local="132045686008392178" remote="132120385800000000" Dst="1" />
-<file name="nav.php" server="files.000webhost.com/public_html/" local="132046353675174692" remote="132120385800000000" Dst="1" />
-<file name="pabx.php" server="files.000webhost.com/public_html/" local="132001677691204380" remote="132120385800000000" Dst="1" />
-<file name="parceiros.php" server="files.000webhost.com/public_html/" local="132119915895478010" remote="132120385800000000" Dst="1" />
-<file name="redef_senha.php" server="files.000webhost.com/public_html/" local="132045925939689828" remote="132120385800000000" Dst="1" />
-<file name="verificaCpf.php" server="files.000webhost.com/public_html/" local="132109554297576335" remote="132120385800000000" Dst="1" />
-<file name="verificaEmail.php" server="files.000webhost.com/public_html/" local="132014704865199104" remote="132120385800000000" Dst="1" />
-<file name="verificaEmailc.php" server="files.000webhost.com/public_html/" local="132013957913292588" remote="132120385800000000" Dst="1" />
-<file name="verificaLink.php" server="files.000webhost.com/public_html/" local="132046702622360883" remote="132120385800000000" Dst="1" />
+<file name="conectar.php" server="files.000webhost.com/public_html/" local="132120910279171756" remote="132121032600000000" Dst="1" />
 </dwsync>

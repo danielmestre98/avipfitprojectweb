@@ -339,9 +339,7 @@ jQuery(function ($) {
 
 	$("#novo_parceiro").validate({
 		rules: {
-			cnpj: {
-				cnpj: true
-			}
+			cnpj: true
 				
 			
 			
