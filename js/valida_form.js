@@ -339,6 +339,13 @@ jQuery(function ($) {
 
 	$("#novo_parceiro").validate({
 		rules: {
+			cnpj: {
+				cnpj: true
+			}
+				
+			
+			
+		
 			
 
 		},
@@ -348,8 +355,12 @@ jQuery(function ($) {
 			},
 			url: {
 				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido"
 			}
 		},
+		
 		errorElement: 'span',
 
 
