@@ -1,5 +1,6 @@
 <?php
 $host = "localhost";
+
 $usuario = "id10764884_academia";
 $senha = "avip123";
 $bd = "id10764884_academia";
