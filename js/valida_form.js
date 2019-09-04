@@ -355,8 +355,12 @@ jQuery(function ($) {
 			},
 			url: {
 				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido"
 			}
 		},
+		
 		errorElement: 'span',
 
 
