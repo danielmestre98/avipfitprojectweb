@@ -341,6 +341,10 @@ jQuery(function ($) {
 		rules: {
 			cnpj: {
 				cnpj: true
+			},
+			email: {
+				email: true,
+				required: true
 			}
 				
 			
