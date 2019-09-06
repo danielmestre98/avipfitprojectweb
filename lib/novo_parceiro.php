@@ -66,7 +66,7 @@ mysqli_close( $conn );
 include('../conectar.php');
 $sql = str_replace( "'", " ", $sql );
 
-$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql')";
+$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'parceiro', '$email2', '$sql')";
 
 if ( $conn->query( $log ) === TRUE ) {
 		header('location: ../admin/parceiros');
