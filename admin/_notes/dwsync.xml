@@ -17,7 +17,7 @@
 <file name="editar_evento.php" server="files.000webhost.com/public_html/" local="132110815740758302" remote="132120384600000000" Dst="1" />
 <file name="editar_exercicio.php" server="files.000webhost.com/public_html/" local="132108687217525799" remote="132120384600000000" Dst="1" />
 <file name="editar_filial.php" server="files.000webhost.com/public_html/" local="132108698080964847" remote="132120384600000000" Dst="1" />
-<file name="editar_parceiro.php" server="files.000webhost.com/public_html/" local="132043254885623480" remote="132120384600000000" Dst="1" />
+<file name="editar_parceiro.php" server="files.000webhost.com/public_html/" local="132122524934564219" remote="132122632800000000" Dst="1" />
 <file name="editar_treinamento.php" server="files.000webhost.com/public_html/" local="132107273267214937" remote="132120384600000000" Dst="1" />
 <file name="edit_aval.php" server="files.000webhost.com/public_html/" local="132043786362534749" remote="132120384600000000" Dst="1" />
 <file name="filiais.php" server="files.000webhost.com/public_html/" local="132120031261493893" remote="132120384600000000" Dst="1" />
@@ -31,7 +31,7 @@
 <file name="novo_evento.php" server="files.000webhost.com/public_html/" local="132116855654907565" remote="132120385200000000" Dst="1" />
 <file name="novo_exercicio.php" server="files.000webhost.com/public_html/" local="132108686757854295" remote="132120385200000000" Dst="1" />
 <file name="novo_filial.php" server="files.000webhost.com/public_html/" local="132108697611100902" remote="132120385200000000" Dst="1" />
-<file name="novo_parceiro.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
+<file name="novo_parceiro.php" server="files.000webhost.com/public_html/" local="132122475467415750" remote="132122583600000000" Dst="1" />
 <file name="novo_ticket.php" server="files.000webhost.com/public_html/" local="132045951540036251" remote="132120385200000000" Dst="1" />
 <file name="novo_treinamento2.php" server="files.000webhost.com/public_html/" local="132106918398677858" remote="132120385200000000" Dst="1" />
 <file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132032691256035378" remote="132120385200000000" Dst="1" />
