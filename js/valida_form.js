@@ -346,12 +346,6 @@ jQuery(function ($) {
 				email: true,
 				required: true
 			}
-				
-			
-			
-		
-			
-
 		},
 		messages: {
 			nomeExercicio: {
@@ -364,12 +358,7 @@ jQuery(function ($) {
 				cnpj: "CNPJ inválido"
 			}
 		},
-		
 		errorElement: 'span',
-
-
-
-
 		errorPlacement: function (error, element) {
 			error.addClass('invalid-feedback');
 			element.closest('.form-group').append(error);
@@ -379,13 +368,50 @@ jQuery(function ($) {
 		},
 		unhighlight: function (element, errorClass, validClass) {
 			$(element).removeClass('is-invalid').addClass('is-valid');
-
 		},
 		submitHandler: function (form) {
 			form.submit();
 		}
-
 	});
+	
+	$("#editar_parceiro").validate({
+		rules: {
+			cnpj: {
+				cnpj: true
+			},
+			email: {
+				email: true,
+				required: true
+			}
+		},
+		messages: {
+			nomeExercicio: {
+				remote: "Exercicio já cadastrado."
+			},
+			url: {
+				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido"
+			}
+		},
+		errorElement: 'span',
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+	
+	
 	
 	$("#exercicio_cadastro").validate({
 		rules: {

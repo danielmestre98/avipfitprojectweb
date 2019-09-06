@@ -23,7 +23,7 @@ include ('../lib/editar_parceiro_show.php');
 		<div class="container">
 			<h1>Editar parceiro</h1>
 			<br>
-			<form id="colab_cadastro" action="parceiros" enctype="multipart/form-data" method="post">
+			<form id="editar_parceiro" action="../lib/editar_parceiro.php" enctype="multipart/form-data" method="post">
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
@@ -37,6 +37,7 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-4">
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
+							<input type="text" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
 							<input type="text" required name="cnpj" value="<?=$cnpj?>" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">
@@ -115,8 +116,8 @@ include ('../lib/editar_parceiro_show.php');
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
-				var $seuCampoCpf = $( "#input_CPF" );
-				$seuCampoCpf.mask( '000.000.000-00', {
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
 					reverse: false
 				} );
 
