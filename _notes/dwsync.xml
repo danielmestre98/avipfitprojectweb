@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="conectar.php" server="files.000webhost.com/public_html/" local="132121057002769576" remote="132121184400000000" Dst="1" />
 <file name=".gitattributes" server="files.000webhost.com/public_html/" local="132122830192137763" remote="132121039200000000" Dst="1" />
 <file name=".htaccess" server="files.000webhost.com/public_html/" local="132122830195668329" remote="132121039200000000" Dst="1" />
@@ -11,7 +10,7 @@
 <file name="index.php" server="files.000webhost.com/public_html/" local="132122830236459572" remote="132121039200000000" Dst="1" />
 <file name="nav.php" server="files.000webhost.com/public_html/" local="132122830241057523" remote="132121039200000000" Dst="1" />
 <file name="pabx.php" server="files.000webhost.com/public_html/" local="132122830242413900" remote="132121039200000000" Dst="1" />
-<file name="parceiros.php" server="files.000webhost.com/public_html/" local="132122830248557484" remote="132122784000000000" Dst="1" />
+<file name="parceiros.php" server="files.000webhost.com/public_html/" local="132123470410000000" remote="132123578400000000" Dst="1" />
 <file name="consulta.html" server="files.000webhost.com/public_html/" local="132122830248836737" remote="132121039200000000" Dst="1" />
 <file name="redef_senha.php" server="files.000webhost.com/public_html/" local="132122830254571397" remote="132121039200000000" Dst="1" />
 <file name="verificaCpf.php" server="files.000webhost.com/public_html/" local="132122830255459031" remote="132121039800000000" Dst="1" />
@@ -19,9 +18,4 @@
 <file name="verificaEmail.php" server="files.000webhost.com/public_html/" local="132122830261353268" remote="132121039800000000" Dst="1" />
 <file name="verificaEmailc.php" server="files.000webhost.com/public_html/" local="132122830262939045" remote="132121039800000000" Dst="1" />
 <file name="verificaLink.php" server="files.000webhost.com/public_html/" local="132122830265811715" remote="132121039800000000" Dst="1" />
-=======
-<file name="conectar.php" server="files.000webhost.com/public_html/" local="132120910279171756" remote="132121032600000000" Dst="1" />
-<file name="filiais.php" server="files.000webhost.com/public_html/" local="132122466372077028" remote="132122784000000000" Dst="1" />
-<file name="parceiros.php" server="files.000webhost.com/public_html/" local="132122466372396827" remote="132122784000000000" Dst="1" />
->>>>>>> origin/Test
 </dwsync>

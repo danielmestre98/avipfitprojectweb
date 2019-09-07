@@ -26,14 +26,14 @@ include_once( 'nav.php' );
 			<br>
 			<?php
 			require( 'conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
-			<p>
+			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">
 				<h3>
-					<?=$row['cidade'] ?>
+					<?=$row['nome'] ?>
 				</h3>
 			</p>
 			<p>
@@ -57,12 +57,6 @@ include_once( 'nav.php' );
 			mysqli_close( $conn );
 
 			?>
-			<p><img src="../fotos/padrao.jpg" width="70" height="70" alt="">
-				<h3>Centro de estética</h3>
-			</p>
-
-			<p>Av. de Cillo, 1500 - Novo Mundo, Americana - SP, 13588-270</p>
-			<p>Telefone: (19) 3875-9878</p>
 
 
 		</div>
