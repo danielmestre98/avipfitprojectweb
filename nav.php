@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['tipoPessoa'])){
-	if($_SESSION['tipoPessoa'] === 1){
+	if($_SESSION['tipoPessoa'] == 1){
 		header('location: admin/principal');
 	}
 }

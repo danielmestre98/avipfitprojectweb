@@ -21,7 +21,7 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container">
-			<h1 align="center">Cadastro de parceiro</h1>
+			<h1>Cadastro de parceiro</h1>
 			<br>
 			<form id="novo_parceiro" action="../lib/novo_parceiro" enctype="multipart/form-data" method="post">
 

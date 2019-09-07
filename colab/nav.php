@@ -3,7 +3,7 @@ session_start();
 require( '../lib/dadosLogin.php' );
 
 if (isset($_SESSION['tipoPessoa'])){
-	if($_SESSION['tipoPessoa'] == 1){
+	if($_SESSION['tipoPessoa'] == 2){
 		
 	}
 	else{
@@ -49,12 +49,12 @@ else{
 			<!-- sidebar-header  -->
 			<div class="sidebar-item sidebar-header d-flex flex-nowrap">
 				<div class="user-pic">
-					<img class="img-responsive img-rounded" src="../fotos/<?php echo $foto?>" alt="User picture">
+					<img class="img-responsive img-rounded" src="../fotos/<?=$foto?>" alt="User picture">
 				</div>
 				<div class="user-info">
 					<span class="user-name"><?php echo $nome ?>
                         </span>
-					<span class="user-role">Administrador</span>
+					<span class="user-role">Colaborador</span>
 
 				</div>
 			</div>
@@ -72,16 +72,9 @@ else{
 							<ul>
 								<li id="cad_aluno">
 									<a href="consulta_aluno">Aluno <span class="badge badge-pill badge-warning">Há alunos sem horário</span></a>
-									
-								</li>
-								<li id="cad_colab">
-									<a href="consulta_colaborador">Colaborador</a>
 								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
-								</li>
-								<li id="cad_filial">
-									<a href="consulta_filial">Filial</a>
 								</li>
 								<li id="cad_treinamento">
 									<a href="consulta_treinamento">Treinamento</a>

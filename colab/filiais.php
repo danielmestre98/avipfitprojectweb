@@ -10,54 +10,38 @@ include_once( 'nav.php' );
 <script>
 	jQuery( function ( $ ) {
 		$( document ).ready( function () {
-			$( "#parceiros" ).addClass( "active" );
+			$( "#filiais" ).addClass( "active" );
 		} );
 	} );
 </script>
-
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container">
-			<p>
-				<h1>Parceiros</h1>
-			</p>
+			<p><h1>Filiais</h1></p>
 			<br>
 			<br>
 			<?php
-			require( 'conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro";
+			require( '../conectar.php' );
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-
+			
 			while ( $row = mysqli_fetch_array( $result ) ) {
-				?>
-			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">
-				<h3>
-					<?=$row['nome'] ?>
-				</h3>
-			</p>
-			<p>
-				<?=$row['rua']?>,
-				<?=$row['numero']?>-
-				<?=$row['bairro']?>,
-				<?=$row['cidade']?>-
-				<?=$row['estado']?>,
-				<?=$row['cep']?>
-			</p>
-			<p>Telefone
-				<?=$row['telefone']?>
-			</p>
-			<br><br>
-
-
-
-
-			<?php
+			?>
+				<p><h3><?=$row['cidade'] ?></h3></p>
+				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
+				<p>Telefone: <?=$row['telefone']?></p>
+				<br><br>
+				
+		
+		
+		
+			<?php	
 			}
 			mysqli_close( $conn );
 
 			?>
-
+			<p><img src="../img/mapa.png" width="100%" alt=""></p>
 
 		</div>
 	</main>

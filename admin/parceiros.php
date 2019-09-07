@@ -56,7 +56,7 @@ include_once( 'nav.php' );
 	<script>
 		function confirma(escolha){
 			if ( window.confirm( " Tem certeza que deseja excluir esse parceiro?" ) ) {
-					window.location="../lib/excluir_parceiro?cnpj="+escolha
+					window.location="../lib/deletar_parceiro?cnpj="+escolha
 			} else {
 				return false
 				
