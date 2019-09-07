@@ -1,6 +1,18 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
+
+if (isset($_SESSION['tipoPessoa'])){
+	if($_SESSION['tipoPessoa'] == 1){
+		
+	}
+	else{
+		header('location: ../index');
+	}
+}
+else{
+	header('location: ../index');
+}
 ?>
 <!DOCTYPE html>
 <html>
