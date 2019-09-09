@@ -13,12 +13,21 @@ include_once( 'nav.php' );
 		} );
 	</script>
 	<meta charset="utf-8">
-	<title>AVIPfit - Cadastro</title>
+	<title>AVIPfit - Mensalidades</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
 	<link rel="stylesheet" href="../css/responsive.dataTables.min.css">
 	<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
 </head>
 
+<?php
+	include ('../conectar.php');
+	$sql = "SELECT EXTRACT(YEAR FROM cadastro) AS ano FROM pessoa WHERE tipoPessoa = '2' GROUP BY cadastro";
+	$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+	mysqli_close( $conn );	
+	$year = date("Y");
+	?>
+	
+	
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
@@ -28,26 +37,28 @@ include_once( 'nav.php' );
 				<div class="form-group col-md-2" style="float: right;">
 					<label for="opcao">Mês de referência</label>
 					<select class="form-control" name="" id="">
-						<option value="">Janeiro</option>
-						<option value="">Fevereiro</option>
-						<option value="">Março</option>
-						<option value="">Abril</option>
-						<option value="">Maio</option>
-						<option selected value="">Junho</option>
-						<option value="">Julho</option>
-						<option value="">Agosto</option>
-						<option value="">Setembro</option>
-						<option value="">Outubro</option>
-						<option value="">Novembro</option>
-						<option value="">Dezembro</option>
+						<option>Janeiro</option>
+						<option>Fevereiro</option>
+						<option>Março</option>
+						<option>Abril</option>
+						<option>Maio</option>
+						<option>Junho</option>
+						<option>Julho</option>
+						<option>Agosto</option>
+						<option>Setembro</option>
+						<option>Outubro</option>
+						<option>Novembro</option>
+						<option>Dezembro</option>
 					</select>
 				</div>
 				<div class="form-group col-md-2" style="float: right;">
 					<label for="opcao">Ano de referência</label>
 					<select class="form-control" name="" id="">
-						<option value="">2017</option>
-						<option value="">2018</option>
-						<option selected value="">2019</option>
+						<?php
+						for ($ano = 2019; $ano <= $year; $ano++){
+							echo '<option>'. $ano . '</option>';
+						}
+						?>
 					</select>
 				</div>
 			</div>
@@ -125,7 +136,7 @@ include_once( 'nav.php' );
 
 				"autoWidth": false,
 				"bProcessing": true,
-
+				"sAjaxSource": "../lib/consulta_mensalidade.php",
 				"columns": [ {
 					data: 'evento'
 				}, {
@@ -144,13 +155,7 @@ include_once( 'nav.php' );
 					}
 
 
-				],
-				initComplete: function () {
-					$( '.dataTables_filter input[type="search"]' ).css( {
-						'width': '600px',
-						'display': 'inline-block'
-					} );
-				}
+				]
 
 
 
@@ -171,4 +176,5 @@ include_once( 'nav.php' );
 		}
 	</script>
 </body>
+
 </html>
