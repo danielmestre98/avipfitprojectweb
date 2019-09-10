@@ -60,14 +60,17 @@ session_start();
 $email2 = $_SESSION[ 'email' ];
 $ip = $_SERVER[ 'REMOTE_ADDR' ];
 $data = date( 'Y-m-d H:i:s' );
+$datacad = date( 'Y-m-d' );
 // Insere os dados no banco
-$sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo)
-		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '3', '$senha', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0');";
+$sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo, cadastro)
+		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '3', '$senha', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0', '$datacad');";
 $sql2 = "INSERT INTO cliente (cpf, filial) VALUES ('$cpf', '$filial'); ";
 $sql3 = "INSERT INTO horario (cpf, segunda, terca, quarta, quinta, sexta, sabado)
 		VALUES ('$cpf', '$segunda', '$terca', '$quarta', '$quinta', '$sexta', '$sabado');";
 $sql4 = "INSERT INTO realiza (cpf, Treinamento) VALUES ('$cpf', '$treinamento');";
-$sql5 = "INSERT INTO mensalidade (cpf, valor, DataVencimento, status) VALUES ('$cpf', '$mensalidade', '$pagamento', '0');";
+$sql5 = "INSERT INTO mensalidade (cpf, valor, DataVencimento) VALUES ('$cpf', '$mensalidade', '$pagamento');";
+$hoje = date("m/Y");
+$sql6 = "INSERT INTO pagamentos (cpf, status, competencia) VALUES ('$cpf', 'Pendente', '$hoje')";
 
 
 include('../conectar.php');
@@ -106,6 +109,14 @@ if ($conn->query($sql5) === TRUE) {
 } else {
     echo "Error: " . $sql5 . "<br>" . $conn->error;
 }
+include('../conectar.php');
+
+if ($conn->query($sql6) === TRUE) {
+   
+} else {
+    echo "Error: " . $sql6 . "<br>" . $conn->error;
+}
+mysqli_close( $conn );
 
 include('../conectar.php');
 $sql = str_replace( "'", " ", $sql );

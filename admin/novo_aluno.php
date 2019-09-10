@@ -99,7 +99,7 @@ include_once( 'nav.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected></option>
+						<option selected value="">Escolha a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
