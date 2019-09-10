@@ -51,6 +51,7 @@ $year = date( "Y" );
 						<th class='col'>Vencimento</th>
 						<th class="col">Competência</th>
 						<th class='col'>Status</th>
+						<th class='col'>Ações</th>
 					</tr>
 				</thead>
 
@@ -80,97 +81,104 @@ $year = date( "Y" );
 
 	<script>
 		$( document ).ready( function () {
-			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-				$( "#divt" ).removeClass( "container-fluid p-5" );
-			}
-			$.fn.dataTable.ext.errMode = 'none';
-			$( '#tabela' ).DataTable( {
-
-				"bLengthChange": false,
-				"language": {
-					"zeroRecords": "Nenhum registro encontrado",
-					"info": "Mostrando página _PAGE_ de _PAGES_",
-					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
-					"search": "Pesquisar",
-					"first": "Primeiro",
-					"pagingType": "simple",
-					"processing": "Carregando...",
-					"paginate": {
-						"last": "Último",
-						"next": "Próxima",
-						"previous": "Anterior"
-					},
-					"emptyTable": "Nenhum registro"
-
-				},
-				"responsive": true, 
-				"autoWidth": false,
-				"bProcessing": true,
-				"sAjaxSource": "../lib/consulta_mensalidade.php",
-				"columns": [ {
-					data: 'nome'
-				},{
-					data: 'DataVencimento'
-				},
-				{
-					data: 'competencia'
-				}, {
-					data: 'status'
-				} ],
-				columnDefs: [ {
-						"width": '63%',
-						"targets": 0
-					}, {
-						"width": '16%',
-						"targets": 2
-					}, {
-						"width": '1%',
-						"targets": 1
+					if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+						$( "#divt" ).removeClass( "container-fluid p-5" );
 					}
+					$.fn.dataTable.ext.errMode = 'none';
+					$( '#tabela' ).DataTable( {
+
+							"bLengthChange": false,
+							"language": {
+								"zeroRecords": "Nenhum registro encontrado",
+								"info": "Mostrando página _PAGE_ de _PAGES_",
+								"infoEmpty": "Nenhum registro disponível",
+								"infoFiltered": "(filtrado de _MAX_ registro totais)",
+								"search": "Pesquisar",
+								"first": "Primeiro",
+								"pagingType": "simple",
+								"processing": "Carregando...",
+								"paginate": {
+									"last": "Último",
+									"next": "Próxima",
+									"previous": "Anterior"
+								},
+								"emptyTable": "Nenhum registro"
+
+							},
+							"responsive": true,
+							"autoWidth": false,
+							"bProcessing": true,
+							"sAjaxSource": "../lib/consulta_mensalidade.php",
+							"columns": [ {
+									data: 'nome'
+								}, {
+									data: 'DataVencimento'
+								}, {
+									data: 'competencia'
+								}, {
+									data: 'status'
+								}, {
+									data: null,
+									render: function ( data, type, row ) {
+										return '<a title="Editar" href="gerenciar_mensalidade.php?cpf=' + row.cpf + '&comp='+ row.competencia +'"><i class="fas fa-edit"></i></a>'
 
 
-				],
-				 initComplete: function () {
-                  var column = this.api().column(2);
-                  var select = $('<select class= "form-control md-4"><option value="">Selecione o mês referência</option></select>')
-                    .appendTo( $('#mes').empty().text('') )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
-                  column
-                    .search( val ? '^'+val+'$' : '', true, false )
-                    .draw();
-                      
-                  } );
-                  column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' );
-                  } );     
-					 
-				  var column2 = this.api().column(3);
-                  var select2 = $('<select class= "form-control"><option value="">Mostrar todos</option></select>')
-                    .appendTo( $('#status').empty().text('') )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
-                  column2
-                    .search( val ? '^'+val+'$' : '', true, false )
-                    .draw();
-                      
-                  } );
-                  column2.data().unique().sort().each( function ( d, j ) {
-                    select2.append( '<option value="'+d+'">'+d+'</option>' );
-                  } );	 
-                }
+
+									}
+								} ],
+								columnDefs: [ {
+										"width": '63%',
+										"targets": 0
+									}, {
+										"width": '16%',
+										"targets": 2
+									}, {
+										"width": '1%',
+										"targets": 1
+									}
+
+
+								],
+								initComplete: function () {
+									var column = this.api().column( 2 );
+									var select = $( '<select class= "form-control md-4"><option value="">Selecione o mês referência</option></select>' )
+										.appendTo( $( '#mes' ).empty().text( '' ) )
+										.on( 'change', function () {
+											var val = $.fn.dataTable.util.escapeRegex(
+												$( this ).val()
+											);
+											column
+												.search( val ? '^' + val + '$' : '', true, false )
+												.draw();
+
+										} );
+									column.data().unique().sort().each( function ( d, j ) {
+										select.append( '<option value="' + d + '">' + d + '</option>' );
+									} );
+
+									var column2 = this.api().column( 3 );
+									var select2 = $( '<select class= "form-control"><option value="">Mostrar todos</option></select>' )
+										.appendTo( $( '#status' ).empty().text( '' ) )
+										.on( 'change', function () {
+											var val = $.fn.dataTable.util.escapeRegex(
+												$( this ).val()
+											);
+											column2
+												.search( val ? '^' + val + '$' : '', true, false )
+												.draw();
+
+										} );
+									column2.data().unique().sort().each( function ( d, j ) {
+										select2.append( '<option value="' + d + '">' + d + '</option>' );
+									} );
+								}
 
 
 
-			} );
+							} );
 
 
-		} );
+					} );
 	</script>
 
 	<script>
