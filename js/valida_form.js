@@ -281,13 +281,13 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 			},
 			senha: {
 				minlength: 8
@@ -311,6 +311,12 @@ jQuery(function ($) {
 			pagamento: {
 				max: "Por favor insira um dia válido.",
 				min: "Por favor insira um dia válido."
+			},
+			telefone:{
+				minlength: "Por favor digite um telefone válido"
+			},
+			cep:{
+				minlength: "Por favor digite um CEP válido"
 			}
 		},
 
@@ -497,13 +503,13 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 
 			},
 			senha: {
@@ -530,6 +536,12 @@ jQuery(function ($) {
 			pagamento: {
 				max: "Por favor insira um dia válido.",
 				min: "Por favor insira um dia válido."
+			},
+			telefone:{
+				minlength: "Por favor digite um telefone válido"
+			},
+			cep:{
+				minlength: "Por favor digite um CEP válido"
 			}
 		},
 
