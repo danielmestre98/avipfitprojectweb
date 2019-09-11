@@ -19,13 +19,7 @@ include_once( 'nav.php' );
 	<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
 </head>
 
-<?php
-include( '../conectar.php' );
-$sql = "SELECT EXTRACT(YEAR FROM cadastro) AS ano FROM pessoa WHERE tipoPessoa = '2' GROUP BY cadastro";
-$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
-mysqli_close( $conn );
-$year = date( "Y" );
-?>
+
 
 
 <body>
@@ -200,17 +194,6 @@ $year = date( "Y" );
 
 
 		} );
-	</script>
-
-	<script>
-		function confirma( dia, horario, filial ) {
-			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
-				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
-			} else {
-				return false
-
-			}
-		}
 	</script>
 </body>
 
