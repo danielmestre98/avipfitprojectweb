@@ -45,20 +45,20 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 		<div class="container-fluid p-5">
 			<h1>Gerenciar mensalidade</h1>
 			<br>
-			<form id="edit_event" action="../lib/editar_evento.php" enctype="multipart/form-data" method="post">
-
+			<form id="edit_event" action="../lib/update_mensalidade.php" enctype="multipart/form-data" method="post">
+				<input type="text" hidden="true" name="cpf" value="<?=$cpf?>">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nomeExercicio">
 							Nome</label>
 					
-						<input type="text" readonly class="form-control" value="<?=$nome?>">
+						<input type="text" readonly name="nome" class="form-control" value="<?=$nome?>">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="descricao">
 							Competência</label>
 					
-						<input type="text" readonly class="form-control" value="<?=$competencia?>">
+						<input type="text" readonly name="competencia" class="form-control" value="<?=$competencia?>">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="">
@@ -67,7 +67,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						if ( $status === 'Pagamento efetuado' ) {
 							echo '<select name="" disabled class="form-control" id="">';
 						} else {
-							echo '<select name="" class="form-control" id="">';
+							echo '<select name="status" class="form-control" id="">';
 						}
 						?>
 

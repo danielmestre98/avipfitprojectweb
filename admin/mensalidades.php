@@ -43,7 +43,7 @@ $year = date( "Y" );
 					<span id="status"></span>
 				</div>
 			</div>
-			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
+			<table class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
@@ -81,104 +81,125 @@ $year = date( "Y" );
 
 	<script>
 		$( document ).ready( function () {
-					if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-						$( "#divt" ).removeClass( "container-fluid p-5" );
+			jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+				"monthYear-pre": function ( a ) {
+					return new Date( '01 ' + a );
+				},
+
+				"monthYear-asc": function ( a, b ) {
+					return ( ( a < b ) ? -1 : ( ( a > b ) ? 1 : 0 ) );
+				},
+
+				"monthYear-desc": function ( a, b ) {
+					return ( ( a < b ) ? 1 : ( ( a > b ) ? -1 : 0 ) );
+				}
+			} );
+			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+				$( "#divt" ).removeClass( "container-fluid p-5" );
+			}
+			$.fn.dataTable.ext.errMode = 'none';
+			$( '#tabela' ).DataTable( {
+
+				"bLengthChange": false,
+				"language": {
+					"zeroRecords": "Nenhum registro encontrado",
+					"info": "Mostrando página _PAGE_ de _PAGES_",
+					"infoEmpty": "Nenhum registro disponível",
+					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"search": "Pesquisar",
+					"first": "Primeiro",
+					"pagingType": "simple",
+					"processing": "Carregando...",
+					"paginate": {
+						"last": "Último",
+						"next": "Próxima",
+						"previous": "Anterior"
+					},
+					"emptyTable": "Nenhum registro"
+
+				},
+				"responsive": true,
+				"autoWidth": false,
+				"bProcessing": true,
+				"sAjaxSource": "../lib/consulta_mensalidade.php",
+
+				"columns": [ {
+					data: 'nome'
+				}, {
+					data: 'DataVencimento'
+				}, {
+					data: 'competencia'
+
+				}, {
+					data: 'status'
+				}, {
+					data: null,
+					render: function ( data, type, row ) {
+						return '<a title="Editar" href="gerenciar_mensalidade.php?cpf=' + row.cpf + '&comp=' + row.competencia + '"><i class="fas fa-edit"></i></a>'
+
+
+
 					}
-					$.fn.dataTable.ext.errMode = 'none';
-					$( '#tabela' ).DataTable( {
-
-							"bLengthChange": false,
-							"language": {
-								"zeroRecords": "Nenhum registro encontrado",
-								"info": "Mostrando página _PAGE_ de _PAGES_",
-								"infoEmpty": "Nenhum registro disponível",
-								"infoFiltered": "(filtrado de _MAX_ registro totais)",
-								"search": "Pesquisar",
-								"first": "Primeiro",
-								"pagingType": "simple",
-								"processing": "Carregando...",
-								"paginate": {
-									"last": "Último",
-									"next": "Próxima",
-									"previous": "Anterior"
-								},
-								"emptyTable": "Nenhum registro"
-
-							},
-							"responsive": true,
-							"autoWidth": false,
-							"bProcessing": true,
-							"sAjaxSource": "../lib/consulta_mensalidade.php",
-							"columns": [ {
-									data: 'nome'
-								}, {
-									data: 'DataVencimento'
-								}, {
-									data: 'competencia'
-								}, {
-									data: 'status'
-								}, {
-									data: null,
-									render: function ( data, type, row ) {
-										return '<a title="Editar" href="gerenciar_mensalidade.php?cpf=' + row.cpf + '&comp='+ row.competencia +'"><i class="fas fa-edit"></i></a>'
+				} ],
+				columnDefs: [ {
+						"width": '63%',
+						"targets": 0
+					}, {
+						"width": '16%',
+						"targets": 2
+					}, {
+						"width": '1%',
+						"targets": 1
+					}
 
 
 
-									}
-								} ],
-								columnDefs: [ {
-										"width": '63%',
-										"targets": 0
-									}, {
-										"width": '16%',
-										"targets": 2
-									}, {
-										"width": '1%',
-										"targets": 1
-									}
 
+				],
+				initComplete: function () {
+					var column = this.api().column( 2 );
+					var select = $( '<select class= "form-control md-4"><option value="">Selecione o mês referência</option></select>' )
+						.appendTo( $( '#mes' ).empty().text( '' ) )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$( this ).val()
+							);
+							column
+								.search( val ? '^' + val + '$' : '', true, false )
+								.draw();
 
-								],
-								initComplete: function () {
-									var column = this.api().column( 2 );
-									var select = $( '<select class= "form-control md-4"><option value="">Selecione o mês referência</option></select>' )
-										.appendTo( $( '#mes' ).empty().text( '' ) )
-										.on( 'change', function () {
-											var val = $.fn.dataTable.util.escapeRegex(
-												$( this ).val()
-											);
-											column
-												.search( val ? '^' + val + '$' : '', true, false )
-												.draw();
-
-										} );
-									column.data().unique().sort().each( function ( d, j ) {
-										select.append( '<option value="' + d + '">' + d + '</option>' );
-									} );
-
-									var column2 = this.api().column( 3 );
-									var select2 = $( '<select class= "form-control"><option value="">Mostrar todos</option></select>' )
-										.appendTo( $( '#status' ).empty().text( '' ) )
-										.on( 'change', function () {
-											var val = $.fn.dataTable.util.escapeRegex(
-												$( this ).val()
-											);
-											column2
-												.search( val ? '^' + val + '$' : '', true, false )
-												.draw();
-
-										} );
-									column2.data().unique().sort().each( function ( d, j ) {
-										select2.append( '<option value="' + d + '">' + d + '</option>' );
-									} );
-								}
-
-
-
-							} );
-
-
+						} );
+					column.data().unique().sort( function ( a, b ) {
+						a = a.split( "/" );
+						b = b.split( "/" )
+						return new Date( b[ 1 ], b[ 0 ], 1 ) - new Date( a[ 1 ], a[ 0 ], 1 )
+					} ).each( function ( d, j ) {
+						select.append( '<option value="' + d + '">' + d + '</option>' );
 					} );
+
+					var column2 = this.api().column( 3 );
+					var select2 = $( '<select class= "form-control"><option value="">Mostrar todos</option></select>' )
+						.appendTo( $( '#status' ).empty().text( '' ) )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$( this ).val()
+							);
+							column2
+								.search( val ? '^' + val + '$' : '', true, false )
+								.draw();
+
+						} );
+					column2.data().unique().sort().each( function ( d, j ) {
+						select2.append( '<option value="' + d + '">' + d + '</option>' );
+					} );
+				}
+
+
+
+			} );
+
+
+		} );
 	</script>
 
 	<script>
