@@ -71,10 +71,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						}
 						?>
 
-						<option hidden="true">
+						<option>
 							<?=$status?>
 						</option>
-						<option>Pendente</option>
 						<option>Pagamento efetuado</option>
 
 						</select>
