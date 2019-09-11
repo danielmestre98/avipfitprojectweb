@@ -11,13 +11,8 @@ include_once( 'nav.php' );
 <script>
 	jQuery( function ( $ ) {
 		$( document ).ready( function () {
-			$( "#agendamento" ).addClass( "active" );
-			$( "#ag_drop" ).slideDown( 200 );
-			$( "#ger_agenda" ).addClass( "bg-dark active" );
-			var $CampoHora = $( ".hora" );
-			$CampoHora.mask( '00:00', {
-				reverse: true
-			} );
+			$( "#mensalidades" ).addClass( "active" );
+			
 		} );
 
 	} );
