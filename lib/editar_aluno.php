@@ -51,7 +51,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 
 		// Faz o upload da imagem para seu respectivo caminho
 		move_uploaded_file( $foto[ "tmp_name" ], $caminho_imagem );
-		$sql = "UPDATE pessoa SET cpf = '$cpf', dataNascimento = '$nascimento', email = '$email', nome = '$nome', telefone = '$telefone', senha = '$senha', cidade = '$cidade', estado = '$estado', cep = '$cep', bairro = '$bairro', rua = '$rua', numero = '$numero', foto = '$nome_imagem' WHERE cpf = '$cpfOld'";
+		$sql = "UPDATE pessoa SET cpf = '$cpf', dataNascimento = '$nascimento', email = '$email', nome = '$nome', telefone = '$telefone', cidade = '$cidade', estado = '$estado', cep = '$cep', bairro = '$bairro', rua = '$rua', numero = '$numero', foto = '$nome_imagem' WHERE cpf = '$cpfOld'";
 
 		$sql2 = "UPDATE horario SET segunda = '$segunda', terca = '$terca', quarta = '$quarta', quinta = '$quinta', sexta = '$sexta', sabado = '$sabado' WHERE cpf = '$cpf'";
 
@@ -96,7 +96,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 		mysqli_close( $conn );
 	}
 } else {
-	$sql = "UPDATE pessoa SET cpf = '$cpf', dataNascimento = '$nascimento', email = '$email', nome = '$nome', telefone = '$telefone', senha = '$senha', cidade = '$cidade', estado = '$estado', cep = '$cep', bairro = '$bairro', rua = '$rua', numero = '$numero' WHERE cpf = '$cpfOld'";
+	$sql = "UPDATE pessoa SET cpf = '$cpf', dataNascimento = '$nascimento', email = '$email', nome = '$nome', telefone = '$telefone', cidade = '$cidade', estado = '$estado', cep = '$cep', bairro = '$bairro', rua = '$rua', numero = '$numero' WHERE cpf = '$cpfOld'";
 
 	$sql2 = "UPDATE horario SET segunda = '$segunda', terca = '$terca', quarta = '$quarta', quinta = '$quinta', sexta = '$sexta', sabado = '$sabado' WHERE cpf = '$cpf'";
 
