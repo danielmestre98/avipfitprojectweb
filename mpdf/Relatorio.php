@@ -2,16 +2,20 @@
 <?php 
 $data = $_POST['data'];
 
+$datahj = date("y-m-d");
+
+
+
 require_once __DIR__ . '/vendor/autoload.php';
 include ("../conectar.php");
-$sql = $conn->prepare('SELECT  from pabx WHERE cast(data as date) BETWEEN ? AND ? and ramal like ? and local like ? and replace(numero, " ", "") like ? ORDER BY id ASC');
+$sql = $conn->prepare('SELECT Treinamento, count(*) FROM realiza r INNER JOIN pessoa p ON (r.cpf = p.cpf) GROUP BY Treinamento ');
 $sql->bind_param("sssss",$dti, $dtf, $ra, $lo, $nu);
 $sql-> execute();
 $sql->bind_result($id, $data, $solicitante, $ramal, $local, $numero);
 				
 				
 	$html = '
-	<h2><b>Relatório de ligações</b></h2>
+	<h2><b>Relatório de relação de alunos</b></h2>
 	<table>
 		<thead>
 							<tr>

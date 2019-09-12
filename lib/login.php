@@ -28,9 +28,9 @@ if ( mysqli_num_rows( $resulted ) > 0 ) {
 			mysqli_close($conn);
 			include('../conectar.php');
 			$resulted2 = mysqli_query($conn, "SELECT IdFilial FROM funcionario WHERE cpf = '$cpf2'");
-			$row = mysqli_fetch_assoc($resulted2);
+			$row2 = mysqli_fetch_assoc($resulted2);
 			session_start();
-			$_SESSION['filial'] = $row['IdFilial'];
+			$_SESSION['filial'] = $row2['IdFilial'];
 			$_SESSION['tipoPessoa'] = $row['tipoPessoa'];
 			$_SESSION['cpf'] = $cpf2;
 			$_SESSION['email'] = $email;
