@@ -41,7 +41,7 @@ else{
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a href="index">avipfit</a>
+				<a href="principal">avipfit</a>
 				<div id="close-sidebar">
 					<i class="fas fa-times"></i>
 				</div>
