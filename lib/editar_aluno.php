@@ -55,7 +55,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 
 		$sql2 = "UPDATE horario SET segunda = '$segunda', terca = '$terca', quarta = '$quarta', quinta = '$quinta', sexta = '$sexta', sabado = '$sabado' WHERE cpf = '$cpf'";
 
-		$sql3 = "UPDATE realiza SET, Treinamento = '$treinamento' WHERE cpf = '$cpf'";
+		$sql3 = "UPDATE realiza SET Treinamento = '$treinamento' WHERE cpf = '$cpf'";
 		$sql4 = "UPDATE mensalidade SET, valor = '$mensalidade', DataVencimento = '$pagamento' WHERE cpf = '$cpf'";
 		$sql5 = "UPDATE cliente SET IdFilial = '$idfilial' WHERE cpf = '$cpf'";
 
