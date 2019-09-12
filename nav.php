@@ -3,6 +3,10 @@ session_start();
 if(isset($_SESSION['tipoPessoa'])){
 	if($_SESSION['tipoPessoa'] == 1){
 		header('location: admin/principal');
+	}else{
+		if($_SESSION['tipoPessoa'] == 2){
+			header('location: colab/principal');
+		}
 	}
 }
 ?>
