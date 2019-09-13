@@ -14,7 +14,12 @@ $email = $_SESSION['email'];
 
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'treinamento, contem', '$email', 'DELETE FROM agenda WHERE id = $id')";
 if ( $conn->query( $log ) === TRUE ) {
-		header('location: ../admin/ag_eventos.php');
+		session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/ag_eventos' );}
+	else{
+		header ('location: ../colab/ag_eventos');
+	}
 	
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

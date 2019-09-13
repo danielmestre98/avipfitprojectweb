@@ -89,7 +89,12 @@ if ( !empty( $foto[ "name" ] ) ) {
 		mysqli_close( $conn );
 		include( '../conectar.php' );
 		if ( $conn->query( $sql5 ) === TRUE ) {
-			header('location: ../admin/consulta_aluno');
+				session_start();
+			if($_SESSION['tipoPessoa'] == '1'){
+			header( 'location: ../admin/consulta_aluno' );}
+			else{
+			header ('location: ../colab/consulta_aluno');
+			}
 		} else {
 			echo "Error: " . $sql5 . "<br>" . $conn->error;
 		}
@@ -133,7 +138,14 @@ if ( !empty( $foto[ "name" ] ) ) {
 	mysqli_close( $conn );
 	include( '../conectar.php' );
 	if ( $conn->query( $sql5 ) === TRUE ) {
-		header('location: ../admin/consulta_aluno');
+			session_start();
+			if($_SESSION['tipoPessoa'] == '1'){
+			header( 'location: ../admin/consulta_aluno' );
+			}
+			else{
+			header ('location: ../colab/consulta_aluno');
+			}
+			
 	} else {
 		echo "Error: " . $sql5 . "<br>" . $conn->error;
 	}

@@ -128,7 +128,12 @@ $sql5 = str_replace( "'", " ", $sql5 );
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql $sql2 $sql3 $sql4 $sql5')";
 
 if ( $conn->query( $log ) === TRUE ) {
-		header('location: ../admin/consulta_aluno');
+		session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_aluno' );}
+	else{
+		header ('location: ../colab/consulta_aluno');
+	}
 	
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

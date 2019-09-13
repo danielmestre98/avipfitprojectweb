@@ -48,7 +48,12 @@ $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$dat
 
 include('../conectar.php');
 if ( $conn->query( $log ) === TRUE ) {
-	header( 'location: ../admin/mensalidades' );
+	session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/mensalidades' );}
+	else{
+		header ('location: ../colab/mensalidades');
+	}
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;
 }

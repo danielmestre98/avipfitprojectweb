@@ -12,7 +12,12 @@ $sql = "UPDATE agenda SET evento = '$evento', horario = '$hora', dia = '$dia' WH
 
 
 if ( $conn->query( $sql ) === TRUE ) {
-	header( 'location: ../admin/ag_eventos.php' );
+	session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/ag_eventos' );}
+	else{
+		header ('location: ../colab/ag_eventos');
+	}
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -24,7 +24,7 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Agendamentos</h1>
+			<h1>Agendamentos</h1>
 			<div id="botao_novo" align="right">
 				<a href="novo_agen" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -88,7 +88,6 @@ include_once( 'nav.php' );
 					"infoEmpty": "Nenhum registro disponível",
 					"infoFiltered": "(filtrado de _MAX_ registro totais)",
 					"search": "Pesquisar",
-					searchPlaceholder: "Nome, tipo (Aula experimental ou Avaliação física), status (Aguardando aprovação ou aprovado)",
 					"first": "Primeiro",
 					"pagingType": "simple",
 					"processing": "Carregando...",
@@ -126,12 +125,7 @@ include_once( 'nav.php' );
 
 
 
-				],initComplete: function () {
-					$( '.dataTables_filter input[type="search"]' ).css( {
-						'width': '630px',
-						'display': 'inline-block'
-					} );
-				}
+				]
 
 
 
