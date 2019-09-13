@@ -41,15 +41,7 @@ include_once( 'nav.php' );
 				
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>20/02/2019</td>
-						<td>15:00</td>
-						<td>Aguardando aprovação</td>
-						<td><a href="aprovacao" title="Visualizar"><i class="far fa-eye"></i></a></td>
-					</tr>
-					
-				</tbody>
+				
 
 			</table>
 
@@ -100,9 +92,22 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
-
+				"sAjaxSource": "../lib/consulta_agendamento_aluno.php",
 				"autoWidth": false,
 				"bProcessing": true,
+				"columns": [{
+					data: 'dia'
+				}, {
+					data: 'horario'
+				},{
+					data: 'status'
+				},
+				{
+					data: null,
+					render: function ( data, type, row ) {
+							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.data+'&tipo='+row.tipo+'"><i class="far fa-eye"></i>'
+					}
+				}],
 				columnDefs: [ {
 						"orderable": false,
 						"targets": 1
