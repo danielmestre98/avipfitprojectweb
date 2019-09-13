@@ -18,7 +18,7 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container">
-			<p><h1 align="center">Depoimentos</h1></p>
+			<p><h1>Depoimentos</h1></p>
 		<a class="btn btn-primary" href="novo_dep">Novo depoimento</a>
 			<br>
 			<br>
