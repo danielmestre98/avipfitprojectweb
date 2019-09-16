@@ -34,7 +34,7 @@ else{
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar"><span class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed;"><i class="fas fa-bars"></i></span>
+	<div id="show-sidebar"><span class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 50"><i class="fas fa-bars"></i></span>
 	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
