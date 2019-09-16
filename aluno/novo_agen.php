@@ -28,7 +28,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input required name="dia" id="datepicker"/>
+						<input autocomplete="off" required name="dia" id="datepicker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
