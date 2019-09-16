@@ -30,7 +30,7 @@
 <file name="editar_filial_show.php" server="files.000webhost.com/public_html/" local="132120843328650206" remote="132128673600000000" Dst="1" />
 <file name="editar_treinamento.php" server="files.000webhost.com/public_html/" local="132128563941476142" remote="132128673600000000" Dst="1" />
 <file name="logout.php" server="files.000webhost.com/public_html/" local="132120843328670192" remote="132128673600000000" Dst="1" />
-<file name="login.php" server="files.000webhost.com/public_html/" local="132127707457759196" remote="132127815600000000" Dst="1" />
+<file name="login.php" server="files.000webhost.com/public_html/" local="132131153191596330" remote="132131260800000000" Dst="1" />
 <file name="novo_aluno.php" server="files.000webhost.com/public_html/" local="132128564253406194" remote="132128673600000000" Dst="1" />
 <file name="novo_colaborador.php" server="files.000webhost.com/public_html/" local="132120843328690185" remote="132128673600000000" Dst="1" />
 <file name="novo_evento.php" server="files.000webhost.com/public_html/" local="132128564481212439" remote="132128673600000000" Dst="1" />
@@ -51,4 +51,6 @@
 <file name="novo_depoimento.php" server="files.000webhost.com/public_html/" local="132128524382073013" remote="132128632200000000" Dst="1" />
 <file name="editar_parceiro.php" server="files.000webhost.com/public_html/" local="132124972244700858" remote="132128673600000000" Dst="1" />
 <file name="consulta_agendamento_aluno.php" server="files.000webhost.com/public_html/" local="132128617319324730" remote="132128725200000000" Dst="1" />
+<file name="consulta_ag_aval.php" server="files.000webhost.com/public_html/" local="132131155298999489" remote="132131263200000000" Dst="1" />
+<file name="salvar_ag_aval.php" server="files.000webhost.com/public_html/" local="132131165491003725" remote="132131273400000000" Dst="1" />
 </dwsync>

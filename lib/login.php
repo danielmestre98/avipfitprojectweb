@@ -42,10 +42,11 @@ if ( mysqli_num_rows( $resulted ) > 0 ) {
 				$resulted2 = mysqli_query( $conn, "SELECT filial FROM cliente WHERE cpf = '$cpf2'" );
 				$row2 = mysqli_fetch_assoc( $resulted2 );
 				session_start();
-				$_SESSION[ 'filial' ] = $row2[ 'IdFilial' ];
+				$_SESSION[ 'filial' ] = $row2[ 'filial' ];
 				$_SESSION[ 'tipoPessoa' ] = $row[ 'tipoPessoa' ];
 				$_SESSION[ 'cpf' ] = $cpf2;
 				$_SESSION[ 'email' ] = $email;
+				
 				header( 'location: ../aluno/principal' );
 			}
 		}
