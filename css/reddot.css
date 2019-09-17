@@ -13,6 +13,5 @@ red{
 .popover-content {background-color: tomato;}
 
 .disabled{
-	background:#F18486;
-	border: #000000;
+	color: red;
 }
