@@ -7,7 +7,7 @@ include_once( 'nav.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit - Agendamento</title>
 	<link rel="stylesheet" href="../css/reddot.css">
-	<link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css">
+	<link rel="stylesheet" href="../css/gijgo.min.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -60,8 +60,8 @@ include_once( 'nav.php' );
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="../js/jquery.mask.js"></script>
-	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
-	<script src="https://unpkg.com/gijgo@1.9.13/js/messages/messages.pt-br.js" type="text/javascript"></script>
+	<script src="../js/gijgo.min.js"></script>
+	<script src="../js/messages/messages.pt-br.min.js"></script>
 	<script src="../js/jquery.validate.min.js"></script>
 	<script src="../js/additional-methods.min.js"></script>
 	<script src="../js/valida_form.js"></script>
@@ -90,6 +90,7 @@ include_once( 'nav.php' );
 		$( '#datepicker' ).datepicker( {
 			disableDaysOfWeek: $dias,
 			uiLibrary: 'bootstrap4',
+		    format: 'dd/mm/yyyy', 
 			locale: 'pt-br',
 			change: function ( e ) {
 				var $datepicker = $('#datepicker').datepicker();

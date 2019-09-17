@@ -6,7 +6,7 @@ $filial = $_SESSION['filial'];
 
 $data = explode( "/", $dia );
 
-list( $mes, $dia, $ano ) = $data;
+list( $dia, $mes, $ano ) = $data;
 
 $data = "$ano-$mes-$dia";
 //$data = new DateTime($data);
