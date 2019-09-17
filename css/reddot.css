@@ -11,3 +11,8 @@ red{
 
 .popover .arrow::after {border-bottom-color: tomato; }
 .popover-content {background-color: tomato;}
+
+.disabled{
+	background:#F18486;
+	border: #000000;
+}
