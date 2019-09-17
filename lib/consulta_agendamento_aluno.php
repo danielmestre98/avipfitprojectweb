@@ -2,6 +2,7 @@
 require('../conectar.php');
 session_start();
 $cpf = $_SESSION['cpf'];
+$data = [];
 
 $sql = "SELECT tipo, status, a.horario,  DATE_FORMAT(a.data,'%d/%m/%Y') AS dia FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.horario = f.horario and a.data = f.data) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.cpf = '$cpf'";
 $result = $conn->query($sql);
