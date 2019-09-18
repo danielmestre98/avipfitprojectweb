@@ -53,4 +53,6 @@
 <file name="consulta_agendamento_aluno.php" server="files.000webhost.com/public_html/" local="132131920396206626" remote="132132028800000000" Dst="1" />
 <file name="consulta_ag_aval.php" server="files.000webhost.com/public_html/" local="132131908854004611" remote="132132016800000000" Dst="1" />
 <file name="salvar_ag_aval.php" server="files.000webhost.com/public_html/" local="132131166313242381" remote="132131415000000000" Dst="1" />
+<file name="consulta_ag_exp.php" server="files.000webhost.com/public_html/" local="132132766124284274" remote="132132873600000000" Dst="1" />
+<file name="salvar_ag_exp.php" server="files.000webhost.com/public_html/" local="132132907424877956" remote="132133015200000000" Dst="1" />
 </dwsync>
