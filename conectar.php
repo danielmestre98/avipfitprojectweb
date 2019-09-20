@@ -1,9 +1,9 @@
 <?php
 $host = "localhost";
 
-$usuario = "id10764884_academia";
+$usuario = "id5677461_academia";
 $senha = "avip123";
-$bd = "id10764884_academia";
+$bd = "id5677461_academia";
 
 $conn = new mysqli($host, $usuario, $senha, $bd);
 if($conn->connect_errno)
