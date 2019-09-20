@@ -17,7 +17,7 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<p><h1>Parceiros</h1></p>
 		
 		<a class="btn btn-primary" href="novo_parceiro">Novo <i class="fas fa-plus"></i></a>

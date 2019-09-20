@@ -66,7 +66,12 @@ if ( !empty( $foto[ "name" ] ) ) {
 		mysqli_close( $conn );
 		include( '../conectar.php' );
 		if ( $conn->query( $sql2 ) === TRUE ) {
-			header('location: ../admin/consulta_colaborador');
+			session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_colaborador' );}
+	else{
+		header ('location: ../colab/consulta_colaborador');
+	}
 
 		} else {
 			echo "Error: " . $sql2 . "<br>" . $conn->error;

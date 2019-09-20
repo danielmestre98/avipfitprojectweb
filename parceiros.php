@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
-			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">
+			<p><img src="fotos/<?=$row['foto']?>" alt="" width="70" height="70">
 				<h3>
 					<?=$row['nome'] ?>
 				</h3>

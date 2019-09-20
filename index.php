@@ -7,11 +7,13 @@ include_once( 'nav.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit</title>
 	<link rel="stylesheet" href="css/carousel.css">
+
 </head>
 
 <body>
-	<main role="main">
 
+	<main role="main">
+	
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

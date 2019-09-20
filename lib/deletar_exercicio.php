@@ -16,7 +16,12 @@ $email = $_SESSION['email'];
 
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'treinamento, contem', '$email', 'DELETE from exercicio WHERE NomeExercicio = $nome; DELETE FROM contem WHERE Exercicio = $nome;')";
 if ( $conn->query( $log ) === TRUE ) {
-		header('location: ../admin/consulta_exercicio');
+		session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_exercicio' );}
+	else{
+		header ('location: ../colab/consulta_exercicio');
+	}
 	
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

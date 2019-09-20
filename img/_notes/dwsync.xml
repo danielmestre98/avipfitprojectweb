@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
+<file name="academia.jpg" server="files.000webhost.com/public_html/" local="132120843327091171" remote="132134758800000000" Dst="1" />
+<file name="avipfit.jpg" server="files.000webhost.com/public_html/" local="132120843327121156" remote="132134758800000000" Dst="1" />
+<file name="aulaexp.jpg" server="files.000webhost.com/public_html/" local="132120843327121156" remote="132134758800000000" Dst="1" />
+<file name="bg1.jpg" server="files.000webhost.com/public_html/" local="132120843327141142" remote="132134758800000000" Dst="1" />
+<file name="bg2.jpg" server="files.000webhost.com/public_html/" local="132120843327151135" remote="132134758800000000" Dst="1" />
+<file name="bg3.jpg" server="files.000webhost.com/public_html/" local="132120843327161142" remote="132134758800000000" Dst="1" />
+<file name="bg4.jpg" server="files.000webhost.com/public_html/" local="132120843327171128" remote="132134758800000000" Dst="1" />
+<file name="biking-solid.svg" server="files.000webhost.com/public_html/" local="132120843327181121" remote="132134758800000000" Dst="1" />
+<file name="favicon.png" server="files.000webhost.com/public_html/" local="132134504239207648" remote="132134758800000000" Dst="1" />
+<file name="fotoprincipal.png" server="files.000webhost.com/public_html/" local="132120843327281064" remote="132134758800000000" Dst="1" />
+<file name="grafico.png" server="files.000webhost.com/public_html/" local="132120843327291057" remote="132134758800000000" Dst="1" />
+<file name="nossoobjetivo.jpg" server="files.000webhost.com/public_html/" local="132120843327331022" remote="132134758800000000" Dst="1" />
+<file name="mapa.png" server="files.000webhost.com/public_html/" local="132120843327311036" remote="132134758800000000" Dst="1" />
+<file name="faleconosco.jpg" server="files.000webhost.com/public_html/" local="132120843327251075" remote="132134758800000000" Dst="1" />
+<file name="relatorio.png" server="files.000webhost.com/public_html/" local="132120843327371000" remote="132134758800000000" Dst="1" />
+<file name="parceiros.jpg" server="files.000webhost.com/public_html/" local="132120843327361004" remote="132134758800000000" Dst="1" />
+<file name="studio.jpg" server="files.000webhost.com/public_html/" local="132120843327380997" remote="132134758800000000" Dst="1" />
+<file name="trabalho.jpg" server="files.000webhost.com/public_html/" local="132120843327400979" remote="132134758800000000" Dst="1" />
+<file name="user.jpg" server="files.000webhost.com/public_html/" local="132120843327420968" remote="132134758800000000" Dst="1" />
+<file name="treinamento.jpg" server="files.000webhost.com/public_html/" local="132120843327410975" remote="132134758800000000" Dst="1" />
+=======
 <file name="academia.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
 <file name="avipfit.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
 <file name="aulaexp.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
@@ -8,7 +30,7 @@
 <file name="bg3.jpg" server="files.000webhost.com/public_html/" local="131989724960000000" remote="132121184400000000" Dst="1" />
 <file name="bg4.jpg" server="files.000webhost.com/public_html/" local="131989724960000000" remote="132121184400000000" Dst="1" />
 <file name="biking-solid.svg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
-<file name="favicon.png" server="files.000webhost.com/public_html/" local="131989724960000000" remote="132122932800000000" Dst="1" />
+<file name="favicon.png" server="files.000webhost.com/public_html/" local="132134504239207648" remote="132134612400000000" Dst="1" />
 <file name="fotoprincipal.png" server="files.000webhost.com/public_html/" local="132045978226171308" remote="132122932800000000" Dst="1" />
 <file name="grafico.png" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
 <file name="nossoobjetivo.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
@@ -20,4 +42,5 @@
 <file name="trabalho.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
 <file name="user.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
 <file name="treinamento.jpg" server="files.000webhost.com/public_html/" local="132120881400000000" remote="132120881400000000" Dst="1" />
+>>>>>>> origin/Test
 </dwsync>

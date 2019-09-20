@@ -21,15 +21,15 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container">
-			<h1 align="center">Depoimento</h1>
+			<h1>Depoimento</h1>
 			<br>
 			
-			<form id="exercicio_cadastro" action="depoimentos" enctype="multipart/form-data" method="post">
+			<form id="depoimento" action="../lib/novo_depoimento.php" enctype="multipart/form-data" method="post">
 				
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="">Descrição</label>
-						<textarea name="" class="form-control" id="" cols="30" rows="10" placeholder="Escreva seu depoimento aqui..."></textarea>
+						<textarea required name="descr" class="form-control" id="descr" cols="30" rows="10" placeholder="Escreva seu depoimento aqui..."></textarea>
 					</div>
 				</div>
 				

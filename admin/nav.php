@@ -2,6 +2,7 @@
 session_start();
 require( '../lib/dadosLogin.php' );
 
+
 if (isset($_SESSION['tipoPessoa'])){
 	if($_SESSION['tipoPessoa'] == 1){
 		
@@ -28,7 +29,7 @@ else{
 <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/sidebar-themes.css">
-<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
 
 
 
@@ -200,7 +201,7 @@ else{
 	<!-- page-wrapper -->
 
 
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.bundle.min.js"></script>
 	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
 

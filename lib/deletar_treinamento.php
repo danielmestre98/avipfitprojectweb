@@ -21,7 +21,12 @@ mysqli_close( $conn );
 include('../conectar.php');
 
 if ( $conn->query( $sql3 ) === TRUE ) {
-	header('location: ../admin/consulta_treinamento');
+	session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_treinamento' );}
+	else{
+		header ('location: ../colab/consulta_treinamento');
+	}
 } else {
 	echo "Error: " . $sql3 . "<br>" . $conn->error;
 }

@@ -20,7 +20,7 @@ include ('../lib/editar_parceiro_show.php');
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Editar parceiro</h1>
 			<br>
 			<form id="editar_parceiro" action="../lib/editar_parceiro.php" enctype="multipart/form-data" method="post">
