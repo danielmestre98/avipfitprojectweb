@@ -55,6 +55,53 @@ jQuery(function ($) {
 
 		return $return;
 	});
+	
+	jQuery.validator.addMethod("cnpj", function (value, element) {
+
+            var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
+            if (value.length == 0) {
+                return false;
+            }
+
+            value = value.replace(/\D+/g, '');
+            digitos_iguais = 1;
+
+            for (i = 0; i < value.length - 1; i++)
+                if (value.charAt(i) != value.charAt(i + 1)) {
+                    digitos_iguais = 0;
+                    break;
+                }
+            if (digitos_iguais)
+                return false;
+
+            tamanho = value.length - 2;
+            numeros = value.substring(0, tamanho);
+            digitos = value.substring(tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            for (i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2)
+                    pos = 9;
+            }
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(0)) {
+                return false;
+            }
+            tamanho = tamanho + 1;
+            numeros = value.substring(0, tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            for (i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2)
+                    pos = 9;
+            }
+
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+
+            return (resultado == digitos.charAt(1));
+        });-
 
 
 
@@ -234,13 +281,13 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 			},
 			senha: {
 				minlength: 8
@@ -264,6 +311,12 @@ jQuery(function ($) {
 			pagamento: {
 				max: "Por favor insira um dia válido.",
 				min: "Por favor insira um dia válido."
+			},
+			telefone:{
+				minlength: "Por favor digite um telefone válido"
+			},
+			cep:{
+				minlength: "Por favor digite um CEP válido"
 			}
 		},
 
@@ -290,6 +343,82 @@ jQuery(function ($) {
 
 	});
 
+	$("#novo_parceiro").validate({
+		rules: {
+			cnpj: {
+				cnpj: true
+			},
+			email: {
+				email: true,
+				required: true
+			}
+		},
+		messages: {
+			nomeExercicio: {
+				remote: "Exercicio já cadastrado."
+			},
+			url: {
+				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido"
+			}
+		},
+		errorElement: 'span',
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+	
+	$("#editar_parceiro").validate({
+		rules: {
+			cnpj: {
+				cnpj: true
+			},
+			email: {
+				email: true,
+				required: true
+			}
+		},
+		messages: {
+			nomeExercicio: {
+				remote: "Exercicio já cadastrado."
+			},
+			url: {
+				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido"
+			}
+		},
+		errorElement: 'span',
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+	
+	
+	
 	$("#exercicio_cadastro").validate({
 		rules: {
 			nomeExercicio: {
@@ -374,13 +503,13 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 
 			},
 			senha: {
@@ -407,6 +536,12 @@ jQuery(function ($) {
 			pagamento: {
 				max: "Por favor insira um dia válido.",
 				min: "Por favor insira um dia válido."
+			},
+			telefone:{
+				minlength: "Por favor digite um telefone válido"
+			},
+			cep:{
+				minlength: "Por favor digite um CEP válido"
 			}
 		},
 

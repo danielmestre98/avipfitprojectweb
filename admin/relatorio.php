@@ -16,43 +16,34 @@ include_once( 'nav.php' );
 		} );
 	} );
 </script>
+<link rel="stylesheet" href="../css/datatables.min.css">
+<link rel="stylesheet" href="../css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
 
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Relatório de relação de alunos</h1>
+		<div class="container-fluid p-5">
+			<h1>Relatório de relação de alunos</h1>
 			<br>
-			
-			<form id="exercicio_cadastro" action="novos_dep" enctype="multipart/form-data" method="post">
-				
-				<div class="form-row">
-					<div class="form-group col-md-3">
-						<label for="cidade">Mês de referência</label>
-						<select required class="form-control" name="" id="aprovacao">
-							<option value="1">Janeiro</option>
-							<option value="1">Fevereiro</option>
-							<option value="1">Março</option>
-							<option value="1">Abril</option>
-							<option selected value="1">Maio</option>
-						</select>
-					</div>
-					<div class="form-group col-md-3">
-						<label for="cidade">Ano de referência</label>
-						<select required class="form-control" name="" id="ano">
-							<option value="1">2018</option>
-							<option selected value="1">2019</option>
 
+
+
+
+
+			<form action="../mpdf/Relatorio.php">
+				<div class="form-row">
+					<div class="form-group col-md-3" style="float: right;">
+						<label for="mes">Mês de referência</label>
+						<select required class="form-control" name="data" id="data">
+							<option value="">Selecione o mês de referência</option>
+							<option>09/2019</option>
 						</select>
 					</div>
 				</div>
-
-				<p align="center"><img src="../img/relatorio.png" alt=""></p>
-
-				<a style="float: right" href="#" class="btn btn-primary">Download <i class="fas fa-download"></i></a>
-				
 			</form>
-			
+			<button style="float: left" type="submit" class="btn btn-primary btn-sm">Gerar PDF</button>
+
 
 
 
@@ -65,10 +56,11 @@ include_once( 'nav.php' );
 	</div>
 
 
-	<script src="../js/jquery.mask.js"></script>
+	<script src="../js/moment.js"></script>
+	<script src="../js/datatables.min.js"></script>
+	<script src="../js/datetime.js"></script>
+	<script src="../js/responsive.bootstrap4.min.js"></script>
+	<script src="../js/dataTables.responsive.min.js"></script>
 
-	<script src="../js/jquery.validate.min.js"></script>
-	<script src="../js/additional-methods.min.js"></script>
-	<script src="../js/valida_form.js"></script>
 </body>
 </html>

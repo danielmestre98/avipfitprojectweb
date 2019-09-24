@@ -22,7 +22,7 @@ include( '../lib/editar_colaborador_show.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Edição de colaborador</h1>
 			<br>
 			<form id="aluno_editar" action="../lib/editar_colaborador.php" enctype="multipart/form-data" method="post">

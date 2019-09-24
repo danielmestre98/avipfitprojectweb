@@ -14,7 +14,12 @@ $sql = "INSERT INTO agenda (dia, evento, horario, filial, cpffunc)
 
 
 if ($conn->query($sql) === TRUE) {
-   header('location: ../admin/ag_eventos');
+  session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/ag_eventos' );}
+	else{
+		header ('location: ../colab/ag_eventos');
+	}
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

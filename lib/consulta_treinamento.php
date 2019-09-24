@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 
-
+$data = [];
 $sql = "Select id, NomeTreinamento FROM treinamento WHERE Id != '9'";
 $result = $conn->query($sql);
 

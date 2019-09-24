@@ -22,7 +22,7 @@ require('../lib/editar_filial_show.php')
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Editar filial</h1>
 			<br>
 			<form id="colab_cadastro" action="../lib/editar_filial.php" enctype="multipart/form-data" method="post">

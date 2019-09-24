@@ -4,13 +4,13 @@ include_once( 'nav.php' );
 <!doctype html>
 <html>
 <head>
-<script>
-	jQuery( function ( $ ) {
-		$( document ).ready( function () {
-			$( "#treinamento" ).addClass( "active" );
+	<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				$( "#treinamento" ).addClass( "active" );
+			} );
 		} );
-	} );
-</script>
+	</script>
 	<meta charset="utf-8">
 	<title>AVIPfit - Cadastro</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
@@ -22,28 +22,30 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Treinamento</h1>
+			<h1>Treinamento</h1>
 			<br>
-			<h4>Perda de peso</h4>
+			<?php
+			session_start();
+			$cpf = $_SESSION[ 'cpf' ];
+			$sql = "SELECT Treinamento FROM realiza WHERE cpf = '$cpf'";
+			$result = $conn->query( $sql );
+			$row = $result->fetch_array(MYSQLI_ASSOC);
+			$treinamento = $row['Treinamento'];
+			?>
+			<h4><?=$treinamento?></h4>
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
 						<th class='col'>Exercício</th>
 						<th class='col'>Vídeo</th>
-				
+
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Abdominal</td>
-						<td><a target="_blank" href="https://www.youtube.com" title="Visualizar"><i class="far fa-eye"></i></a></td>
-					</tr>
-				</tbody>
 
 			</table>
 			<br>
-			
+
 		</div>
 
 
@@ -69,7 +71,7 @@ include_once( 'nav.php' );
 			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
 				$( "#divt" ).removeClass( "container-fluid p-5" );
 			}
-			
+
 			$( '#tabela' ).DataTable( {
 
 				"bLengthChange": false,
@@ -91,27 +93,33 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
-
+				"sAjaxSource": "../lib/consulta_a_treinamento.php",
 				"autoWidth": false,
 				"bProcessing": true,
+				"columns": [ {
+					data: 'Exercicio'
+				}, {
+					data: null,
+					render: function ( data, type, row ) {
+						if ( row.url.length > 2 ) {
+							return '<a title="Ver vídeo" target="_blank" href="' + row.url + '"><i class="far fa-eye"></i></a>'
+						} else {
+							return '<i class="far fa-eye"></i>'
+						}
+					}
+				} ],
 				columnDefs: [ {
 						"orderable": false,
 						"targets": 1
 					}, {
-						"width": '70%',
+						"width": '95%',
 						"targets": 0
 					}, {
-						"width": '30%',
+						"width": '5%',
 						"targets": 1
 					}, {
-						"width": '20%',
-						"targets": 2
-					},{
 						"orderable": false,
 						"targets": 1
-					},{
-						"orderable": false,
-						"targets": 2
 					}
 
 
@@ -122,17 +130,17 @@ include_once( 'nav.php' );
 
 			} );
 
-			
+
 		} );
 	</script>
 
 	<script>
-		function confirma(dia, horario, filial){
+		function confirma( dia, horario, filial ) {
 			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
-					window.location="../lib/deletar_evento.php?dia="+dia+"&horario="+horario+"&filial="+filial
+				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
 			} else {
 				return false
-				
+
 			}
 		}
 	</script>

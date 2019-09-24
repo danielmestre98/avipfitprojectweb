@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 
-
+$data = [];
 $sql = "SELECT p.nome, status, p.cpf FROM depoimentos d INNER JOIN pessoa p ON (d.cpf=p.cpf)";
 $result = $conn->query($sql);
 

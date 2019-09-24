@@ -1,5 +1,6 @@
 <?php
 include_once( 'nav.php' );
+include ('../lib/editar_parceiro_show.php');
 ?>
 <!doctype html>
 <html>
@@ -16,20 +17,19 @@ include_once( 'nav.php' );
 		} );
 	} );
 </script>
-
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Novo parceiro</h1>
+		<div class="container-fluid p-5">
+			<h1>Editar parceiro</h1>
 			<br>
-			<form id="colab_cadastro" action="parceiros" enctype="multipart/form-data" method="post">
+			<form id="editar_parceiro" action="../lib/editar_parceiro.php" enctype="multipart/form-data" method="post">
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade">
 							<red>*</red>Nome</label>
-						<input type="text" required name="nome" value="Centro de estética" class="form-control" id="input_nome">
+						<input type="text" required name="nome" value="<?=$nome?>" class="form-control" id="input_nome">
 					</div>
 					
 				</div>
@@ -37,12 +37,13 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
-							<input type="text" required name="cnpj" value="36.448.141/0001-19" class="form-control" id="input_cnpj">
+							<input type="text" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
+							<input type="text" required name="cnpj" value="<?=$cnpj?>" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">
 						<label for="email">
 							<red>*</red>E-mail</label>
-						<input type="text" required name="email" value="estetica@hotmail.com" class="form-control" id="input_email">
+						<input type="text" required name="email" value="<?=$email?>" class="form-control" id="input_email">
 					</div>
 				</div>
 				<div class="form-row">
@@ -55,39 +56,39 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="Americana" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" value="<?=$cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" value="São Paulo" id="input_estado">
+						<input type="text" required name="estado" class="form-control" value="<?=$estado?>" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" value="13588-270" class="form-control" id="input_cep">
+						<input type="text" required name="cep" value="<?=$cep?>" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" value="Novo Mundo" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" value="<?=$bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="Av. de Cillo" class="form-control" id="input_rua">
+						<input type="text" required name="rua" value="<?=$rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número</label>
-						<input type="text" required name="numero" value="1500" class="form-control" id="input_numero">
+						<input type="text" required name="numero" value="<?=$numero?>" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" required name="telefone" value="(19)3875-9878" class="form-control" id="input_telefone">
+						<input type="text" required name="telefone" value="<?=$telefone?>" class="form-control" id="input_telefone">
 					</div>
 				</div>
 
@@ -115,8 +116,8 @@ include_once( 'nav.php' );
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
-				var $seuCampoCpf = $( "#input_CPF" );
-				$seuCampoCpf.mask( '000.000.000-00', {
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
 					reverse: false
 				} );
 

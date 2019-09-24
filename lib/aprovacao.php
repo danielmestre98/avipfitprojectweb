@@ -14,7 +14,12 @@ $sql = "UPDATE agendamento SET status = '$status', descricaoCancelamento = '$can
 
 
 if ( $conn->query( $sql ) === TRUE ) {
-	header( 'location: ../admin/agendamentos' );
+	session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/agendamentos' );}
+	else{
+		header ('location: ../colab/agendamentos');
+	}
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }

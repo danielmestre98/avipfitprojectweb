@@ -21,7 +21,7 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Cadastro de aluno</h1>
 			<br>
 			<form id="aluno_cadastro" action="../lib/novo_aluno.php" enctype="multipart/form-data" method="post">
@@ -99,7 +99,7 @@ include_once( 'nav.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected></option>
+						<option selected value="">Escolha a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";

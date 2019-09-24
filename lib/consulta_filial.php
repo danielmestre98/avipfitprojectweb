@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 
-
+$data = [];
 $sql = "Select cidade, IdFilial, rua, numero, bairro, estado FROM filial";
 $result = $conn->query($sql);
 
