@@ -1,6 +1,7 @@
 <?php
 $host = "localhost";
 <<<<<<< HEAD
+<<<<<<< HEAD
 $usuario = "id5677461_academia";
 $senha = "tcc987455";
 $bd = "id5677461_academia";
@@ -9,6 +10,12 @@ $usuario = "id10764884_academia";
 $senha = "avip123";
 $bd = "id10764884_academia";
 >>>>>>> origin/Test
+=======
+
+$usuario = "id5677461_academia";
+$senha = "avip123";
+$bd = "id5677461_academia";
+>>>>>>> origin/master
 
 $conn = new mysqli($host, $usuario, $senha, $bd);
 if($conn->connect_errno)
