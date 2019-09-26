@@ -37,7 +37,7 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-4">
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
-							<input type="text" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
+							<input type="text" id="cnpjOld" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
 							<input type="text" required name="cnpj" value="<?=$cnpj?>" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">

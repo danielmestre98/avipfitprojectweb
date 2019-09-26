@@ -393,23 +393,28 @@ jQuery(function ($) {
 
 	$("#novo_parceiro").validate({
 		rules: {
-			cnpj: {
-				cnpj: true
+			cnpj: {	
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpj.php",
+					type: "post"
+				}
 			},
 			email: {
 				email: true,
 				required: true
+			},
+			telefone:{
+				minlength: 13
 			}
 		},
 		messages: {
-			nomeExercicio: {
-				remote: "Exercicio já cadastrado."
-			},
-			url: {
-				remote: "Link já cadastrado."
+			telefone:{
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido."
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
 			}
 		},
 		errorElement: 'span',
@@ -431,7 +436,16 @@ jQuery(function ($) {
 	$("#editar_parceiro").validate({
 		rules: {
 			cnpj: {
-				cnpj: true
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjEdit.php",
+					type: "post",
+					data:{
+						cnpjOld: function () {
+							return $('#cnpjOld').val();
+						}
+					}
+				}
 			},
 			email: {
 				email: true,
@@ -446,7 +460,8 @@ jQuery(function ($) {
 				remote: "Link já cadastrado."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido."
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
 			}
 		},
 		errorElement: 'span',
