@@ -128,7 +128,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( nome, cpf ) {
-			if ( window.confirm( " Tem certeza que deseja deletar o exercício " + nome + "? (Isso desvinculará esse exercício de todos os treinamentos) " ) ) {
+			if ( window.confirm( "Deseja deletar o exercício " + nome + "? \nEsta ação desassociará este exercício dos treinamentos. " ) ) {
 				window.location = "../lib/deletar_exercicio.php?nomeExercicio=" + nome
 			} else {
 				return false

@@ -23,7 +23,7 @@ require( '../lib/editar_exercicio_show.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Editar exercício</h1>
+			<h1>Edição de exercício</h1>
 			<br>
 			<form id="editar_exercicio" action="../lib/editar_exercicio.php?id=<?php echo $_GET['nome']?>" enctype="multipart/form-data" method="post">
 				<div class="form-row">
