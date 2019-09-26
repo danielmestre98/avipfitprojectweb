@@ -309,14 +309,14 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			},
 			telefone:{
-				minlength: "Por favor digite um telefone válido"
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cep:{
-				minlength: "Por favor digite um CEP válido"
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -361,7 +361,7 @@ jQuery(function ($) {
 				remote: "Link já cadastrado."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido"
+				cnpj: "CNPJ inválido."
 			}
 		},
 		errorElement: 'span',
@@ -398,7 +398,7 @@ jQuery(function ($) {
 				remote: "Link já cadastrado."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido"
+				cnpj: "CNPJ inválido."
 			}
 		},
 		errorElement: 'span',
@@ -534,14 +534,14 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			},
 			telefone:{
-				minlength: "Por favor digite um telefone válido"
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cep:{
-				minlength: "Por favor digite um CEP válido"
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -630,8 +630,8 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			}
 		},
 
@@ -660,12 +660,12 @@ jQuery(function ($) {
 
 	jQuery.extend(jQuery.validator.messages, {
 		required: "Este campo é necessário.",
-		telefone: "Por favor insira um telefone válido.",
-		cpf: "Por favor insira um CPF válido.",
-		cep: "Por favor insira um CEP válido.",
-		time: "Por favor insira uma hora válida.",
-		email: "Por favor insira um endereço de e-mail válido.",
-		url: "Please enter a valid URL.",
+		telefone: "Por favor, insira um telefone válido.",
+		cpf: "Por favor, insira um CPF válido.",
+		cep: "Por favor, insira um CEP válido.",
+		time: "Por favor, insira uma hora válida.",
+		email: "Por favor, insira um endereço de e-mail válido.",
+		url: "Por favor, insira uma url válida.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
 		number: "Please enter a valid number.",
