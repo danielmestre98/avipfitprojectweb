@@ -129,7 +129,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( nome, cpf ) {
-			if ( window.confirm( " Tem certeza que deseja deletar o treinamento " + nome + "? \n(Isso irá desvincular esse treinamento de todos os cadastros que o possuem)" ) ) {
+			if ( window.confirm( "Deseja deletar o treinamento " + nome + "? \nEsta ação desassociará este treinamento dos cadastros de alunos." ) ) {
 				window.location = "../lib/deletar_treinamento.php?nome=" + nome
 			} else {
 				return false

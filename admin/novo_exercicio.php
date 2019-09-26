@@ -22,26 +22,26 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Cadastro de exercícios físicos</h1>
+			<h1>Cadastro de exercícios</h1>
 			<br>
 			<form id="exercicio_cadastro" action="../lib/novo_exercicio.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							<red>*</red>Nome do exercício</label>
-						<input type="text" name="nomeExercicio" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" name="nomeExercicio" maxlength="20" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="descricao"><red>*</red>Descrição</label>
-						<input type="text" required name="descricao" class="form-control" id="descricao">
+						<input type="text" required name="descricao" maxlength="100" class="form-control" id="descricao">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade">Link do vídeo</label>
-						<input type="text" name="url" placeholder="https://www.exemplo.com" class="form-control" id="input_cidade">
+						<input type="text" name="url" maxlength="100" placeholder="https://www.exemplo.com" class="form-control" id="input_cidade">
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 				</div>
