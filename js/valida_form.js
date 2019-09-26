@@ -215,7 +215,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			nome: {
-				remote: "Treinamento já existe.",
+				remote: "Treinamento já cadastrado.",
 			}
 		},
 		errorElement: 'span',
@@ -239,6 +239,47 @@ jQuery(function ($) {
 		}
 	});
 
+		$("#edit_treinamento").validate({
+		rules: {
+			nome: {
+				required: true,
+				remote: {
+					url: "../lib/verificaTrei.php",
+					type: "post",
+					data:{
+						nomeOld: function () {
+							return $('#nomeOld').val();
+						}
+					}
+				}
+			}
+		},
+		messages: {
+			nome: {
+				remote: "Treinamento já cadastrado.",
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+	
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
@@ -691,7 +732,7 @@ jQuery(function ($) {
 		digits: "Please enter only digits.",
 		creditcard: "Please enter a valid credit card number.",
 		equalTo: "Senhas divergentes.",
-		accept: "Por favor escolha um arquivo com uma extensão válida.",
+		accept: "Por favor, selecione um arquivo com um formato válido.",
 		maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
 		minlength: jQuery.validator.format("Por favor, digite pelo menos {0} caracteres."),
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),

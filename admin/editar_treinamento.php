@@ -53,6 +53,7 @@ include_once( 'nav.php' );
 						<label for="nome">
 							<red>*</red> Nome do treinamento</label>
 						<input required type="text" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
+						<input type="text" hidden="true" value="<?=$nome?>" id="nomeOld" name="nomeOld">
 					</div>
 				</div>
 				<h3>Selecione os exercícios</h3>

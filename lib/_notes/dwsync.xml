@@ -19,7 +19,7 @@
 <file name="deletar_exercicio.php" server="files.000webhost.com/public_html/" local="132128561546697227" remote="132134761200000000" Dst="1" />
 <file name="deletar_filial.php" server="files.000webhost.com/public_html/" local="132120843328580252" remote="132134761200000000" Dst="1" />
 <file name="deletar_treinamento.php" server="files.000webhost.com/public_html/" local="132128562636099977" remote="132134761200000000" Dst="1" />
-<file name="editar_aluno.php" server="files.000webhost.com/public_html/" local="132131890536631708" remote="132134761200000000" Dst="1" />
+<file name="editar_aluno.php" server="files.000webhost.com/public_html/" local="132140024657431299" remote="132140132400000000" Dst="1" />
 <file name="editar_aluno_show.php" server="files.000webhost.com/public_html/" local="132120843328600238" remote="132134761200000000" Dst="1" />
 <file name="editar_colaborador.php" server="files.000webhost.com/public_html/" local="132128563267719577" remote="132134761200000000" Dst="1" />
 <file name="editar_colaborador_show.php" server="files.000webhost.com/public_html/" local="132120843328620224" remote="132134761200000000" Dst="1" />
@@ -36,7 +36,7 @@
 <file name="novo_evento.php" server="files.000webhost.com/public_html/" local="132128564481212439" remote="132134763000000000" Dst="1" />
 <file name="novo_exercicio.php" server="files.000webhost.com/public_html/" local="132128564704505001" remote="132134761800000000" Dst="1" />
 <file name="novo_filial.php" server="files.000webhost.com/public_html/" local="132120843328710170" remote="132134761800000000" Dst="1" />
-<file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132128564961916492" remote="132134761800000000" Dst="1" />
+<file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132140064654632670" remote="132140172600000000" Dst="1" />
 <file name="verificaContem.php" server="files.000webhost.com/public_html/" local="132120843328730160" remote="132134761800000000" Dst="1" />
 <file name="verificaEvento.php" server="files.000webhost.com/public_html/" local="132120843328740153" remote="132134761800000000" Dst="1" />
 <file name="verificaEventoEdit.php" server="files.000webhost.com/public_html/" local="132120843328750146" remote="132134761800000000" Dst="1" />
@@ -55,4 +55,5 @@
 <file name="salvar_ag_aval.php" server="files.000webhost.com/public_html/" local="132131166313242381" remote="132134761800000000" Dst="1" />
 <file name="consulta_ag_exp.php" server="files.000webhost.com/public_html/" local="132132766124284274" remote="132134761200000000" Dst="1" />
 <file name="salvar_ag_exp.php" server="files.000webhost.com/public_html/" local="132132907424877956" remote="132134761800000000" Dst="1" />
+<file name="verificaTrei.php" server="files.000webhost.com/public_html/" local="132140080747251062" remote="132140188800000000" Dst="1" />
 </dwsync>

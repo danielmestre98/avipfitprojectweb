@@ -30,7 +30,7 @@ require( '../lib/editar_aluno_show.php' );
 					<div class="form-group col-md-6">
 						<label for="nome">
 							<red>*</red>Nome</label>
-						<input type="text" name="nome" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
+						<input type="text" name="nome" maxlength="255" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
 					</div>
 					<input type="text" hidden="true" name="cpfOld" id="cpfOLD" value="<?php echo $_GET['cpf']?>">
 					<div class="form-group col-md-6">
@@ -42,7 +42,7 @@ require( '../lib/editar_aluno_show.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email"><i><red>*</red>E-mail</i></label>
-						<input type="email" required name="email" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+						<input type="email" required name="email" maxlength="50" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="telefone">
@@ -56,19 +56,19 @@ require( '../lib/editar_aluno_show.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do aluno, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" maxlength="255" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
+						<input type="text" required name="estado" maxlength="255" value="<?php echo $estado?>" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
@@ -81,17 +81,17 @@ require( '../lib/editar_aluno_show.php' );
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="<?php echo $rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" value="<?php echo $rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número</label>
-						<input type="text" required name="numero" value="<?php echo $numero?>" class="form-control" id="input_numero">
+						<input type="text" required name="numero" maxlength="35" value="<?php echo $numero?>" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -163,7 +163,7 @@ require( '../lib/editar_aluno_show.php' );
 
 					<div class="form-group col-md-12">
 						<b>
-							<red>*</red> Preencha apenas os dias que o aluno irá frequentar</b>
+							<red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio</b>
 					</div>
 
 				</div>
@@ -174,9 +174,9 @@ require( '../lib/editar_aluno_show.php' );
 						<input type="text" required name="mensalidade" value="<?php echo $valor?>" class="form-control" id="mensalidade" placeholder="R$">
 					</div>
 					<div class="form-group col-md-2">
-						<label for="input_data">
+						<label for="pagamento">
 							<red>*</red>Data de pagamento</label>
-						<input id="input_data" required name="pagamento" value="<?php echo $vencimento?>" class="form-control" maxlength="2" placeholder="dd">
+						<input id="pagamento" required name="pagamento" value="<?php echo $vencimento?>" class="form-control" maxlength="2" placeholder="dd">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_senha">
@@ -218,6 +218,11 @@ require( '../lib/editar_aluno_show.php' );
 					reverse: false
 				} );
 
+				var $datamens = $("#pagamento");
+				$datamens.mask('00',{
+					reverse: false
+				});
+				
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true
@@ -234,7 +239,7 @@ require( '../lib/editar_aluno_show.php' );
 				} );
 
 				var $CampoValor = $( "#mensalidade" );
-				$CampoValor.mask( '0000', {
+				$CampoValor.mask( '0000,00', {
 					reverse: true
 				} );
 				$( 'input, :input' ).attr( 'autocomplete', 'off' );

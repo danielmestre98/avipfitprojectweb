@@ -164,7 +164,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( cpf, nome ) {
-			if ( window.confirm( " Tem certeza que deseja inativar o aluno " + nome + "? " ) ) {
+			if ( window.confirm( " Deseja deletar o registro " + nome + "? " ) ) {
 				window.location = "../lib/deletar_aluno.php?cpf=" + cpf
 			} else {
 				return false
