@@ -25,12 +25,13 @@ require( '../lib/editar_exercicio_show.php' );
 		<div class="container-fluid p-5">
 			<h1>Editar exercício</h1>
 			<br>
-			<form id="exercicio_cadastro" action="../lib/editar_exercicio.php?id=<?php echo $_GET['nome']?>" enctype="multipart/form-data" method="post">
+			<form id="editar_exercicio" action="../lib/editar_exercicio.php?id=<?php echo $_GET['nome']?>" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							<red>*</red>Nome do exercício</label>
 						<input type="text" name="nomeExerciciou" maxlength="20" value="<?php echo $exercicio?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" hidden="true" value="<?=$exercicio?>" id="nomeOld">
 					</div>
 				</div>
 				<div class="form-row">
@@ -44,6 +45,7 @@ require( '../lib/editar_exercicio_show.php' );
 					<div class="form-group col-md-12">
 						<label for="cidade">Link do vídeo</label>
 						<input type="text" name="url" value="<?php echo $url?>" maxlength="100" placeholder="https://www.exemplo.com" class="form-control" id="input_cidade">
+						<input type="text" hidden="true" value="<?=$url?>" id="linkOld">
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 				</div>

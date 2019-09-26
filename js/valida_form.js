@@ -514,6 +514,60 @@ jQuery(function ($) {
 		}
 
 	});
+	
+	$("#editar_exercicio").validate({
+		rules: {
+			nomeExerciciou: {
+				remote: {
+					url: "../lib/verificaExercicioEdit.php",
+					type: "post",
+					data:{
+						nomeOld: $('#nomeOld').val()
+					}
+
+				}
+			},
+			url: {
+				remote: {
+					url: "../verificaLinkEdit.php",
+					type: "post",
+					data:{
+						linkOld: $('#linkOld').val()
+					}
+				}
+			}
+
+		},
+		messages: {
+			nomeExerciciou: {
+				remote: "Exercicio já cadastrado."
+			},
+			url: {
+				remote: "Link já cadastrado."
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+
 
 	$("#aluno_cadastro").validate({
 		rules: {
