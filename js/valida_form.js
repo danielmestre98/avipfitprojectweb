@@ -259,6 +259,9 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
+				minlength: 5
+			},
+			estado: {
 				minlength: 2
 			},
 			segunda: "time",
@@ -278,6 +281,10 @@ jQuery(function ($) {
 					}
 				}
 
+			},
+			bairro:{
+				required: true,
+				minlength: 5
 			},
 			telefone: {
 				required: true,
@@ -309,14 +316,14 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			},
 			telefone:{
-				minlength: "Por favor digite um telefone válido"
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cep:{
-				minlength: "Por favor digite um CEP válido"
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -361,7 +368,7 @@ jQuery(function ($) {
 				remote: "Link já cadastrado."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido"
+				cnpj: "CNPJ inválido."
 			}
 		},
 		errorElement: 'span',
@@ -398,7 +405,7 @@ jQuery(function ($) {
 				remote: "Link já cadastrado."
 			},
 			cnpj: {
-				cnpj: "CNPJ inválido"
+				cnpj: "CNPJ inválido."
 			}
 		},
 		errorElement: 'span',
@@ -482,9 +489,21 @@ jQuery(function ($) {
 				}
 
 			},
-			cidade: {
+			estado: {
 				required: true,
 				minlength: 2
+			},
+			cidade: {
+				required: true,
+				minlength: 5
+			},
+			rua: {
+				required: true,
+				minlength: 5
+			},
+			bairro:{
+				required: true,
+				minlength: 5
 			},
 			segunda: "time",
 			terca: "time",
@@ -534,14 +553,14 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			},
 			telefone:{
-				minlength: "Por favor digite um telefone válido"
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cep:{
-				minlength: "Por favor digite um CEP válido"
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -586,7 +605,7 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
-				minlength: 2
+				minlength: 5
 			},
 			email: {
 				required: true,
@@ -630,8 +649,8 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			}
 		},
 
@@ -660,12 +679,12 @@ jQuery(function ($) {
 
 	jQuery.extend(jQuery.validator.messages, {
 		required: "Este campo é necessário.",
-		telefone: "Por favor insira um telefone válido.",
-		cpf: "Por favor insira um CPF válido.",
-		cep: "Por favor insira um CEP válido.",
-		time: "Por favor insira uma hora válida.",
-		email: "Por favor insira um endereço de e-mail válido.",
-		url: "Please enter a valid URL.",
+		telefone: "Por favor, insira um telefone válido.",
+		cpf: "Por favor, insira um CPF válido.",
+		cep: "Por favor, insira um CEP válido.",
+		time: "Por favor, insira uma hora válida.",
+		email: "Por favor, insira um endereço de e-mail válido.",
+		url: "Por favor, insira uma url válida.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
 		number: "Please enter a valid number.",
@@ -674,7 +693,7 @@ jQuery(function ($) {
 		equalTo: "Senhas divergentes.",
 		accept: "Por favor escolha um arquivo com uma extensão válida.",
 		maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
-		minlength: jQuery.validator.format("Por favor digite pelo menos {0} caracteres."),
+		minlength: jQuery.validator.format("Por favor, digite pelo menos {0} caracteres."),
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
 		range: jQuery.validator.format("Please enter a value between {0} and {1}."),
 		max: jQuery.validator.format("Please enter a value less than or equal to {0}."),

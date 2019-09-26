@@ -99,7 +99,7 @@ include_once( 'nav.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected value="">Escolha a opção desejada</option>
+						<option selected hidden="" value="">Selecione a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
@@ -142,7 +142,7 @@ include_once( 'nav.php' );
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option value=""></option>
+							<option hidden="true" value="">Selecione a opção desejada</option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -158,7 +158,7 @@ include_once( 'nav.php' );
 
 					<div class="form-group col-md-12">
 						<b>
-							<red>*</red> Preencha apenas os dias que o aluno irá frequentar</b>
+							<red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio </b>
 					</div>
 
 				</div>
@@ -213,7 +213,10 @@ include_once( 'nav.php' );
 					reverse: false
 				} );
 
-
+				var $datamens = $(".pagamento");
+				$datamens.mask('00'{
+					reverse: false
+				});
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true

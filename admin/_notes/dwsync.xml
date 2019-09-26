@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="ag_eventos.php" server="files.000webhost.com/public_html/" local="132120843326181741" remote="132134757000000000" Dst="1" />
 <file name="aprovacao.php" server="files.000webhost.com/public_html/" local="132131312776836029" remote="132134757000000000" Dst="1" />
 <file name="aprovacaoexp.php" server="files.000webhost.com/public_html/" local="132120843326221713" remote="132134757000000000" Dst="1" />
@@ -24,9 +23,9 @@
 <file name="filiais.php" server="files.000webhost.com/public_html/" local="132122466371987082" remote="132134757000000000" Dst="1" />
 <file name="manuais.php" server="files.000webhost.com/public_html/" local="132120843326351638" remote="132134757000000000" Dst="1" />
 <file name="mensalidades.php" server="files.000webhost.com/public_html/" local="132126873211072728" remote="132134757000000000" Dst="1" />
-<file name="nav.php" server="files.000webhost.com/public_html/" local="132134497753688571" remote="132134757000000000" Dst="1" />
+<file name="nav.php" server="files.000webhost.com/public_html/" local="132139904148461888" remote="132140011800000000" Dst="1" />
 <file name="novos_dep.php" server="files.000webhost.com/public_html/" local="132120843326441578" remote="132134757000000000" Dst="1" />
-<file name="novo_aluno.php" server="files.000webhost.com/public_html/" local="132131890536531782" remote="132134757000000000" Dst="1" />
+<file name="novo_aluno.php" server="files.000webhost.com/public_html/" local="132139917893336614" remote="132140025600000000" Dst="1" />
 <file name="novo_aval.php" server="files.000webhost.com/public_html/" local="132120843326381617" remote="132134757000000000" Dst="1" />
 <file name="novo_colaborador.php" server="files.000webhost.com/public_html/" local="132131890536561750" remote="132134757000000000" Dst="1" />
 <file name="novo_evento.php" server="files.000webhost.com/public_html/" local="132120843326391610" remote="132134757000000000" Dst="1" />
@@ -37,7 +36,7 @@
 <file name="novo_treinamento2.php" server="files.000webhost.com/public_html/" local="132120843326431585" remote="132134757000000000" Dst="1" />
 <file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132120843326431585" remote="132134757000000000" Dst="1" />
 <file name="parceiros.php" server="files.000webhost.com/public_html/" local="132131961119653124" remote="132134757000000000" Dst="1" />
-<file name="principal.php" server="files.000webhost.com/public_html/" local="132120843326451571" remote="132134757000000000" Dst="1" />
+<file name="principal.php" server="files.000webhost.com/public_html/" local="132139901237858642" remote="132140008800000000" Dst="1" />
 <file name="relatorio.php" server="files.000webhost.com/public_html/" local="132126997662322539" remote="132134758200000000" Dst="1" />
 <file name="selecionar_edit.php" server="files.000webhost.com/public_html/" local="132120843326471564" remote="132134758200000000" Dst="1" />
 <file name="tickets.php" server="files.000webhost.com/public_html/" local="132120843326481553" remote="132134758200000000" Dst="1" />
@@ -45,49 +44,4 @@
 <file name="view_ticket.php" server="files.000webhost.com/public_html/" local="132120843326491546" remote="132134758200000000" Dst="1" />
 <file name="gerenciar_mensalidade.php" server="files.000webhost.com/public_html/" local="132126839539594468" remote="132134765400000000" Dst="1" />
 <file name="selecionar.php" server="files.000webhost.com/public_html/" local="132124972244301088" remote="132134765400000000" Dst="1" />
-=======
-<file name="ag_eventos.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="aprovacao.php" server="files.000webhost.com/public_html/" local="132131312776836029" remote="132131420400000000" Dst="1" />
-<file name="aprovacaoexp.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="aprovacao_dep.php" server="files.000webhost.com/public_html/" local="132119204114247669" remote="132120384600000000" Dst="1" />
-<file name="agendamentos.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="aval_fisica.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="consulta_aluno.php" server="files.000webhost.com/public_html/" local="132132939354959001" remote="132133047000000000" Dst="1" />
-<file name="consulta_colaborador.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="consulta_exercicio.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="consulta_filial.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="depoimentos.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="consulta_treinamento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="editar_aluno.php" server="files.000webhost.com/public_html/" local="132131497584768769" remote="132131605200000000" Dst="1" />
-<file name="editar_colaborador.php" server="files.000webhost.com/public_html/" local="132131500036481032" remote="132131608200000000" Dst="1" />
-<file name="editar_evento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="editar_exercicio.php" server="files.000webhost.com/public_html/" local="132131959551861985" remote="132132067200000000" Dst="1" />
-<file name="editar_filial.php" server="files.000webhost.com/public_html/" local="132131960114800043" remote="132132067800000000" Dst="1" />
-<file name="editar_parceiro.php" server="files.000webhost.com/public_html/" local="132131961927289873" remote="132132069600000000" Dst="1" />
-<file name="editar_treinamento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="edit_aval.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="filiais.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="manuais.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="mensalidades.php" server="files.000webhost.com/public_html/" local="132126873211072728" remote="132126981000000000" Dst="1" />
-<file name="nav.php" server="files.000webhost.com/public_html/" local="132134497753688571" remote="132134605800000000" Dst="1" />
-<file name="novos_dep.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="novo_aluno.php" server="files.000webhost.com/public_html/" local="132131497861492692" remote="132131605800000000" Dst="1" />
-<file name="novo_aval.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="novo_colaborador.php" server="files.000webhost.com/public_html/" local="132131499437780732" remote="132131607000000000" Dst="1" />
-<file name="novo_evento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="novo_exercicio.php" server="files.000webhost.com/public_html/" local="132131959111969366" remote="132132066600000000" Dst="1" />
-<file name="novo_filial.php" server="files.000webhost.com/public_html/" local="132131959940894100" remote="132132067800000000" Dst="1" />
-<file name="novo_parceiro.php" server="files.000webhost.com/public_html/" local="132131961665054205" remote="132132069600000000" Dst="1" />
-<file name="novo_ticket.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="novo_treinamento2.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="parceiros.php" server="files.000webhost.com/public_html/" local="132131961119653124" remote="132132069000000000" Dst="1" />
-<file name="principal.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="relatorio.php" server="files.000webhost.com/public_html/" local="132126884118990934" remote="132126991800000000" Dst="1" />
-<file name="selecionar_edit.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="tickets.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="ver_aval.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="view_ticket.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132120880800000000" Dst="1" />
-<file name="gerenciar_mensalidade.php" server="files.000webhost.com/public_html/" local="132126839539594468" remote="132126947400000000" Dst="1" />
->>>>>>> origin/Test
 </dwsync>
