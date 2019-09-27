@@ -22,7 +22,9 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Cadastro de filiais</h1>
+			<h1>Cadastro de filial</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar uma filial.</h5>
 			<br>
 			<form id="colab_cadastro" action="../lib/novo_filial.php" enctype="multipart/form-data" method="post">
 
@@ -31,39 +33,39 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" class="form-control" id="input_cidade">
+						<input type="text" required placeholder="Cidade" maxlength="255" name="cidade" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" id="input_estado">
+						<input type="text" required placeholder="Estado" maxlength="255" name="estado" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" placeholder="Bairro" maxlength="255" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." maxlength="255" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" maxlength="255" placeholder="Número e complemento" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" required name="telefone" class="form-control" id="input_telefone">
+						<input type="text" placeholder="(19)999999999" required name="telefone" class="form-control" id="input_telefone">
 					</div>
 				</div>
 

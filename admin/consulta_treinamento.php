@@ -25,6 +25,9 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Treinamentos</h1>
+			<br>
+			<h5>Registre treinamentos ou pesquise por treinamentos cadastrados para atualizar informações.</h5>
+			<br>
 			<div id="botao_novo" align="right">
 				<a href="novo_treinamento2" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -129,7 +132,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( nome, cpf ) {
-			if ( window.confirm( " Tem certeza que deseja deletar o treinamento " + nome + "? \n(Isso irá desvincular esse treinamento de todos os cadastros que o possuem)" ) ) {
+			if ( window.confirm( "Deseja deletar o treinamento " + nome + "? \nEsta ação desassociará este treinamento dos cadastros de alunos." ) ) {
 				window.location = "../lib/deletar_treinamento.php?nome=" + nome
 			} else {
 				return false

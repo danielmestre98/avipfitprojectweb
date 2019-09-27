@@ -23,16 +23,18 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de avaliação física</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar uma avaliação física.</h5>
+			<br>
 			<form id="exercicio_cadastro" action="../lib/salvar_ag_aval" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="datepicker"/>
+						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="datepicker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							<red>*</red>Horario</label>
+							<red>*</red>Horário</label>
 						<select name = "hora" required class="form-control" name="" id="horario">
 							<option value="">Selecione a opção desejada</option>
 						</select>

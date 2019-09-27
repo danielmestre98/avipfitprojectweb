@@ -23,13 +23,15 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Cadastro de parceiro</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um parceiro.</h5>
+			<br>
 			<form id="novo_parceiro" action="../lib/novo_parceiro" enctype="multipart/form-data" method="post">
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade">
 							<red>*</red>Nome</label>
-						<input type="text" placeholder="Nome" required name="nome" class="form-control" id="input_nome">
+						<input type="text" placeholder="Nome" maxlength="255" name="nome" class="form-control" id="input_nome">
 					</div>
 					
 				</div>
@@ -42,12 +44,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-8">
 						<label for="email">
 							<red>*</red>E-mail</label>
-						<input type="text" placeholder="exemplo@exemplo.com" required name="email" class="form-control" id="input_email">
+						<input type="text" placeholder="exemplo@exemplo.com" maxlength="60" required name="email" class="form-control" id="input_email">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group">
-						<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+						<label for="foto">Adicione uma imagem ao registro da organização parceira, os formatos admitidos são jpg, jpeg e png. </label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
@@ -55,39 +57,39 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" placeholder="Cidade" maxlength="255" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" id="input_estado">
+						<input type="text" required placeholder="Estado" name="estado" maxlength="255" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" placeholder="Bairro" maxlength="255" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." maxlength="255" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" placeholder="Número e complemento" maxlength="35" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" placeholder="(99)99999999" required name="telefone" class="form-control" id="input_telefone">
+						<input type="text" placeholder="(19)99999999" required name="telefone" class="form-control" id="input_telefone">
 					</div>
 				</div>
 

@@ -7,7 +7,7 @@ $email = $_POST[ 'email' ];
 $foto = $_FILES[ "foto" ];
 $cnpj = $_POST[ 'cnpj' ];
 $telefone = $_POST[ 'telefone' ];
-$cidade = str_replace( "'", "", $_POST[ 'cidade' ] );
+$cidade = addslashes($_POST[ 'cidade' ]);
 $estado = $_POST[ 'estado' ];
 $bairro = $_POST[ 'bairro' ];
 $cep = $_POST[ 'cep' ];
@@ -50,7 +50,7 @@ $ip = $_SERVER[ 'REMOTE_ADDR' ];
 $data = date( 'Y-m-d H:i:s' );
 // Insere os dados no banco
 $sql = "INSERT INTO parceiro (cnpj, email, nome, telefone, foto, cidade, estado, cep, bairro, rua, numero)
-		VALUES ('$cpf', '$email', '$nome', '$telefone', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero');";
+		VALUES ('$cnpj', '$email', '$nome', '$telefone', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero');";
 
 
 

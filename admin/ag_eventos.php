@@ -25,6 +25,8 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Agenda de eventos</h1>
+			<br>
+			<h5>Registre eventos ou pesquise por eventos cadastrados para atualizar informações.</h5>
 			<div id="botao_novo" align="right">
 				<a href="novo_evento" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
