@@ -19,13 +19,15 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
 			<p><h1>Parceiros</h1></p>
-		
+		<br>
+		<h5>Registre parceiros ou pesquise por parceiros cadastrados para atualizar informações.</h5>
+		<br>
 		<a class="btn btn-primary" href="novo_parceiro">Novo <i class="fas fa-plus"></i></a>
 			<br>
 			<br>
 		<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro ORDER BY nome ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			
 			while ( $row = mysqli_fetch_array( $result ) ) {

@@ -55,53 +55,53 @@ jQuery(function ($) {
 
 		return $return;
 	});
-	
+
 	jQuery.validator.addMethod("cnpj", function (value, element) {
 
-            var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
-            if (value.length == 0) {
-                return false;
-            }
+		var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
+		if (value.length == 0) {
+			return false;
+		}
 
-            value = value.replace(/\D+/g, '');
-            digitos_iguais = 1;
+		value = value.replace(/\D+/g, '');
+		digitos_iguais = 1;
 
-            for (i = 0; i < value.length - 1; i++)
-                if (value.charAt(i) != value.charAt(i + 1)) {
-                    digitos_iguais = 0;
-                    break;
-                }
-            if (digitos_iguais)
-                return false;
+		for (i = 0; i < value.length - 1; i++)
+			if (value.charAt(i) != value.charAt(i + 1)) {
+				digitos_iguais = 0;
+				break;
+			}
+		if (digitos_iguais)
+			return false;
 
-            tamanho = value.length - 2;
-            numeros = value.substring(0, tamanho);
-            digitos = value.substring(tamanho);
-            soma = 0;
-            pos = tamanho - 7;
-            for (i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2)
-                    pos = 9;
-            }
-            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-            if (resultado != digitos.charAt(0)) {
-                return false;
-            }
-            tamanho = tamanho + 1;
-            numeros = value.substring(0, tamanho);
-            soma = 0;
-            pos = tamanho - 7;
-            for (i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2)
-                    pos = 9;
-            }
+		tamanho = value.length - 2;
+		numeros = value.substring(0, tamanho);
+		digitos = value.substring(tamanho);
+		soma = 0;
+		pos = tamanho - 7;
+		for (i = tamanho; i >= 1; i--) {
+			soma += numeros.charAt(tamanho - i) * pos--;
+			if (pos < 2)
+				pos = 9;
+		}
+		resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+		if (resultado != digitos.charAt(0)) {
+			return false;
+		}
+		tamanho = tamanho + 1;
+		numeros = value.substring(0, tamanho);
+		soma = 0;
+		pos = tamanho - 7;
+		for (i = tamanho; i >= 1; i--) {
+			soma += numeros.charAt(tamanho - i) * pos--;
+			if (pos < 2)
+				pos = 9;
+		}
 
-            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+		resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 
-            return (resultado == digitos.charAt(1));
-        });-
+		return (resultado == digitos.charAt(1));
+	}); -
 
 
 
@@ -239,14 +239,14 @@ jQuery(function ($) {
 		}
 	});
 
-		$("#edit_treinamento").validate({
+	$("#edit_treinamento").validate({
 		rules: {
 			nome: {
 				required: true,
 				remote: {
 					url: "../lib/verificaTrei.php",
 					type: "post",
-					data:{
+					data: {
 						nomeOld: function () {
 							return $('#nomeOld').val();
 						}
@@ -279,7 +279,7 @@ jQuery(function ($) {
 			form.submit();
 		}
 	});
-	
+
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
@@ -323,7 +323,7 @@ jQuery(function ($) {
 				}
 
 			},
-			bairro:{
+			bairro: {
 				required: true,
 				minlength: 5
 			},
@@ -360,10 +360,10 @@ jQuery(function ($) {
 				max: "Por favor, insira um dia válido.",
 				min: "Por favor, insira um dia válido."
 			},
-			telefone:{
+			telefone: {
 				minlength: "Por favor, digite um telefone válido."
 			},
-			cep:{
+			cep: {
 				minlength: "Por favor, digite um CEP válido."
 			}
 		},
@@ -393,24 +393,70 @@ jQuery(function ($) {
 
 	$("#novo_parceiro").validate({
 		rules: {
-			cnpj: {	
+			nome: {
+				required: true,
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cnpj: {
 				cnpj: true,
 				remote: {
 					url: "../lib/verificaCnpj.php",
 					type: "post"
 				}
+			},bairro:{
+				minlength: 3,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			cidade:{
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
 			},
 			email: {
 				email: true,
-				required: true
+				required: true,
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
 			},
-			telefone:{
+			estado: {
+				minlength: 2,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			rua:{
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			numero:{
+				minlength: 2,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			telefone: {
 				minlength: 13
+			},
+			cep: {
+				minlength: 9
 			}
 		},
 		messages: {
-			telefone:{
+			telefone: {
 				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um cep válido."
 			},
 			cnpj: {
 				cnpj: "CNPJ inválido.",
@@ -432,27 +478,80 @@ jQuery(function ($) {
 			form.submit();
 		}
 	});
-	
+
 	$("#editar_parceiro").validate({
 		rules: {
+			nome:{
+				minlength:5,
+				required: true,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
 			cnpj: {
 				cnpj: true,
 				remote: {
 					url: "../lib/verificaCnpjEdit.php",
 					type: "post",
-					data:{
+					data: {
 						cnpjOld: function () {
 							return $('#cnpjOld').val();
 						}
 					}
 				}
 			},
+			bairro:{
+				minlength: 3,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			cidade:{
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
 			email: {
 				email: true,
-				required: true
+				required: true,
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			estado: {
+				minlength: 2,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			rua:{
+				minlength: 5,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			numero:{
+				minlength: 2,
+				normalizer: function(value) {
+				return $.trim(value);
+			  }
+			},
+			telefone: {
+				minlength: 13
+			},
+			cep: {
+				minlength: 9
 			}
 		},
 		messages: {
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um cep válido."
+			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."
 			},
@@ -479,9 +578,9 @@ jQuery(function ($) {
 			form.submit();
 		}
 	});
-	
-	
-	
+
+
+
 	$("#exercicio_cadastro").validate({
 		rules: {
 			nomeExercicio: {
@@ -529,14 +628,14 @@ jQuery(function ($) {
 		}
 
 	});
-	
+
 	$("#editar_exercicio").validate({
 		rules: {
 			nomeExerciciou: {
 				remote: {
 					url: "../lib/verificaExercicioEdit.php",
 					type: "post",
-					data:{
+					data: {
 						nomeOld: $('#nomeOld').val()
 					}
 
@@ -546,7 +645,7 @@ jQuery(function ($) {
 				remote: {
 					url: "../verificaLinkEdit.php",
 					type: "post",
-					data:{
+					data: {
 						linkOld: $('#linkOld').val()
 					}
 				}
@@ -611,7 +710,7 @@ jQuery(function ($) {
 				required: true,
 				minlength: 5
 			},
-			bairro:{
+			bairro: {
 				required: true,
 				minlength: 5
 			},
@@ -666,10 +765,10 @@ jQuery(function ($) {
 				max: "Por favor, insira um dia válido.",
 				min: "Por favor, insira um dia válido."
 			},
-			telefone:{
+			telefone: {
 				minlength: "Por favor, digite um telefone válido."
 			},
-			cep:{
+			cep: {
 				minlength: "Por favor, digite um CEP válido."
 			}
 		},

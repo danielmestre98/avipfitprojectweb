@@ -6,7 +6,7 @@ include ('../lib/editar_parceiro_show.php');
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>AVIPfit - Novo parceiro</title>
+	<title>AVIPfit - Edição de parceiro</title>
 	<link rel="stylesheet" href="../css/reddot.css">
 </head>
 <script>
@@ -21,7 +21,9 @@ include ('../lib/editar_parceiro_show.php');
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Editar parceiro</h1>
+			<h1>Edição de parceiro</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um parceiro.</h5>
 			<br>
 			<form id="editar_parceiro" action="../lib/editar_parceiro.php" enctype="multipart/form-data" method="post">
 
@@ -48,7 +50,7 @@ include ('../lib/editar_parceiro_show.php');
 				</div>
 				<div class="form-row">
 					<div class="form-group">
-						<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+						<label for="foto">Adicione uma imagem ao registro da organização parceira, os formatos admitidos são jpg, jpeg e png. </label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
