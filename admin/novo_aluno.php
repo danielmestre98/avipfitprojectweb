@@ -178,12 +178,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red>*</red>Senha</label>
-						<input type="password" maxlength="16" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Minimo de 8 caracteres">
+						<input type="password" maxlength="16" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Mínimo de 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red>*</red>Confirme a senha</label>
-						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Minimo de 8 caracteres" maxlength="16" class="form-control" id="input_confsenha">
+						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Mínimo de 8 caracteres" maxlength="16" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>

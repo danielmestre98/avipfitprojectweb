@@ -25,7 +25,7 @@ require( '../lib/editar_aluno_show.php' );
 		<div class="container-fluid p-5">
 			<h1>Edição de aluno</h1>
 			<br>
-			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um aluno.</h5>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um aluno.</h5>
 			<br>
 			<form id="aluno_editar" action="../lib/editar_aluno.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
@@ -183,12 +183,12 @@ require( '../lib/editar_aluno_show.php' );
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red></red>Senha</label>
-						<input type="password" disabled name="senha" value="********" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 8 caracteres" class="form-control" id="senha" placeholder="Minimo 8 caracteres">
+						<input type="password" disabled name="senha" value="********" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 8 caracteres" class="form-control" id="senha" placeholder="Mínimo 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red></red>Confirme a senha</label>
-						<input type="password" placeholder="Minimo 8 caracteres" value="********" disabled data-placement="bottom" data-animation="true" data-content="As senhas não conferem" name="confsenha" class="form-control" id="input_confsenha">
+						<input type="password" placeholder="Mínimo 8 caracteres" value="********" disabled data-placement="bottom" data-animation="true" data-content="As senhas não conferem" name="confsenha" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
