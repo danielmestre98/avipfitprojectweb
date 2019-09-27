@@ -817,10 +817,21 @@ jQuery(function ($) {
 					type: "post",
 				}
 
+			},estado: {
+				required: true,
+				minlength: 2
 			},
 			cidade: {
 				required: true,
 				minlength: 5
+			},
+			rua: {
+				required: true,
+				minlength: 5
+			},
+			bairro: {
+				required: true,
+				minlength: 3
 			},
 			email: {
 				required: true,
@@ -833,14 +844,14 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true,
-				required: true
+				required: true,
+				minlength: 9
 			},
 			senha: {
 				required: true,
@@ -859,6 +870,12 @@ jQuery(function ($) {
 		messages: {
 			email: {
 				remote: "E-mail já cadastrado."
+			},
+			cep:{
+				minlength: "Por favor, digite um CEP válido."
+			},
+			telefone:{
+				minlength: "Por favor, digite um telefone válido."
 			},
 			cpf: {
 				remote: "CPF já cadastrado."
