@@ -44,7 +44,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 		
 
 		if ( $conn->query( $sql ) === TRUE ) {
-
+			header('location: ../admin/parceiros');
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}

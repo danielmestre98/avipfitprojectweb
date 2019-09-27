@@ -22,15 +22,17 @@ require( '../lib/editar_aluno_show.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Edição de aluno</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um aluno.</h5>
 			<br>
 			<form id="aluno_editar" action="../lib/editar_aluno.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome">
 							<red>*</red>Nome</label>
-						<input type="text" name="nome" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
+						<input type="text" name="nome" maxlength="255" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
 					</div>
 					<input type="text" hidden="true" name="cpfOld" id="cpfOLD" value="<?php echo $_GET['cpf']?>">
 					<div class="form-group col-md-6">
@@ -42,7 +44,7 @@ require( '../lib/editar_aluno_show.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email"><i><red>*</red>E-mail</i></label>
-						<input type="email" required name="email" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+						<input type="email" required name="email" maxlength="50" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="telefone">
@@ -56,42 +58,42 @@ require( '../lib/editar_aluno_show.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do aluno, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" maxlength="255" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
+						<input type="text" required name="estado" maxlength="255" value="<?php echo $estado?>" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							CEP</label>
 					
-						<input type="text" name="cep" value="<?php echo $cep?>" class="form-control" id="input_cep">
+						<input type="text" name="cep" placeholder="_____-___" value="<?php echo $cep?>" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="<?php echo $rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" value="<?php echo $rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número</label>
-						<input type="text" required name="numero" value="<?php echo $numero?>" class="form-control" id="input_numero">
+						<input type="text" required name="numero" maxlength="35" value="<?php echo $numero?>" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -102,7 +104,7 @@ require( '../lib/editar_aluno_show.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected value="<?php echo $treinamento?>"><?php echo $treinamento?></option>
+						<option selected hidden="true" value="<?php echo $treinamento?>"><?php echo $treinamento?></option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
@@ -120,33 +122,33 @@ require( '../lib/editar_aluno_show.php' );
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
-						<input type="text" name="segunda" value="<?php echo $segunda?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="segunda" value="<?php echo $segunda?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-lg-1">
 						<label for="terca">Terça</label>
-						<input type="text" name="terca" value="<?php echo $terca?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="terca" value="<?php echo $terca?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quarta">Quarta</label>
-						<input type="text" name="quarta" value="<?php echo $quarta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quarta" value="<?php echo $quarta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quinta">Quinta</label>
-						<input type="text" name="quinta" value="<?php echo $quinta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quinta" value="<?php echo $quinta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sexta">Sexta</label>
-						<input type="text" name="sexta" value="<?php echo $sexta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sexta" value="<?php echo $sexta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sabado">Sábado</label>
-						<input type="text" name="sabado" value="<?php echo $sabado?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sabado" value="<?php echo $sabado?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option selected value="<?php echo $idfilial?>"><?php echo "$frua, $fnum, $fbairro, $fcidade, $festado"?></option>
+							<option hidden="true" selected value="<?php echo $idfilial?>"><?php echo "$frua, $fnum, $fbairro, $fcidade, $festado"?></option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -163,7 +165,7 @@ require( '../lib/editar_aluno_show.php' );
 
 					<div class="form-group col-md-12">
 						<b>
-							<red>*</red> Preencha apenas os dias que o aluno irá frequentar</b>
+							<red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio</b>
 					</div>
 
 				</div>
@@ -174,19 +176,19 @@ require( '../lib/editar_aluno_show.php' );
 						<input type="text" required name="mensalidade" value="<?php echo $valor?>" class="form-control" id="mensalidade" placeholder="R$">
 					</div>
 					<div class="form-group col-md-2">
-						<label for="input_data">
+						<label for="pagamento">
 							<red>*</red>Data de pagamento</label>
-						<input id="input_data" required name="pagamento" value="<?php echo $vencimento?>" class="form-control" maxlength="2" placeholder="dd">
+						<input id="pagamento" required name="pagamento" value="<?php echo $vencimento?>" class="form-control" maxlength="2" placeholder="dd">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red></red>Senha</label>
-						<input type="password" disabled name="senha" value="********" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 8 caracteres" class="form-control" id="senha" placeholder="Minimo 8 caracteres">
+						<input type="password" disabled name="senha" value="********" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 8 caracteres" class="form-control" id="senha" placeholder="Mínimo 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red></red>Confirme a senha</label>
-						<input type="password" placeholder="Minimo 8 caracteres" value="********" disabled data-placement="bottom" data-animation="true" data-content="As senhas não conferem" name="confsenha" class="form-control" id="input_confsenha">
+						<input type="password" placeholder="Mínimo 8 caracteres" value="********" disabled data-placement="bottom" data-animation="true" data-content="As senhas não conferem" name="confsenha" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
@@ -218,6 +220,11 @@ require( '../lib/editar_aluno_show.php' );
 					reverse: false
 				} );
 
+				var $datamens = $("#pagamento");
+				$datamens.mask('00',{
+					reverse: false
+				});
+				
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true
@@ -234,7 +241,7 @@ require( '../lib/editar_aluno_show.php' );
 				} );
 
 				var $CampoValor = $( "#mensalidade" );
-				$CampoValor.mask( '0000', {
+				$CampoValor.mask( '0000,00', {
 					reverse: true
 				} );
 				$( 'input, :input' ).attr( 'autocomplete', 'off' );

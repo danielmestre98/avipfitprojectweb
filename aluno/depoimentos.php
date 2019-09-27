@@ -17,8 +17,11 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<p><h1>Depoimentos</h1></p>
+		<br>
+		<h5>Confira os depoimentos dos alunos AVIPfit!</h5>
+		<br>
 		<a class="btn btn-primary" href="novo_dep">Novo depoimento</a>
 			<br>
 			<br>

@@ -26,6 +26,9 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Filiais</h1>
+			<br>
+			<h5>Registre filiais ou pesquise por filiais cadastradas para atualizar informações.</h5>
+			<br>
 			<div id="botao_novo" align="right">
 				<a href="novo_filial" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -104,7 +107,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_filial.php?id=' + data.IdFilial + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cidade + '\',\'' + data.IdFilial + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Editar" href="editar_filial.php?id=' + data.IdFilial + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cidade + '\',\'' + data.IdFilial + '\',\'' + row.rua + '\',\'' + row.estado + '\',\'' + row.numero + '\',\'' + row.bairro + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 
@@ -128,8 +131,8 @@ include_once( 'nav.php' );
 			
 		} );
 
-		function confirma( nome, cpf ) {
-			if ( window.confirm( " Tem certeza que deseja deletar a filial " + nome + "? " ) ) {
+		function confirma( nome, cpf , rua, estado, numero, bairro) {
+			if ( window.confirm( "Deseja deletar a filial " + rua + ", "+ numero + ", "+ bairro +", "+ nome +", "+ estado +"? \nEsta ação desassociará esta filial dos cadastros de alunos." ) ) {
 				window.location = "../lib/deletar_filial.php?id=" + cpf
 			} else {
 				return false

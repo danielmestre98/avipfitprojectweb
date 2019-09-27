@@ -23,7 +23,7 @@ include_once( 'nav.php' );
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial ORDER BY cidade ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			
 			while ( $row = mysqli_fetch_array( $result ) ) {

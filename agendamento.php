@@ -23,12 +23,14 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de aula experimental</h1>
 			<br>
-			<form id="exercicio_cadastro" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental.</h5>
+			<br>
+			<form id="agendamento_exp" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="picker"/>
+						<input style="cursor:pointer; background-color: #FFFFFF" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
@@ -39,8 +41,8 @@ include_once( 'nav.php' );
 					</div>
 					<div class="form-group col-md-4">
 						<label for="descricao">Treinamento</label>
-						<select class="form-control" name="treinamento" id="">
-							<option value="">Selecione a opção desejada...</option>
+						<select required class="form-control" name="treinamento" id="">
+							<option value="">Selecione a opção desejada</option>
 							<?php
 							require( 'conectar.php' );
 							$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
@@ -57,7 +59,7 @@ include_once( 'nav.php' );
 						<label for="descricao">
 							<red>*</red>Filial</label>
 						<select required class="form-control" name="filial" id="">
-							<option value="">Selecione a opção desejada...</option>
+							<option value="">Selecione a opção desejada</option>
 							<?php
 								require( 'conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -73,18 +75,18 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-5">
 						<label for="descricao">
-							<red>*</red>Nome</label>
-						<input type="text" required name="nome" class="form-control" id="descricao">
+							<red>*</red>Nome do aluno(a)</label>
+						<input type="text" required placeholder="Nome" name="nome" class="form-control" id="descricao">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="email">
-							<red>*</red>E-mail</label>
-						<input type="text" required name="email" class="form-control" id="email">
+							<red>*</red>E-mail para contato</label>
+						<input type="text" placeholder="exemplo@exemplo.com" required name="email" class="form-control" id="email">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="numero">
-							<red>*</red>Telefone</label>
-						<input type="text" required name="numero" class="form-control" id="numero">
+							<red>*</red>Telefone para contato</label>
+						<input type="text" placeholder="(19) 999999999" required name="numero" class="form-control" id="numero">
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 				</div>
@@ -153,6 +155,17 @@ include_once( 'nav.php' );
 
 				} )
 			}
+		} );
+	</script>
+		<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				var $CampoTel = $( "#numero" );
+				$CampoTel.mask( '(00) 000000000', {
+					reverse: false
+				} );
+				$( 'input, :input' ).attr( 'autocomplete', 'off' );
+			} );
 		} );
 	</script>
 </body>

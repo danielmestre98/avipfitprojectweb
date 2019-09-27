@@ -12,23 +12,22 @@ $estado = $_POST[ 'estado' ];
 $bairro = $_POST[ 'bairro' ];
 $cep = $_POST[ 'cep' ];
 $rua = $_POST[ 'rua' ];
-$cpfOld = $_POST['cpf'];
+$cpfOld = $_POST[ 'cpf' ];
 $numero = $_POST[ 'numero' ];
-$filial = $_POST['filial'];
-$salario = $_POST['salario'];
-$funcao = $_POST['funcao'];
+$filial = $_POST[ 'filial' ];
+$salario = $_POST[ 'salario' ];
+$funcao = $_POST[ 'funcao' ];
 if ( !empty( $_POST[ 'senha' ] ) ) {
 	$senha = md5( $_POST[ 'senha' ] );
-}
-else{
-$resulted = mysqli_query($conn, "SELECT senha from pessoa where '$cpfOld' = cpf");
-if ( mysqli_num_rows( $resulted ) > 0 ) {
-	$row = mysqli_fetch_assoc( $resulted );
-	$senha = $row['senha'];
+} else {
+	$resulted = mysqli_query( $conn, "SELECT senha from pessoa where '$cpfOld' = cpf" );
+	if ( mysqli_num_rows( $resulted ) > 0 ) {
+		$row = mysqli_fetch_assoc( $resulted );
+		$senha = $row[ 'senha' ];
 
-	
-}
-	
+
+	}
+
 }
 // Se a foto estiver sido selecionada
 if ( !empty( $foto[ "name" ] ) ) {
@@ -67,11 +66,11 @@ if ( !empty( $foto[ "name" ] ) ) {
 		include( '../conectar.php' );
 		if ( $conn->query( $sql2 ) === TRUE ) {
 			session_start();
-	if($_SESSION['tipoPessoa'] == '1'){
-	header( 'location: ../admin/consulta_colaborador' );}
-	else{
-		header ('location: ../colab/consulta_colaborador');
-	}
+			if ( $_SESSION[ 'tipoPessoa' ] === '1' ) {
+				header( 'location: ../admin/consulta_colaborador' );
+			} else {
+				header( 'location: ../colab/consulta_colaborador' );
+			}
 
 		} else {
 			echo "Error: " . $sql2 . "<br>" . $conn->error;
@@ -91,7 +90,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 	mysqli_close( $conn );
 	include( '../conectar.php' );
 	if ( $conn->query( $sql2 ) === TRUE ) {
-		header('location: ../admin/consulta_colaborador');
+		header( 'location: ../admin/consulta_colaborador' );
 
 	} else {
 		echo "Error: " . $sql2 . "<br>" . $conn->error;

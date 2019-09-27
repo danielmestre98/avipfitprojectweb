@@ -25,12 +25,14 @@ include( '../lib/editar_colaborador_show.php' );
 		<div class="container-fluid p-5">
 			<h1>Edição de colaborador</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um colaborador.</h5>
+			<br>
 			<form id="aluno_editar" action="../lib/editar_colaborador.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome">
 							<red>*</red>Nome</label>
-						<input type="text" name="nome" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
+						<input type="text" name="nome" maxlength="255" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
 					</div>
 					<input type="text" hidden="true" name="cpf" data-placement="bottom" value="<?php echo $cpf?>">
 					<div class="form-group col-md-6">
@@ -42,7 +44,7 @@ include( '../lib/editar_colaborador_show.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email"><i><red>*</red>E-mail</i></label>
-						<input type="email" required name="email" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+						<input type="email" required name="email" maxlength="50" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="telefone">
@@ -56,19 +58,19 @@ include( '../lib/editar_colaborador_show.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do colaborador, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required maxlength="255" name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
+						<input type="text" required name="estado" maxlength="255" value="<?php echo $estado?>" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
@@ -80,17 +82,17 @@ include( '../lib/editar_colaborador_show.php' );
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="<?php echo $rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" value="<?php echo $rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" value="<?php echo $numero?>" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" maxlength="255" value="<?php echo $numero?>" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -101,7 +103,7 @@ include( '../lib/editar_colaborador_show.php' );
 					<label for="funcao">
 						<red>*</red>Função</label>
 					<select id="funcao" required name="funcao" class="form-control">
-						<option selected value="<?php echo $funcao?>"><?php echo $funcao?></option>
+						<option selected hidden="true" value="<?php echo $funcao?>"><?php echo $funcao?></option>
 						<option>Professor</option>
 						<option>Recepcionista</option>
 					</select>
@@ -120,7 +122,7 @@ include( '../lib/editar_colaborador_show.php' );
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option selected value="<?php echo $idfilial?>"><?php echo "$frua, $fnumero, $fbairro, $fcidade, $festado"?></option>
+							<option selected hidden="true" value="<?php echo $idfilial?>"><?php echo "$frua, $fnumero, $fbairro, $fcidade, $festado"?></option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -190,7 +192,7 @@ include( '../lib/editar_colaborador_show.php' );
 				} );
 
 				var $CampoValor = $( "#salario" );
-				$CampoValor.mask( '0000', {
+				$CampoValor.mask( '0000,00', {
 					reverse: true
 				} );
 				$( 'input, :input' ).attr( 'autocomplete', 'off' );

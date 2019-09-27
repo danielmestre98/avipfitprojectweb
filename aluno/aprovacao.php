@@ -25,6 +25,8 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de avaliação física</h1>
 			<br>
+			<h5>Detalhes do agendamento de avaliação física.</h5>
+			<br>
 			<?php 
 			include ('../conectar.php');
 			
@@ -53,9 +55,9 @@ include_once( 'nav.php' );
 			?>
 			<form id="exercicio_cadastro" action="agendamentos" enctype="multipart/form-data" method="post">
 				<div class="form-row">
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-8">
 						<label for="nomeExercicio">
-							Nome</label>
+							Nome do aluno(a)</label>
 					
 
 						<input type="text" name="nomeExerciciou" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
@@ -63,14 +65,14 @@ include_once( 'nav.php' );
 					
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							Data</label>
+							Data do agendamento</label>
 					
 
 						<input type="text" required readonly value="<?=$data?>" name="descricao" class="form-control" id="descricao">
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="descricao">
-							Hora</label>
+							Horário do agendamento</label>
 					
 
 						<input type="text" required readonly value="<?=$hora?>" name="descricao" class="form-control" id="descricao">
@@ -82,7 +84,7 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="cidade"><red>*</red>Aprovação</label>
+						<label for="cidade">Status (Aguardando aprovação, Aprovado, Cancelado)</label>
 						<select required disabled class="form-control" name="" id="aprovacao">
 							<option><?=$status?></option>
 							<option value="1">Aprovado</option>
@@ -92,13 +94,12 @@ include_once( 'nav.php' );
 					<?php if ($status == 'Cancelado'){?>
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
-							<red>*</red>Descrição do cancelamento</label>
+							Descrição do cancelamento</label>
 					
 
 						<textarea type="text" readonly name="nomeExercicio" rows="10" class="form-control" id=""><?=$canc?></textarea>
 					</div><?php }?>
 				</div>
-				<p>Campos com <red>*</red> são obrigatórios</p>
 				
 
 

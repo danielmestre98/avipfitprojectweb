@@ -6,7 +6,7 @@ include ('../lib/editar_parceiro_show.php');
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>AVIPfit - Novo parceiro</title>
+	<title>AVIPfit - Edição de parceiro</title>
 	<link rel="stylesheet" href="../css/reddot.css">
 </head>
 <script>
@@ -21,7 +21,9 @@ include ('../lib/editar_parceiro_show.php');
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Editar parceiro</h1>
+			<h1>Edição de parceiro</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um parceiro.</h5>
 			<br>
 			<form id="editar_parceiro" action="../lib/editar_parceiro.php" enctype="multipart/form-data" method="post">
 
@@ -29,7 +31,7 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-12">
 						<label for="cidade">
 							<red>*</red>Nome</label>
-						<input type="text" required name="nome" value="<?=$nome?>" class="form-control" id="input_nome">
+						<input type="text" required name="nome" maxlength="255" value="<?=$nome?>" class="form-control" id="input_nome">
 					</div>
 					
 				</div>
@@ -37,18 +39,18 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-4">
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
-							<input type="text" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
+							<input type="text" id="cnpjOld" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
 							<input type="text" required name="cnpj" value="<?=$cnpj?>" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">
 						<label for="email">
 							<red>*</red>E-mail</label>
-						<input type="text" required name="email" value="<?=$email?>" class="form-control" id="input_email">
+						<input type="text" required name="email" maxlength="60" value="<?=$email?>" class="form-control" id="input_email">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group">
-						<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+						<label for="foto">Adicione uma imagem ao registro da organização parceira, os formatos admitidos são jpg, jpeg e png. </label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
@@ -56,12 +58,12 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="<?=$cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" maxlength="255" value="<?=$cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" value="<?=$estado?>" id="input_estado">
+						<input type="text" required name="estado" maxlength="255" class="form-control" value="<?=$estado?>" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
@@ -73,17 +75,17 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" value="<?=$bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" value="<?=$bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="<?=$rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" value="<?=$rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" value="<?=$numero?>" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" maxlength="255" value="<?=$numero?>" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
