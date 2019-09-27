@@ -24,6 +24,8 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Cadastro de aluno</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um aluno.</h5>
+			<br>
 			<form id="aluno_cadastro" action="../lib/novo_aluno.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
@@ -61,34 +63,34 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" maxlength="255" required name="cidade" class="form-control" id="input_cidade">
+						<input type="text" maxlength="255" required name="cidade" class="form-control" id="input_cidade" placeholder="Cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required maxlength="255" name="estado" class="form-control" id="input_estado">
+						<input type="text" required maxlength="255" placeholder="Estado" name="estado" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							CEP</label>
-						<input type="text"  name="cep" class="form-control" id="input_cep">
+						<input type="text"  name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" maxlength="255" required name="bairro" class="form-control" id="input_bairro">
+						<input type="text" maxlength="255" placeholder="Bairro" required name="bairro" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" maxlength="255" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." maxlength="255" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número e complemento</label>
-						<input type="text" required name="numero" maxlength="35" class="form-control" id="input_numero">
+						<input type="text" placeholder="Número e complemento" required name="numero" maxlength="35" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -116,27 +118,27 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
-						<input type="text" name="segunda" class="form-control hora" placeholder="--:--">
+						<input type="text" name="segunda" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-lg-1">
 						<label for="terca">Terça</label>
-						<input type="text" name="terca" class="form-control hora" placeholder="--:--">
+						<input type="text" name="terca" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quarta">Quarta</label>
-						<input type="text" name="quarta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quarta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quinta">Quinta</label>
-						<input type="text" name="quinta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quinta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sexta">Sexta</label>
-						<input type="text" name="sexta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sexta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sabado">Sábado</label>
-						<input type="text" name="sabado" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sabado" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="filial">

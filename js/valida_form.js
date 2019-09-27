@@ -325,7 +325,7 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 5
+				minlength: 3
 			},
 			telefone: {
 				required: true,
@@ -712,7 +712,7 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 5
+				minlength: 3
 			},
 			segunda: "time",
 			terca: "time",

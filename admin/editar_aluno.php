@@ -25,6 +25,8 @@ require( '../lib/editar_aluno_show.php' );
 		<div class="container-fluid p-5">
 			<h1>Edição de aluno</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um aluno.</h5>
+			<br>
 			<form id="aluno_editar" action="../lib/editar_aluno.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
@@ -74,7 +76,7 @@ require( '../lib/editar_aluno_show.php' );
 						<label for="cep">
 							CEP</label>
 					
-						<input type="text" name="cep" value="<?php echo $cep?>" class="form-control" id="input_cep">
+						<input type="text" name="cep" placeholder="_____-___" value="<?php echo $cep?>" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
@@ -102,7 +104,7 @@ require( '../lib/editar_aluno_show.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected value="<?php echo $treinamento?>"><?php echo $treinamento?></option>
+						<option selected hidden="true" value="<?php echo $treinamento?>"><?php echo $treinamento?></option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
@@ -120,33 +122,33 @@ require( '../lib/editar_aluno_show.php' );
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
-						<input type="text" name="segunda" value="<?php echo $segunda?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="segunda" value="<?php echo $segunda?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-lg-1">
 						<label for="terca">Terça</label>
-						<input type="text" name="terca" value="<?php echo $terca?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="terca" value="<?php echo $terca?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quarta">Quarta</label>
-						<input type="text" name="quarta" value="<?php echo $quarta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quarta" value="<?php echo $quarta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quinta">Quinta</label>
-						<input type="text" name="quinta" value="<?php echo $quinta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quinta" value="<?php echo $quinta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sexta">Sexta</label>
-						<input type="text" name="sexta" value="<?php echo $sexta?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sexta" value="<?php echo $sexta?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sabado">Sábado</label>
-						<input type="text" name="sabado" value="<?php echo $sabado?>" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sabado" value="<?php echo $sabado?>" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option selected value="<?php echo $idfilial?>"><?php echo "$frua, $fnum, $fbairro, $fcidade, $festado"?></option>
+							<option hidden="true" selected value="<?php echo $idfilial?>"><?php echo "$frua, $fnum, $fbairro, $fcidade, $festado"?></option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";

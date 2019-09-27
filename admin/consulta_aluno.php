@@ -25,6 +25,8 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Alunos</h1>
+			<br>
+			<h5>Registre alunos ou pesquise por alunos cadastrados para atualizar informações.</h5>
 			<div id="botao_novo" align="right">
 				<a href="novo_aluno" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
