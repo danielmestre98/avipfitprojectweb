@@ -418,6 +418,9 @@ jQuery(function ($) {
 				return $.trim(value);
 			  }
 			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
+			},
 			email: {
 				email: true,
 				required: true,
@@ -499,6 +502,9 @@ jQuery(function ($) {
 						}
 					}
 				}
+			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
 			},
 			bairro:{
 				minlength: 3,

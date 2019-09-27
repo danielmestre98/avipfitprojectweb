@@ -36,7 +36,7 @@ include_once( 'nav.php' );
 				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
 				<p>Telefone: <?=$row['telefone']?></p>
 				<a class="btn btn-primary btn-sm" href="editar_parceiro?cnpj=<?=$row['cnpj']?>">Editar <i class="fas fa-edit"></i></a>
-				<button class="btn btn-primary btn-sm" onClick="confirma('<?=$row['cnpj']?>')">Excluir <i class="far fa-trash-alt"></i></button>	
+				<button class="btn btn-primary btn-sm" onClick="confirma('<?=$row['cnpj']?>', '<?=$row['nome']?>')">Excluir <i class="far fa-trash-alt"></i></button>	
 				<br><br>
 					
 		
@@ -56,8 +56,8 @@ include_once( 'nav.php' );
 	<!-- page-content" -->
 </body>
 	<script>
-		function confirma(escolha){
-			if ( window.confirm( " Tem certeza que deseja excluir esse parceiro?" ) ) {
+		function confirma(escolha, nome){
+			if ( window.confirm( " Deseja deletar o parceiro "+nome+"?" ) ) {
 					window.location="../lib/deletar_parceiro?cnpj="+escolha
 			} else {
 				return false

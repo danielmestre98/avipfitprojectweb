@@ -57,34 +57,34 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" maxlength="50" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" placeholder="Cidade" maxlength="255" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" maxlength="50" class="form-control" id="input_estado">
+						<input type="text" required placeholder="Estado" name="estado" maxlength="255" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" maxlength="80" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" placeholder="Bairro" maxlength="255" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" maxlength="150" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." maxlength="255" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número e complemento</label>
-						<input type="text" required name="numero" maxlength="35" class="form-control" id="input_numero">
+						<input type="text" required name="numero" placeholder="Número e complemento" maxlength="35" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
