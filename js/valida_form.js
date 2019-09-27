@@ -1,7 +1,6 @@
 // JavaScript Document
 jQuery(function ($) {
 
-
 	$.validator.addMethod('cpf', function (value, element, param) {
 		$return = true;
 
@@ -803,10 +802,15 @@ jQuery(function ($) {
 
 
 	$("#colab_cadastro").validate({
+		
 		rules: {
 			nome: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				normalizer: function(value) {
+						// Trim the value of every element
+						return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -818,19 +822,35 @@ jQuery(function ($) {
 
 			},estado: {
 				required: true,
-				minlength: 2
+				minlength: 2,
+				normalizer: function(value) {
+						// Trim the value of every element
+						return $.trim(value);
+				}
 			},
 			cidade: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				normalizer: function(value) {
+						// Trim the value of every element
+						return $.trim(value);
+				}
 			},
 			rua: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				normalizer: function(value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
 			},
 			bairro: {
 				required: true,
-				minlength: 3
+				minlength: 3,
+				normalizer: function(value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
 			},
 			email: {
 				required: true,
@@ -840,6 +860,14 @@ jQuery(function ($) {
 					type: "post"
 				}
 
+			},
+			numero: {
+				required: true,
+				minlength: 2,
+				normalizer: function(value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
 			},
 			telefone: {
 				required: true,

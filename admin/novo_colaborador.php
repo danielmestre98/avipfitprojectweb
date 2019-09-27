@@ -24,6 +24,8 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Cadastro de colaborador</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um colaborador.</h5>
+			<br>
 			<form id="colab_cadastro" action="../lib/novo_colaborador.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
@@ -54,7 +56,7 @@ include_once( 'nav.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do colaborador, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">

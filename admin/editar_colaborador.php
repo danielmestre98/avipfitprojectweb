@@ -56,7 +56,7 @@ include( '../lib/editar_colaborador_show.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do colaborador, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
