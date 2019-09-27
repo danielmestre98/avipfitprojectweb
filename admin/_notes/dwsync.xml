@@ -12,13 +12,8 @@
 <file name="consulta_filial.php" server="files.000webhost.com/public_html/" local="132140915874315394" remote="132141035400000000" Dst="1" />
 <file name="depoimentos.php" server="files.000webhost.com/public_html/" local="132140915874335344" remote="132141035400000000" Dst="1" />
 <file name="consulta_treinamento.php" server="files.000webhost.com/public_html/" local="132140915874315394" remote="132141035400000000" Dst="1" />
-<file name="editar_aluno.php" server="files.000webhost.com/public_html/" local="132140930094923427" remote="132141038400000000" Dst="1" />
-<file name="editar_colaborador.php" server="files.000webhost.com/public_html/" local="132140915874345323" remote="132141035400000000" Dst="1" />
-<file name="editar_evento.php" server="files.000webhost.com/public_html/" local="132140915874355292" remote="132141035400000000" Dst="1" />
-<file name="editar_exercicio.php" server="files.000webhost.com/public_html/" local="132140915874365270" remote="132141035400000000" Dst="1" />
 <file name="editar_filial.php" server="files.000webhost.com/public_html/" local="132140915874365270" remote="132141035400000000" Dst="1" />
 <file name="editar_parceiro.php" server="files.000webhost.com/public_html/" local="132140915874375241" remote="132141035400000000" Dst="1" />
-<file name="editar_treinamento.php" server="files.000webhost.com/public_html/" local="132140924097287288" remote="132141035400000000" Dst="1" />
 <file name="edit_aval.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132141017400000000" Dst="1" />
 <file name="filiais.php" server="files.000webhost.com/public_html/" local="132140915874395185" remote="132141035400000000" Dst="1" />
 <file name="manuais.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132141017400000000" Dst="1" />
@@ -44,4 +39,6 @@
 <file name="view_ticket.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132141017400000000" Dst="1" />
 <file name="gerenciar_mensalidade.php" server="files.000webhost.com/public_html/" local="132140915874405160" remote="132141035400000000" Dst="1" />
 <file name="selecionar.php" server="files.000webhost.com/public_html/" local="132140915874494926" remote="132141035400000000" Dst="1" />
+<file name="editar_colaborador.php" server="files.000webhost.com/public_html/" local="132140933886296538" remote="132140871600000000" Dst="1" />
+<file name="editar_evento.php" server="files.000webhost.com/public_html/" local="132140933894457299" remote="132140815800000000" Dst="1" />
 </dwsync>

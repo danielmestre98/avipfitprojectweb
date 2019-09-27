@@ -22,28 +22,32 @@ require( '../lib/editar_exercicio_show.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1>Editar exercício</h1>
+		<div class="container-fluid p-5">
+			<h1>Edição de exercício</h1>
 			<br>
-			<form id="exercicio_cadastro" action="../lib/editar_exercicio.php?id=<?php echo $_GET['nome']?>" enctype="multipart/form-data" method="post">
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um exercício.</h5>
+			<br>
+			<form id="editar_exercicio" action="../lib/editar_exercicio.php?id=<?php echo $_GET['nome']?>" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							<red>*</red>Nome do exercício</label>
-						<input type="text" name="nomeExerciciou" value="<?php echo $exercicio?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" name="nomeExerciciou" maxlength="255" value="<?php echo $exercicio?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" hidden="true" value="<?=$exercicio?>" id="nomeOld">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="descricao">
 							<red>*</red>Descrição</label>
-						<input type="text" required value="<?php echo $descricao?>" name="descricao" class="form-control" id="descricao">
+						<textarea type="text" rows="5" required maxlength="1022" name="descricao" class="form-control" id="descricao"><?php echo $descricao?></textarea>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="cidade">Link do vídeo</label>
-						<input type="text" name="url" value="<?php echo $url?>" placeholder="https://www.exemplo.com" class="form-control" id="input_cidade">
+						<input type="text" name="url" value="<?php echo $url?>" maxlength="100" placeholder="https://www.exemplo.com" class="form-control" id="input_cidade">
+						<input type="text" hidden="true" value="<?=$url?>" id="linkOld">
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 				</div>
