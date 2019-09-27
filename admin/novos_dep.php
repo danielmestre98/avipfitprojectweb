@@ -24,11 +24,13 @@ include_once( 'nav.php' );
 		<div id="divt" class="container-fluid p-5">
 			<h1>Gerenciar depoimentos</h1>
 			<br>
+			<h5>Pesquise por depoimentos pendentes e clique em detalhes para efetuar a aprovação.</h5>
+			<br>
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
+						<th class='col'>Aluno(a)</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>
 

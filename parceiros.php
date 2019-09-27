@@ -18,22 +18,25 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<p>
 				<h1>Parceiros</h1>
 			</p>
 			<br>
+		<h5>Organizações parceiras do studio AVIPfit e suas informações.</h5>
 			<br>
 			<?php
 			require( 'conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-
+			if ( mysqli_num_rows( $result ) < 1 ){
+				echo "Não existem registros cadastrados.";
+			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
-			<p>
+			<p><img src="fotos/<?=$row['foto']?>" alt="" width="70" height="70">
 				<h3>
-					<?=$row['cidade'] ?>
+					<?=$row['nome'] ?>
 				</h3>
 			</p>
 			<p>
@@ -57,12 +60,6 @@ include_once( 'nav.php' );
 			mysqli_close( $conn );
 
 			?>
-			<p><img src="../fotos/padrao.jpg" width="70" height="70" alt="">
-				<h3>Centro de estética</h3>
-			</p>
-
-			<p>Av. de Cillo, 1500 - Novo Mundo, Americana - SP, 13588-270</p>
-			<p>Telefone: (19) 3875-9878</p>
 
 
 		</div>

@@ -17,12 +17,33 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<p><h1 align="center">Depoimentos</h1></p>
-			
-			<p><img src="../fotos/padrao.jpg" width="70" height="70" alt=""> <h3>Daniel Mestre Loureiro</h3></p>
+		<div class="container-fluid p-5">
+			<p><h1>Depoimentos</h1></p>
+			<br>
+			<h5>Confira os depoimentos dos alunos AVIPfit!</h5>
+			<br>
+			<?php
+			require( 'conectar.php' );
+			$sql2 = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado'";
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+			if ( mysqli_num_rows( $result ) < 1 ){
+				echo "Não existem depoimentos registrados.";
+			}
+			while ( $row = mysqli_fetch_array( $result ) ) {
+			?>
+				<p><img src="../fotos/<?=$row['foto']?>" width="70" height="70" alt=""> <h3><?=$row['nome']?></h3></p>
+				<p><?=$row['descricao']?></p>
+				<br><br>
+				
+		
+		
+		
+			<?php	
+			}
+			mysqli_close( $conn );
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod repellendus cupiditate velit, fuga repudiandae id obcaecati consectetur eligendi officiis! Commodi nemo distinctio debitis fugiat consectetur aperiam quidem dolorem ipsam iusto. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+			?>
+
 
 
 		</div>

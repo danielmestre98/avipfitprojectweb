@@ -1,7 +1,6 @@
 // JavaScript Document
 jQuery(function ($) {
 
-
 	$.validator.addMethod('cpf', function (value, element, param) {
 		$return = true;
 
@@ -55,53 +54,53 @@ jQuery(function ($) {
 
 		return $return;
 	});
-	
+
 	jQuery.validator.addMethod("cnpj", function (value, element) {
 
-            var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
-            if (value.length == 0) {
-                return false;
-            }
+		var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
+		if (value.length == 0) {
+			return false;
+		}
 
-            value = value.replace(/\D+/g, '');
-            digitos_iguais = 1;
+		value = value.replace(/\D+/g, '');
+		digitos_iguais = 1;
 
-            for (i = 0; i < value.length - 1; i++)
-                if (value.charAt(i) != value.charAt(i + 1)) {
-                    digitos_iguais = 0;
-                    break;
-                }
-            if (digitos_iguais)
-                return false;
+		for (i = 0; i < value.length - 1; i++)
+			if (value.charAt(i) != value.charAt(i + 1)) {
+				digitos_iguais = 0;
+				break;
+			}
+		if (digitos_iguais)
+			return false;
 
-            tamanho = value.length - 2;
-            numeros = value.substring(0, tamanho);
-            digitos = value.substring(tamanho);
-            soma = 0;
-            pos = tamanho - 7;
-            for (i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2)
-                    pos = 9;
-            }
-            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-            if (resultado != digitos.charAt(0)) {
-                return false;
-            }
-            tamanho = tamanho + 1;
-            numeros = value.substring(0, tamanho);
-            soma = 0;
-            pos = tamanho - 7;
-            for (i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2)
-                    pos = 9;
-            }
+		tamanho = value.length - 2;
+		numeros = value.substring(0, tamanho);
+		digitos = value.substring(tamanho);
+		soma = 0;
+		pos = tamanho - 7;
+		for (i = tamanho; i >= 1; i--) {
+			soma += numeros.charAt(tamanho - i) * pos--;
+			if (pos < 2)
+				pos = 9;
+		}
+		resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+		if (resultado != digitos.charAt(0)) {
+			return false;
+		}
+		tamanho = tamanho + 1;
+		numeros = value.substring(0, tamanho);
+		soma = 0;
+		pos = tamanho - 7;
+		for (i = tamanho; i >= 1; i--) {
+			soma += numeros.charAt(tamanho - i) * pos--;
+			if (pos < 2)
+				pos = 9;
+		}
 
-            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+		resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 
-            return (resultado == digitos.charAt(1));
-        });-
+		return (resultado == digitos.charAt(1));
+	}); -
 
 
 
@@ -109,6 +108,113 @@ jQuery(function ($) {
 		submitHandler: function () {
 			alert("Feito!");
 		}
+	});
+	$("#agendamento_exp").validate({
+		rules: {
+			nome: {
+				required: true
+			},
+			email: {
+				required: true,
+				email: true
+
+			},
+			numero: {
+				required: true,
+				minlength: 13
+			}
+		},
+		messages: {
+			email: {
+				remote: "E-mail já cadastrado."
+			},
+			cpf: {
+				remote: "CPF já cadastrado."
+			},
+			pagamento: {
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			numero: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um CEP válido."
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+	$("#login").validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			senha: {
+				required: true
+			}
+		},
+		messages: {
+			email: {
+				remote: "E-mail já cadastrado."
+			},
+			cpf: {
+				remote: "CPF já cadastrado."
+			},
+			pagamento: {
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um CEP válido."
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
 	});
 	$("#edit_event").validate({
 		rules: {
@@ -176,8 +282,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário.",
-				required: "Preencha este campo."
+				remote: "Já existe um evento nesse horário."
 			}
 		},
 		errorElement: 'span',
@@ -215,7 +320,48 @@ jQuery(function ($) {
 		},
 		messages: {
 			nome: {
-				remote: "Treinamento já existe.",
+				remote: "Treinamento já cadastrado.",
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+
+	$("#edit_treinamento").validate({
+		rules: {
+			nome: {
+				required: true,
+				remote: {
+					url: "../lib/verificaTrei.php",
+					type: "post",
+					data: {
+						nomeOld: function () {
+							return $('#nomeOld').val();
+						}
+					}
+				}
+			}
+		},
+		messages: {
+			nome: {
+				remote: "Treinamento já cadastrado.",
 			}
 		},
 		errorElement: 'span',
@@ -242,8 +388,7 @@ jQuery(function ($) {
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
-				required: true,
-				minlength: 5
+				required: true
 			},
 			cpf: {
 				required: true,
@@ -259,6 +404,9 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
+				minlength: 5
+			},
+			estado: {
 				minlength: 2
 			},
 			segunda: "time",
@@ -279,15 +427,19 @@ jQuery(function ($) {
 				}
 
 			},
+			bairro: {
+				required: true,
+				minlength: 3
+			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 			},
 			senha: {
 				minlength: 8
@@ -309,8 +461,15 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -337,24 +496,185 @@ jQuery(function ($) {
 
 	});
 
+
 	$("#novo_parceiro").validate({
 		rules: {
-			
-
+			nome: {
+				required: true,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cnpj: {
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpj.php",
+					type: "post"
+				}
+			},
+			bairro: {
+				minlength: 3,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cidade: {
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
+			},
+			email: {
+				email: true,
+				required: true,
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			estado: {
+				minlength: 2,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			rua: {
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			numero: {
+				minlength: 2,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			telefone: {
+				minlength: 13
+			},
+			cep: {
+				minlength: 9
+			}
 		},
 		messages: {
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um cep válido."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
+			}
+		},
+		errorElement: 'span',
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+
+	$("#editar_parceiro").validate({
+		rules: {
+			nome: {
+				required: true,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cnpj: {
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjEdit.php",
+					type: "post",
+					data: {
+						cnpjOld: function () {
+							return $('#cnpjOld').val();
+						}
+					}
+				}
+			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
+			},
+			bairro: {
+				minlength: 3,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cidade: {
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			email: {
+				email: true,
+				required: true,
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			estado: {
+				minlength: 2,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			rua: {
+				minlength: 5,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			numero: {
+				minlength: 2,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			telefone: {
+				minlength: 13
+			},
+			cep: {
+				minlength: 9
+			}
+		},
+		messages: {
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um cep válido."
+			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."
 			},
 			url: {
 				remote: "Link já cadastrado."
+			},
+			cnpj: {
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
 			}
 		},
 		errorElement: 'span',
-
-
-
-
 		errorPlacement: function (error, element) {
 			error.addClass('invalid-feedback');
 			element.closest('.form-group').append(error);
@@ -364,14 +684,14 @@ jQuery(function ($) {
 		},
 		unhighlight: function (element, errorClass, validClass) {
 			$(element).removeClass('is-invalid').addClass('is-valid');
-
 		},
 		submitHandler: function (form) {
 			form.submit();
 		}
-
 	});
-	
+
+
+
 	$("#exercicio_cadastro").validate({
 		rules: {
 			nomeExercicio: {
@@ -420,11 +740,64 @@ jQuery(function ($) {
 
 	});
 
+	$("#editar_exercicio").validate({
+		rules: {
+			nomeExerciciou: {
+				remote: {
+					url: "../lib/verificaExercicioEdit.php",
+					type: "post",
+					data: {
+						nomeOld: $('#nomeOld').val()
+					}
+
+				}
+			},
+			url: {
+				remote: {
+					url: "../verificaLinkEdit.php",
+					type: "post",
+					data: {
+						linkOld: $('#linkOld').val()
+					}
+				}
+			}
+
+		},
+		messages: {
+			nomeExerciciou: {
+				remote: "Exercicio já cadastrado."
+			},
+			url: {
+				remote: "Link já cadastrado."
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+
+
 	$("#aluno_cadastro").validate({
 		rules: {
 			nome: {
-				required: true,
-				minlength: 5
+				required: true
 			},
 			cpf: {
 				required: true,
@@ -435,9 +808,21 @@ jQuery(function ($) {
 				}
 
 			},
-			cidade: {
+			estado: {
 				required: true,
 				minlength: 2
+			},
+			cidade: {
+				required: true,
+				minlength: 5
+			},
+			rua: {
+				required: true,
+				minlength: 5
+			},
+			bairro: {
+				required: true,
+				minlength: 3
 			},
 			segunda: "time",
 			terca: "time",
@@ -456,13 +841,13 @@ jQuery(function ($) {
 			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true
+				minlength: 9
 
 			},
 			senha: {
@@ -487,8 +872,15 @@ jQuery(function ($) {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+
+				minlength: "Por favor, digite um CEP válido."
 			}
 		},
 
@@ -517,10 +909,14 @@ jQuery(function ($) {
 
 
 	$("#colab_cadastro").validate({
+
 		rules: {
 			nome: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -531,9 +927,37 @@ jQuery(function ($) {
 				}
 
 			},
+			estado: {
+				required: true,
+				minlength: 2,
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
+			},
 			cidade: {
 				required: true,
-				minlength: 2
+				minlength: 5,
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
+			},
+			rua: {
+				required: true,
+				minlength: 5,
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
+			},
+			bairro: {
+				required: true,
+				minlength: 3,
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
 			},
 			email: {
 				required: true,
@@ -544,16 +968,24 @@ jQuery(function ($) {
 				}
 
 			},
+			numero: {
+				required: true,
+				minlength: 2,
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
+				}
+			},
 			telefone: {
 				required: true,
-				telefone: true
+				minlength: 13
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			cep: {
-				cep: true,
-				required: true
+				required: true,
+				minlength: 9
 			},
 			senha: {
 				required: true,
@@ -573,12 +1005,18 @@ jQuery(function ($) {
 			email: {
 				remote: "E-mail já cadastrado."
 			},
+			cep: {
+				minlength: "Por favor, digite um CEP válido."
+			},
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
 			cpf: {
 				remote: "CPF já cadastrado."
 			},
 			pagamento: {
-				max: "Por favor insira um dia válido.",
-				min: "Por favor insira um dia válido."
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
 			}
 		},
 
@@ -607,21 +1045,21 @@ jQuery(function ($) {
 
 	jQuery.extend(jQuery.validator.messages, {
 		required: "Este campo é necessário.",
-		telefone: "Por favor insira um telefone válido.",
-		cpf: "Por favor insira um CPF válido.",
-		cep: "Por favor insira um CEP válido.",
-		time: "Por favor insira uma hora válida.",
-		email: "Por favor insira um endereço de e-mail válido.",
-		url: "Please enter a valid URL.",
+		telefone: "Por favor, insira um telefone válido.",
+		cpf: "Por favor, insira um CPF válido.",
+		cep: "Por favor, insira um CEP válido.",
+		time: "Por favor, insira uma hora válida.",
+		email: "Por favor, insira um endereço de e-mail válido.",
+		url: "Por favor, insira uma url válida.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
 		number: "Please enter a valid number.",
 		digits: "Please enter only digits.",
 		creditcard: "Please enter a valid credit card number.",
 		equalTo: "Senhas divergentes.",
-		accept: "Por favor escolha um arquivo com uma extensão válida.",
+		accept: "Por favor, selecione um arquivo com um formato válido.",
 		maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
-		minlength: jQuery.validator.format("Por favor digite pelo menos {0} caracteres."),
+		minlength: jQuery.validator.format("Por favor, digite pelo menos {0} caracteres."),
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
 		range: jQuery.validator.format("Please enter a value between {0} and {1}."),
 		max: jQuery.validator.format("Please enter a value less than or equal to {0}."),

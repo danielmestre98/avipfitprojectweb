@@ -18,6 +18,8 @@ $funcao = $_POST[ 'funcao' ];
 $salario = $_POST[ 'salario' ];
 $filial = $_POST[ 'filial' ];
 $senha = md5( $_POST[ 'senha' ] );
+date_default_timezone_set('America/Sao_Paulo');
+$data = date( 'Y-m-d' );
 
 // Se a foto estiver sido selecionada
 if ( !empty( $foto[ "name" ] ) ) {
@@ -49,8 +51,8 @@ if ( !empty( $foto[ "name" ] ) ) {
 	$nome_imagem = "padrao.jpg";
 }
 // Insere os dados no banco
-$sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo)
-		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '2', '$senha', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0');";
+$sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo, cadastro)
+		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '2', '$senha', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0', '$data');";
 $sql2 = "INSERT INTO funcionario (cpf, IdFilial, funcao, salario) VALUES ('$cpf', '$filial', '$funcao', '$salario'); ";
 
 

@@ -21,15 +21,17 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Cadastro de colaborador</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um colaborador.</h5>
 			<br>
 			<form id="colab_cadastro" action="../lib/novo_colaborador.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome">
 							<red>*</red>Nome</label>
-						<input type="text" name="nome" required class="form-control" id="input_nome" placeholder="Nome">
+						<input type="text" name="nome" maxlength="255" required class="form-control" id="input_nome" placeholder="Nome">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="cpf">
@@ -40,7 +42,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email"><i><red>*</red>E-mail</i></label>
-						<input type="email" required name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="telefone">
@@ -54,41 +56,41 @@ include_once( 'nav.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do colaborador, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" class="form-control" id="input_cidade">
+						<input type="text" placeholder="Cidade" maxlength="255" required name="cidade" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" id="input_estado">
+						<input type="text" required placeholder="Estado" maxlength="255" name="estado" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" placeholder="Bairro" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" placeholder="Rua, Av." class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" maxlength="255" placeholder="Número e complemento" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -99,7 +101,7 @@ include_once( 'nav.php' );
 					<label for="funcao">
 						<red>*</red>Função</label>
 					<select id="funcao" required name="funcao" class="form-control">
-						<option selected></option>
+						<option hidden="true" value="" selected>Selecione a opção desejada</option>
 						<option>Professor(a)</option>
 						<option>Recepcionista</option>
 					</select>
@@ -114,7 +116,7 @@ include_once( 'nav.php' );
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option value=""></option>
+							<option value="">Selecione a opção desejada</option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -130,12 +132,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red>*</red>Senha</label>
-						<input type="password" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Minimo 8 caracteres">
+						<input type="password" maxlength="20" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Minimo de 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red>*</red>Confirme a senha</label>
-						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Minimo 8 caracteres" class="form-control" id="input_confsenha">
+						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" maxlength="20" required name="confsenha" placeholder="Minimo de 8 caracteres" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
@@ -184,7 +186,7 @@ include_once( 'nav.php' );
 				} );
 
 				var $CampoValor = $( "#salario" );
-				$CampoValor.mask( '0000', {
+				$CampoValor.mask( '0000,00', {
 					reverse: true
 				} );
 				$( 'input, :input' ).attr( 'autocomplete', 'off' );

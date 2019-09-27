@@ -12,7 +12,12 @@ $sql = "UPDATE exercicio SET nomeExercicio = '$nome', descricao = '$descricao', 
 
 
 if ( $conn->query( $sql ) === TRUE ) {
-	header( 'location: ../admin/consulta_exercicio' );
+	session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_exercicio' );}
+	else{
+		header ('location: ../colab/consulta_exercicio');
+	}
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }

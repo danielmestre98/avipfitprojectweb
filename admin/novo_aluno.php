@@ -21,15 +21,17 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Cadastro de aluno</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um aluno.</h5>
 			<br>
 			<form id="aluno_cadastro" action="../lib/novo_aluno.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome">
 							<red>*</red>Nome</label>
-						<input type="text" name="nome" required class="form-control" id="input_nome" placeholder="Nome">
+						<input type="text" name="nome" maxlength="255" required class="form-control" id="input_nome" placeholder="Nome">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="cpf">
@@ -40,7 +42,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email"><i><red>*</red>E-mail</i></label>
-						<input type="email" required name="email" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="telefone">
@@ -54,41 +56,41 @@ include_once( 'nav.php' );
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="foto">Foto (Formatos: jpg, jpeg, png)</label>
+					<label for="foto">Adicione uma foto ao perfil do aluno, os formatos admitidos são jpg, jpeg e png.</label>
 					<input type="file" name="foto" class="form-control-file" id="foto">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" class="form-control" id="input_cidade">
+						<input type="text" maxlength="255" required name="cidade" class="form-control" id="input_cidade" placeholder="Cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" class="form-control" id="input_estado">
+						<input type="text" required maxlength="255" placeholder="Estado" name="estado" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							CEP</label>
-						<input type="text"  name="cep" class="form-control" id="input_cep">
+						<input type="text"  name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" class="form-control" id="input_bairro">
+						<input type="text" maxlength="255" placeholder="Bairro" required name="bairro" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." maxlength="255" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" class="form-control" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" placeholder="Número e complemento" required name="numero" maxlength="35" class="form-control" id="input_numero">
 					</div>
 				</div>
 
@@ -99,7 +101,7 @@ include_once( 'nav.php' );
 					<label for="inputState">
 						<red>*</red>Treinamento</label>
 					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected></option>
+						<option selected hidden="" value="">Selecione a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
@@ -116,33 +118,33 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
-						<input type="text" name="segunda" class="form-control hora" placeholder="--:--">
+						<input type="text" name="segunda" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-lg-1">
 						<label for="terca">Terça</label>
-						<input type="text" name="terca" class="form-control hora" placeholder="--:--">
+						<input type="text" name="terca" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quarta">Quarta</label>
-						<input type="text" name="quarta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quarta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="quinta">Quinta</label>
-						<input type="text" name="quinta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="quinta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sexta">Sexta</label>
-						<input type="text" name="sexta" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sexta" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-1">
 						<label for="sabado">Sábado</label>
-						<input type="text" name="sabado" class="form-control hora" placeholder="--:--">
+						<input type="text" name="sabado" class="form-control hora" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
-							<option value=""></option>
+							<option hidden="true" value="">Selecione a opção desejada</option>
 								<?php
 								require( '../conectar.php' );
 								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
@@ -158,7 +160,7 @@ include_once( 'nav.php' );
 
 					<div class="form-group col-md-12">
 						<b>
-							<red>*</red> Preencha apenas os dias que o aluno irá frequentar</b>
+							<red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio </b>
 					</div>
 
 				</div>
@@ -169,19 +171,19 @@ include_once( 'nav.php' );
 						<input type="text" required name="mensalidade" class="form-control" id="mensalidade" placeholder="R$">
 					</div>
 					<div class="form-group col-md-2">
-						<label for="input_data">
+						<label for="pagamento">
 							<red>*</red>Data de pagamento</label>
-						<input id="input_data" required name="pagamento" class="form-control" maxlength="2" placeholder="dd">
+						<input id="pagamento" required name="pagamento" class="form-control" maxlength="2" placeholder="dd">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red>*</red>Senha</label>
-						<input type="password" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Minimo 8 caracteres">
+						<input type="password" maxlength="16" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Mínimo de 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red>*</red>Confirme a senha</label>
-						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Minimo 8 caracteres" class="form-control" id="input_confsenha">
+						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Mínimo de 8 caracteres" maxlength="16" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
@@ -213,7 +215,10 @@ include_once( 'nav.php' );
 					reverse: false
 				} );
 
-
+				var $datamens = $("#pagamento");
+				$datamens.mask('00',{
+					reverse: false
+				});
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true
@@ -230,7 +235,7 @@ include_once( 'nav.php' );
 				} );
 
 				var $CampoValor = $( "#mensalidade" );
-				$CampoValor.mask( '0000', {
+				$CampoValor.mask( '0000,00', {
 					reverse: true
 				} );
 				$( 'input, :input' ).attr( 'autocomplete', 'off' );

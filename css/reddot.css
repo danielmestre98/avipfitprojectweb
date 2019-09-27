@@ -11,3 +11,11 @@ red{
 
 .popover .arrow::after {border-bottom-color: tomato; }
 .popover-content {background-color: tomato;}
+
+.gj-picker-bootstrap table tr td.other-month div{
+	color: #777 !important;
+}
+.gj-picker-bootstrap table tr td.disabled div {
+    color: #FF0004 !important;
+}
+

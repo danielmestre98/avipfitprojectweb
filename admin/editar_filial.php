@@ -22,8 +22,10 @@ require('../lib/editar_filial_show.php')
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1>Editar filial</h1>
+		<div class="container-fluid p-5">
+			<h1>Edição de filial</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de uma filial.</h5>
 			<br>
 			<form id="colab_cadastro" action="../lib/editar_filial.php" enctype="multipart/form-data" method="post">
 

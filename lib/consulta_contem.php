@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 $nome = $_GET['nome'];
-
+$data = [];
 $sql = "Select Exercicio FROM contem WHERE NomeTreinamento = '$nome'";
 $result = $conn->query($sql);
 

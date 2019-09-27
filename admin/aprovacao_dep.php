@@ -20,7 +20,7 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<h1>Depoimento</h1>
 			<br>
 			<?php 
@@ -45,7 +45,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
-							Nome</label>
+							Aluno(a)</label>
 							<input type="text" hidden="true" name="cpf" value="<?=$cpf?>"</input>
 					<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
@@ -66,6 +66,7 @@ include_once( 'nav.php' );
 						</select>
 					</div>
 				</div>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 

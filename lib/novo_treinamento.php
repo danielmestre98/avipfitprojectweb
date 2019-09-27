@@ -20,9 +20,11 @@ if ( $conn->query( $sql ) === TRUE ) {} else {
 }
 mysqli_close( $conn );
 include( '../conectar.php' );
+if(isset($_POST['exercicios'])){
 $sql2 = "INSERT INTO contem (NomeTreinamento, exercicio) VALUES " . implode( ',', $dois );
 if ( $conn->query( $sql2 ) === TRUE ) {} else {
 	echo "Error: " . $sql2 . "<br>" . $conn->error;
+}
 }
 mysqli_close( $conn );
 
@@ -36,7 +38,12 @@ session_start();
 $email = $_SESSION['email'];
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'treinamento, contem', '$email', '$sql $sql2')";
 if ( $conn->query( $log ) === TRUE ) {
-		header('location: ../admin/consulta_treinamento');
+		session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_treinamento' );}
+	else{
+		header ('location: ../colab/consulta_treinamento');
+	}
 	
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

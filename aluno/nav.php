@@ -1,6 +1,18 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
+
+if (isset($_SESSION['tipoPessoa'])){
+	if($_SESSION['tipoPessoa'] == 3){
+		
+	}
+	else{
+		header('location: ../index');
+	}
+}
+else{
+	header('location: ../index');
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +34,14 @@ require( '../lib/dadosLogin.php' );
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar"><span class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px;"><i class="fas fa-bars"></i></span>
+	<div id="show-sidebar"><span class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 50"><i class="fas fa-bars"></i></span>
 	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a href="index">avipfit</a>
+				<a href="principal">avipfit</a>
 				<div id="close-sidebar">
 					<i class="fas fa-times"></i>
 				</div>
@@ -43,7 +55,7 @@ require( '../lib/dadosLogin.php' );
 				<div class="user-info">
 					<span class="user-name"><?php echo $nome ?>
                         </span>
-					<span class="user-role">Aluno</span>
+					<span class="user-role">Aluno(a)</span>
 
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 
-
+$data = [];
 $sql = "Select nome, p.cpf, telefone, funcao, IdFilial from pessoa p INNER JOIN funcionario f ON (p.cpf = f.cpf) where inativo = '0' and TipoPessoa = '2'";
 $result = $conn->query($sql);
 

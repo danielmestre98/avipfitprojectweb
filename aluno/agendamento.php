@@ -24,7 +24,10 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Agendamentos</h1>
+			<h1>Agendamentos</h1>
+			<br>
+			<h5>Registre o agendamento de uma avaliação física e verifique os detalhes dos agendamentos realizados.</h5>
+			<br>
 			<div id="botao_novo" align="right">
 				<a href="novo_agen" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -34,22 +37,14 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Data</th>
+						<th class='col'>Data do agendamento</th>
 						<th class="col">Horário</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>
 				
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>20/02/2019</td>
-						<td>15:00</td>
-						<td>Aguardando aprovação</td>
-						<td><a href="aprovacao" title="Visualizar"><i class="far fa-eye"></i></a></td>
-					</tr>
-					
-				</tbody>
+				
 
 			</table>
 
@@ -88,7 +83,6 @@ include_once( 'nav.php' );
 					"infoEmpty": "Nenhum registro disponível",
 					"infoFiltered": "(filtrado de _MAX_ registro totais)",
 					"search": "Pesquisar",
-					searchPlaceholder: "Nome, tipo (Aula experimental ou Avaliação física), status (Aguardando aprovação ou aprovado)",
 					"first": "Primeiro",
 					"pagingType": "simple",
 					"processing": "Carregando...",
@@ -101,9 +95,22 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
-
+				"sAjaxSource": "../lib/consulta_agendamento_aluno.php",
 				"autoWidth": false,
 				"bProcessing": true,
+				"columns": [{
+					data: 'dia'
+				}, {
+					data: 'horario'
+				},{
+					data: 'status'
+				},
+				{
+					data: null,
+					render: function ( data, type, row ) {
+							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.dia+'"><i class="far fa-eye"></i>'
+					}
+				}],
 				columnDefs: [ {
 						"orderable": false,
 						"targets": 1
@@ -126,12 +133,7 @@ include_once( 'nav.php' );
 
 
 
-				],initComplete: function () {
-					$( '.dataTables_filter input[type="search"]' ).css( {
-						'width': '630px',
-						'display': 'inline-block'
-					} );
-				}
+				]
 
 
 

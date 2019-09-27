@@ -7,11 +7,13 @@ include_once( 'nav.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit</title>
 	<link rel="stylesheet" href="css/carousel.css">
+
 </head>
 
 <body>
-	<main role="main">
 
+	<main role="main">
+	
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -78,13 +80,13 @@ include_once( 'nav.php' );
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/fotoprincipal.png" alt="Generic placeholder image" width="140" height="140">
             <h2>O <i>personal trainer</i></h2>
-            <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos, onde pode observar a dificuldade do alcance de resultados por parte das pessoas em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética, sem considerar a especificidade de cada biotipo.</p>
+            <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos exclusivos, pois observou a dificuldade do alcance de resultados em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética que não consideram a especificidade de cada biotipo.</p>
             
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/studio.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>O <i>studio</i></h2>
-            <p>O studio AVIPfit define um espaço físico reduzido, perfeito para sessões individuais ou de até cinco alunos. O treinamento personalizado e com fluxo de alunos reduzido, permite ao personal trainer a elaboração de treinos e acompanhamento exclusivo para cada aluno, conforme suas necessidades. O studio possui equipamentos modernos buscando a excêlencia em qualidade.</p>
+            <p>O studio AVIPfit é um espaço físico perfeito para sessões individuais ou de até cinco alunos, colaborando ao treinamento personalizado e possibilitando o acompanhamento individual ao aluno, conforme suas necessidades. O studio possui equipamentos modernos buscando a excelência em qualidade.</p>
             
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
@@ -97,7 +99,7 @@ include_once( 'nav.php' );
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading">Nosso objetivo</h2>
-            <p class="lead">Desenvolvimento de planos concisos por meio de avaliações periódicas e métricas para mensurar a evolução dos clientes, determinando o progresso conquistado e definindo novas metas ao escopo dos treinamentos.</p>
+            <p class="lead">Desenvolvimento de planos concisos por meio de avaliações periódicas e métricas para mensurar a evolução dos alunos, determinando o progresso conquistado e definindo novas metas ao escopo dos treinamentos.</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="img/nossoobjetivo.jpg" alt="Generic placeholder image">
@@ -109,7 +111,7 @@ include_once( 'nav.php' );
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">Como trabalhamos</h2>
-            <p class="lead">À performance de coach de emagrecimento, estabeleço a relevância sobre a consciência do estado emocional do cliente relativo às patologias, síndromes ou crenças limitadoras com a finalidade de transformar o mindset e complementar os benefícios da atividade física. Conhecendo esta visão geral sobre trabalho, lhe convido a ingressar em um novo estilo de vida, surpreendente às primeiras semanas de treinamento!</p>
+            <p class="lead">Estabelecemos a relevância sobre a consciência do estado emocional do aluno relativo às patologias, síndromes ou crenças limitadoras com a finalidade de transformar o mindset e complementar os benefícios da atividade física. Conhecendo esta visão geral sobre nosso trabalho, convidamos-lhes a ingressar em um novo estilo de vida, surpreendente às primeiras semanas de treinamento!</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="img/trabalho.jpg" alt="Generic placeholder image">

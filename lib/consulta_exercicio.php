@@ -1,7 +1,7 @@
 <?php 
 require('../conectar.php');
 
-
+$data = [];
 $sql = "Select NomeExercicio, id FROM exercicio";
 $result = $conn->query($sql);
 

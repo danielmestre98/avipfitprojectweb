@@ -22,32 +22,60 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Agendamento de avaliação física</h1>
+		<div class="container-fluid p-5">
+			<h1>Agendamento de avaliação física</h1>
 			<br>
+			<h5>Detalhes do agendamento de avaliação física.</h5>
+			<br>
+			<?php 
+			include ('../conectar.php');
+			
+			$hora = $_GET['horario'];
+				
+			$data = $_GET['data'];
+			$datan = explode( "/", $data );
+
+			list( $dia, $mes, $ano ) = $datan;
+
+			$datan = "$ano-$mes-$dia";
+				
+			$sql = "SELECT a.data, a.horario, status, p.nome, descricaoCancelamento FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.data = '$datan' AND a.horario = '$hora'";
+			//$sql = "SELECT a.data, a.horario, status, p.nome FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.data = '$data' AND f.horario = '$hora'";
+				
+			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+			if ( mysqli_num_rows( $resulted ) == 1 ) {
+				$row = mysqli_fetch_assoc( $resulted );
+				$nome = $row['nome'];
+				$status = $row['status'];
+				$filial = $row['IdFilial'];
+				$canc = $row['descricaoCancelamento'];
+				
+			}
+				
+			?>
 			<form id="exercicio_cadastro" action="agendamentos" enctype="multipart/form-data" method="post">
 				<div class="form-row">
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-8">
 						<label for="nomeExercicio">
-							Nome</label>
+							Nome do aluno(a)</label>
 					
 
-						<input type="text" name="nomeExerciciou" readonly value="Daniel Mestre Loureiro" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" name="nomeExerciciou" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
 					
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							Data</label>
+							Data do agendamento</label>
 					
 
-						<input type="text" required readonly value="19/06/2019" name="descricao" class="form-control" id="descricao">
+						<input type="text" required readonly value="<?=$data?>" name="descricao" class="form-control" id="descricao">
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="descricao">
-							Hora</label>
+							Horário do agendamento</label>
 					
 
-						<input type="text" required readonly value="17:00" name="descricao" class="form-control" id="descricao">
+						<input type="text" required readonly value="<?=$hora?>" name="descricao" class="form-control" id="descricao">
 					</div>
 				</div>
 				
@@ -56,27 +84,26 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="cidade"><red>*</red>Aprovação</label>
+						<label for="cidade">Status (Aguardando aprovação, Aprovado, Cancelado)</label>
 						<select required disabled class="form-control" name="" id="aprovacao">
-							<option value=""></option>
+							<option><?=$status?></option>
 							<option value="1">Aprovado</option>
 							<option value="2">Cancelado</option>
 						</select>
 					</div>
+					<?php if ($status == 'Cancelado'){?>
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
-							<red>*</red>Descrição do cancelamento</label>
+							Descrição do cancelamento</label>
 					
 
-						<textarea type="text" name="nomeExercicio" rows="10" value="" required class="form-control" id=""></textarea>
-					</div>
+						<textarea type="text" readonly name="nomeExercicio" rows="10" class="form-control" id=""><?=$canc?></textarea>
+					</div><?php }?>
 				</div>
-				<p>Campos com <red>*</red> são obrigatórios</p>
 				
 
 
 				<a class="btn btn-primary" href="agendamento">Voltar</a>
-				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 
 
@@ -91,16 +118,6 @@ include_once( 'nav.php' );
 	</div>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#cancelar').hide();
-        $('#aprovacao').change(function() {
-             if ($('#aprovacao').val() == 1) {
-                $('#cancelar').hide();   
-            }  else {
-                $('#cancelar').show();
-            }
-        });
-    });
 </script> 
 	<script src="../js/jquery.mask.js"></script>
 

@@ -3,5 +3,10 @@ include('../conectar.php');
 $cpf = $_GET['cpf'];
 mysqli_query( $conn,"UPDATE pessoa SET inativo = 1 WHERE cpf = '$cpf'");
 
-header('location: ../admin/consulta_aluno');
+session_start();
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/consulta_aluno' );}
+	else{
+		header ('location: ../colab/consulta_aluno');
+	}
 ?>

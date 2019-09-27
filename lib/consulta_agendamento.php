@@ -2,6 +2,7 @@
 require('../conectar.php');
 
 
+$data = [];
 $sql = "SELECT nome, tipo, status, a.horario, a.data FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.horario = f.horario and a.data = f.data) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE a.status != 'Cancelado'";
 $result = $conn->query($sql);
 mysqli_close($conn);
@@ -15,6 +16,8 @@ while($row = $result->fetch_array(MYSQLI_ASSOC)){
 while($row2 = $result2->fetch_array(MYSQLI_ASSOC)){
   $data[] = $row2;
 }
+
+
 
 $results = ["sEcho" => 1,
         	"iTotalRecords" => count($data),
