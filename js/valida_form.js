@@ -176,8 +176,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário.",
-				required: "Preencha este campo."
+				remote: "Já existe um evento nesse horário."
 			}
 		},
 		errorElement: 'span',

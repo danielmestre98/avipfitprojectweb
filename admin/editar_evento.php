@@ -35,7 +35,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 	
 	$row = mysqli_fetch_assoc( $resulted );
 	
-	$hora = $row['horario'];
+	$hora = date("H:i", strtotime($row['horario']));
 	$dia = $row['dia'];
 	$evento = $row['evento'];
 	$id = $row['id'];
@@ -46,7 +46,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Edição de eventos</h1>
+			<h1>Edição de evento</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um evento.</h5>
 			<br>
 			<form id="edit_event" action="../lib/editar_evento.php" enctype="multipart/form-data" method="post">
 				<input type="text" name="horaold" id="horaold" hidden="true" value="<?php echo $horaold?>">
@@ -58,7 +60,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						<label for="nomeExercicio">
 							<red>*</red>Evento</label>
 						<select id="evento" required name="evento" class="form-control">
-							<option selected><?php echo $evento?></option>
+							<option hidden="true" selected><?php echo $evento?></option>
 							<option>Avaliação física</option>
 							<option>Aula experimental</option>
 						</select>
@@ -67,7 +69,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						<label for="descricao">
 							<red>*</red>Dia da semana</label>
 						<select id="dsemana" required name="dia" class="form-control">
-							<option selected><?php echo $dia?></option>
+							<option hidden="true" selected><?php echo $dia?></option>
 							<option>Segunda</option>
 							<option>Terça</option>
 							<option>Quarta</option>
@@ -79,8 +81,10 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					<div class="form-group col-md-1">
 						<label for="">
 							<red>*</red>Horário</label>
-						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" type="text" placeholder="--:--">
+						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" type="text" placeholder="hh:mm">
 					</div>
+					<br>
+					<p>Campos com <red>*</red> são obrigatórios.</p>
 				</div>
 
 
