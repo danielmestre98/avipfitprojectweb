@@ -12,10 +12,10 @@
 <file name="parceiros.php" server="files.000webhost.com/public_html/" local="132128499472036712" remote="132128607600000000" Dst="1" />
 <file name="consulta.html" server="files.000webhost.com/public_html/" local="132122830248836737" remote="132121039200000000" Dst="1" />
 <file name="redef_senha.php" server="files.000webhost.com/public_html/" local="132122830254571397" remote="132121039200000000" Dst="1" />
-<file name="verificaCpf.php" server="files.000webhost.com/public_html/" local="132122830255459031" remote="132121039800000000" Dst="1" />
-<file name="login.php" server="files.000webhost.com/public_html/" local="132122830256935081" remote="132121039200000000" Dst="1" />
-<file name="verificaEmail.php" server="files.000webhost.com/public_html/" local="132122830261353268" remote="132121039800000000" Dst="1" />
-<file name="verificaEmailc.php" server="files.000webhost.com/public_html/" local="132122830262939045" remote="132121039800000000" Dst="1" />
-<file name="verificaLink.php" server="files.000webhost.com/public_html/" local="132122830265811715" remote="132121039800000000" Dst="1" />
-<file name="verificaLinkEdit.php" server="files.000webhost.com/public_html/" local="132140103339252196" remote="132140211000000000" Dst="1" />
+<file name="verificaCpf.php" server="files.000webhost.com/public_html/" local="132122830255459031" remote="132140331600000000" Dst="1" />
+<file name="login.php" server="files.000webhost.com/public_html/" local="132140880699791096" remote="132140989200000000" Dst="1" />
+<file name="verificaEmail.php" server="files.000webhost.com/public_html/" local="132122830261353268" remote="132140331600000000" Dst="1" />
+<file name="verificaEmailc.php" server="files.000webhost.com/public_html/" local="132122830262939045" remote="132140331600000000" Dst="1" />
+<file name="verificaLink.php" server="files.000webhost.com/public_html/" local="132122830265811715" remote="132140331600000000" Dst="1" />
+<file name="verificaLinkEdit.php" server="files.000webhost.com/public_html/" local="132140103339252196" remote="132140331600000000" Dst="1" />
 </dwsync>

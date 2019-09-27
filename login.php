@@ -17,7 +17,7 @@ include_once( 'nav.php' );
 			<div class="row justify-content-center">
 				<div class="col-md-6 login-form-1">
 					<h3>Login AVIPfit</h3>
-					<form action="lib/login" method="post">
+					<form id="login" action="lib/login" method="post">
 						<div class="form-group">
 							<input type="email" name="email" required class="form-control" placeholder="*E-mail" value="<?php if (isset($_SESSION['email']))
 								{
@@ -49,6 +49,9 @@ include_once( 'nav.php' );
 			</div>
 		</div>
 	</main>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.min.js"></script>
+	<script src="js/valida_form.js"></script>
 	<!-- page-content" -->
 	</div>
 </body>

@@ -109,6 +109,57 @@ jQuery(function ($) {
 			alert("Feito!");
 		}
 	});
+	$("#login").validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			senha: {
+				required: true
+			}
+		},
+		messages: {
+			email: {
+				remote: "E-mail já cadastrado."
+			},
+			cpf: {
+				remote: "CPF já cadastrado."
+			},
+			pagamento: {
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			telefone: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um CEP válido."
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
 	$("#edit_event").validate({
 		rules: {
 			hora: {
@@ -388,6 +439,7 @@ jQuery(function ($) {
 
 	});
 
+
 	$("#novo_parceiro").validate({
 		rules: {
 			nome: {
@@ -402,17 +454,18 @@ jQuery(function ($) {
 					url: "../lib/verificaCnpj.php",
 					type: "post"
 				}
-			},bairro:{
-				minlength: 3,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
 			},
-			cidade:{
+			bairro: {
+				minlength: 3,
+				normalizer: function (value) {
+					return $.trim(value);
+				}
+			},
+			cidade: {
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
@@ -421,27 +474,27 @@ jQuery(function ($) {
 				email: true,
 				required: true,
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			estado: {
 				minlength: 2,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
-			rua:{
+			rua: {
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
-			numero:{
+			numero: {
 				minlength: 2,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			telefone: {
 				minlength: 13
@@ -480,11 +533,11 @@ jQuery(function ($) {
 
 	$("#editar_parceiro").validate({
 		rules: {
-			nome:{
+			nome: {
 				required: true,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			cnpj: {
 				cnpj: true,
@@ -501,43 +554,43 @@ jQuery(function ($) {
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
-			bairro:{
+			bairro: {
 				minlength: 3,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
-			cidade:{
+			cidade: {
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			email: {
 				email: true,
 				required: true,
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			estado: {
 				minlength: 2,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
-			rua:{
+			rua: {
 				minlength: 5,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
-			numero:{
+			numero: {
 				minlength: 2,
-				normalizer: function(value) {
-				return $.trim(value);
-			  }
+				normalizer: function (value) {
+					return $.trim(value);
+				}
 			},
 			telefone: {
 				minlength: 13
@@ -798,13 +851,13 @@ jQuery(function ($) {
 
 
 	$("#colab_cadastro").validate({
-		
+
 		rules: {
 			nome: {
 				required: true,
-				normalizer: function(value) {
-						// Trim the value of every element
-						return $.trim(value);
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
 				}
 			},
 			cpf: {
@@ -815,26 +868,27 @@ jQuery(function ($) {
 					type: "post",
 				}
 
-			},estado: {
+			},
+			estado: {
 				required: true,
 				minlength: 2,
-				normalizer: function(value) {
-						// Trim the value of every element
-						return $.trim(value);
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
 				}
 			},
 			cidade: {
 				required: true,
 				minlength: 5,
-				normalizer: function(value) {
-						// Trim the value of every element
-						return $.trim(value);
+				normalizer: function (value) {
+					// Trim the value of every element
+					return $.trim(value);
 				}
 			},
 			rua: {
 				required: true,
 				minlength: 5,
-				normalizer: function(value) {
+				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
 				}
@@ -842,7 +896,7 @@ jQuery(function ($) {
 			bairro: {
 				required: true,
 				minlength: 3,
-				normalizer: function(value) {
+				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
 				}
@@ -859,7 +913,7 @@ jQuery(function ($) {
 			numero: {
 				required: true,
 				minlength: 2,
-				normalizer: function(value) {
+				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
 				}
@@ -893,10 +947,10 @@ jQuery(function ($) {
 			email: {
 				remote: "E-mail já cadastrado."
 			},
-			cep:{
+			cep: {
 				minlength: "Por favor, digite um CEP válido."
 			},
-			telefone:{
+			telefone: {
 				minlength: "Por favor, digite um telefone válido."
 			},
 			cpf: {

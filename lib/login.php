@@ -54,7 +54,7 @@ if ( mysqli_num_rows( $resulted ) > 0 ) {
 
 } else {
 	session_start();
-	$_SESSION[ 'message' ] = '*Usuário ou senha inválido.';
+	$_SESSION[ 'message' ] = 'E-mail ou senha inválidos.';
 	$_SESSION[ 'email' ] = $email;
 	header( 'location: ../login' );
 }
