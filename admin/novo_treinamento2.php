@@ -39,7 +39,7 @@ include_once( 'nav.php' );
 						<input required placeholder="Nome" maxlength="50" type="text" id="nome" name="nome" class="form-control">
 					</div>
 				</div>
-				<label><red>*</red>Selecione os exercícios</label>
+				Selecione os exercícios
 				
 				<select multiple="multiple" size="10" name="exercicios[]" id="exercicios">
 

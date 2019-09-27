@@ -25,6 +25,8 @@ include( '../lib/editar_colaborador_show.php' );
 		<div class="container-fluid p-5">
 			<h1>Edição de colaborador</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um colaborador.</h5>
+			<br>
 			<form id="aluno_editar" action="../lib/editar_colaborador.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">

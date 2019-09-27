@@ -281,8 +281,7 @@ jQuery(function ($) {
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
-				required: true,
-				minlength: 5
+				required: true
 			},
 			cpf: {
 				required: true,
@@ -393,7 +392,6 @@ jQuery(function ($) {
 		rules: {
 			nome: {
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -483,7 +481,6 @@ jQuery(function ($) {
 	$("#editar_parceiro").validate({
 		rules: {
 			nome:{
-				minlength:5,
 				required: true,
 				normalizer: function(value) {
 				return $.trim(value);
@@ -690,8 +687,7 @@ jQuery(function ($) {
 	$("#aluno_cadastro").validate({
 		rules: {
 			nome: {
-				required: true,
-				minlength: 5
+				required: true
 			},
 			cpf: {
 				required: true,
@@ -806,7 +802,6 @@ jQuery(function ($) {
 		rules: {
 			nome: {
 				required: true,
-				minlength: 5,
 				normalizer: function(value) {
 						// Trim the value of every element
 						return $.trim(value);

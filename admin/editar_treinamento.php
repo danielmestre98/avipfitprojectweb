@@ -59,7 +59,7 @@ include_once( 'nav.php' );
 						<input type="text" hidden="true" value="<?=$nome?>" id="nomeOld" name="nomeOld">
 					</div>
 				</div>
-				<h3>Selecione os exercícios</h3>
+				Selecione os exercícios
 
 				<select multiple="multiple" size="10" name="exercicios[]" id="exercicios">
 
