@@ -109,6 +109,62 @@ jQuery(function ($) {
 			alert("Feito!");
 		}
 	});
+	$("#agendamento_exp").validate({
+		rules: {
+			nome: {
+				required: true
+			},
+			email: {
+				required: true,
+				email: true
+
+			},
+			numero: {
+				required: true,
+				minlength: 13
+			}
+		},
+		messages: {
+			email: {
+				remote: "E-mail já cadastrado."
+			},
+			cpf: {
+				remote: "CPF já cadastrado."
+			},
+			pagamento: {
+				max: "Por favor, insira um dia válido.",
+				min: "Por favor, insira um dia válido."
+			},
+			numero: {
+				minlength: "Por favor, digite um telefone válido."
+			},
+			cep: {
+				minlength: "Por favor, digite um CEP válido."
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
 	$("#login").validate({
 		rules: {
 			email: {
