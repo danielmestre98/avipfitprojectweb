@@ -29,6 +29,9 @@ include_once( 'nav.php' );
 			<h1 align="">
 				Edição de treinamento
 			</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um treinamento.</h5>
+			<br>
 		
 
 
@@ -52,7 +55,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-12">
 						<label for="nome">
 							<red>*</red> Nome do treinamento</label>
-						<input required type="text" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
+						<input required type="text" maxlength="50" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
 						<input type="text" hidden="true" value="<?=$nome?>" id="nomeOld" name="nomeOld">
 					</div>
 				</div>

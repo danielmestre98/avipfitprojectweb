@@ -29,12 +29,14 @@ include_once( 'nav.php' );
 			<h1>
 				Cadastro de treinamento
 			</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um treinamento.</h5>
 		<br>
 			<form id="treinamento" method="post" enctype="multipart/form-data" action="../lib/novo_treinamento.php">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nome"><red>*</red> Nome do treinamento</label>
-						<input required type="text" id="nome" name="nome" class="form-control">
+						<input required placeholder="Nome" maxlength="50" type="text" id="nome" name="nome" class="form-control">
 					</div>
 				</div>
 				<label><red>*</red>Selecione os exercícios</label>
