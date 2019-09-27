@@ -167,7 +167,7 @@ include_once( 'nav.php' );
 
 				// when not all of the options are visible due to the filter                                        
 
-				infoTextFiltered: '<span class="badge badge-warning">Filtered</span> {0} from {1}',
+				infoTextFiltered: '<span class="badge badge-warning">Filtrado</span> {0} de {1}',
 
 				// when there are no options present in the list
 

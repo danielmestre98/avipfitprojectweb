@@ -29,6 +29,9 @@ include_once( 'nav.php' );
 			<h1 align="">
 				Edição de treinamento
 			</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar o cadastro de um treinamento.</h5>
+			<br>
 		
 
 
@@ -52,10 +55,11 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-12">
 						<label for="nome">
 							<red>*</red> Nome do treinamento</label>
-						<input required type="text" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
+						<input required type="text" maxlength="50" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
+						<input type="text" hidden="true" value="<?=$nome?>" id="nomeOld" name="nomeOld">
 					</div>
 				</div>
-				<h3>Selecione os exercícios</h3>
+				Selecione os exercícios
 
 				<select multiple="multiple" size="10" name="exercicios[]" id="exercicios">
 
@@ -83,6 +87,7 @@ include_once( 'nav.php' );
 					?>
 
 				</select>
+				<p>Campos com <red>*</red> são obrigatórios</p>
 				<br>
 				<a href="consulta_treinamento" class="btn btn-primary">Voltar</a>
 				<button class="btn btn-primary" style="float: right" type="submit">Salvar</button>
@@ -162,7 +167,7 @@ include_once( 'nav.php' );
 
 				// when not all of the options are visible due to the filter                                        
 
-				infoTextFiltered: '<span class="badge badge-warning">Filtered</span> {0} from {1}',
+				infoTextFiltered: '<span class="badge badge-warning">Filtrado</span> {0} de {1}',
 
 				// when there are no options present in the list
 
