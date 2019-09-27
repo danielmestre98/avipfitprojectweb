@@ -468,6 +468,7 @@ jQuery(function ($) {
 				minlength: "Por favor, digite um telefone válido."
 			},
 			cep: {
+
 				minlength: "Por favor, digite um CEP válido."
 			}
 		},
@@ -878,6 +879,7 @@ jQuery(function ($) {
 				minlength: "Por favor, digite um telefone válido."
 			},
 			cep: {
+
 				minlength: "Por favor, digite um CEP válido."
 			}
 		},
