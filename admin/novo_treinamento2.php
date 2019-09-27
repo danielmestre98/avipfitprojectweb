@@ -35,7 +35,7 @@ include_once( 'nav.php' );
 			<form id="treinamento" method="post" enctype="multipart/form-data" action="../lib/novo_treinamento.php">
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="nome"><red>*</red> Nome do treinamento</label>
+						<label for="nome"><red>*</red>Nome do treinamento</label>
 						<input required placeholder="Nome" maxlength="50" type="text" id="nome" name="nome" class="form-control">
 					</div>
 				</div>
