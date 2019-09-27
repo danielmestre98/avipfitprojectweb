@@ -87,6 +87,7 @@ include_once( 'nav.php' );
 					?>
 
 				</select>
+				<p>Campos com <red>*</red> são obrigatórios</p>
 				<br>
 				<a href="consulta_treinamento" class="btn btn-primary">Voltar</a>
 				<button class="btn btn-primary" style="float: right" type="submit">Salvar</button>
