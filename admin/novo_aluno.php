@@ -114,7 +114,7 @@ include_once( 'nav.php' );
 						?>
 					</select>
 				</div>
-				<b>Hora</b>
+				<b><red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio.</b>
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
@@ -156,11 +156,6 @@ include_once( 'nav.php' );
 
 								?>
 						</select>
-					</div>
-
-					<div class="form-group col-md-12">
-						<b>
-							<red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio </b>
 					</div>
 
 				</div>

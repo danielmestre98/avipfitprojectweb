@@ -118,7 +118,7 @@ require( '../lib/editar_aluno_show.php' );
 					</select>
 				
 				</div>
-				<b>Hora</b>
+				<b><red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio.</b>
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>
