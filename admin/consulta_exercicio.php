@@ -25,6 +25,9 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Exercícios</h1>
+			<br>
+			<h5>Registre exercícios ou pesquise por exercícios cadastrados para atualizar informações.</h5>
+			<br>
 			<div id="botao_novo" align="right">
 				<a href="novo_exercicio" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
