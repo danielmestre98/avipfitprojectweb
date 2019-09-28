@@ -30,13 +30,13 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
+						<input style="cursor:pointer; background-color: #FFFFFF" title="Datas em cinza estão disponíveis!" data-placement="top" data-toggle="tooltip" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							<red>*</red>Horario</label>
+							<red>*</red>Horário</label>
 						<select name="hora" required class="form-control" id="horario">
-							<option value="">Selecione a data</option>
+							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
 					<div class="form-group col-md-4">
@@ -146,7 +146,7 @@ include_once( 'nav.php' );
 
 					if ( dados.length > 0 ) {
 						$( '#horario' ).empty();
-						var option = '<option value="">Selecione o horário desejado...</option>';
+						var option = '<option value="">Selecione a opção desejada</option>';
 						$.each( dados, function ( i, obj ) {
 							option += '<option value="' + obj + '">' + obj + '</option>';
 						} )
@@ -159,6 +159,9 @@ include_once( 'nav.php' );
 	</script>
 		<script>
 		jQuery( function ( $ ) {
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
 			$( document ).ready( function () {
 				var $CampoTel = $( "#numero" );
 				$CampoTel.mask( '(00) 000000000', {

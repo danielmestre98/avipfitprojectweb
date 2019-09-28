@@ -2,9 +2,9 @@
 require('../conectar.php');
 session_start();
 if ($_SESSION['tipoPessoa'] == 2){
-	$cpf = $_SESSION['cpf'];
+	$cpf = $_SESSION['filial'];
 	$data = [];
-	$sql = "SELECT dia, evento, horario, f.cidade, f.rua, f.numero, f.estado, f.bairro, p.nome, filial, a.id FROM agenda a INNER JOIN filial f ON (filial = IdFilial) INNER JOIN pessoa p ON (cpffunc = cpf) WHERE cpffunc = '$cpf'";
+	$sql = "SELECT dia, evento, horario, f.cidade, f.rua, f.numero, f.estado, f.bairro, p.nome, filial, a.id FROM agenda a INNER JOIN filial f ON (filial = IdFilial) INNER JOIN pessoa p ON (cpffunc = cpf) WHERE filial = '$cpf'";
 	$result = $conn->query($sql);
 }
 else{

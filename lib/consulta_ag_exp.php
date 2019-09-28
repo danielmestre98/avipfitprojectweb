@@ -19,10 +19,10 @@ if ( $diadasemana == 4 )$dias = 'Quinta';
 if ( $diadasemana == 5 )$dias = 'Sexta';
 if ( $diadasemana == 6 )$dias = 'Sábado';
 
-$sql = "SELECT horario FROM agenda WHERE dia = '$dias' AND evento = 'Avaliação física'";
+$sql = "SELECT horario FROM agenda WHERE dia = '$dias' AND evento = 'Aula experimental'";
 $result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 while ( $row = mysqli_fetch_array( $result ) ) {
-	$resultado[] = $row['horario']; 
+	$resultado[] = date("H:i", strtotime($row['horario'])); 
 }
 echo json_encode( $resultado );
 
