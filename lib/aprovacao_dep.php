@@ -12,7 +12,7 @@ $sql = "UPDATE depoimentos SET status = '$status' WHERE id = '$cpf'";
 }
 else {
 	if ($status == 'Cancelado'){
-		$sql = "DELETE FROM depoimentos WHERE cpf = '$cpf'";
+		$sql = "DELETE FROM depoimentos WHERE id = '$cpf'";
 	}
 }
 if ( $conn->query( $sql ) === TRUE ) {

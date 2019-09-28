@@ -22,7 +22,7 @@ jQuery(function ($) {
 			}
 		}
 
-		
+
 		value = value.replace("-", "");
 		value = value.replace(/\./g, "");
 
@@ -117,17 +117,17 @@ jQuery(function ($) {
 			email: {
 				required: true,
 				email: true,
-				remote:{
+				remote: {
 					url: "../lib/verificaAgExp.php",
 					type: "post",
 					data: {
 						dia: function () {
 							return $("#picker").val();
 						},
-						hora: function(){
+						hora: function () {
 							return $("#horario").val();
 						},
-						filial: function(){
+						filial: function () {
 							return $("#filial").val();
 						}
 					}
@@ -403,7 +403,11 @@ jQuery(function ($) {
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -419,10 +423,24 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			estado: {
-				minlength: 2
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			rua:{
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			segunda: "time",
 			terca: "time",
@@ -444,7 +462,17 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 3
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			numero: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			telefone: {
 				required: true,
@@ -812,7 +840,11 @@ jQuery(function ($) {
 	$("#aluno_cadastro").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -825,19 +857,31 @@ jQuery(function ($) {
 			},
 			estado: {
 				required: true,
-				minlength: 2
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cidade: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			rua: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			bairro: {
 				required: true,
-				minlength: 3
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			segunda: "time",
 			terca: "time",
@@ -857,6 +901,13 @@ jQuery(function ($) {
 			telefone: {
 				required: true,
 				minlength: 13
+			},
+			numero: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
