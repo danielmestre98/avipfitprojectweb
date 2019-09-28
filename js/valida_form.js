@@ -435,7 +435,7 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
-			rua:{
+			rua: {
 				required: true,
 				normalizer: function (value) {
 					// Trim the value of the input
@@ -740,8 +740,19 @@ jQuery(function ($) {
 			nomeExercicio: {
 				remote: {
 					url: "../lib/verificaExercicio.php",
-					type: "post",
+					type: "post"
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			descricao: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			},
 			url: {
@@ -749,6 +760,10 @@ jQuery(function ($) {
 					url: "../verificaLink.php",
 					type: "post"
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 
@@ -793,6 +808,17 @@ jQuery(function ($) {
 						nomeOld: $('#nomeOld').val()
 					}
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			descricao: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			},
 			url: {
