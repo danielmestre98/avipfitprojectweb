@@ -65,7 +65,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" placeholder="(19)999999999" required name="telefone" class="form-control" id="input_telefone">
+						<input type="text" placeholder="(19) 999999999" required name="telefone" class="form-control" id="input_telefone">
 					</div>
 				</div>
 

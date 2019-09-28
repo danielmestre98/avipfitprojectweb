@@ -40,7 +40,7 @@ require( '../lib/editar_exercicio_show.php' );
 					<div class="form-group col-md-12">
 						<label for="descricao">
 							<red>*</red>Descrição</label>
-						<textarea type="text" rows="5" required maxlength="1022" name="descricao" class="form-control" id="descricao"><?php echo $descricao?></textarea>
+						<textarea type="text" rows="5" required maxlength="1022" placeholder="Descrição" name="descricao" class="form-control" id="descricao"><?php echo $descricao?></textarea>
 					</div>
 				</div>
 				<div class="form-row">
