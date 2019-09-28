@@ -19,3 +19,6 @@ red{
     color: #FF0004 !important;
 }
 
+.gj-picker-bootstrap table tr td.gj-cursor-pointer div {
+    color: green;
+}
