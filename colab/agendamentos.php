@@ -30,7 +30,7 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
+						<th class='col'>Aluno(a)</th>
 						<th class="col">Tipo</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>

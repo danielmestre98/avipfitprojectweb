@@ -113,7 +113,7 @@ include_once( 'nav.php' );
 
 
 
-				<a class="btn btn-primary" href="../admin/agendamentos">Voltar</a>
+				<a class="btn btn-primary" href="agendamentos">Voltar</a>
 				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 			<?php }
