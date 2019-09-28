@@ -995,7 +995,6 @@ jQuery(function ($) {
 			},
 			estado: {
 				required: true,
-				minlength: 2,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -1003,7 +1002,6 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -1011,7 +1009,6 @@ jQuery(function ($) {
 			},
 			rua: {
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -1019,7 +1016,6 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 3,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -1036,7 +1032,6 @@ jQuery(function ($) {
 			},
 			numero: {
 				required: true,
-				minlength: 2,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
