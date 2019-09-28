@@ -26,7 +26,9 @@ include_once( 'nav.php' );
 			require( '../conectar.php' );
 			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial ORDER BY cidade ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-			
+			if ( mysqli_num_rows( $result ) == 0 ){
+				echo "Não existem registros cadastrados.";
+			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
 			?>
 				<p><h3><?=$row['cidade'] ?></h3></p>

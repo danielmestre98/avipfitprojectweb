@@ -29,6 +29,9 @@ include_once( 'nav.php' );
 		include('../conectar.php');
 		$sql = "SELECT * FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Pendente'";
 		$result = mysqli_query($conn, $sql) or die ( mysqli_error($conn));
+		if ( mysqli_num_rows( $result ) == 0 ){
+				echo "Não existem depoimentos registrados.";
+			}
 		if ( mysqli_num_rows( $result ) >= 1 ) {
 		
 		?>
