@@ -7,14 +7,13 @@ include_once( 'nav.php' );
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
-				$( "#agendamento" ).addClass( "active" );
-				$( "#ag_drop" ).slideDown( 200 );
-				$( "#ger_agenda" ).addClass( "bg-dark active" )
+				$( "#aval_fisica" ).addClass( "active" );
+
 			} );
 		} );
 	</script>
 	<meta charset="utf-8">
-	<title>AVIPfit - Agenda</title>
+	<title>AVIPfit - Cadastro</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
 	<link rel="stylesheet" href="../css/responsive.dataTables.min.css">
 	<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
@@ -24,28 +23,53 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1>Agenda de eventos</h1>
-			<br>
-			<h5>Registre eventos ou pesquise por eventos cadastrados para atualizar informações.</h5>
-			<div id="botao_novo" align="right">
-				<a href="novo_evento" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
-
+			<h1 align="center">Avaliações físicas</h1>
+			<div class="form-row">
+				<div class="form-group col-md-2" style="float: right;">
+					<label for="opcao">Mês de referência</label>
+					<select class="form-control" name="" id="">
+						<option value="">Janeiro</option>
+						<option value="">Fevereiro</option>
+						<option value="">Março</option>
+						<option value="">Abril</option>
+						<option value="">Maio</option>
+						<option value="">Junho</option>
+						<option value="">Julho</option>
+						<option value="">Agosto</option>
+						<option value="">Setembro</option>
+						<option value="">Outubro</option>
+						<option value="">Novembro</option>
+						<option value="">Dezembro</option>
+					</select>
+				</div>
+				<div class="form-group col-md-2" style="float: right;">
+					<label for="opcao">Ano de referência</label>
+					<select class="form-control" name="" id="">
+						<option value="">2017</option>
+						<option value="">2018</option>
+						<option selected value="">2019</option>
+					</select>
+				</div>
+				
 			</div>
-			<br>
+
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
-						<th class='col'>Evento</th>
-						<th class='col'>Dia da semana</th>
-						<th class='col'>Horário</th>
-						<th class='col'>Filial</th>
-						<th class="col">Professor(a)</th>
+						<th class='col'>Nome</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>
 				<tbody>
-
+					<tr>
+						<td>Daniel Mestre Loureiro</td>
+						<td>
+							<a title="Novo" href="novo_aval"><i class="fas fa-plus"></i></a>
+							<a href="ver_aval" title="Ver"><i class="far fa-eye"></i></a>
+							<a href="selecionar_edit" title="Editar"><i class="fas fa-edit"></i></a>
+						</td>
+					</tr>
 				</tbody>
 
 			</table>
@@ -84,6 +108,7 @@ include_once( 'nav.php' );
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
 					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					searchPlaceholder: "Nome, filial",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",
@@ -100,58 +125,34 @@ include_once( 'nav.php' );
 
 				"autoWidth": false,
 				"bProcessing": true,
-				"sAjaxSource": "../lib/consulta_agenda.php",
+
 				"columns": [ {
 					data: 'evento'
 				}, {
 					data: 'dia'
-				}, {
-					data: 'horario'
-				}, {
-					data: 'cidade',
-					render: function ( data, type, row ) {
-						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
-					}
-				}, {
-					data: 'nome',
-					render: function ( data, type, row ) {
-						return data;
-					}
-				}, {
-					data: null,
-					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_evento.php?dia=' + data.dia + '&horario='+ data.horario +'&filial='+row.filial+'"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + row.evento + '\',\'' + row.horario + '\',\'' + row.dia + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
-
-
-
-					}
 				} ],
 				columnDefs: [ {
+						"searchable": false,
+						"targets": 1
+					}, {
 						"orderable": false,
 						"targets": 1
 					}, {
-						"width": '13%',
+						"width": '70%',
 						"targets": 0
 					}, {
-						"width": '12%',
+						"width": '2%',
 						"targets": 1
-					}, {
-						"width": '10%',
-						"targets": 2
-					}, {
-						"width": '45%',
-						"targets": 3
-					}, {
-						"orderable": false,
-						"targets": 2
-					}, {
-						"targets": 5,
-						"orderable": false
 					}
 
 
-
-				]
+				],
+				initComplete: function () {
+					$( '.dataTables_filter input[type="search"]' ).css( {
+						'width': '630px',
+						'display': 'inline-block'
+					} );
+				}
 
 
 
@@ -162,9 +163,9 @@ include_once( 'nav.php' );
 	</script>
 
 	<script>
-		function confirma( dia, tipo, hora, semana ) {
-			if ( window.confirm( "Deseja deletar o evento "+tipo+" para "+semana+"s as "+hora+"h? \nEsta ação impossibilitará o agendamento dos alunos para este dia da semana e horário." ) ) {
-				window.location = "../lib/deletar_evento.php?dia=" + dia
+		function confirma( dia, horario, filial ) {
+			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
+				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
 			} else {
 				return false
 
