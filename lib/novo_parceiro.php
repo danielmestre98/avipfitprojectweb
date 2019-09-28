@@ -41,7 +41,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 		move_uploaded_file( $foto[ "tmp_name" ], $caminho_imagem );
 	}
 } else {
-	$nome_imagem = "padrao.jpg";
+	$nome_imagem = "no-image.png";
 }
 date_default_timezone_set('America/Sao_Paulo');
 session_start();
