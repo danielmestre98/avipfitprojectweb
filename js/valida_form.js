@@ -330,6 +330,10 @@ jQuery(function ($) {
 				remote: {
 					url: "../lib/verificaNomeTrei.php",
 					type: "post",
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 		},
@@ -371,6 +375,10 @@ jQuery(function ($) {
 							return $('#nomeOld').val();
 						}
 					}
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 		},
