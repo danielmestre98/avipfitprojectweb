@@ -26,7 +26,7 @@ include_once( 'nav.php' );
 			<?php 
 			include ('../conectar.php');
 			$tipo = $_GET['tipo']; 
-			if ($tipo == 'Avaliacao Fisica'){
+			if ($tipo == 'Avaliação Física'){
 			$hora = $_GET['horario'];
 				
 			$data = $_GET['data'];
@@ -113,7 +113,7 @@ include_once( 'nav.php' );
 
 
 
-				<a class="btn btn-primary" href="agendamentos">Voltar</a>
+				<a class="btn btn-primary" href="../admin/agendamentos">Voltar</a>
 				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 			<?php }

@@ -14,33 +14,52 @@ include_once( 'nav.php' );
 		} );
 	} );
 </script>
+
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<p><h1>Parceiros</h1></p>
-		
+		<div class="container-fluid p-5">
+			<p>
+				<h1>Parceiros</h1>
+			</p>
 			<br>
-		<?php
+		<h5>Organizações parceiras do studio AVIPfit e suas informações.</h5>
+			<br>
+			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-			
+			if ( mysqli_num_rows( $result ) < 1 ){
+				echo "Não existem registros cadastrados.";
+			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
-			?>
-				<p><img width="70" height="70" src="../fotos/<?=$row['foto']?>" alt=""><h3><?=$row['nome'] ?></h3></p>
-				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
-				<p>Telefone: <?=$row['telefone']?></p>	
-				<br><br>
-					
-		
-		
-			<?php	
+				?>
+			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">
+				<h3>
+					<?=$row['nome'] ?>
+				</h3>
+			</p>
+			<p>
+				<?=$row['rua']?>,
+				<?=$row['numero']?>-
+				<?=$row['bairro']?>,
+				<?=$row['cidade']?>-
+				<?=$row['estado']?>,
+				<?=$row['cep']?>
+			</p>
+			<p>Telefone
+				<?=$row['telefone']?>
+			</p>
+			<br><br>
+
+
+
+
+			<?php
 			}
 			mysqli_close( $conn );
 
 			?>
-
 
 
 		</div>
@@ -49,14 +68,4 @@ include_once( 'nav.php' );
 	</div>
 	<!-- page-content" -->
 </body>
-	<script>
-		function confirma(escolha){
-			if ( window.confirm( " Tem certeza que deseja excluir esse parceiro?" ) ) {
-					window.location="../lib/deletar_parceiro?cnpj="+escolha
-			} else {
-				return false
-				
-			}
-		}
-	</script>
 </html>
