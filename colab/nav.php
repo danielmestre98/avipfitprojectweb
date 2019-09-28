@@ -71,7 +71,7 @@ else{
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
 								<li id="cad_aluno">
-									<a href="consulta_aluno">Aluno <span class="badge badge-pill badge-warning">Há alunos sem horário</span></a>
+									<a href="consulta_aluno">Aluno</a>
 								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
