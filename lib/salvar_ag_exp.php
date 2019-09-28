@@ -28,7 +28,7 @@ if ($conn->query($sql) === TRUE) {
 mysqli_close( $conn );
 include ('../conectar.php');
 if ($conn->query($sql2) === TRUE) {
-	header( 'location: ../index' );
+	header( 'location: ../index?suc=1' );
 } else {
     echo "Error: " . $sql2 . "<br>" . $conn->error;
 }

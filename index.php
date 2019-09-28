@@ -13,7 +13,14 @@ include_once( 'nav.php' );
 <body>
 
 	<main role="main">
-	
+		<?php
+		if (isset($_GET['suc'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>Sucesso!</strong> Aula experimental submetida com sucesso e encaminhada para aprovação! Você receberá o e-mail de aprovação em breve! Agradecemos pelo interesse em nosso serviço!
+		</div>
+
+		<?php }?>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -129,7 +136,12 @@ include_once( 'nav.php' );
 
     </main>
 	<!-- page-content" -->
-	
+	<script>
+		$( document ).ready( function () {
+			$('#errodelete').delay(5000).fadeOut(400);
+		});
+
+	</script>
 
 </body>
 </html>

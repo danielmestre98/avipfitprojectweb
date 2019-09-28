@@ -54,9 +54,10 @@
 <file name="consulta_ag_aval.php" server="files.000webhost.com/public_html/" local="132140938585543462" remote="132141708600000000" Dst="1" />
 <file name="salvar_ag_aval.php" server="files.000webhost.com/public_html/" local="132140938585742929" remote="132141708600000000" Dst="1" />
 <file name="consulta_ag_exp.php" server="files.000webhost.com/public_html/" local="132141589810000000" remote="132141708600000000" Dst="1" />
-<file name="salvar_ag_exp.php" server="files.000webhost.com/public_html/" local="132140938585742929" remote="132141708600000000" Dst="1" />
+<file name="salvar_ag_exp.php" server="files.000webhost.com/public_html/" local="132141626620033911" remote="132141734400000000" Dst="1" />
 <file name="verificaTrei.php" server="files.000webhost.com/public_html/" local="132140938585782834" remote="132141708600000000" Dst="1" />
 <file name="verificaExercicioEdit.php" server="files.000webhost.com/public_html/" local="132140938585772847" remote="132141708600000000" Dst="1" />
 <file name="verificaCnpj.php" server="files.000webhost.com/public_html/" local="132140938585762886" remote="132141708600000000" Dst="1" />
 <file name="verificaCnpjEdit.php" server="files.000webhost.com/public_html/" local="132140938585762886" remote="132141708600000000" Dst="1" />
+<file name="verificaAgExp.php" server="files.000webhost.com/public_html/" local="132141667607735605" remote="132141775200000000" Dst="1" />
 </dwsync>

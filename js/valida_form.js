@@ -116,7 +116,22 @@ jQuery(function ($) {
 			},
 			email: {
 				required: true,
-				email: true
+				email: true,
+				remote:{
+					url: "../lib/verificaAgExp.php",
+					type: "post",
+					data: {
+						dia: function () {
+							return $("#picker").val();
+						},
+						hora: function(){
+							return $("#horario").val();
+						},
+						filial: function(){
+							return $("#filial").val();
+						}
+					}
+				}
 
 			},
 			numero: {
@@ -126,7 +141,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			email: {
-				remote: "E-mail já cadastrado."
+				remote: "E-mail já cadastrado no horário selecionado."
 			},
 			cpf: {
 				remote: "CPF já cadastrado."

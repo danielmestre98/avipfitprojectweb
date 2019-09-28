@@ -58,7 +58,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="descricao">
 							<red>*</red>Filial</label>
-						<select required class="form-control" name="filial" id="">
+						<select class="form-control" name="filial" id="filial">
 							<option value="">Selecione a opção desejada</option>
 							<?php
 								require( 'conectar.php' );
@@ -135,10 +135,13 @@ include_once( 'nav.php' );
 		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
 		?>
 	<script type="text/javascript">
+		var today;
+		today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 		$( '#picker' ).datepicker( {
 			disableDaysOfWeek: $dias,
 			uiLibrary: 'bootstrap4',
 			format: 'dd/mm/yyyy',
+			minDate: today,
 			locale: 'pt-br',
 			change: function ( e ) {
 				var $datepicker = $( '#picker' ).datepicker();
