@@ -23,6 +23,14 @@ include_once( 'nav.php' );
 
 <body>
 	<main class="page-content pt-2">
+		<?php
+		if (isset($_GET['err'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Está filial possui registros vinculados a ela.
+		</div>
+
+		<?php }?>
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Filiais</h1>
@@ -70,6 +78,7 @@ include_once( 'nav.php' );
 	<script src="../js/dataTables.responsive.min.js"></script>
 	<script>
 		$( document ).ready( function () {
+			$('#errodelete').delay(5000).fadeOut(400);
 			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
 				$( "#divt" ).removeClass( "container-fluid p-5" );
 			}
