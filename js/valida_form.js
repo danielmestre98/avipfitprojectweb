@@ -1,6 +1,5 @@
 // JavaScript Document
 jQuery(function ($) {
-
 	$.validator.addMethod('cpf', function (value, element, param) {
 		$return = true;
 
@@ -23,6 +22,7 @@ jQuery(function ($) {
 			}
 		}
 
+		
 		value = value.replace("-", "");
 		value = value.replace(/\./g, "");
 

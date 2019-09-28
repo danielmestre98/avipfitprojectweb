@@ -7,7 +7,7 @@ $status = $_POST['aprovacao'];
 
 if ($status == 'Aprovado'){
 
-$sql = "UPDATE depoimentos SET status = '$status' WHERE cpf = '$cpf'";
+$sql = "UPDATE depoimentos SET status = '$status' WHERE id = '$cpf'";
 
 }
 else {

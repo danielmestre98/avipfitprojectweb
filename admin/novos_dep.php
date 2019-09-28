@@ -96,7 +96,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Visualizar" href="aprovacao_dep.php?cpf=' + row.cpf +'"><i class="far fa-eye"></i>'
+						return '<a title="Visualizar" href="aprovacao_dep.php?id=' + row.id +'"><i class="far fa-eye"></i>'
 					}
 				} ],
 				"autoWidth": false,

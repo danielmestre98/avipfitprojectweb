@@ -25,10 +25,10 @@ include_once( 'nav.php' );
 			<br>
 			<?php 
 			include ('../conectar.php');
-			$cpf = $_GET['cpf'];
+			$id = $_GET['id'];
 			
 				
-			$sql = "SELECT p.nome, descricao, status, p.foto FROM depoimentos d INNER JOIN pessoa p ON (p.cpf = d.cpf) WHERE d.cpf = '$cpf'";
+			$sql = "SELECT p.nome, descricao, status, p.foto FROM depoimentos d INNER JOIN pessoa p ON (p.cpf = d.cpf) WHERE id = '$id'";
 
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -46,7 +46,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							Aluno(a)</label>
-							<input type="text" hidden="true" name="cpf" value="<?=$cpf?>"</input>
+							<input type="text" hidden="true" name="cpf" value="<?=$id?>"</input>
 					<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
 				</div>
