@@ -30,12 +30,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="datepicker"/>
+						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" readonly autocomplete="off" required name="dia" id="datepicker"/>
 					</div>
-					<div class="form-group col-md-2">
+					<div class="form-group col-md-3">
 						<label for="descricao">
 							<red>*</red>Horário</label>
-						<select name = "hora" required class="form-control" name="" id="horario">
+						<select name="hora" required class="form-control" name="" id="horario">
 							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
@@ -65,6 +65,7 @@ include_once( 'nav.php' );
 	<script src="../js/gijgo.min.js"></script>
 	<script src="../js/messages/messages.pt-br.min.js"></script>
 	<script src="../js/jquery.validate.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
 	<script src="../js/additional-methods.min.js"></script>
 	<script src="../js/valida_form.js"></script>
 	<?php 
@@ -89,26 +90,31 @@ include_once( 'nav.php' );
 		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
 		?>
 	<script>
-		$( '#datepicker' ).datepicker( {
-			disableDaysOfWeek: $dias,
-			uiLibrary: 'bootstrap4',
-		    format: 'dd/mm/yyyy', 
-			locale: 'pt-br',
-			change: function ( e ) {
-				var $datepicker = $('#datepicker').datepicker();
-				$.getJSON( '../lib/consulta_ag_aval.php?dia='+$datepicker.value(), function ( dados ) {
-					
-					if ( dados.length > 0 ) {
-						$('#horario').empty();
-						var option = '<option value="">Selecione o horário desejado</option>';
-						$.each(dados, function(i, obj){
-							option += '<option value="'+obj+'">'+obj+'</option>';
-						})
-						$('#horario').html(option).show(); 
-					}
+		jQuery( function ( $ ) {
+			$( function () {
+				$( '[data-toggle="tooltip"]' ).tooltip()
+			} )
+			$( '#datepicker' ).datepicker( {
+				disableDaysOfWeek: $dias,
+				uiLibrary: 'bootstrap4',
+				format: 'dd/mm/yyyy',
+				locale: 'pt-br',
+				change: function ( e ) {
+					var $datepicker = $( '#datepicker' ).datepicker();
+					$.getJSON( '../lib/consulta_ag_aval.php?dia=' + $datepicker.value(), function ( dados ) {
 
-				} )
-			}
+						if ( dados.length > 0 ) {
+							$( '#horario' ).empty();
+							var option = '<option value="">Selecione o horário desejado</option>';
+							$.each( dados, function ( i, obj ) {
+								option += '<option value="' + obj + '">' + obj + '</option>';
+							} )
+							$( '#horario' ).html( option ).show();
+						}
+
+					} )
+				}
+			} );
 		} );
 	</script>
 </body>
