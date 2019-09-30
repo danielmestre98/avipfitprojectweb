@@ -106,7 +106,10 @@ include_once( 'nav.php' );
 				}, {
 					data: 'dia'
 				}, {
-					data: 'horario'
+					data: 'horario',
+					render: function (data, type, row){
+						return row.horario+' - '+row.horafim
+					}
 				}, {
 					data: 'cidade',
 					render: function ( data, type, row ) {

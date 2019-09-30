@@ -243,10 +243,36 @@ jQuery(function ($) {
 						dsemana: function () {
 							return $("#dsemana").val();
 						},
+						horafim: function(){
+							return $("#horafim").val();
+						},
 						horaold: $("#horaold").val(),
 						diaold: $("#diaold").val(),
 						idfilial: $("#filial").val(),
-						id: $("#id").val()
+						id: $("#id").val(),
+						horafimold: $("#horafimold").val()
+					}
+				}
+
+			},
+			horafim: {
+				time: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaEventoEdit.php",
+					type: "post",
+					data: {
+						dsemana: function () {
+							return $("#dsemana").val();
+						},
+						hora: function(){
+							return $("#hora").val();
+						},
+						horaold: $("#horaold").val(),
+						diaold: $("#diaold").val(),
+						idfilial: $("#filial").val(),
+						id: $("#id").val(),
+						horafimold: $("#horafimold").val()
 					}
 				}
 
@@ -254,8 +280,10 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário.",
-				required: "Preencha este campo."
+				remote: "Já existe um evento nesse horário."
+			},
+			horafim: {
+				remote: "Já existe um evento nesse horário."
 			}
 		},
 		errorElement: 'span',
@@ -289,6 +317,26 @@ jQuery(function ($) {
 					data: {
 						dsemana: function () {
 							return $('#dsemana').val();
+						},
+						horafim: function() {
+							return $('#horafim').val();
+						}
+					}
+				}
+
+			},
+			horafim: {
+				time: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaEvento.php",
+					type: "post",
+					data: {
+						dsemana: function () {
+							return $('#dsemana').val();
+						},
+						hora: function() {
+							return $('#hora').val();
 						}
 					}
 				}
@@ -297,7 +345,10 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário."
+				remote: "Já existe um evento nesse intervalo de horário."
+			},
+			horafim: {
+				remote: "Já existe um evento nesse intervalo de horário."
 			}
 		},
 		errorElement: 'span',

@@ -30,12 +30,13 @@ $horaold = $_GET['horario'];
 $filialold = $_GET['filial'];
 $diaold = $_GET['dia'];
 
-$resulted = mysqli_query( $conn, "SELECT dia, evento, horario, id FROM agenda WHERE horario = '$horaold' AND dia = '$diaold' AND filial = '$filialold'" ) or die(mysqli_error($conn));
+$resulted = mysqli_query( $conn, "SELECT dia, evento, horario, id, horafim FROM agenda WHERE horario = '$horaold' AND dia = '$diaold' AND filial = '$filialold'" ) or die(mysqli_error($conn));
 if ( mysqli_num_rows( $resulted ) === 1 ) {
 	
 	$row = mysqli_fetch_assoc( $resulted );
-	
+	$horafim = date("H:i", strtotime($row['horafim']));
 	$hora = date("H:i", strtotime($row['horario']));
+	$horafimold = date("H:i", strtotime($row['horafim']));
 	$dia = $row['dia'];
 	$evento = $row['evento'];
 	$id = $row['id'];
@@ -54,9 +55,10 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 				<input type="text" name="horaold" id="horaold" hidden="true" value="<?php echo $horaold?>">
 				<input type="text" name="diaold" id="diaold" hidden="true" value="<?php echo $diaold?>">
 				<input type="number" name="filial" id="filial" hidden="true" value="<?php echo $filialold?>">
+				<input type="text" name="horafimold" id="horafimold" hidden="true" value="<?=$horafimold?>">
 				<input type="number" name="id" id="id" hidden="true" value="<?php echo $id?>">
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-5">
 						<label for="nomeExercicio">
 							<red>*</red>Evento</label>
 						<select id="evento" required name="evento" class="form-control">
@@ -65,7 +67,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 							<option>Aula experimental</option>
 						</select>
 					</div>
-					<div class="form-group col-md-5">
+					<div class="form-group col-md-3">
 						<label for="descricao">
 							<red>*</red>Dia da semana</label>
 						<select id="dsemana" required name="dia" class="form-control">
@@ -78,10 +80,15 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 							<option>Sábado</option>
 						</select>
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="">
-							<red>*</red>Horário</label>
+							<red>*</red>Horário de início</label>
 						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" type="text" placeholder="hh:mm">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="">
+							<red>*</red>Horário de término</label>
+						<input required value="<?php echo $horafim?>" class="form-control hora" name="horafim" type="text" placeholder="hh:mm">
 					</div>
 					<br>
 					<p>Campos com <red>*</red> são obrigatórios.</p>

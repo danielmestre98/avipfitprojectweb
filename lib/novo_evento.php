@@ -8,9 +8,10 @@ $evento = $_POST[ 'evento' ];
 $dsemana = $_POST[ 'dsemana' ];
 $filial = $_SESSION['filial'];
 $hora = $_POST['hora'];
+$horafim = $_POST['horafim'];
 
-$sql = "INSERT INTO agenda (dia, evento, horario, filial, cpffunc)
-		VALUES ('$dsemana', '$evento', '$hora', '$filial', '$cpf');";
+$sql = "INSERT INTO agenda (dia, evento, horario, filial, cpffunc, horafim)
+		VALUES ('$dsemana', '$evento', '$hora', '$filial', '$cpf', '$horafim');";
 
 
 if ($conn->query($sql) === TRUE) {
