@@ -13,7 +13,7 @@ red{
 .popover-content {background-color: tomato;}
 
 .gj-picker-bootstrap table tr td.other-month div{
-	color: #777 !important;
+	color: green !important;
 }
 .gj-picker-bootstrap table tr td.disabled div {
     color: #FF0004 !important;
