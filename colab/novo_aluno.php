@@ -41,7 +41,7 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="email"><i><red>*</red>E-mail</i></label>
+						<label for="email"><red>*</red>E-mail</label>
 						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
@@ -114,7 +114,7 @@ include_once( 'nav.php' );
 						?>
 					</select>
 				</div>
-				<b><red>*</red> Preencha o horário aos dias da semana em que o aluno frequentará o studio.</b>
+				Preencha o horário aos dias da semana em que o aluno frequentará o studio.
 				<div class="form-row">
 					<div class="form-group col-md-1">
 						<label for="segunda">Segunda</label>

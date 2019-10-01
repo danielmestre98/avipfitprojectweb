@@ -106,7 +106,10 @@ include_once( 'nav.php' );
 				}, {
 					data: 'dia'
 				}, {
-					data: 'horario'
+					data: 'horario',
+					render: function (data, type, row){
+						return row.horario+' - '+row.horafim
+					}
 				}, {
 					data: 'cidade',
 					render: function ( data, type, row ) {
@@ -120,7 +123,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_evento.php?dia=' + data.dia + '&horario='+ data.horario +'&filial='+row.filial+'"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + row.evento + '\',\'' + row.horario + '\',\'' + row.dia + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Editar" href="editar_evento.php?dia=' + data.dia + '&horario='+ data.horario +'&filial='+row.filial+'"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + row.id + '\',\'' + data.cidade + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 
@@ -162,8 +165,8 @@ include_once( 'nav.php' );
 	</script>
 
 	<script>
-		function confirma( dia, tipo, hora, semana ) {
-			if ( window.confirm( "Deseja deletar o evento "+tipo+" para "+semana+"s as "+hora+"h? \nEsta ação impossibilitará o agendamento dos alunos para este dia da semana e horário." ) ) {
+		function confirma( dia, horario, filial ) {
+			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
 				window.location = "../lib/deletar_evento.php?dia=" + dia
 			} else {
 				return false
