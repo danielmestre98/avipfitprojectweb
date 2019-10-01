@@ -23,23 +23,8 @@ include_once( 'nav.php' );
 				<h1>Depoimentos</h1>
 			</p>
 		<br>
-		<h5>Clique em gerenciar depoimentos para aprovar novos registros.</h5>
+		<h5>Confira os depoimentos dos alunos AVIPfit!</h5>
 		<br>
-		<?php 
-		include('../conectar.php');
-		$sql = "SELECT * FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Pendente'";
-		$result = mysqli_query($conn, $sql) or die ( mysqli_error($conn));
-		if ( mysqli_num_rows( $result ) >= 1 ) {
-		
-		?>
-			<a class="btn btn-primary" href="novos_dep">Gerenciar depoimentos <span class="badge badge-light">Novos</span></a>
-		<?php }
-		else{ ?>
-			<a class="btn btn-primary" href="novos_dep">Gerenciar depoimentos</a>
-		<?php }?>
-			<br>
-		<br>
-			<br>
 			<?php
 			require( '../conectar.php' );
 			$sql2 = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado'";
