@@ -90,6 +90,8 @@ include_once( 'nav.php' );
 		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
 		?>
 	<script>
+		var today;
+		today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 		jQuery( function ( $ ) {
 			$( function () {
 				$( '[data-toggle="tooltip"]' ).tooltip()
@@ -98,6 +100,7 @@ include_once( 'nav.php' );
 				disableDaysOfWeek: $dias,
 				uiLibrary: 'bootstrap4',
 				format: 'dd/mm/yyyy',
+				minDate: today,
 				locale: 'pt-br',
 				change: function ( e ) {
 					var $datepicker = $( '#datepicker' ).datepicker();
@@ -105,7 +108,7 @@ include_once( 'nav.php' );
 
 						if ( dados.length > 0 ) {
 							$( '#horario' ).empty();
-							var option = '<option value="">Selecione o horário desejado</option>';
+							var option = '<option value="">Selecione a opção desejada</option>';
 							$.each( dados, function ( i, obj ) {
 								option += '<option value="' + obj + '">' + obj + '</option>';
 							} )
