@@ -27,7 +27,7 @@ include_once( 'nav.php' );
 		if (isset($_GET['err'])){
 		?>
 		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
-		  <strong>Erro!</strong> Está filial possui registros vinculados a ela.
+		  <strong>Erro!</strong> Existem alunos ou colaboradores associados a esta filial.
 		</div>
 
 		<?php }?>
@@ -141,7 +141,7 @@ include_once( 'nav.php' );
 		} );
 
 		function confirma( nome, cpf , rua, estado, numero, bairro) {
-			if ( window.confirm( "Deseja deletar a filial " + rua + ", "+ numero + ", "+ bairro +", "+ nome +", "+ estado +"? \nEsta ação desassociará esta filial dos cadastros de alunos." ) ) {
+			if ( window.confirm( "Deseja deletar a filial " + rua + ", "+ numero + ", "+ bairro +", "+ nome +", "+ estado +"?" ) ) {
 				window.location = "../lib/deletar_filial.php?id=" + cpf
 			} else {
 				return false
