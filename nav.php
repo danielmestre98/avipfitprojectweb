@@ -15,6 +15,7 @@ if(isset($_SESSION['tipoPessoa'])){
 		
 	}
 }
+
 ?>
 
 <!DOCTYPE html>

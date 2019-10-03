@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$usuario = "id5677461_academia";
-$senha = "avip123";
-$bd = "id5677461_academia";
+$host = "aviptest.mysql.dbaas.com.br";
+$usuario = "aviptest";
+$senha = "avip#fit2019";
+$bd = "aviptest";
 
 $conn = new mysqli($host, $usuario, $senha, $bd);
 if($conn->connect_errno)
