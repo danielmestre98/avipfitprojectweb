@@ -56,4 +56,5 @@
 <file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145865816387953" remote="132145865400000000" Dst="1" />
 <file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145863584686968" remote="132145863600000000" Dst="1" />
 <file name="emailteste.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145980530583384" remote="132145980000000000" Dst="1" />
+<file name="testeemail.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145993822928011" remote="132145993800000000" Dst="1" />
 </dwsync>

@@ -1,10 +1,6 @@
 <?php 
  include('phpmailer/class.phpmailer.php'); 
  include('phpmailer/class.smtp.php'); 
- $mailDestino = "daniel.mloure@live.com";
-	$nome = "Daniel";
-$assunto = "Olá, esse é um e-mail teste.";
-$mensagem = "Olá, esse é o corpo do email teste.";
  $mail = new PHPMailer();
  $mail->IsSMTP(); // envia por SMTP 
  $mail->CharSet = 'UTF-8';
