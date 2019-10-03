@@ -1,57 +1,28 @@
-<html lang="pt-br"> 
-<head>
- <meta charset="utf-8">
- <title>inVettor | Hospedagem de sites, Revendas, SSL e Cloud.</title>
- <!--Bootstrap -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-
-<body>
-<div class="container">
-
-<?php 
- if ($_POST) 
- {
- //Carrega as classes do PHPMailer
- include("phpmailer/class.phpmailer.php"); 
- include("phpmailer/class.smtp.php"); 
- 
- //envia o e-mail para o visitante do site
- $mailDestino = $_POST['txtEmail']; 
- $nome = $_POST['txtNome']; 
- $mensagem = "Obrigado pelo seu contato, responderemos ASAP!";
- $assunto = "Obrigado pelo seu contato!";
- include("emailteste.php");
- 
- //envia o e-mail para o administrador do site
- $mailDestino = 'daniel.mloure@live.com'; 
- $nome = 'inVettor'; 
- $assunto = "Mensagem recebida do site";
- $mensagem = "Recebemos uma mensagem no site <br/>
- <strong>Nome:</strong> $_POST[txtNome]<br/>
- <strong>e-mail:</strong> $_POST[txtEmail]<br/>
- <strong>mensagem:</strong> $_POST[txtMensagem]";
- include("emailteste.php");
- }
+<?php
+require_once('phpmailer/class.phpmailer.php');
+ include('phpmailer/class.smtp.php'); 
+$mailer = new PHPMailer();
+$mailer->IsSMTP();
+$mailer->SMTPDebug = 1;
+$mailer->IsHTML(true);
+$mailer->Port = 587; //Indica a porta de conexão 
+$mailer->Host = 'email-ssl.com.br';//Endereço do Host do SMTP 
+$mailer->SMTPAuth = true; //define se haverá ou não autenticação 
+$mailer->CharSet = 'iso-8859-1';
+$mailer->Username = 'no-reply@avipfit.com'; //Login de autenticação do SMTP
+$mailer->Password = 'Noreply@123'; //Senha de autenticação do SMTP
+$mailer->FromName = 'AVIPfit - No reply'; //Nome que será exibido
+$mailer->From = 'no-reply@avipfit.com'; //Obrigatório ser a mesma caixa postal configurada no remetente do SMTP
+$mailer->AddAddress('daniel.mloure@live.com','Daniel');
+//Destinatários
+$mailer->Subject = 'Teste enviado através do PHP Mailer 
+SMTPLW';
+$mailer->Body = 'Este é um teste realizado com o PHP Mailer 
+SMTPLW';
+if(!$mailer->Send())
+{
+echo "Message was not sent";
+echo "Mailer Error: " . $mailer->ErrorInfo; exit; 
+}
+print "E-mail enviado!"
 ?>
-
-<form method="POST" name="formContato">
-
-<label>Informe seu nome: </label>
- <input type="text" name="txtNome" placeholder="João" class="form-control" required>
-
- <label>Informe seu e-mail: </label>
- <input type="email" name="txtEmail" placeholder="a@a.com" class="form-control" required>
-
- <label>Deixe sua mensagem: </label>
- <textarea rows="6" class="form-control" name="txtMensagem"></textarea>
- <br/>
-
-<div style="text-align:center">
- <button type="submit" class="btn btn-default btn-lg"> Enviar Mensagem </button>
- </div>
- 
- </form> 
-</div>
-</body>
-</html>
