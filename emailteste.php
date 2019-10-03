@@ -1,0 +1,31 @@
+<?php 
+ include('phpmailer/class.phpmailer.php'); 
+ include('phpmailer/class.smtp.php'); 
+ $mailDestino = "daniel.mloure@live.com";
+	$nome = "Daniel";
+$assunto = "Olá, esse é um e-mail teste.";
+$mensagem = "Olá, esse é o corpo do email teste.";
+ $mail = new PHPMailer();
+ $mail->IsSMTP(); // envia por SMTP 
+ $mail->CharSet = 'UTF-8';
+ $mail->True;
+ $mail->Host = "email-ssl.com.br"; // Servidor SMTP
+ $mail->Port = 465; 
+ $mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
+ $mail->Username = "no-reply@avipfittest.provisorio.ws"; // SMTP username
+ $mail->Password = "Teste@123"; // SMTP password
+ $mail->From = "no-reply@avipfittest.provisorio.ws"; // From
+ $mail->FromName = "AVIPfit" ; // Nome de quem envia o email
+ $mail->AddAddress($mailDestino, $nome); // Email e nome de quem receberá //Responder
+ $mail->WordWrap = 50; // Definir quebra de linha
+ $mail->IsHTML = true ; // Enviar como HTML
+ $mail->Subject = $assunto ; // Assunto
+ $mail->Body = '<br/>' . $mensagem . '<br/>' ; //Corpo da mensagem caso seja HTML
+ $mail->AltBody = "$mensagem" ; //PlainText, para caso quem receber o email não aceite o corpo HTML
+
+if(!$mail->Send()) // Envia o email
+	echo "ok";
+ { 
+ echo "Erro no envio da mensagem";
+ } 
+?>

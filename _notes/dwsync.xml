@@ -42,7 +42,7 @@
 <file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125846946852" remote="132145848000000000" Dst="1" />
 <file name="filiais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125846956821" remote="132145848000000000" Dst="1" />
 <file name="login.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847366595" remote="132145848000000000" Dst="1" />
-<file name="index.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847026803" remote="132145848000000000" Dst="1" />
+<file name="index.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145891224505144" remote="132145891800000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145848000000000" remote="132145848000000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847386557" remote="132145848000000000" Dst="1" />
 <file name="redef_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328800114" remote="132145848000000000" Dst="1" />
@@ -55,4 +55,5 @@
 <file name=".gitignore" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145005170355102" remote="132145849800000000" Dst="1" />
 <file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145865816387953" remote="132145865400000000" Dst="1" />
 <file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145863584686968" remote="132145863600000000" Dst="1" />
+<file name="emailteste.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145980530583384" remote="132145980000000000" Dst="1" />
 </dwsync>
