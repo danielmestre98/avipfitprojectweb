@@ -12,7 +12,9 @@ include_once( 'nav.php' );
 
 <body>
 
-	<main role="main">
+	<main class="page-content pt-2" role="main">
+		<div id="overlay" class="overlay"></div>
+		
 		<?php
 		if (isset($_GET['suc'])){
 		?>
