@@ -16,10 +16,8 @@ $mailer->FromName = 'AVIPfit - No reply'; //Nome que será exibido
 $mailer->From = 'no-reply@avipfit.com'; //Obrigatório ser a mesma caixa postal configurada no remetente do SMTP
 $mailer->AddAddress('daniel.mloure@live.com','Daniel');
 //Destinatários
-$mailer->Subject = 'Teste enviado através do PHP Mailer 
-SMTPLW';
-$mailer->Body = 'Este é um teste realizado com o PHP Mailer 
-SMTPLW';
+$mailer->Subject = 'Recuperação de senha AVIPfit';
+$mailer->Body = 'Este é um teste realizado com o PHP Mailer SMTPLW';
 if(!$mailer->Send())
 {
 echo "Message was not sent";
