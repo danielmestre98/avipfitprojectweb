@@ -1080,7 +1080,11 @@ jQuery(function ($) {
 			},
 			cnpj: {
 				required: true,
-				cnpj: true
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjfi.php",
+					type: "post"
+				}
 			},
 			estado: {
 				required: true,
@@ -1153,7 +1157,8 @@ jQuery(function ($) {
 		},
 		messages: {
 			cnpj:{
-				cnpj: "CNPJ inválido."
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
 			},
 			email: {
 				remote: "E-mail já cadastrado."

@@ -27,7 +27,7 @@
 <file name="verificaEmailc.php" server="ftp.avipfit.com//public_html/" local="132120843328970011" remote="132145752000000000" Dst="1" />
 <file name="verificaLink.php" server="ftp.avipfit.com//public_html/" local="132120843328980011" remote="132145752000000000" Dst="1" />
 <file name="verificaLinkEdit.php" server="ftp.avipfit.com//public_html/" local="132140524706057542" remote="132145752000000000" Dst="1" />
-<file name=".htaccess" server="ftp.avipfit.com//public_html/" local="132145756679823786" remote="132145756200000000" Dst="1" />
+<file name=".htaccess" server="ftp.avipfit.com//public_html/" local="132145768800000000" remote="132145768800000000" Dst="1" />
 <file name="conectar.php" server="ftp.avipfit.com//public_html/" local="132145759318760103" remote="132145759200000000" Dst="1" />
 <file name="codigo.php" server="ftp.avipfit.com//public_html/" local="132120843326631461" remote="132145753200000000" Dst="1" />
 <file name="consulta.html" server="ftp.avipfit.com//public_html/" local="132120843326641458" remote="132145753200000000" Dst="1" />
@@ -54,6 +54,6 @@
 <file name="verificaLink.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328980011" remote="132145849800000000" Dst="1" />
 <file name=".gitignore" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145005170355102" remote="132145849800000000" Dst="1" />
 <file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145865816387953" remote="132145865400000000" Dst="1" />
-<file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145863584686968" remote="132145863600000000" Dst="1" />
+<file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132149435150834391" remote="132149434800000000" Dst="1" />
 <file name="testeemail.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132146692356092606" remote="132146692200000000" Dst="1" />
 </dwsync>

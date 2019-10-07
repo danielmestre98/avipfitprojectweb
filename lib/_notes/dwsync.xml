@@ -180,4 +180,5 @@
 <file name="deletar_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225142708" remote="132145849800000000" Dst="1" />
 <file name="deletar_colaborador.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140787225738457" remote="132145849800000000" Dst="1" />
 <file name="deletar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225152704" remote="132145849800000000" Dst="1" />
+<file name="verificaCnpjfi.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132149415010000000" remote="132149415000000000" Dst="1" />
 </dwsync>
