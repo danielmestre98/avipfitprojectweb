@@ -30,12 +30,12 @@ include_once( 'nav.php' );
 
 
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-5">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
 						<input type="text" required placeholder="Cidade" maxlength="255" name="cidade" class="form-control" id="input_cidade">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-3">
 						<label for="estado">
 							<red>*</red>Estado</label>
 						<input type="text" required placeholder="Estado" maxlength="255" name="estado" class="form-control" id="input_estado">
@@ -44,6 +44,11 @@ include_once( 'nav.php' );
 						<label for="cep">
 							<red>*</red>CEP</label>
 						<input type="text" required name="cep" placeholder="_____-___" class="form-control" id="input_cep">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="cnpj">
+							<red>*</red>CNPJ</label>
+						<input type="text" required name="cnpj" placeholder="__.___.___/____-__" class="form-control" id="input_cnpj">
 					</div>
 				</div>
 				<div class="form-row">
@@ -98,7 +103,10 @@ include_once( 'nav.php' );
 					reverse: false
 				} );
 
-
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
+					reverse: false
+				} );
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true

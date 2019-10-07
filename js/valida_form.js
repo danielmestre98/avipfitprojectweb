@@ -1078,6 +1078,10 @@ jQuery(function ($) {
 				}
 
 			},
+			cnpj: {
+				required: true,
+				cnpj: true
+			},
 			estado: {
 				required: true,
 				normalizer: function (value) {
@@ -1148,6 +1152,9 @@ jQuery(function ($) {
 			}
 		},
 		messages: {
+			cnpj:{
+				cnpj: "CNPJ inválido."
+			},
 			email: {
 				remote: "E-mail já cadastrado."
 			},
@@ -1191,6 +1198,7 @@ jQuery(function ($) {
 
 	jQuery.extend(jQuery.validator.messages, {
 		required: "Este campo é necessário.",
+		cnpj: "CNPJ inválido.",
 		telefone: "Por favor, insira um telefone válido.",
 		cpf: "Por favor, insira um CPF válido.",
 		cep: "Por favor, insira um CEP válido.",
