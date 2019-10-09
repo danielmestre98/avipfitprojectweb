@@ -1086,6 +1086,17 @@ jQuery(function ($) {
 					type: "post"
 				}
 			},
+			cnpje: {
+				required: true,
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjfie.php",
+					type: "post",
+					data: {
+						cnpjold: $("#cnpjold").val()
+					}
+				}
+			},
 			estado: {
 				required: true,
 				normalizer: function (value) {
@@ -1157,6 +1168,10 @@ jQuery(function ($) {
 		},
 		messages: {
 			cnpj:{
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
+			},
+			cnpje:{
 				cnpj: "CNPJ inválido.",
 				remote: "CNPJ já cadastrado."
 			},

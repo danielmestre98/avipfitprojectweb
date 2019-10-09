@@ -9,12 +9,13 @@ $estado = $_POST[ 'estado' ];
 $bairro = $_POST[ 'bairro' ];
 $cep = $_POST[ 'cep' ];
 $rua = $_POST[ 'rua' ];
+$cnpj = $_POST['cnpj'];
 $numero = $_POST[ 'numero' ];
 
 // Se a foto estiver sido selecionada
 
-$sql = "INSERT INTO filial (telefone, cidade, estado, cep, bairro, rua, numero)
-		VALUES ('$telefone', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero');";
+$sql = "INSERT INTO filial (telefone, cidade, estado, cep, bairro, rua, numero, cnpj)
+		VALUES ('$telefone', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '$cnpj');";
 
 
 

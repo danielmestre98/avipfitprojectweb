@@ -143,10 +143,10 @@
 <file name="editar_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225222686" remote="132145846800000000" Dst="1" />
 <file name="editar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225242713" remote="132145846800000000" Dst="1" />
 <file name="editar_exercicio_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328640213" remote="132145846800000000" Dst="1" />
-<file name="editar_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328650206" remote="132145846800000000" Dst="1" />
+<file name="editar_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151075117720027" remote="132151074600000000" Dst="1" />
 <file name="editar_parceiro.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524705957598" remote="132145846800000000" Dst="1" />
 <file name="editar_parceiro_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225252644" remote="132145846800000000" Dst="1" />
-<file name="editar_filial_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328650206" remote="132145846800000000" Dst="1" />
+<file name="editar_filial_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132150902333051886" remote="132150901800000000" Dst="1" />
 <file name="login.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145767340367059" remote="132145846800000000" Dst="1" />
 <file name="logout.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328670192" remote="132145846800000000" Dst="1" />
 <file name="editar_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847216663" remote="132145846800000000" Dst="1" />
@@ -155,7 +155,7 @@
 <file name="novo_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225302616" remote="132145846800000000" Dst="1" />
 <file name="novo_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847246669" remote="132145846800000000" Dst="1" />
 <file name="novo_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225342584" remote="132145846800000000" Dst="1" />
-<file name="novo_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328710170" remote="132145846800000000" Dst="1" />
+<file name="novo_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151074204091735" remote="132151074000000000" Dst="1" />
 <file name="novo_parceiro.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847266641" remote="132145846800000000" Dst="1" />
 <file name="novo_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706007560" remote="132145846800000000" Dst="1" />
 <file name="salvar_ag_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847276627" remote="132145846800000000" Dst="1" />
@@ -180,5 +180,6 @@
 <file name="deletar_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225142708" remote="132145849800000000" Dst="1" />
 <file name="deletar_colaborador.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140787225738457" remote="132145849800000000" Dst="1" />
 <file name="deletar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225152704" remote="132145849800000000" Dst="1" />
-<file name="verificaCnpjfi.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132149415010000000" remote="132149415000000000" Dst="1" />
+<file name="verificaCnpjfi.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132150924640115298" remote="132150924600000000" Dst="1" />
+<file name="verificaCnpjfie.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132150924928047354" remote="132150924600000000" Dst="1" />
 </dwsync>

@@ -31,12 +31,13 @@ require('../lib/editar_filial_show.php')
 
 
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					
+					<div class="form-group col-md-5">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
 						<input type="text" required name="cidade" placeholder="Cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-3">
 						<label for="estado">
 							<red>*</red>Estado</label>
 						<input type="text" required name="estado" placeholder="Estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
@@ -45,6 +46,12 @@ require('../lib/editar_filial_show.php')
 						<label for="cep">
 							<red>*</red>CEP</label>
 						<input type="text" required name="cep" placeholder="_____-___" value="<?php echo $cep?>" class="form-control" id="input_cep">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="cnpj">
+							<red>*</red>CNPJ</label>
+						<input type="text" hidden="true" value="<?=$cnpj?>" id="cnpjold">
+						<input type="text" required name="cnpje" value="<?=$cnpj?>" placeholder="__.___.___/____-__" class="form-control" id="input_cnpj">
 					</div>
 				</div>
 				<div class="form-row">
@@ -113,6 +120,11 @@ require('../lib/editar_filial_show.php')
 
 				var $CampoCep = $( "#input_cep" );
 				$CampoCep.mask( '00000-000', {
+					reverse: false
+				} );
+				
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
 					reverse: false
 				} );
 
