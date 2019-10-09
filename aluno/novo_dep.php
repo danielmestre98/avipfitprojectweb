@@ -25,18 +25,21 @@ include_once( 'nav.php' );
 			<br>
 			<h5>Sua opinião é muito importante para a AVIPfit, compartilhe conosco sobre suas experiências no studio! Preencha o campo obrigatório e clique em Salvar para submeter um depoimento.</h5>
 			<br>
-			
+
 			<form id="depoimento" action="../lib/novo_depoimento.php" enctype="multipart/form-data" method="post">
-				
+
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for=""><red>*</red>Descrição</label>
-						<textarea required name="descr" class="form-control" id="descr" cols="30" rows="10" placeholder="Escreva seu depoimento aqui..."></textarea>
+						<label for="">
+							<red>*</red>Descrição</label>
+						<textarea maxlength="1022" required name="descr" class="form-control" id="descr" cols="30" rows="10" placeholder="Escreva seu depoimento aqui..."></textarea>
+						<br>
+						<p>Campos com
+							<red>*</red> são obrigatórios.</p>
 					</div>
-					<br>
-					<p>Campos com <red>*</red> são obrigatórios.</p>
+
 				</div>
-				
+
 
 
 
