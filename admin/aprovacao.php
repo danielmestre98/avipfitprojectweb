@@ -102,12 +102,14 @@ include_once( 'nav.php' );
 							<option>Cancelado</option>
 						</select>
 					</div>
+				</div>
+				<div class="form-row">
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
 							<red>*</red>Descrição do cancelamento</label>
 
 
-						<textarea type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
+						<textarea maxlength="1022" type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
 					</div>
 				</div>
 				<p>Campos com
@@ -209,17 +211,19 @@ include_once( 'nav.php' );
 						<label for="cidade">
 							<red>*</red>Aprovação</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
-							<option value="" hidden="true"><?=$status?></option>
+							<option hidden="true"><?=$status?></option>
 							<option value="Aprovado">Aprovado</option>
 							<option>Cancelado</option>
 						</select>
 					</div>
+				</div>
+				<div class="form-row">
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
 							<red>*</red>Descrição do cancelamento</label>
 
 
-						<textarea type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
+						<textarea maxlength="1022" type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
 					</div>
 					<br>
 
