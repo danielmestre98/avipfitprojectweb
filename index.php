@@ -88,13 +88,13 @@ include_once( 'nav.php' );
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/fotoprincipal.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>O <i>personal trainer</i></h2>
+            <h2>O personal trainer</h2>
             <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos exclusivos, pois observou a dificuldade do alcance de resultados em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética que não consideram a especificidade de cada biotipo.</p>
             
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/studio.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>O <i>studio</i></h2>
+            <h2>O studio</h2>
             <p>O studio AVIPfit é um espaço físico perfeito para sessões individuais ou de até cinco alunos, colaborando ao treinamento personalizado e possibilitando o acompanhamento individual ao aluno, conforme suas necessidades. O studio possui equipamentos modernos buscando a excelência em qualidade.</p>
             
           </div><!-- /.col-lg-4 -->

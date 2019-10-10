@@ -34,16 +34,16 @@ else{
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar"><span class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 50"><i class="fas fa-bars"></i></span>
+	<div id="show-sidebar"><span title="Expandir menu" class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 50"><i title="Expandir menu" class="fas fa-bars"></i></span>
 	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a href="principal">avipfit</a>
+				<a title="Página inicial" href="principal">avipfit</a>
 				<div id="close-sidebar">
-					<i class="fas fa-times"></i>
+					<i title="Recolher menu" class="fas fa-times"></i>
 				</div>
 			</div>
 
