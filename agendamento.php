@@ -41,7 +41,7 @@ include_once( 'nav.php' );
 					</div>
 					<div class="form-group col-md-4">
 						<label for="descricao">Treinamento</label>
-						<select required class="form-control" name="treinamento" id="">
+						<select class="form-control" name="treinamento" id="">
 							<option value="">Selecione a opção desejada</option>
 							<?php
 							require( 'conectar.php' );
@@ -58,7 +58,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="descricao">
 							<red>*</red>Filial</label>
-						<select class="form-control" name="filial" id="filial">
+						<select required class="form-control" name="filial" id="filial">
 							<option value="">Selecione a opção desejada</option>
 							<?php
 								require( 'conectar.php' );

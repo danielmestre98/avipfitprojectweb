@@ -124,14 +124,6 @@ else{
 					
 
 					</li>
-					<li id="relatorio">
-						<a href="relatorio">
-                                <i class="far fa-file-alt"></i>
-                                <span class="menu-text">Relatório</span>
-                            </a>
-					
-
-					</li>
 					<li id="filiais">
 						<a href="filiais">
                                 <i class="far fa-building"></i>
