@@ -12,15 +12,15 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Redefinição de senha</h1>
+		<div class="container-fluid p-5">
+			<h1>Redefinição de senha</h1>
 			<br>
-			<form id="nometrei_cadastro" action="codigo" enctype="multipart/form-data" method="post">
+			<form id="redef_senha" action="env_email" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							<red>*</red>Email</label>
-						<input type="email" name="nomeTreinamento" required class="form-control" id="nomeTreinamento" placeholder="exemplo@exemplo.com">
+						<input type="email" name="email" required class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<p>Campos com <red>*</red> são obrigatórios</p>
 				</div>
