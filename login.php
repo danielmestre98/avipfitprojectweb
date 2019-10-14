@@ -22,6 +22,22 @@ include_once( 'nav.php' );
 		</div>
 
 		<?php }?>
+		<?php
+		if (isset($_GET['inv'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Link inválido ou expirado
+		</div>
+
+		<?php }?>
+		<?php
+		if (isset($_GET['suc'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>Sucesso!</strong> Senha alterada com sucesso!
+		</div>
+
+		<?php }?>
 		<div class="container login-container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 login-form-1">

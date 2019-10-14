@@ -19,7 +19,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
-							<red>*</red>Email</label>
+							<red>*</red>E-mail</label>
 						<input type="email" name="email" required class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<p>Campos com <red>*</red> são obrigatórios</p>

@@ -371,6 +371,43 @@ jQuery(function ($) {
 			form.submit();
 		}
 	});
+	$("#redef_senha").validate({
+		rules: {
+			email: {
+				email: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaSenha.php",
+					type: "post"
+				}
+
+			}
+		},
+		messages: {
+			email: {
+				remote: "Não existe nenhum usuário com este e-mail cadastrado."
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
 
 
 

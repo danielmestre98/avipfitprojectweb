@@ -184,4 +184,6 @@
 <file name="verificaCnpjfie.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132150924928047354" remote="132150924600000000" Dst="1" />
 <file name="verificaCnpjfi.php" server="ftp.avipfit.com//public_html/" local="132150924640115298" remote="132151812000000000" Dst="1" />
 <file name="verificaCnpjfie.php" server="ftp.avipfit.com//public_html/" local="132150924928047354" remote="132151812000000000" Dst="1" />
+<file name="verificaSenha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155449137866254" remote="132155448600000000" Dst="1" />
+<file name="nova_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155523228235312" remote="132155523000000000" Dst="1" />
 </dwsync>
