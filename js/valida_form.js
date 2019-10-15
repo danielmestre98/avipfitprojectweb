@@ -381,6 +381,12 @@ jQuery(function ($) {
 					type: "post"
 				}
 
+			},
+			senha: {
+				minlength: 8
+			},
+			confsenha: {
+				equalTo: '#senha'
 			}
 		},
 		messages: {

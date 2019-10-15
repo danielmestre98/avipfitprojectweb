@@ -34,7 +34,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-6">
 						<label for="nomeExercicio">
 							<red>*</red>Confirme a senha</label>
-						<input type="password" name="conf_senha" maxlength="50" required class="form-control" id="conf_senha" placeholder="Mínimo de 8 caracteres">
+						<input type="password" name="confsenha" maxlength="50" required class="form-control" id="confsenha" placeholder="Mínimo de 8 caracteres">
 					</div>
 					<p>Campos com
 						<red>*</red> são obrigatórios</p>
