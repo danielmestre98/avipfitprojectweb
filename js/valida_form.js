@@ -386,6 +386,7 @@ jQuery(function ($) {
 				minlength: 8
 			},
 			confsenha: {
+				minlength: 8, 
 				equalTo: '#senha'
 			}
 		},
