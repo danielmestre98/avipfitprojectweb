@@ -31,7 +31,7 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-12">
 						<label for="cidade">
 							<red>*</red>Nome</label>
-						<input type="text" required name="nome" maxlength="255" value="<?=$nome?>" class="form-control" id="input_nome">
+						<input type="text" required name="nome" placeholder="Nome" maxlength="255" value="<?=$nome?>" class="form-control" id="input_nome">
 					</div>
 					
 				</div>
@@ -40,12 +40,12 @@ include ('../lib/editar_parceiro_show.php');
 							<label for="cnpj">
 								<red>*</red>CNPJ</label>
 							<input type="text" id="cnpjOld" name="cnpjOld" value="<?=$cnpj?>" hidden="true">
-							<input type="text" required name="cnpj" value="<?=$cnpj?>" class="form-control" id="input_cnpj">
+							<input type="text" required name="cnpj" value="<?=$cnpj?>" placeholder="__.___.___/____-__" class="form-control" id="input_cnpj">
 					</div>
 					<div class="form-group col-md-8">
 						<label for="email">
 							<red>*</red>E-mail</label>
-						<input type="text" required name="email" maxlength="60" value="<?=$email?>" class="form-control" id="input_email">
+						<input type="text" required name="email" maxlength="60" placeholder="exemplo@exemplo.com" value="<?=$email?>" class="form-control" id="input_email">
 					</div>
 				</div>
 				<div class="form-row">
@@ -58,39 +58,39 @@ include ('../lib/editar_parceiro_show.php');
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" maxlength="255" value="<?=$cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" placeholder="Cidade" maxlength="255" value="<?=$cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" maxlength="255" class="form-control" value="<?=$estado?>" id="input_estado">
+						<input type="text" required name="estado" maxlength="255"  placeholder="Estado" class="form-control" value="<?=$estado?>" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" value="<?=$cep?>" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" value="<?=$cep?>" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" maxlength="255" value="<?=$bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" placeholder="Bairro" maxlength="255" value="<?=$bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" maxlength="255" value="<?=$rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" placeholder="Rua, Av." value="<?=$rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número e complemento</label>
-						<input type="text" required name="numero" maxlength="255" value="<?=$numero?>" class="form-control" id="input_numero">
+						<input type="text" required name="numero" placeholder="Número e complemento" maxlength="255" value="<?=$numero?>" class="form-control" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" required name="telefone" value="<?=$telefone?>" class="form-control" id="input_telefone">
+						<input type="text" required name="telefone" value="<?=$telefone?>"  placeholder="(19) 999999999" class="form-control" id="input_telefone">
 					</div>
 				</div>
 

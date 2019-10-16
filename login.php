@@ -11,8 +11,33 @@ include_once( 'nav.php' );
 </head>
 
 <body>
+	
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
+		<?php
+		if (isset($_GET['mail'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>E-mail enviado com sucesso!</strong> Por favor, siga as instruções no email para prosseguir com a redefinição de senha. <strong>Verifique sua caixa de spam.</strong>
+		</div>
+
+		<?php }?>
+		<?php
+		if (isset($_GET['inv'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Link inválido ou expirado
+		</div>
+
+		<?php }?>
+		<?php
+		if (isset($_GET['suc'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>Sucesso!</strong> Senha alterada com sucesso!
+		</div>
+
+		<?php }?>
 		<div class="container login-container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 login-form-1">
@@ -54,5 +79,11 @@ include_once( 'nav.php' );
 	<script src="js/valida_form.js"></script>
 	<!-- page-content" -->
 	</div>
+		<script>
+		$( document ).ready( function () {
+			$('#errodelete').delay(5000).fadeOut(400);
+		});
+
+	</script>
 </body>
 </html>

@@ -9,7 +9,8 @@ $result = $conn->query($sql);
 mysqli_close($conn);
 
 while($row = $result->fetch_array(MYSQLI_ASSOC)){
-  $data[] = $row;
+	$row['horario'] = date("H:i", strtotime($row['horario']));
+  	$data[] = $row;
 }
 
 $results = ["sEcho" => 1,

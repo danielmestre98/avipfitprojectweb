@@ -28,21 +28,21 @@ else{
 <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/sidebar-themes.css">
-<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
 
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar"><span class="btn btn-dark" style="position: fixed; z-index: 50 border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 50px;"><i class="fas fa-bars"></i></span>
+	<div id="show-sidebar"><span title="Expandir menu" class="btn btn-dark" style="position: fixed; z-index: 50 border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 50px;"><i title="Expandir menu" class="fas fa-bars"></i></span>
 	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a href="principal">avipfit</a>
+				<a title="Página inicial" href="principal">avipfit</a>
 				<div id="close-sidebar">
-					<i class="fas fa-times"></i>
+					<i title="Recolher menu" class="fas fa-times"></i>
 				</div>
 			</div>
 
@@ -71,7 +71,7 @@ else{
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
 								<li id="cad_aluno">
-									<a href="consulta_aluno">Aluno <span class="badge badge-pill badge-warning">Há alunos sem horário</span></a>
+									<a href="consulta_aluno">Aluno</a>
 								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
@@ -120,14 +120,6 @@ else{
 						<a href="aval_fisica">
                                 <i class="fas fa-running"></i>
                                 <span class="menu-text">Avaliação física</span>
-                            </a>
-					
-
-					</li>
-					<li id="relatorio">
-						<a href="relatorio">
-                                <i class="far fa-file-alt"></i>
-                                <span class="menu-text">Relatório</span>
                             </a>
 					
 

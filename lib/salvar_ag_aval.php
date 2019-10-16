@@ -10,7 +10,7 @@ $filial = $_SESSION['filial'];
 $hora = $_POST['hora'];
 $data = explode( "/", $dia );
 
-list( $mes, $dia, $ano ) = $data;
+list( $dia, $mes, $ano ) = $data;
 
 $data = "$ano-$mes-$dia";
 $sql = "INSERT INTO agendamento (data, status, horario, tipo, idFilial, descricaoCancelamento)

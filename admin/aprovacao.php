@@ -44,14 +44,16 @@ include_once( 'nav.php' );
 			}
 				
 			?>
-			<h1>Controle de agendamento de avaliação física</h1>
+			<h1>Aprovação de evento</h1>
+			<br>
+			<h5>Selecione a ação desejada e clique em Salvar.</h5>
 			<br>
 			<form id="exercicio_cadastro" action="../lib/aprovacao" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<input type="text" name="filial" hidden="true" value="<?=$filial?>">
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-8">
 						<label for="nomeExercicio">
-							Nome</label>
+							Nome do aluno(a)</label>
 					
 
 
@@ -63,7 +65,7 @@ include_once( 'nav.php' );
 
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							Data</label>
+							Data do agendamento</label>
 					
 
 
@@ -72,9 +74,9 @@ include_once( 'nav.php' );
 
 						<input type="text" required readonly value="<?php echo date(" d/m/Y ", strtotime($data))?>" name="data2" class="form-control" id="descricao">
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="descricao">
-							Hora</label>
+							Horário do agendamento</label>
 					
 
 
@@ -93,19 +95,21 @@ include_once( 'nav.php' );
 						<label for="cidade">
 							<red>*</red>Aprovação</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
-							<option hidden="true" value="">
+							<option hidden="true">
 								<?=$status?>
 							</option>
 							<option value="Aprovado">Aprovado</option>
 							<option>Cancelado</option>
 						</select>
 					</div>
+				</div>
+				<div class="form-row">
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
 							<red>*</red>Descrição do cancelamento</label>
 
 
-						<textarea type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
+						<textarea maxlength="1022" type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
 					</div>
 				</div>
 				<p>Campos com
@@ -140,29 +144,31 @@ include_once( 'nav.php' );
 			
 			?>
 
-			<h1>Controle de agendamento de aula experimental</h1>
+			<h1>Aprovação de evento</h1>
+			<br>
+			<h5>Selecione a ação desejada e clique em Salvar.</h5>
 			<br>
 			<form id="exercicio_cadastro" action="../lib/aprovacao.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<input type="text" name="filial" hidden="true" value="<?=$filial?>">
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-8">
 						<label for="nomeExercicio">
-							Nome</label>
+							Nome do aluno(a)</label>
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 					</div>
 
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							Data</label>
+							Data do agendamento</label>
 					
 
 
 						<input type="text" required name="data" readonly hidden="true" value="<?=$data?>" name="descricao" class="form-control" id="descricao">
 						<input type="text" required name="data2" readonly value="<?php echo date(" d/m/Y ", strtotime($data))?>" name="descricao" class="form-control" id="descricao">
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="descricao">
-							Hora</label>
+							Horário do agendamento</label>
 					
 
 
@@ -205,17 +211,19 @@ include_once( 'nav.php' );
 						<label for="cidade">
 							<red>*</red>Aprovação</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
-							<option value="" hidden="true"><?=$status?></option>
+							<option hidden="true"><?=$status?></option>
 							<option value="Aprovado">Aprovado</option>
 							<option>Cancelado</option>
 						</select>
 					</div>
+				</div>
+				<div class="form-row">
 					<div id="cancelar" class="form-group col-md-6">
 						<label for="nomeExercicio">
 							<red>*</red>Descrição do cancelamento</label>
 
 
-						<textarea type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
+						<textarea maxlength="1022" type="text" name="cancelamento" rows="10" value="" required class="form-control" id=""></textarea>
 					</div>
 					<br>
 

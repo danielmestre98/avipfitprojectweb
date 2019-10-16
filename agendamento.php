@@ -30,18 +30,18 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
+						<input style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
-							<red>*</red>Horario</label>
+							<red>*</red>Horário</label>
 						<select name="hora" required class="form-control" id="horario">
-							<option value="">Selecione a data</option>
+							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
 					<div class="form-group col-md-4">
 						<label for="descricao">Treinamento</label>
-						<select required class="form-control" name="treinamento" id="">
+						<select class="form-control" name="treinamento" id="">
 							<option value="">Selecione a opção desejada</option>
 							<?php
 							require( 'conectar.php' );
@@ -58,7 +58,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="descricao">
 							<red>*</red>Filial</label>
-						<select required class="form-control" name="filial" id="">
+						<select required class="form-control" name="filial" id="filial">
 							<option value="">Selecione a opção desejada</option>
 							<?php
 								require( 'conectar.php' );
@@ -135,10 +135,13 @@ include_once( 'nav.php' );
 		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
 		?>
 	<script type="text/javascript">
+		var today;
+		today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 		$( '#picker' ).datepicker( {
 			disableDaysOfWeek: $dias,
 			uiLibrary: 'bootstrap4',
 			format: 'dd/mm/yyyy',
+			minDate: today,
 			locale: 'pt-br',
 			change: function ( e ) {
 				var $datepicker = $( '#picker' ).datepicker();
@@ -146,7 +149,7 @@ include_once( 'nav.php' );
 
 					if ( dados.length > 0 ) {
 						$( '#horario' ).empty();
-						var option = '<option value="">Selecione o horário desejado...</option>';
+						var option = '<option value="">Selecione a opção desejada</option>';
 						$.each( dados, function ( i, obj ) {
 							option += '<option value="' + obj + '">' + obj + '</option>';
 						} )
@@ -159,6 +162,9 @@ include_once( 'nav.php' );
 	</script>
 		<script>
 		jQuery( function ( $ ) {
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
 			$( document ).ready( function () {
 				var $CampoTel = $( "#numero" );
 				$CampoTel.mask( '(00) 000000000', {

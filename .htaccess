@@ -1,4 +1,11 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php71-script .php
+suPHP_ConfigPath /home/avipfittestprovi1/
+##### LOCAWEB - NAO REMOVER #####
+
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
+Header add "Cache-Control" "no-cache"
+Header add "disablevcache" "true"

@@ -65,34 +65,34 @@ include( '../lib/editar_colaborador_show.php' );
 					<div class="form-group col-md-6">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required maxlength="255" name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required maxlength="255" placeholder="Cidade" name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" maxlength="255" value="<?php echo $estado?>" class="form-control" id="input_estado">
+						<input type="text" required name="estado" placeholder="Estado" maxlength="255" value="<?php echo $estado?>" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" value="<?php echo $cep?>" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" value="<?php echo $cep?>" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" maxlength="255" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255"  placeholder="Bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" maxlength="255" value="<?php echo $rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" maxlength="255" placeholder="Rua, Av." value="<?php echo $rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Número e complemento</label>
-						<input type="text" required name="numero" maxlength="255" value="<?php echo $numero?>" class="form-control" id="input_numero">
+						<input type="text" required name="numero" maxlength="255" placeholder="Número e complemento" value="<?php echo $numero?>" class="form-control" id="input_numero">
 					</div>
 				</div>
 

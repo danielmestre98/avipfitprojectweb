@@ -31,42 +31,49 @@ require('../lib/editar_filial_show.php')
 
 
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					
+					<div class="form-group col-md-5">
 						<label for="cidade">
 							<red>*</red>Cidade</label>
-						<input type="text" required name="cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
+						<input type="text" required name="cidade" placeholder="Cidade" value="<?php echo $cidade?>" class="form-control" id="input_cidade">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-3">
 						<label for="estado">
 							<red>*</red>Estado</label>
-						<input type="text" required name="estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
+						<input type="text" required name="estado" placeholder="Estado" value="<?php echo $estado?>" class="form-control" id="input_estado">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="cep">
 							<red>*</red>CEP</label>
-						<input type="text" required name="cep" value="<?php echo $cep?>" class="form-control" id="input_cep">
+						<input type="text" required name="cep" placeholder="_____-___" value="<?php echo $cep?>" class="form-control" id="input_cep">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="cnpj">
+							<red>*</red>CNPJ</label>
+						<input type="text" hidden="true" value="<?=$cnpj?>" id="cnpjold">
+						<input type="text" required name="cnpje" value="<?=$cnpj?>" placeholder="__.___.___/____-__" class="form-control" id="input_cnpj">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" class="form-control" value="<?php echo $bairro?>" id="input_bairro">
+						<input type="text" required name="bairro" placeholder="Bairro" class="form-control" value="<?php echo $bairro?>" id="input_bairro">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="rua">
 							<red>*</red>Logradouro</label>
-						<input type="text" required name="rua" value="<?php echo $rua?>" class="form-control" id="input_rua">
+						<input type="text" required name="rua" placeholder="Rua, Av." value="<?php echo $rua?>" class="form-control" id="input_rua">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
-							<red>*</red>Número</label>
-						<input type="text" required name="numero" class="form-control" value="<?php echo $numero?>" id="input_numero">
+							<red>*</red>Número e complemento</label>
+						<input type="text" required name="numero" placeholder="Número e complemento" class="form-control" value="<?php echo $numero?>" id="input_numero">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">
 							<red>*</red>Telefone</label>
-						<input type="text" required name="telefone" class="form-control" value="<?php echo $telefone?>" id="input_telefone">
+						<input type="text" required name="telefone" class="form-control" placeholder="(19) 999999999" value="<?php echo $telefone?>" id="input_telefone">
 					</div>
 					<input type="hidden" name="id" value="<?php echo $_GET['id']?>">
 				</div>
@@ -113,6 +120,11 @@ require('../lib/editar_filial_show.php')
 
 				var $CampoCep = $( "#input_cep" );
 				$CampoCep.mask( '00000-000', {
+					reverse: false
+				} );
+				
+				var $seuCampoCpf = $( "#input_cnpj" );
+				$seuCampoCpf.mask( '00.000.000/0000-00', {
 					reverse: false
 				} );
 

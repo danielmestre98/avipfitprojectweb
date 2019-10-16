@@ -49,13 +49,12 @@ include_once( 'nav.php' );
 
 			?>
 
-			<br>
 			<form id="edit_treinamento" method="post" enctype="multipart/form-data" action="../lib/editar_treinamento.php?nome=<?php echo $_GET['nome']?>">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nome">
 							<red>*</red>Nome do treinamento</label>
-						<input required type="text" maxlength="50" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
+						<input required type="text" maxlength="50" placeholder="Nome" value="<?php echo $nome?>" id="nome" name="nome" class="form-control">
 						<input type="text" hidden="true" value="<?=$nome?>" id="nomeOld" name="nomeOld">
 					</div>
 				</div>

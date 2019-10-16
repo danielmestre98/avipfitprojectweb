@@ -38,11 +38,9 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
-						<th class='col'>CPF</th>
-						<th class='col'>Telefone</th>
+						<th class='col'>Função</th>
+						<th class='col'>Filial</th>
 						<th class='col'>Ações</th>
-						<th>funcao</th>
-						<th>filial</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -105,13 +103,16 @@ include_once( 'nav.php' );
 				"columns": [ {
 					data: 'nome'
 				}, {
-					data: 'cpf'
+					data: 'funcao'
 				}, {
-					data: 'telefone'
+					data: 'filial',
+					render: function ( data, type, row ) {
+						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+					}
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_colaborador.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\''+ data.cpf +'\',\''+ data.nome +'\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Editar" href="editar_colaborador.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cpf + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 
@@ -128,22 +129,16 @@ include_once( 'nav.php' );
 						"orderable": false,
 						"targets": 1
 					}, {
-						"width": '80%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '1%',
-						"targets": 3
-					}, {
-						"orderable": false,
-						"targets": 2
-					}, {
-						"targets": 3,
-						"orderable": false
+						"targets": 1
 					},
-							 
+
 					{
 						"visible": false,
-						"targets": [1,2,4,5]
+						"targets": [ 4, 5 ]
 					}
 
 
@@ -154,17 +149,17 @@ include_once( 'nav.php' );
 
 			} );
 
-			
+
 		} );
 	</script>
 
 	<script>
-		function confirma(cpf, nome){
-			if ( window.confirm( "Deseja deletar o registro "+nome+"? " ) ) {
-					window.location="../lib/deletar_colaborador.php?cpf="+cpf
+		function confirma( cpf, nome ) {
+			if ( window.confirm( "Deseja deletar o registro " + nome + "? " ) ) {
+				window.location = "../lib/deletar_colaborador.php?cpf=" + cpf
 			} else {
 				return false
-				
+
 			}
 		}
 	</script>

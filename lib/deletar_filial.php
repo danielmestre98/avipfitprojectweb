@@ -1,7 +1,23 @@
 <?php
-include('../conectar.php');
-$id = $_GET['id'];
-mysqli_query( $conn,"DELETE FROM filial WHERE IdFilial = '$id'");
+include( '../conectar.php' );
+$id = $_GET[ 'id' ];
+$resulted = mysqli_query( $conn, "SELECT * FROM filial fi INNER JOIN funcionario f ON (fi.IdFilial = f.IdFilial) WHERE fi.IdFilial = '$id'" )or die( mysqli_error( $conn ) );
+if ( mysqli_num_rows( $resulted ) > 0 ) {
+	header( 'location: ../admin/consulta_filial?err=1' );
 
-header('location: ../admin/consulta_filial');
+} else {
+	mysqli_close( $conn );
+	include( '../conectar.php' );
+	$resulted = mysqli_query( $conn, "SELECT * FROM filial fi INNER JOIN cliente c ON (fi.IdFilial = c.filial) WHERE fi.IdFilial = '$id'" )or die( mysqli_error( $conn ) );
+	if ( mysqli_num_rows( $resulted ) > 0 ) {
+		header( 'location: ../admin/consulta_filial?err=1' );
+
+	} else {
+		mysqli_close( $conn );
+		include( '../conectar.php' );
+		mysqli_query( $conn, "DELETE FROM filial WHERE IdFilial = '$id'" );
+		echo "SELECT * FROM filial fi INNER JOIN cliente c ON (fi.IdFilial = c.filial) INNER JOIN funcionario f ON (fi.IdFilial = f.IdFilial) WHERE fi.IdFilial = '$id'";
+		header('location: ../admin/consulta_filial');
+	}
+}
 ?>

@@ -18,17 +18,20 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<p>
 				<h1>Parceiros</h1>
 			</p>
 			<br>
+		<h5>Organizações parceiras do studio AVIPfit e suas informações.</h5>
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro ORDER BY nome";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-
+			if ( mysqli_num_rows( $result ) < 1 ){
+				echo "Não existem registros cadastrados.";
+			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
 			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">

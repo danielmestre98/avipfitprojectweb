@@ -12,8 +12,17 @@ include_once( 'nav.php' );
 
 <body>
 
-	<main role="main">
-	
+	<main class="page-content pt-2" role="main">
+		<div id="overlay" class="overlay"></div>
+		
+		<?php
+		if (isset($_GET['suc'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>Sucesso!</strong> Aula experimental submetida com sucesso e encaminhada para aprovação! Você receberá o e-mail de aprovação em breve! Agradecemos pelo interesse em nosso serviço!
+		</div>
+
+		<?php }?>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -79,13 +88,13 @@ include_once( 'nav.php' );
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/fotoprincipal.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>O <i>personal trainer</i></h2>
+            <h2>O personal trainer</h2>
             <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos exclusivos, pois observou a dificuldade do alcance de resultados em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética que não consideram a especificidade de cada biotipo.</p>
             
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="img/studio.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>O <i>studio</i></h2>
+            <h2>O studio</h2>
             <p>O studio AVIPfit é um espaço físico perfeito para sessões individuais ou de até cinco alunos, colaborando ao treinamento personalizado e possibilitando o acompanhamento individual ao aluno, conforme suas necessidades. O studio possui equipamentos modernos buscando a excelência em qualidade.</p>
             
           </div><!-- /.col-lg-4 -->
@@ -129,7 +138,12 @@ include_once( 'nav.php' );
 
     </main>
 	<!-- page-content" -->
-	
+	<script>
+		$( document ).ready( function () {
+			$('#errodelete').delay(5000).fadeOut(400);
+		});
+
+	</script>
 
 </body>
 </html>

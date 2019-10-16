@@ -27,7 +27,7 @@ session_start();
 $email = $_SESSION['email'];
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'treinamento, contem', '$email', '$sql')";
 if ( $conn->query( $log ) === TRUE ) {
-		header('location: ../aluno/depoimentos');
+		header('location: ../aluno/depoimentos?suc=1');
 	
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

@@ -51,7 +51,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 				<input type="text" hidden="true" name="cpf" id="cpf" value="<?php echo $rastreio?>">
 				
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-5">
 						<label for="nomeExercicio">
 							<red>*</red>Evento</label>
 						<select id="evento" required name="evento" class="form-control">
@@ -60,7 +60,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 							<option>Aula experimental</option>
 						</select>
 					</div>
-					<div class="form-group col-md-5">
+					<div class="form-group col-md-3">
 						<label for="descricao">
 							<red>*</red>Dia da semana</label>
 						<select id="dsemana" required name="dsemana" class="form-control">
@@ -73,15 +73,20 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 							<option>Sábado</option>
 						</select>
 					</div>
-					<div class="form-group col-md-1">
+					<div class="form-group col-md-2">
 						<label for="">
-							<red>*</red>Horário</label>
+							<red>*</red>Horário de início</label>
 						<input required class="form-control hora" type="text" id="hora" name="hora" placeholder="hh:mm">
 					</div>
+					<div class="form-group col-md-2">
+						<label for="">
+							<red>*</red>Horário de término</label>
+						<input required class="form-control hora" type="text" id="horafim" name="horafim" placeholder="hh:mm">
+					</div>
 					<br>
-					<p>Campos com <red>*</red> são obrigatórios.</p>
+					
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="ag_eventos">Voltar</a>

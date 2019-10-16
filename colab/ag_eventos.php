@@ -25,6 +25,8 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Agenda de eventos</h1>
+			<br>
+			<h5>Registre eventos ou pesquise por eventos cadastrados para atualizar informações.</h5>
 			<div id="botao_novo" align="right">
 				<a href="novo_evento" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -104,7 +106,10 @@ include_once( 'nav.php' );
 				}, {
 					data: 'dia'
 				}, {
-					data: 'horario'
+					data: 'horario',
+					render: function (data, type, row){
+						return row.horario+' - '+row.horafim
+					}
 				}, {
 					data: 'cidade',
 					render: function ( data, type, row ) {
@@ -118,7 +123,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_evento.php?dia=' + data.dia + '&horario='+ data.horario +'&filial='+row.filial+'"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + row.evento + '\',\'' + row.horario + '\',\'' + row.dia + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Editar" href="editar_evento.php?dia=' + data.dia + '&horario='+ data.horario +'&filial='+row.filial+'"><i class="fas fa-edit"></i></a>   <a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + row.evento + '\',\'' + row.horario + '\',\'' + row.dia + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 

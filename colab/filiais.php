@@ -17,13 +17,14 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
+		<div class="container-fluid p-5">
 			<p><h1>Filiais</h1></p>
 			<br>
+			<h5>Filiais AVIPfit e suas localizações.</h5>
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial ORDER BY cidade ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			
 			while ( $row = mysqli_fetch_array( $result ) ) {
@@ -41,7 +42,7 @@ include_once( 'nav.php' );
 			mysqli_close( $conn );
 
 			?>
-			<p><img src="../img/mapa.png" width="100%" alt=""></p>
+			<p><img src="../img/mapa.png" width="50%" alt=""></p>
 
 		</div>
 	</main>

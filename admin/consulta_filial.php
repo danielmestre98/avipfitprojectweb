@@ -23,6 +23,14 @@ include_once( 'nav.php' );
 
 <body>
 	<main class="page-content pt-2">
+		<?php
+		if (isset($_GET['err'])){
+		?>
+		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Existem alunos ou colaboradores associados a esta filial.
+		</div>
+
+		<?php }?>
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Filiais</h1>
@@ -70,6 +78,7 @@ include_once( 'nav.php' );
 	<script src="../js/dataTables.responsive.min.js"></script>
 	<script>
 		$( document ).ready( function () {
+			$('#errodelete').delay(5000).fadeOut(400);
 			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
 				$( "#divt" ).removeClass( "container-fluid p-5" );
 			}
@@ -132,7 +141,7 @@ include_once( 'nav.php' );
 		} );
 
 		function confirma( nome, cpf , rua, estado, numero, bairro) {
-			if ( window.confirm( "Deseja deletar a filial " + rua + ", "+ numero + ", "+ bairro +", "+ nome +", "+ estado +"? \nEsta ação desassociará esta filial dos cadastros de alunos." ) ) {
+			if ( window.confirm( "Deseja deletar a filial " + rua + ", "+ numero + ", "+ bairro +", "+ nome +", "+ estado +"?" ) ) {
 				window.location = "../lib/deletar_filial.php?id=" + cpf
 			} else {
 				return false

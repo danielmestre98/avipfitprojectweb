@@ -1,6 +1,5 @@
 // JavaScript Document
 jQuery(function ($) {
-
 	$.validator.addMethod('cpf', function (value, element, param) {
 		$return = true;
 
@@ -22,6 +21,7 @@ jQuery(function ($) {
 				$return = false;
 			}
 		}
+
 
 		value = value.replace("-", "");
 		value = value.replace(/\./g, "");
@@ -112,11 +112,30 @@ jQuery(function ($) {
 	$("#agendamento_exp").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			email: {
 				required: true,
-				email: true
+				email: true,
+				remote: {
+					url: "../lib/verificaAgExp.php",
+					type: "post",
+					data: {
+						dia: function () {
+							return $("#picker").val();
+						},
+						hora: function () {
+							return $("#horario").val();
+						},
+						filial: function () {
+							return $("#filial").val();
+						}
+					}
+				}
 
 			},
 			numero: {
@@ -126,7 +145,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			email: {
-				remote: "E-mail já cadastrado."
+				remote: "E-mail já cadastrado no horário selecionado."
 			},
 			cpf: {
 				remote: "CPF já cadastrado."
@@ -228,10 +247,36 @@ jQuery(function ($) {
 						dsemana: function () {
 							return $("#dsemana").val();
 						},
+						horafim: function(){
+							return $("#horafim").val();
+						},
 						horaold: $("#horaold").val(),
 						diaold: $("#diaold").val(),
 						idfilial: $("#filial").val(),
-						id: $("#id").val()
+						id: $("#id").val(),
+						horafimold: $("#horafimold").val()
+					}
+				}
+
+			},
+			horafim: {
+				time: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaEventoEdit.php",
+					type: "post",
+					data: {
+						dsemana: function () {
+							return $("#dsemana").val();
+						},
+						hora: function(){
+							return $("#hora").val();
+						},
+						horaold: $("#horaold").val(),
+						diaold: $("#diaold").val(),
+						idfilial: $("#filial").val(),
+						id: $("#id").val(),
+						horafimold: $("#horafimold").val()
 					}
 				}
 
@@ -239,8 +284,10 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário.",
-				required: "Preencha este campo."
+				remote: "Já existe um evento nesse horário."
+			},
+			horafim: {
+				remote: "Já existe um evento nesse horário."
 			}
 		},
 		errorElement: 'span',
@@ -274,6 +321,26 @@ jQuery(function ($) {
 					data: {
 						dsemana: function () {
 							return $('#dsemana').val();
+						},
+						horafim: function() {
+							return $('#horafim').val();
+						}
+					}
+				}
+
+			},
+			horafim: {
+				time: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaEvento.php",
+					type: "post",
+					data: {
+						dsemana: function () {
+							return $('#dsemana').val();
+						},
+						hora: function() {
+							return $('#hora').val();
 						}
 					}
 				}
@@ -282,7 +349,62 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário."
+				remote: "Já existe um evento nesse intervalo de horário."
+			},
+			horafim: {
+				remote: "Já existe um evento nesse intervalo de horário."
+			}
+		},
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+	});
+	$("#redef_senha").validate({
+		rules: {
+			email: {
+				email: true,
+				required: true,
+				remote: {
+					url: "../lib/verificaSenha.php",
+					type: "post"
+				}
+
+			},
+			senha: {
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			confsenha: {
+				minlength: 8, 
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			}
+		},
+		messages: {
+			email: {
+				remote: "Não existe nenhum usuário com este e-mail cadastrado."
 			}
 		},
 		errorElement: 'span',
@@ -315,6 +437,10 @@ jQuery(function ($) {
 				remote: {
 					url: "../lib/verificaNomeTrei.php",
 					type: "post",
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 		},
@@ -356,6 +482,10 @@ jQuery(function ($) {
 							return $('#nomeOld').val();
 						}
 					}
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 		},
@@ -388,7 +518,11 @@ jQuery(function ($) {
 	$("#aluno_editar").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -404,10 +538,24 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			estado: {
-				minlength: 2
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			rua: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			segunda: "time",
 			terca: "time",
@@ -429,7 +577,17 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 3
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			numero: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			telefone: {
 				required: true,
@@ -442,10 +600,18 @@ jQuery(function ($) {
 				minlength: 9
 			},
 			senha: {
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
@@ -697,8 +863,19 @@ jQuery(function ($) {
 			nomeExercicio: {
 				remote: {
 					url: "../lib/verificaExercicio.php",
-					type: "post",
+					type: "post"
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			descricao: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			},
 			url: {
@@ -706,6 +883,10 @@ jQuery(function ($) {
 					url: "../verificaLink.php",
 					type: "post"
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			}
 
@@ -750,6 +931,17 @@ jQuery(function ($) {
 						nomeOld: $('#nomeOld').val()
 					}
 
+				},
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			descricao: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
 				}
 			},
 			url: {
@@ -797,7 +989,11 @@ jQuery(function ($) {
 	$("#aluno_cadastro").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cpf: {
 				required: true,
@@ -810,19 +1006,31 @@ jQuery(function ($) {
 			},
 			estado: {
 				required: true,
-				minlength: 2
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			cidade: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			rua: {
 				required: true,
-				minlength: 5
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			bairro: {
 				required: true,
-				minlength: 3
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			segunda: "time",
 			terca: "time",
@@ -843,6 +1051,13 @@ jQuery(function ($) {
 				required: true,
 				minlength: 13
 			},
+			numero: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
 			foto: {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
@@ -852,11 +1067,19 @@ jQuery(function ($) {
 			},
 			senha: {
 				required: true,
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
 				required: true,
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
@@ -927,9 +1150,27 @@ jQuery(function ($) {
 				}
 
 			},
+			cnpj: {
+				required: true,
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjfi.php",
+					type: "post"
+				}
+			},
+			cnpje: {
+				required: true,
+				cnpj: true,
+				remote: {
+					url: "../lib/verificaCnpjfie.php",
+					type: "post",
+					data: {
+						cnpjold: $("#cnpjold").val()
+					}
+				}
+			},
 			estado: {
 				required: true,
-				minlength: 2,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -937,7 +1178,6 @@ jQuery(function ($) {
 			},
 			cidade: {
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -945,7 +1185,6 @@ jQuery(function ($) {
 			},
 			rua: {
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -953,7 +1192,6 @@ jQuery(function ($) {
 			},
 			bairro: {
 				required: true,
-				minlength: 3,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -970,7 +1208,6 @@ jQuery(function ($) {
 			},
 			numero: {
 				required: true,
-				minlength: 2,
 				normalizer: function (value) {
 					// Trim the value of every element
 					return $.trim(value);
@@ -989,11 +1226,19 @@ jQuery(function ($) {
 			},
 			senha: {
 				required: true,
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
 				required: true,
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
@@ -1002,6 +1247,14 @@ jQuery(function ($) {
 			}
 		},
 		messages: {
+			cnpj:{
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
+			},
+			cnpje:{
+				cnpj: "CNPJ inválido.",
+				remote: "CNPJ já cadastrado."
+			},
 			email: {
 				remote: "E-mail já cadastrado."
 			},
@@ -1045,6 +1298,7 @@ jQuery(function ($) {
 
 	jQuery.extend(jQuery.validator.messages, {
 		required: "Este campo é necessário.",
+		cnpj: "CNPJ inválido.",
 		telefone: "Por favor, insira um telefone válido.",
 		cpf: "Por favor, insira um CPF válido.",
 		cep: "Por favor, insira um CEP válido.",

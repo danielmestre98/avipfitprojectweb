@@ -84,7 +84,7 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="cidade">Status (Aguardando aprovação, Aprovado, Cancelado)</label>
+						<label for="cidade">Status</label>
 						<select required disabled class="form-control" name="" id="aprovacao">
 							<option><?=$status?></option>
 							<option value="1">Aprovado</option>

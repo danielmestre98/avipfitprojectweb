@@ -14,7 +14,7 @@ include_once( 'nav.php' );
 	} );
 </script>
 	<meta charset="utf-8">
-	<title>AVIPfit - Cadastro</title>
+	<title>AVIPfit - Agendamentos</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
 	<link rel="stylesheet" href="../css/responsive.dataTables.min.css">
 	<link rel="stylesheet" href="../css/responsive.bootstrap4.min.css">
@@ -26,12 +26,15 @@ include_once( 'nav.php' );
 		<div id="divt" class="container-fluid p-5">
 			<h1>Gerenciar agendamentos</h1>
 			<br>
+			<h5>Aprove eventos ou pesquise por eventos para atualizar informações.</h5>
+			<br>
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
-						<th class="col">Tipo</th>
+						<th class='col'>Aluno(a)</th>
+						<th class="col">Filial</th>
+						<th class="col">Agendamento</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>
 				
@@ -90,6 +93,11 @@ include_once( 'nav.php' );
 				"autoWidth": false,
 				"columns": [ {
 					data: 'nome'
+				},{
+					data: 'filial',
+					render: function ( data, type, row ) {
+						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+					}
 				}, {
 					data: 'tipo'
 				}, {
@@ -103,22 +111,22 @@ include_once( 'nav.php' );
 				"bProcessing": true,
 				columnDefs: [ {
 						"orderable": false,
-						"targets": 1
+						"targets": 2
 					}, {
-						"width": '70%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '10%',
-						"targets": 1
+						"targets": 2
 					}, {
 						"width": '20%',
-						"targets": 2
-					},{
-						"orderable": false,
 						"targets": 3
 					},{
 						"orderable": false,
-						"targets": 2
+						"targets": 4
+					},{
+						"orderable": false,
+						"targets": 3
 					}
 
 
