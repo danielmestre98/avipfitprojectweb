@@ -383,11 +383,19 @@ jQuery(function ($) {
 
 			},
 			senha: {
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
 				minlength: 8, 
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			}
 		},
 		messages: {
@@ -588,10 +596,18 @@ jQuery(function ($) {
 				minlength: 9
 			},
 			senha: {
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
@@ -1047,11 +1063,19 @@ jQuery(function ($) {
 			},
 			senha: {
 				required: true,
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
 				required: true,
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
@@ -1198,11 +1222,19 @@ jQuery(function ($) {
 			},
 			senha: {
 				required: true,
-				minlength: 8
+				minlength: 8,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			confsenha: {
 				required: true,
-				equalTo: '#senha'
+				equalTo: '#senha',
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			pagamento: {
 				required: true,
