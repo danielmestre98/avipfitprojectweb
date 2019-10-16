@@ -112,7 +112,11 @@ jQuery(function ($) {
 	$("#agendamento_exp").validate({
 		rules: {
 			nome: {
-				required: true
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
 			},
 			email: {
 				required: true,
