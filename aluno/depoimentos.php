@@ -30,7 +30,7 @@ include_once( 'nav.php' );
 		<br>
 		<h5>Confira os depoimentos dos alunos AVIPfit!</h5>
 		<br>
-		<a class="btn btn-primary" style="float: right" href="novo_dep">Novo <i class="fas fa-plus"></i></a>
+		<a class="btn btn-primary" href="novo_dep">Novo <i class="fas fa-plus"></i></a>
 			<br>
 			<br>
 			<?php
