@@ -366,6 +366,8 @@ jQuery(function ($) {
 			horafim: {
 				time: true,
 				required: true,
+				min: function(){ 
+					return $("#hora").val()},
 				remote: {
 					url: "../lib/verificaEvento.php",
 					type: "post",
@@ -1347,7 +1349,7 @@ jQuery(function ($) {
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
 		range: jQuery.validator.format("Please enter a value between {0} and {1}."),
 		max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
-		min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+		min: jQuery.validator.format("Por favor, insira um horário maior que {0}.")
 	});
 
 
