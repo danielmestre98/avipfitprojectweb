@@ -679,13 +679,11 @@ jQuery(function ($) {
 				}
 			},
 			bairro: {
-				minlength: 3,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			cidade: {
-				minlength: 5,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -696,25 +694,23 @@ jQuery(function ($) {
 			email: {
 				email: true,
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			estado: {
-				minlength: 2,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			rua: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			numero: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -778,13 +774,13 @@ jQuery(function ($) {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			bairro: {
-				minlength: 3,
+	
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			cidade: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -792,25 +788,25 @@ jQuery(function ($) {
 			email: {
 				email: true,
 				required: true,
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			estado: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			rua: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			numero: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
