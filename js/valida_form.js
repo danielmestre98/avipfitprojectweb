@@ -184,6 +184,40 @@ jQuery(function ($) {
 		}
 
 	});
+	$("#depoimento").validate({
+		rules: {
+			descr: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+	
 	$("#login").validate({
 		rules: {
 			email: {
