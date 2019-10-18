@@ -34,7 +34,6 @@
 <file name="novo_parceiro.php" server="files.000webhost.com/public_html/" local="132141072233563423" remote="132142886400000000" Dst="1" />
 <file name="novo_ticket.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132142886400000000" Dst="1" />
 <file name="novo_treinamento2.php" server="files.000webhost.com/public_html/" local="132140938584984959" remote="132142886400000000" Dst="1" />
-<file name="novo_treinamento.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132142886400000000" Dst="1" />
 <file name="parceiros.php" server="files.000webhost.com/public_html/" local="132141742193788496" remote="132142886400000000" Dst="1" />
 <file name="relatorio.php" server="files.000webhost.com/public_html/" local="132140938585014876" remote="132142886400000000" Dst="1" />
 <file name="selecionar_edit.php" server="files.000webhost.com/public_html/" local="132120880800000000" remote="132142886400000000" Dst="1" />
@@ -68,7 +67,6 @@
 <file name="novo_exercicio.php" server="ftp.avipfit.com//public_html/" local="132140583872267423" remote="132145744200000000" Dst="1" />
 <file name="novo_filial.php" server="ftp.avipfit.com//public_html/" local="132149203552297736" remote="132151811400000000" Dst="1" />
 <file name="novo_parceiro.php" server="ftp.avipfit.com//public_html/" local="132143125846017410" remote="132145744200000000" Dst="1" />
-<file name="novo_treinamento.php" server="ftp.avipfit.com//public_html/" local="132120843326431585" remote="132145744200000000" Dst="1" />
 <file name="novo_treinamento2.php" server="ftp.avipfit.com//public_html/" local="132143125846037393" remote="132145744200000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfit.com//public_html/" local="132120843326421589" remote="132145744200000000" Dst="1" />
 <file name="principal.php" server="ftp.avipfit.com//public_html/" local="132151797855663242" remote="132151811400000000" Dst="1" />
@@ -113,7 +111,6 @@
 <file name="novo_parceiro.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125846017410" remote="132145840800000000" Dst="1" />
 <file name="novo_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140583872267423" remote="132145840800000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326421589" remote="132145840800000000" Dst="1" />
-<file name="novo_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326431585" remote="132145840800000000" Dst="1" />
 <file name="novo_treinamento2.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125846037393" remote="132145840800000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132157085457303652" remote="132157085400000000" Dst="1" />
 <file name="principal.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151797855663242" remote="132151797600000000" Dst="1" />
