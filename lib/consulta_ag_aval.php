@@ -23,7 +23,7 @@ if ( $diadasemana == 6 )$dias = 'Sábado';
 $sql = "SELECT horario FROM agenda WHERE dia = '$dias' AND evento = 'Avaliação física' AND filial = '$filial'";
 $result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 while ( $row = mysqli_fetch_array( $result ) ) {
-	$resultado[] = $row['horario']; 
+	$resultado[] = date("H:i", strtotime($row['horario']));  
 }
 echo json_encode( $resultado );
 

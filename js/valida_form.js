@@ -1349,7 +1349,7 @@ jQuery(function ($) {
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
 		range: jQuery.validator.format("Please enter a value between {0} and {1}."),
 		max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
-		min: jQuery.validator.format("Por favor, insira um horário maior que {0}.")
+		min: jQuery.validator.format("O horário de término deve ser posterior ao horário de início.")
 	});
 
 
