@@ -903,6 +903,27 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
+			hora: {
+				required: true,
+				remote: {
+					url: "../lib/verificaAgFis.php",
+					type: "post",
+					data: {
+						dia: function () {
+							return $("#datepicker").val();
+						}
+					}
+				}
+
+			},
+			cancelamento: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+				
+			},
 			descricao: {
 				required: true,
 				normalizer: function (value) {

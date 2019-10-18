@@ -39,6 +39,8 @@ include_once( 'nav.php' );
 							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
+					<?php session_start(); $cpf = $_SESSION['cpf'];?>
+					<input type="text" hidden="true" value = "<?=$cpf?>">
 					<br>
 
 				</div>
