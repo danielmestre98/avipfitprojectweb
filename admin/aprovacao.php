@@ -183,7 +183,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="email">
-							Email</label>
+							E-mail para contato</label>
 					
 
 
@@ -192,7 +192,7 @@ include_once( 'nav.php' );
 					</div>
 					<div class="form-group col-md-3">
 						<label for="telefone">
-							Telefone</label>
+							Telefone para contato</label>
 					
 
 
