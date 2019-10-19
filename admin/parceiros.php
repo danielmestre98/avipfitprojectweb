@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 		
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			if ( mysqli_num_rows( $result ) == 0 ){
-				echo "Não existem registros cadastrados.";
+				echo "Não existem organizações parceiras cadastradas. ";
 			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
 			?>
