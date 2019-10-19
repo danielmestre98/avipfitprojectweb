@@ -14,52 +14,42 @@ include_once( 'nav.php' );
 		} );
 	} );
 </script>
-
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<p>
-				<h1>Parceiros</h1>
-			</p>
+			<p><h1>Parceiros</h1></p>
+		<br>
+		<h5>Registre parceiros ou pesquise por parceiros cadastrados para atualizar informações.</h5>
+		<br>
+		<a class="btn btn-primary" href="novo_parceiro">Novo <i class="fas fa-plus"></i></a>
 			<br>
-		<h5>Organizações parceiras do studio AVIPfit e suas informações.</h5>
 			<br>
-			<?php
+		<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro ORDER BY nome ASC";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro ORDER BY nome ASC";
+		
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
-			if ( mysqli_num_rows( $result ) < 1 ){
+			if ( mysqli_num_rows( $result ) == 0 ){
 				echo "Não existem organizações parceiras cadastradas. ";
 			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
-				?>
-			<p><img src="../fotos/<?=$row['foto']?>" alt="" width="70" height="70">
-				<h3>
-					<?=$row['nome'] ?>
-				</h3>
-			</p>
-			<p>
-				<?=$row['rua']?>,
-				<?=$row['numero']?>-
-				<?=$row['bairro']?>,
-				<?=$row['cidade']?>-
-				<?=$row['estado']?>,
-				<?=$row['cep']?>
-			</p>
-			<p>Telefone
-				<?=$row['telefone']?>
-			</p>
-			<br><br>
-
-
-
-
-			<?php
+			?>
+				<p><img width="70" height="70" src="../fotos/<?=$row['foto']?>" alt=""><h3><?=$row['nome'] ?></h3></p>
+				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
+				<p>Telefone: <?=$row['telefone']?></p>
+				<a class="btn btn-primary btn-sm" href="editar_parceiro?cnpj=<?=$row['cnpj']?>">Editar <i class="fas fa-edit"></i></a>
+				<button class="btn btn-primary btn-sm" onClick="confirma('<?=$row['cnpj']?>', '<?=$row['nome']?>')">Excluir <i class="far fa-trash-alt"></i></button>	
+				<br><br>
+					
+		
+		
+			<?php	
 			}
 			mysqli_close( $conn );
 
 			?>
+
 
 
 		</div>
@@ -68,4 +58,14 @@ include_once( 'nav.php' );
 	</div>
 	<!-- page-content" -->
 </body>
+	<script>
+		function confirma(escolha, nome){
+			if ( window.confirm( " Deseja deletar o parceiro "+nome+"?" ) ) {
+					window.location="../lib/deletar_parceiro?cnpj="+escolha
+			} else {
+				return false
+				
+			}
+		}
+	</script>
 </html>
