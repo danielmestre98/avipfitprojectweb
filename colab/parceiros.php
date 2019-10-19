@@ -27,7 +27,7 @@ include_once( 'nav.php' );
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro ORDER BY nome";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto FROM parceiro ORDER BY nome ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			if ( mysqli_num_rows( $result ) < 1 ){
 				echo "Não existem organizações parceiras cadastradas. ";
