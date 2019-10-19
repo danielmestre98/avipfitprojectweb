@@ -49,7 +49,7 @@ $mailer->From = 'no-reply@avipfit.com'; //Obrigatório ser a mesma caixa postal 
 $mailer->AddAddress( $email, $email );
 //Destinatários
 $mailer->Subject = 'Recuperação de senha AVIPfit';
-$mailer->Body = '<p>Prezado(a) '.$nome.'.</p><p>Se você solicitou a recuperação de senha no sistema AVIPfit clique no link abaixo para ser direcionado para a página de criação da nova senha.</p><p><a href = "http://avipfittest.provisorio.ws/nova_senha?email=' . $email . '&token=' . $token . '">Clique aqui</a></p><p>Está mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
+$mailer->Body = '<p>Prezado(a) '.$nome.'.</p><p>Se você solicitou a recuperação de senha no sistema AVIPfit clique no link abaixo para ser direcionado para a página de criação da nova senha.</p><p><a href = "http://avipfittest.provisorio.ws/nova_senha?email=' . $email . '&token=' . $token . '">Clique aqui</a></p><p>Esta mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
 if ( !$mailer->Send() ) {
 	echo "Message was not sent";
 	echo "Mailer Error: " . $mailer->ErrorInfo;

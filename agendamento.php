@@ -30,7 +30,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" placeholder="dd/mm/aaaa" readonly autocomplete="off" required name="dia" id="picker"/>
+						<input style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" placeholder="dd/mm/aaaa" readonly autocomplete="off" name="dia" id="picker"/>
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">

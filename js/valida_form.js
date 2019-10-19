@@ -118,6 +118,9 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
+			dia:{
+			required: true
+			},
 			email: {
 				required: true,
 				email: true,
