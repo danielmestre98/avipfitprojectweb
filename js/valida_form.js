@@ -440,7 +440,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			email: {
-				remote: "Não existe nenhum usuário com este e-mail cadastrado."
+				remote: "E-mail inválido."
 			}
 		},
 		errorElement: 'span',

@@ -41,11 +41,11 @@
 <file name="consulta.html" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326641458" remote="132145848000000000" Dst="1" />
 <file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159944529519700" remote="132159944400000000" Dst="1" />
 <file name="filiais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159918578006563" remote="132159918600000000" Dst="1" />
-<file name="login.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155518169753039" remote="132155517600000000" Dst="1" />
+<file name="login.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159974055717709" remote="132159973800000000" Dst="1" />
 <file name="index.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155391987255432" remote="132155487000000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151803568606915" remote="132151803000000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159911178126990" remote="132159910800000000" Dst="1" />
-<file name="redef_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155450469699784" remote="132155450400000000" Dst="1" />
+<file name="redef_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159960362857740" remote="132159960600000000" Dst="1" />
 <file name="verificaCpf.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159956330543940" remote="132159955800000000" Dst="1" />
 <file name="verificaEmail.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328960014" remote="132145848000000000" Dst="1" />
 <file name="verificaEmailc.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328970011" remote="132145848000000000" Dst="1" />
@@ -55,8 +55,9 @@
 <file name=".gitignore" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145005170355102" remote="132145849800000000" Dst="1" />
 <file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145865816387953" remote="132145865400000000" Dst="1" />
 <file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132149435150834391" remote="132149434800000000" Dst="1" />
-<file name="env_email.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155392530548786" remote="132155392200000000" Dst="1" />
-<file name="nova_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155520340546227" remote="132155520000000000" Dst="1" />
+<file name="env_email.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159972772751642" remote="132159972600000000" Dst="1" />
+<file name="nova_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159961353170973" remote="132159961200000000" Dst="1" />
 <file name="verificaCpf.php" server="ftp.avipfit.com/public_html/" local="132159956330543940" remote="132159956400000000" Dst="1" />
 <file name="verificaEmailc.php" server="ftp.avipfit.com/public_html/" local="132122830262939045" remote="132158281200000000" Dst="1" />
+<file name="login.php" server="ftp.avipfit.com/public_html/" local="132159968439347896" remote="132159968400000000" Dst="1" />
 </dwsync>
