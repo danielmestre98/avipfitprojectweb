@@ -2,10 +2,6 @@
 require('../conectar.php');
 session_start();
 
-	$cpf = $_SESSION['filial'];
-	$data = [];
-	$sql = "SELECT dia, evento, horario, f.cidade, f.rua, f.numero, f.estado, f.bairro, p.nome, filial, a.id FROM agenda a INNER JOIN filial f ON (filial = IdFilial) INNER JOIN pessoa p ON (cpffunc = cpf) WHERE filial = '$cpf'";
-	$result = $conn->query($sql);
 
 $data = [];
 $sql = "SELECT dia, evento, horario, horafim, f.cidade, f.rua, f.numero, f.estado, f.bairro, p.nome, filial, a.id FROM agenda a INNER JOIN filial f ON (filial = IdFilial) INNER JOIN pessoa p ON (cpffunc = cpf)";

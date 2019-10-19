@@ -123,8 +123,8 @@
 <file name="adicionar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328450333" remote="132145846200000000" Dst="1" />
 <file name="aprovacao_dep.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847136712" remote="132145846200000000" Dst="1" />
 <file name="aprovacao.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085224912863" remote="132145846200000000" Dst="1" />
-<file name="consulta_agenda.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847156725" remote="132145846200000000" Dst="1" />
-<file name="consulta_agendamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151181875095445" remote="132151182600000000" Dst="1" />
+<file name="consulta_agenda.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159764312699955" remote="132159763800000000" Dst="1" />
+<file name="consulta_agendamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159765190498594" remote="132159765000000000" Dst="1" />
 <file name="consulta_agendamento_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132144102214051050" remote="132145846200000000" Dst="1" />
 <file name="consulta_ag_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132158815686842713" remote="132158815200000000" Dst="1" />
 <file name="consulta_ag_exp.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847146705" remote="132145846200000000" Dst="1" />
