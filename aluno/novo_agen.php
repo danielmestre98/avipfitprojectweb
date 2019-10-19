@@ -35,12 +35,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-3">
 						<label for="descricao">
 							<red>*</red>Horário</label>
-						<select name="hora" required class="form-control" name="" id="horario">
+						<select name="hora" required class="form-control" id="horario">
 							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
 					<?php session_start(); $cpf = $_SESSION['cpf'];?>
-					<input type="text" hidden="true" value = "<?=$cpf?>">
+					<input type="text" hidden="true" id="input_cpf" name="cpf" value = "<?=$cpf?>">
 					<br>
 
 				</div>

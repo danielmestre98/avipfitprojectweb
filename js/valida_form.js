@@ -911,6 +911,9 @@ jQuery(function ($) {
 					data: {
 						dia: function () {
 							return $("#datepicker").val();
+						},
+						cpf: function(){
+							return $("#input_cpf").val();
 						}
 					}
 				}
@@ -945,6 +948,9 @@ jQuery(function ($) {
 
 		},
 		messages: {
+			hora:{
+				remote: "Você já solicitou um agendamento para esse horário."
+			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."
 			},
