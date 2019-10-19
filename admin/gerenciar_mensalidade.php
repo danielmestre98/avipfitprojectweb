@@ -60,17 +60,14 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					<div class="form-group col-md-5">
 						<label for="">
 							<red>*</red>Status da mensalidade</label>
-						<?php
-						if ( $status === 'Pagamento efetuado' ) {
-							echo '<select name="" disabled class="form-control" id="">';
-						} else {
-							echo '<select name="status" class="form-control" id="">';
-						}
-						?>
 
-						<option>
+					
+						<select name="status" class="form-control" id="">
+
+						<option hidden="true">
 							<?=$status?>
 						</option>
+						<option>Pendente</option>
 						<option>Pagamento efetuado</option>
 
 						</select>
@@ -82,13 +79,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 
 
 				<a class="btn btn-primary" href="mensalidades">Voltar</a>
-				<?php
-				if ( $status === 'Pagamento efetuado' ) {
+				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 
-				} else {
-					echo '<button type="submit" class="btn btn-primary float-right">Salvar</button>';
-				}
-				?>
+
 
 			</form>
 
