@@ -8,7 +8,6 @@ if ( isset( $_POST[ 'cpf' ] ) ) {
 		$old = $_POST['cpfo'];
 		$cpf = $_POST[ 'cpf' ];
 		$sql = "SELECT cpf FROM pessoa WHERE cpf = '$cpf' and cpf != '$old' and inativo = '0'";
-		echo $sql;
 		$query = $conn->query( $sql );
 		$num_rows = $query->num_rows;
 		if ( $num_rows > 0 ) {
