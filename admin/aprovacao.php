@@ -26,12 +26,12 @@ include_once( 'nav.php' );
 			<?php 
 			include ('../conectar.php');
 			$tipo = $_GET['tipo']; 
+			$id = $_GET['id'];
 			if ($tipo == 'Avaliação Física'){
-			$hora = $_GET['horario'];
+			
 				
-			$data = $_GET['data'];
 				
-			$sql = "SELECT a.data, a.horario, status, p.nome, f.IdFilial FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.data = '$data' AND a.horario = '$hora'";
+			$sql = "SELECT a.data, a.horario, status, p.nome, f.IdFilial, a.id FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
 			//$sql = "SELECT a.data, a.horario, status, p.nome FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.data = '$data' AND f.horario = '$hora'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -39,7 +39,10 @@ include_once( 'nav.php' );
 				$row = mysqli_fetch_assoc( $resulted );
 				$nome = $row['nome'];
 				$status = $row['status'];
+				$hora = $row['horario'];
+				$data = $row['data'];
 				$filial = $row['IdFilial'];
+				$id = $row['id'];
 				
 			}
 				
@@ -56,7 +59,7 @@ include_once( 'nav.php' );
 							Nome do aluno(a)</label>
 					
 
-
+<input type="text" hidden="true" name="id" value="<?=$id?>">
 
 
 
@@ -93,7 +96,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
-							<red>*</red>Aprovação</label>
+							<red>*</red>Status</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
 							<option hidden="true">
 								<?=$status?>
@@ -123,12 +126,9 @@ include_once( 'nav.php' );
 			<?php }
 			else{ if($tipo == 'Aula Experimental'){
 			include ('../conectar.php');
-			
-			$hora = $_GET['horario'];
 				
-			$data = $_GET['data'];
 				
-			$sql = "SELECT a.data, a.horario, status, nome, telefone, email, modalidadeTreinamento, f.IdFilial FROM agendamentoaulaexp a INNER JOIN agendamento f ON (a.data = f.data and a.horario = f.horario) WHERE a.data = '$data' AND a.horario = '$hora'";
+			$sql = "SELECT a.data, a.horario, status, nome, telefone, email, modalidadeTreinamento, f.IdFilial FROM agendamentoaulaexp a INNER JOIN agendamento f ON (a.id = f.id) WHERE a.id = '$id'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 			if ( mysqli_num_rows( $resulted ) === 1 ) {
@@ -136,6 +136,8 @@ include_once( 'nav.php' );
 				$nome = $row['nome'];
 				$filial = $row['IdFilial'];
 				$status = $row['status'];
+				$hora = $row['horario'];
+				$data = $row['data'];
 				$telefone = $row['telefone'];
 				$email = $row['email'];
 				$treinamento = $row['modalidadeTreinamento'];	
@@ -155,6 +157,7 @@ include_once( 'nav.php' );
 						<label for="nomeExercicio">
 							Nome do aluno(a)</label>
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" hidden="true" name="id" value="<?=$id?>">
 					</div>
 
 					<div class="form-group col-md-2">
@@ -209,7 +212,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="cidade">
-							<red>*</red>Aprovação</label>
+							<red>*</red>Status</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
 							<option hidden="true"><?=$status?></option>
 							<option value="Aprovado">Aprovado</option>

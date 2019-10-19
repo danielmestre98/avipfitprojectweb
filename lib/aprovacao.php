@@ -2,6 +2,7 @@
 
 require( '../conectar.php' );
 $nome = $_POST[ 'nome' ];
+$id = $_POST['id'];
 $data = $_POST[ 'data' ];
 $hora = $_POST[ 'hora' ];
 $status = $_POST['aprovacao'];
@@ -10,7 +11,7 @@ $filial = $_POST['filial'];
 
 
 
-$sql = "UPDATE agendamento SET status = '$status', descricaoCancelamento = '$canc' WHERE data = '$data' AND horario = '$hora' AND IdFilial = '$filial'";
+$sql = "UPDATE agendamento SET status = '$status', descricaoCancelamento = '$canc' WHERE id = '$id'";
 
 
 if ( $conn->query( $sql ) === TRUE ) {

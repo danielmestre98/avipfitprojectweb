@@ -949,7 +949,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora:{
-				remote: "Você já solicitou um agendamento para esse horário."
+				remote: "Agendamento já cadastrado."
 			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."

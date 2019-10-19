@@ -12,7 +12,7 @@
 
 		$data = "$ano-$mes-$dia";
 		
-		$sql = "SELECT * FROM agendamentoavalfisicamensal WHERE cpf = '$cpf' AND data = '$data' AND horario = '$hora'";
+		$sql = "SELECT * FROM agendamentoavalfisicamensal f  INNER JOIN agendamento a ON (a.id = f.id) WHERE cpf = '$cpf' AND f.data = '$data' AND f.horario = '$hora'";
         $query = $conn->query($sql);
 		$num_rows = $query->num_rows;
         if( $num_rows > 0 ){

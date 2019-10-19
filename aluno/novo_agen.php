@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 						</select>
 					</div>
 					<?php session_start(); $cpf = $_SESSION['cpf'];?>
-					<input type="text" hidden="true" id="input_cpf" name="cpf" value = "<?=$cpf?>">
+					<input type="text" hidden="true" id="input_cpf" name="cpf" value="<?=$cpf?>">
 					<br>
 
 				</div>
@@ -89,17 +89,32 @@ include_once( 'nav.php' );
 				$disable = array_diff($diasn, $dias);
 				$disable = array_values($disable);
 				
-		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
+			echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
+			include('../conectar.php');
+			$sql2 = "SELECT f.data FROM agendamentoavalfisicamensal f INNER JOIN agendamento a ON (f.data = a.data AND f.horario = a.horario) WHERE status = 'Aprovado'";
+			$existentes = [];
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+				while ( $row = mysqli_fetch_array( $result ) ) {
+					$data = explode( "-", $row['data'] );
+
+					list( $ano, $mes, $dia ) = $data;
+
+					$data = "$dia/$mes/$ano";
+					$existentes[] = $data;
+				}
+			mysqli_close( $conn );
+			echo '<script type="text/javascript">var $existentes='.json_encode($existentes).'</script>';
 		?>
 	<script>
 		var today;
-		today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() );
 		jQuery( function ( $ ) {
 			$( function () {
 				$( '[data-toggle="tooltip"]' ).tooltip()
 			} )
 			$( '#datepicker' ).datepicker( {
 				disableDaysOfWeek: $dias,
+				disableDates: $existentes,
 				uiLibrary: 'bootstrap4',
 				format: 'dd/mm/yyyy',
 				minDate: today,

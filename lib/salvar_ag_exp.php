@@ -15,17 +15,22 @@ $data = explode( "/", $dia );
 list( $dia, $mes, $ano ) = $data;
 
 $data = "$ano-$mes-$dia";
+
+
 $sql = "INSERT INTO agendamento (data, status, horario, tipo, idFilial, descricaoCancelamento)
 		VALUES ('$data', 'Aguardando aprovação', '$hora', 'Aula Experimental', '$filial', '');";
-$sql2 = "INSERT INTO agendamentoaulaexp (data, email, IdFilial, modalidadeTreinamento, nome, telefone, horario) VALUES ('$data', '$email', '$filial', '$treinamento', '$nome', '$telefone', '$hora')";
-
-
 if ($conn->query($sql) === TRUE) {
-
+	$id = mysqli_insert_id($conn);
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
+include ('../conectar.php');
+
+
+
+$sql2 = "INSERT INTO agendamentoaulaexp (data, email, IdFilial, modalidadeTreinamento, nome, telefone, horario, id) VALUES ('$data', '$email', '$filial', '$treinamento', '$nome', '$telefone', '$hora', '$id')";
+
 include ('../conectar.php');
 if ($conn->query($sql2) === TRUE) {
 	header( 'location: ../index?suc=1' );
