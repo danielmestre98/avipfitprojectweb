@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 					</div>
 					<div class="form-group col-md-3">
 						<label for="sexo"><red>*</red>Sexo</label>
-						<select class="form-control" name="sexo" id="sexo">
+						<select class="form-control" name="sexo" required id="sexo">
 							<option hidden="true" selected value="">Selecione a opção desejada</option>
 							<option>Masculino</option>
 							<option>Feminino</option>

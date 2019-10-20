@@ -42,7 +42,7 @@ require( '../lib/editar_aluno_show.php' );
 					</div>
 					<div class="form-group col-md-3">
 						<label for="sexo"><red>*</red>Sexo</label>
-						<select class="form-control" name="sexo" id="sexo">
+						<select class="form-control" required name="sexo" id="sexo">
 							<option hidden="true" selected><?=$sexo?></option>
 							<option>Masculino</option>
 							<option>Feminino</option>
