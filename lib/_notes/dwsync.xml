@@ -188,7 +188,7 @@
 <file name="nova_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155523228235312" remote="132155523000000000" Dst="1" />
 <file name="verificaAgExp.php" server="ftp.avipfit.com/public_html/" local="132159885842420664" remote="132160562400000000" Dst="1" />
 <file name="deletar_aluno.php" server="ftp.avipfit.com/public_html/" local="132158279625404000" remote="132158281200000000" Dst="1" />
-<file name="novo_aluno.php" server="ftp.avipfit.com/public_html/" local="132158277610000000" remote="132158281200000000" Dst="1" />
+<file name="novo_aluno.php" server="ftp.avipfit.com/public_html/" local="132160804011998451" remote="132160803600000000" Dst="1" />
 <file name="verificaAgFis.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159886429993672" remote="132159886200000000" Dst="1" />
 <file name="adicionar_exercicio.php" server="ftp.avipfit.com/public_html/" local="132120881400000000" remote="132160562400000000" Dst="1" />
 <file name="aprovacao.php" server="ftp.avipfit.com/public_html/" local="132159869560769450" remote="132160562400000000" Dst="1" />
@@ -214,8 +214,8 @@
 <file name="deletar_parceiro.php" server="ftp.avipfit.com/public_html/" local="132140938585643195" remote="132160562400000000" Dst="1" />
 <file name="deletar_treinamento.php" server="ftp.avipfit.com/public_html/" local="132140938585653168" remote="132160562400000000" Dst="1" />
 <file name="deletar_filial.php" server="ftp.avipfit.com/public_html/" local="132141726389629271" remote="132160562400000000" Dst="1" />
-<file name="editar_aluno_show.php" server="ftp.avipfit.com/public_html/" local="132122830099974060" remote="132160562400000000" Dst="1" />
-<file name="editar_aluno.php" server="ftp.avipfit.com/public_html/" local="132140938585653168" remote="132160562400000000" Dst="1" />
+<file name="editar_aluno_show.php" server="ftp.avipfit.com/public_html/" local="132160710467629019" remote="132160809600000000" Dst="1" />
+<file name="editar_aluno.php" server="ftp.avipfit.com/public_html/" local="132160713161928616" remote="132160809600000000" Dst="1" />
 <file name="editar_colaborador.php" server="ftp.avipfit.com/public_html/" local="132140938585663141" remote="132160562400000000" Dst="1" />
 <file name="editar_evento.php" server="ftp.avipfit.com/public_html/" local="132140938585673115" remote="132160562400000000" Dst="1" />
 <file name="editar_colaborador_show.php" server="ftp.avipfit.com/public_html/" local="132122830104122976" remote="132160562400000000" Dst="1" />
@@ -226,7 +226,7 @@
 <file name="editar_parceiro_show.php" server="ftp.avipfit.com/public_html/" local="132140938585683088" remote="132160562400000000" Dst="1" />
 <file name="editar_treinamento.php" server="ftp.avipfit.com/public_html/" local="132141785156797971" remote="132160562400000000" Dst="1" />
 <file name="editar_parceiro.php" server="ftp.avipfit.com/public_html/" local="132140938585683088" remote="132160562400000000" Dst="1" />
-<file name="login.php" server="ftp.avipfit.com/public_html/" local="132140938585703037" remote="132160562400000000" Dst="1" />
+<file name="login.php" server="ftp.avipfit.com/public_html/" local="132160815285705030" remote="132160815000000000" Dst="1" />
 <file name="logout.php" server="ftp.avipfit.com/public_html/" local="132122830123501150" remote="132160562400000000" Dst="1" />
 <file name="nova_senha.php" server="ftp.avipfit.com/public_html/" local="132155723214084178" remote="132160562400000000" Dst="1" />
 <file name="novo_colaborador.php" server="ftp.avipfit.com/public_html/" local="132140938585713013" remote="132160562400000000" Dst="1" />

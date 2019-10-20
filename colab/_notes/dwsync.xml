@@ -92,7 +92,7 @@
 <file name="consulta_aluno.php" server="ftp.avipfit.com/public_html/" local="132159925532475637" remote="132160562400000000" Dst="1" />
 <file name="depoimentos.php" server="ftp.avipfit.com/public_html/" local="132159944103589522" remote="132160562400000000" Dst="1" />
 <file name="consulta_treinamento.php" server="ftp.avipfit.com/public_html/" local="132159925533064344" remote="132160562400000000" Dst="1" />
-<file name="editar_aluno.php" server="ftp.avipfit.com/public_html/" local="132159925533912081" remote="132160562400000000" Dst="1" />
+<file name="editar_aluno.php" server="ftp.avipfit.com/public_html/" local="132160714307559528" remote="132160809600000000" Dst="1" />
 <file name="editar_exercicio.php" server="ftp.avipfit.com/public_html/" local="132159925534621252" remote="132160562400000000" Dst="1" />
 <file name="editar_evento.php" server="ftp.avipfit.com/public_html/" local="132159925534380825" remote="132160562400000000" Dst="1" />
 <file name="edit_aval.php" server="ftp.avipfit.com/public_html/" local="132159925533563027" remote="132160562400000000" Dst="1" />
@@ -103,7 +103,7 @@
 <file name="mensalidades.php" server="ftp.avipfit.com/public_html/" local="132159925536276382" remote="132160562400000000" Dst="1" />
 <file name="novo_aval.php" server="ftp.avipfit.com/public_html/" local="132159925536944602" remote="132160562400000000" Dst="1" />
 <file name="novo_evento.php" server="ftp.avipfit.com/public_html/" local="132159925537233823" remote="132160562400000000" Dst="1" />
-<file name="novo_aluno.php" server="ftp.avipfit.com/public_html/" local="132159925536575582" remote="132160562400000000" Dst="1" />
+<file name="novo_aluno.php" server="ftp.avipfit.com/public_html/" local="132160714328563907" remote="132160809600000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfit.com/public_html/" local="132159925537762407" remote="132160562400000000" Dst="1" />
 <file name="novo_exercicio.php" server="ftp.avipfit.com/public_html/" local="132159925537542992" remote="132160562400000000" Dst="1" />
 <file name="novo_treinamento2.php" server="ftp.avipfit.com/public_html/" local="132159925538031687" remote="132160562400000000" Dst="1" />
