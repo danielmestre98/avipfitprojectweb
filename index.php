@@ -18,8 +18,9 @@ include_once( 'nav.php' );
 		<?php
 		if (isset($_GET['suc'])){
 		?>
-		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
-		  <strong>Sucesso!</strong> Aula experimental submetida com sucesso e encaminhada para aprovação! Você receberá o e-mail de aprovação em breve! Agradecemos pelo interesse em nosso serviço!
+		<div id="aula" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
+		  <strong>Sucesso!</strong> Aula experimental submetida com sucesso e encaminhada para aprovação! Você receberá o e-mail de aprovação em breve! Agradecemos pelo interesse em nosso serviço! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
 		</div>
 
 		<?php }?>
