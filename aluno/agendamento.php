@@ -112,10 +112,7 @@ include_once( 'nav.php' );
 							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.dia+'"><i class="far fa-eye"></i>'
 					}
 				}],
-				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
+				columnDefs: [{
 						"width": '30%',
 						"targets": 0
 					}, {
@@ -127,9 +124,6 @@ include_once( 'nav.php' );
 					},{
 						"orderable": false,
 						"targets": 3
-					},{
-						"orderable": false,
-						"targets": 2
 					}
 
 
