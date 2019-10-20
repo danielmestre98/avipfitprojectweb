@@ -61,7 +61,7 @@
 <file name="consulta_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925532475637" remote="132159925200000000" Dst="1" />
 <file name="consulta_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925532775120" remote="132159925200000000" Dst="1" />
 <file name="consulta_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925533064344" remote="132159925200000000" Dst="1" />
-<file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159944103589522" remote="132159943800000000" Dst="1" />
+<file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160730109008347" remote="132160729800000000" Dst="1" />
 <file name="editar_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160714307559528" remote="132160714200000000" Dst="1" />
 <file name="editar_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925534380825" remote="132159925200000000" Dst="1" />
 <file name="editar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925534621252" remote="132159925200000000" Dst="1" />
@@ -74,7 +74,7 @@
 <file name="tickets.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925538974394" remote="132159925200000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925537762407" remote="132159925200000000" Dst="1" />
 <file name="novo_treinamento2.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925538031687" remote="132159925200000000" Dst="1" />
-<file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925538156583" remote="132159925200000000" Dst="1" />
+<file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160732174959397" remote="132160732200000000" Dst="1" />
 <file name="principal.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159998892495809" remote="132159998400000000" Dst="1" />
 <file name="relatorio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159925538695143" remote="132159925200000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159935786892883" remote="132159935400000000" Dst="1" />

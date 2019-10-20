@@ -23,7 +23,7 @@ include_once( 'nav.php' );
 				<h1>Depoimentos</h1>
 			</p>
 		<br>
-		<h5>Clique em gerenciar depoimentos para aprovar novos registros.</h5>
+		<h5>Confira os depoimentos dos alunos AVIPfit!</h5>
 		<br>
 			<?php
 			require( '../conectar.php' );

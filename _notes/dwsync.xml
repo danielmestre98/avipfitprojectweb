@@ -39,7 +39,7 @@
 <file name="agendamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160677263377082" remote="132160677000000000" Dst="1" />
 <file name="codigo.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326631461" remote="132145848000000000" Dst="1" />
 <file name="consulta.html" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326641458" remote="132145848000000000" Dst="1" />
-<file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159944529519700" remote="132159944400000000" Dst="1" />
+<file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160735530716510" remote="132160735200000000" Dst="1" />
 <file name="filiais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159918578006563" remote="132159918600000000" Dst="1" />
 <file name="login.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159974055717709" remote="132159973800000000" Dst="1" />
 <file name="index.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155723214014356" remote="132159999000000000" Dst="1" />
@@ -66,10 +66,10 @@
 <file name="depoimentos.php" server="ftp.avipfit.com/public_html/" local="132159944529519700" remote="132160562400000000" Dst="1" />
 <file name="consulta.html" server="ftp.avipfit.com/public_html/" local="132122830248836737" remote="132160562400000000" Dst="1" />
 <file name="filiais.php" server="ftp.avipfit.com/public_html/" local="132159918578006563" remote="132160562400000000" Dst="1" />
-<file name="env_email.php" server="ftp.avipfit.com/public_html/" local="132160561706532883" remote="132160562400000000" Dst="1" />
+<file name="env_email.php" server="ftp.avipfit.com/public_html/" local="132160738878166172" remote="132160738800000000" Dst="1" />
 <file name="index.php" server="ftp.avipfit.com/public_html/" local="132155723214014356" remote="132160562400000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfit.com/public_html/" local="132155723214134033" remote="132160562400000000" Dst="1" />
-<file name="nova_senha.php" server="ftp.avipfit.com/public_html/" local="132159961353170973" remote="132160562400000000" Dst="1" />
+<file name="nova_senha.php" server="ftp.avipfit.com/public_html/" local="132160740714824170" remote="132160740600000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfit.com/public_html/" local="132159911178126990" remote="132160562400000000" Dst="1" />
 <file name="redef_senha.php" server="ftp.avipfit.com/public_html/" local="132159960362857740" remote="132160562400000000" Dst="1" />
 <file name="pegar.php" server="ftp.avipfit.com/public_html/" local="132160082647011934" remote="132160562400000000" Dst="1" />

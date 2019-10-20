@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 						<input type="password" name="confsenha" maxlength="50" required class="form-control" id="confsenha" placeholder="Mínimo de 8 caracteres">
 					</div>
 					<p> Campos com
-						<red>*</red> são obrigatórios</p>
+						<red>*</red> são obrigatórios.</p>
 				</div>
 
 
