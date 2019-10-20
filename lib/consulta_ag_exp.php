@@ -1,5 +1,6 @@
 <?php
 $dia = $_GET[ 'dia' ];
+$filial = $_GET['filial'];
 include( '../conectar.php' );
 
 
