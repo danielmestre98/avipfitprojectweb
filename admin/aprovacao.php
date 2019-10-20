@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 			
 				
 				
-			$sql = "SELECT a.data, a.horario, status, p.nome, f.IdFilial, a.id FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
+			$sql = "SELECT a.data, a.horario, status, p.nome, f.IdFilial, a.id, p.email FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
 			//$sql = "SELECT a.data, a.horario, status, p.nome FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.data = '$data' AND f.horario = '$hora'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -43,6 +43,7 @@ include_once( 'nav.php' );
 				$data = $row['data'];
 				$filial = $row['IdFilial'];
 				$id = $row['id'];
+				$email = $row['email'];
 				
 			}
 				
@@ -62,7 +63,7 @@ include_once( 'nav.php' );
 <input type="text" hidden="true" name="id" value="<?=$id?>">
 
 
-
+<input type="text" hidden="true" name="email" value="<?=$email?>">
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="">
 					</div>
 
