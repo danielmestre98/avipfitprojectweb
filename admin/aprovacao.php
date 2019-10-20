@@ -61,7 +61,7 @@ include_once( 'nav.php' );
 					
 
 <input type="text" hidden="true" name="id" value="<?=$id?>">
-
+<input type="text" hidden="true" name="tipo" value="exp">
 
 <input type="text" hidden="true" name="email" value="<?=$email?>">
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="">
@@ -159,6 +159,7 @@ include_once( 'nav.php' );
 							Nome do aluno(a)</label>
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 						<input type="text" hidden="true" name="id" value="<?=$id?>">
+						<input type="text" hidden="true" name="tipo" value="exp">
 					</div>
 
 					<div class="form-group col-md-2">

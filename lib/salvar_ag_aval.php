@@ -28,6 +28,7 @@ $sql2 = "INSERT INTO  agendamentoavalfisicamensal (data, cpf, horario, id) VALUE
 
 
 if ($conn->query($sql2) === TRUE) {
+	include('../notificacao/novaAval.php');
 	header( 'location: ../aluno/agendamento' );
 } else {
     echo "Error: " . $sql2 . "<br>" . $conn->error;

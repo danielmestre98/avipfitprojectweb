@@ -9,7 +9,7 @@ $status = $_POST['aprovacao'];
 $canc = $_POST['cancelamento'];
 $filial = $_POST['filial'];
 $email = $_POST['email'];
-
+$tipo = $_POST['tipo'];
 $data = explode( "-", $data );
 
 list( $ano, $mes, $dia ) = $data;
@@ -17,7 +17,8 @@ $diacomp = "$dia/$mes/$ano";
 
 $sql = "UPDATE agendamento SET status = '$status', descricaoCancelamento = '$canc' WHERE id = '$id'";
 
-
+if ($tipo == 'exp'){
+	
 if ( $conn->query( $sql ) === TRUE ) {
 	session_start();
 	if($status == 'Aprovado'){
@@ -36,6 +37,24 @@ if ( $conn->query( $sql ) === TRUE ) {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
-
-
+}else{
+	if ( $conn->query( $sql ) === TRUE ) {
+	session_start();
+	if($status == 'Aprovado'){
+		include('../notificacao/aprovAval.php');
+	}else{
+		if($status == 'Cancelado'){
+			include('../notificacao/cancAval.php');
+		}
+	}
+	if($_SESSION['tipoPessoa'] == '1'){
+	header( 'location: ../admin/agendamentos' );}
+	else{
+		header ('location: ../colab/agendamentos');
+	}
+} else {
+	echo "Error: " . $sql . "<br>" . $conn->error;
+}
+mysqli_close( $conn );
+}
 ?>
