@@ -60,7 +60,7 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-12">
 						<label for="cidade"><red>*</red>Aprovação</label>
 						<select required class="form-control" name="aprovacao" id="aprovacao">
-							<option hidden="true" value=""><?=$status?></option>
+							<option hidden="true"><?=$status?></option>
 							<option>Aprovado</option>
 							<option>Cancelado</option>
 						</select>
