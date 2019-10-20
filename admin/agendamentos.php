@@ -110,9 +110,6 @@ include_once( 'nav.php' );
 				}],
 				"bProcessing": true,
 				columnDefs: [ {
-						"orderable": false,
-						"targets": 2
-					}, {
 						"width": '40%',
 						"targets": 0
 					}, {
@@ -124,9 +121,6 @@ include_once( 'nav.php' );
 					},{
 						"orderable": false,
 						"targets": 4
-					},{
-						"orderable": false,
-						"targets": 3
 					}
 
 
