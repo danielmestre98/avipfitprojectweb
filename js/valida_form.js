@@ -119,7 +119,8 @@ jQuery(function ($) {
 				}
 			},
 			dia:{
-			required: true
+			required: true,
+				date:false
 			},
 			email: {
 				required: true,

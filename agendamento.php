@@ -27,34 +27,6 @@ include_once( 'nav.php' );
 			<br>
 			<form id="agendamento_exp" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
-					<div class="form-group col-md-2">
-						<label for="nomeExercicio">
-							<red>*</red>Data do agendamento</label>
-						<input style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" placeholder="dd/mm/aaaa" readonly autocomplete="off" name="dia" id="picker"/>
-					</div>
-					<div class="form-group col-md-2">
-						<label for="descricao">
-							<red>*</red>Horário</label>
-						<select name="hora" required class="form-control" id="horario">
-							<option value="">Selecione a opção desejada</option>
-						</select>
-					</div>
-					<div class="form-group col-md-4">
-						<label for="descricao">Treinamento</label>
-						<select class="form-control" name="treinamento" id="">
-							<option value="">Selecione a opção desejada</option>
-							<?php
-							require( 'conectar.php' );
-							$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
-							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
-							while ( $row = mysqli_fetch_array( $result ) ) {
-								echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
-							}
-							mysqli_close( $conn );
-
-							?>
-						</select>
-					</div>
 					<div class="form-group col-md-4">
 						<label for="descricao">
 							<red>*</red>Filial</label>
@@ -71,6 +43,35 @@ include_once( 'nav.php' );
 								?>
 						</select>
 					</div>
+					<div class="form-group col-md-2">
+						<label for="nomeExercicio">
+							<red>*</red>Data do agendamento</label>
+						<input style="cursor:pointer; background-color: #FFFFFF" placeholder="dd/mm/aaaa" readonly autocomplete="off" name="dia" id="picker"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="descricao">
+							<red>*</red>Horário</label>
+						<select name="hora" required class="form-control" id="horario">
+							<option value="">Selecione a opção desejada</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="descricao">Treinamento</label>
+						<select class="form-control" name="treinamento" id="">
+							<option value="">Selecione a opção desejada</option>
+							<?php
+							require( 'conectar.php' );
+							$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
+							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+							while ( $row = mysqli_fetch_array( $result ) ) {
+								echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
+							}
+							mysqli_close( $conn );
+
+							?>
+						</select>
+					</div>
+					
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-5">
@@ -88,9 +89,12 @@ include_once( 'nav.php' );
 							<red>*</red>Telefone para contato</label>
 						<input type="text" placeholder="(19) 999999999" required name="numero" class="form-control" id="numero">
 					</div>
-					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
+					
+					
 				</div>
-
+				<label style="margin-left: 4px" for="">Datas em verde estão disponíveis</label>
+					<br>
+<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 
 
 				<button type="submit" class="btn btn-primary float-right">Salvar</button>
@@ -162,9 +166,6 @@ include_once( 'nav.php' );
 	</script>
 		<script>
 		jQuery( function ( $ ) {
-			$(function () {
-			  $('[data-toggle="tooltip"]').tooltip()
-			})
 			$( document ).ready( function () {
 				var $CampoTel = $( "#numero" );
 				$CampoTel.mask( '(00) 000000000', {
