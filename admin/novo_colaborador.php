@@ -41,7 +41,7 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="email"><i><red>*</red>E-mail</i></label>
+						<label for="email"><red>*</red>E-mail</label>
 						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
