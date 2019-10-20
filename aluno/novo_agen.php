@@ -23,14 +23,14 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de avaliação física</h1>
 			<br>
-			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar uma avaliação física.</h5>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar uma avaliação física. As datas em verde estão disponíveis!</h5>
 			<br>
 			<form id="exercicio_cadastro" action="../lib/salvar_ag_aval" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" readonly autocomplete="off" required name="dia" id="datepicker"/>
+						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="datepicker"/>
 					</div>
 					<div class="form-group col-md-3">
 						<label for="descricao">
@@ -102,6 +102,9 @@ include_once( 'nav.php' );
 				disableDaysOfWeek: $dias,
 				uiLibrary: 'bootstrap4',
 				format: 'dd/mm/yyyy',
+				close: function (e) {
+             				$("#exercicio_cadastro").validate().element("#datepicker");
+         		},
 				minDate: today,
 				locale: 'pt-br',
 				change: function ( e ) {

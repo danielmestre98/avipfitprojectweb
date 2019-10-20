@@ -23,7 +23,7 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de aula experimental</h1>
 			<br>
-			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental.</h5>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</h5>
 			<br>
 			<form id="agendamento_exp" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
@@ -92,8 +92,6 @@ include_once( 'nav.php' );
 
 
 				</div>
-				<label style="margin-left: 4px" for="">Datas em verde estão disponíveis</label>
-				<br>
 				<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
 
 
