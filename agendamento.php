@@ -133,6 +133,9 @@ include_once( 'nav.php' );
 						uiLibrary: 'bootstrap4',
 						format: 'dd/mm/yyyy',
 						minDate: today,
+						close: function (e) {
+             				$("#agendamento_exp").validate().element("#picker");
+         				},
 						locale: 'pt-br',
 						change: function ( e ) {
 							var $datepicker = $( '#picker' ).datepicker();
@@ -164,6 +167,9 @@ include_once( 'nav.php' );
 			uiLibrary: 'bootstrap4',
 			format: 'dd/mm/yyyy',
 			minDate: today,
+			close: function (e) {
+             				$("#agendamento_exp").validate().element("#picker");
+         	},
 			locale: 'pt-br',
 			change: function ( e ) {
 				var $datepicker = $( '#picker' ).datepicker();
