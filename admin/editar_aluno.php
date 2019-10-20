@@ -35,10 +35,18 @@ require( '../lib/editar_aluno_show.php' );
 						<input type="text" name="nome" maxlength="255" required class="form-control" value="<?php echo $nome?>" id="input_nome" placeholder="Nome">
 					</div>
 					<input type="text" hidden="true" name="cpfOld" id="cpfOLD" value="<?php echo $_GET['cpf']?>">
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-3">
 						<label for="cpf">
 							<red>*</red>CPF</label>
 						<input type="text" required name="cpf" data-placement="bottom" data-animation="true" data-content="CPF inválido" value="<?php echo $cpf?>" class="form-control" id="input_CPF" placeholder="___.___.___-__">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="sexo"><red>*</red>Sexo</label>
+						<select class="form-control" name="sexo" id="sexo">
+							<option hidden="true" selected><?=$sexo?></option>
+							<option>Masculino</option>
+							<option>Feminino</option>
+						</select>
 					</div>
 				</div>
 				<div class="form-row">

@@ -33,10 +33,18 @@ include_once( 'nav.php' );
 							<red>*</red>Nome</label>
 						<input type="text" name="nome" maxlength="255" required class="form-control" id="input_nome" placeholder="Nome">
 					</div>
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-3">
 						<label for="cpf">
 							<red>*</red>CPF</label>
 						<input type="text" required name="cpf" data-placement="bottom" data-animation="true" data-content="CPF inválido" class="form-control" id="input_CPF" placeholder="___.___.___-__">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="sexo"><red>*</red>Sexo</label>
+						<select class="form-control" name="sexo" id="sexo">
+							<option hidden="true" selected value="">Selecione a opção desejada</option>
+							<option>Masculino</option>
+							<option>Feminino</option>
+						</select>
 					</div>
 				</div>
 				<div class="form-row">

@@ -12,6 +12,7 @@ $cidade = addslashes( $_POST[ 'cidade' ] );
 $estado = $_POST[ 'estado' ];
 $bairro = $_POST[ 'bairro' ];
 $cep = $_POST[ 'cep' ];
+$sexo = $_POST['sexo'];
 $rua = $_POST[ 'rua' ];
 $numero = $_POST[ 'numero' ];
 $treinamento = $_POST[ 'treinamento' ];
@@ -69,7 +70,7 @@ $data = date( 'Y-m-d H:i:s' );
 $datacad = date( 'Y-m-d' );
 // Insere os dados no banco
 $sql = "UPDATE pessoa SET dataNascimento = '$nascimento', email = '$email', nome = '$nome', telefone = '$telefone', TipoPessoa = '3', senha = '$senha', foto = '$nome_imagem', cidade = '$cidade', estado = '$estado', cep = '$cep', bairro = '$bairro', rua = '$rua', numero = '$numero', inativo = '0' WHERE cpf = '$cpf'";
-$sql2 = "UPDATE cliente SET filial = '$filial' WHERE cpf = '$cpf'";
+$sql2 = "UPDATE cliente SET filial = '$filial' sexo = '$sexo' WHERE cpf = '$cpf'";
 $sql3 = "UPDATE horario SET  segunda = '$segunda', terca = '$terca', quarta = '$quarta', quinta = '$quinta', sexta = '$sexta', sabado = '$sabado' WHERE cpf = '$cpf'";
 $sql4 = "UPDATE realiza SET Treinamento = '$treinamento' WHERE cpf = '$cpf'";
 $sql5 = "UPDATE mensalidade SET valor = '$mensalidade', DataVencimento = '$pagamento' WHERE cpf = '$cpf'";
@@ -193,7 +194,7 @@ $datacad = date( 'Y-m-d' );
 // Insere os dados no banco
 $sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo, cadastro)
 		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '3', '$senha', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0', '$datacad');";
-$sql2 = "INSERT INTO cliente (cpf, filial) VALUES ('$cpf', '$filial'); ";
+$sql2 = "INSERT INTO cliente (cpf, filial, sexo) VALUES ('$cpf', '$filial', '$sexo'); ";
 $sql3 = "INSERT INTO horario (cpf, segunda, terca, quarta, quinta, sexta, sabado)
 		VALUES ('$cpf', '$segunda', '$terca', '$quarta', '$quinta', '$sexta', '$sabado');";
 $sql4 = "INSERT INTO realiza (cpf, Treinamento) VALUES ('$cpf', '$treinamento');";
