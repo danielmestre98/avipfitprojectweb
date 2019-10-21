@@ -440,7 +440,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			email: {
-				remote: "Não existe nenhum usuário com este e-mail cadastrado."
+				remote: "E-mail inválido."
 			}
 		},
 		errorElement: 'span',
@@ -911,6 +911,9 @@ jQuery(function ($) {
 					data: {
 						dia: function () {
 							return $("#datepicker").val();
+						},
+						cpf: function(){
+							return $("#input_cpf").val();
 						}
 					}
 				}
@@ -945,6 +948,9 @@ jQuery(function ($) {
 
 		},
 		messages: {
+			hora:{
+				remote: "Agendamento já cadastrado."
+			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."
 			},
@@ -1038,6 +1044,52 @@ jQuery(function ($) {
 
 	});
 
+	$("#new_ticket").validate({
+		rules: {
+			nome_ticket: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			desc: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
+			}
+		},
+		messages: {
+		
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
 
 	$("#aluno_cadastro").validate({
 		rules: {

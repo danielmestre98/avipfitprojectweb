@@ -101,10 +101,7 @@ include_once( 'nav.php' );
 				} ],
 				"autoWidth": false,
 				"bProcessing": true,
-				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
+				columnDefs: [  {
 						"width": '70%',
 						"targets": 0
 					}, {
@@ -113,9 +110,6 @@ include_once( 'nav.php' );
 					}, {
 						"width": '20%',
 						"targets": 2
-					}, {
-						"orderable": false,
-						"targets": 1
 					}, {
 						"orderable": false,
 						"targets": 2

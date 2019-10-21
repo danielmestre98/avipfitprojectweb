@@ -18,6 +18,7 @@ $treinamento = $_POST[ 'treinamento' ];
 $segunda = $_POST[ 'segunda' ];
 $terca = $_POST[ 'terca' ];
 $quarta = $_POST[ 'quarta' ];
+$sexo = $_POST['sexo'];
 $quinta = $_POST[ 'quinta' ];
 $sexta = $_POST[ 'sexta' ];
 $sabado = $_POST[ 'sabado' ];
@@ -57,7 +58,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 
 		$sql3 = "UPDATE realiza SET Treinamento = '$treinamento' WHERE cpf = '$cpf'";
 		$sql4 = "UPDATE mensalidade SET valor = '$mensalidade', DataVencimento = '$pagamento' WHERE cpf = '$cpf'";
-		$sql5 = "UPDATE cliente SET filial = '$idfilial' WHERE cpf = '$cpf'";
+		$sql5 = "UPDATE cliente SET filial = '$idfilial', sexo = '$sexo' WHERE cpf = '$cpf'";
 
 
 		if ( $conn->query( $sql ) === TRUE ) {
@@ -107,7 +108,7 @@ if ( !empty( $foto[ "name" ] ) ) {
 
 	$sql3 = "UPDATE realiza SET Treinamento = '$treinamento' WHERE cpf = '$cpf'";
 	$sql4 = "UPDATE mensalidade SET valor = '$mensalidade', DataVencimento = '$pagamento' WHERE cpf = '$cpf'";
-	$sql5 = "UPDATE cliente SET filial = '$idfilial' WHERE cpf = '$cpf'";
+	$sql5 = "UPDATE cliente SET filial = '$idfilial', sexo = '$sexo' WHERE cpf = '$cpf'";
 
 	if ( $conn->query( $sql ) === TRUE ) {
 

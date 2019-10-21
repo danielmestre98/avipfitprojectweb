@@ -21,7 +21,10 @@ include_once( 'nav.php' );
 				if ( mysqli_num_rows( $resulted ) > 0 ){
 			
 			?>
+			<br>
 			<h1>Redefinição de senha</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para redefinir sua senha.</h5>
 			<br>
 			<form id="redef_senha" action="/lib/nova_senha" enctype="multipart/form-data" method="post">
 				<div class="form-row">
@@ -36,8 +39,8 @@ include_once( 'nav.php' );
 							<red>*</red>Confirme a senha</label>
 						<input type="password" name="confsenha" maxlength="50" required class="form-control" id="confsenha" placeholder="Mínimo de 8 caracteres">
 					</div>
-					<p>Campos com
-						<red>*</red> são obrigatórios</p>
+					<p> Campos com
+						<red>*</red> são obrigatórios.</p>
 				</div>
 
 

@@ -15,7 +15,7 @@ while ( $row = mysqli_fetch_array( $result ) ) {
 		
 		$cpf = $row['cpf'];
 		$comp = $row['competencia'];
-		$sql2 = "UPDATE pagamentos SET status = 'Em atraso' WHERE cpf = '$cpf' AND competencia = '$comp'";
+		$sql2 = "UPDATE pagamentos SET status = 'Em débito' WHERE cpf = '$cpf' AND competencia = '$comp'";
 		
 		include('../conectar.php');
 		if ( $conn->query( $sql2 ) === TRUE ) {

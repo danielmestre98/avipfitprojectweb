@@ -37,7 +37,7 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
-						<th class='col'>Ações</th>
+						<th class='col'>Frequência</th>
 						<th class="col">Ações</th>
 					</tr>
 				</thead>
@@ -102,7 +102,10 @@ include_once( 'nav.php' );
 					data: 'nome'
 				}, 
 					{
-					data: 'cidade'
+					data: 'null',
+					render: function ( data, type, row ) {
+						return row.segunda + row.terca + row.quarta + row.quinta + row.sexta + row.sabado;
+					}
 				},		
 				{
 					data: null,
@@ -112,26 +115,6 @@ include_once( 'nav.php' );
 
 
 					}
-				},{
-					data: 'segunda'
-				},
-							{
-					data: 'terca'
-				},
-							{
-					data: 'quarta'
-				},
-							{
-					data: 'quinta'
-				},{
-					data: 'sexta'
-				},
-							{
-					data: 'sabado'
-				},{
-					data: 'cpf'
-				},{
-					data: 'Treinamento'
 				}
 						   
 						   ],
@@ -142,16 +125,13 @@ include_once( 'nav.php' );
 						"orderable": false,
 						"targets": 2
 					}, {
-						"width": '80%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '1%',
 						"targets": 2
-					},
-							 {
-						"visible": false,
-						"targets": [1, 3,4,5,6,7,8,9,10]
 					}
+							 
 
 
 

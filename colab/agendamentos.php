@@ -4,15 +4,15 @@ include_once( 'nav.php' );
 <!doctype html>
 <html>
 <head>
-<script>
-	jQuery( function ( $ ) {
-		$( document ).ready( function () {
-			$( "#agendamento" ).addClass( "active" );
-			$( "#ag_drop" ).slideDown( 200 );
-			$( "#ger_agendamentos" ).addClass( "bg-dark active" )
+	<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				$( "#agendamento" ).addClass( "active" );
+				$( "#ag_drop" ).slideDown( 200 );
+				$( "#ger_agendamentos" ).addClass( "bg-dark active" )
+			} );
 		} );
-	} );
-</script>
+	</script>
 	<meta charset="utf-8">
 	<title>AVIPfit - Agendamentos</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
@@ -33,14 +33,15 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Aluno(a)</th>
+						<th class='col'>Data e horário</th>
 						<th class="col">Filial</th>
 						<th class="col">Agendamento</th>
 						<th class='col'>Status</th>
 						<th class='col'>Detalhes</th>
-				
+
 					</tr>
 				</thead>
-			
+
 			</table>
 
 		</div>
@@ -65,84 +66,85 @@ include_once( 'nav.php' );
 	<script src="../js/dataTables.responsive.min.js"></script>
 	<script>
 		$( document ).ready( function () {
-			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-				$( "#divt" ).removeClass( "container-fluid p-5" );
-			}
-			
-			$( '#tabela' ).DataTable( {
-				"bLengthChange": false,
-				"language": {
-					"zeroRecords": "Nenhum registro encontrado",
-					"info": "Mostrando página _PAGE_ de _PAGES_",
-					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
-					"search": "Pesquisar",
-					"first": "Primeiro",
-					"pagingType": "simple",
-					"processing": "Carregando...",
-					"paginate": {
-						"last": "Último",
-						"next": "Próxima",
-						"previous": "Anterior"
-					},
-					"emptyTable": "Nenhum registro"
-				
-				},
-				"responsive": true,
-				"sAjaxSource": "../lib/consulta_agendamento.php",
-				"autoWidth": false,
-				"columns": [ {
-					data: 'nome'
-				},{
-					data: 'filial',
-					render: function ( data, type, row ) {
-						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
-					}
-				}, {
-					data: 'tipo'
-				}, {
-					data: 'status'
-				}, {
-					data: null,
-					render: function ( data, type, row ) {
-							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.data+'&tipo='+row.tipo+'"><i class="far fa-eye"></i>'
-					}
-				}],
-				"bProcessing": true,
-				columnDefs: [ {
-						"orderable": false,
-						"targets": 2
-					}, {
-						"width": '40%',
-						"targets": 0
-					}, {
-						"width": '10%',
-						"targets": 2
-					}, {
-						"width": '20%',
-						"targets": 3
-					},{
-						"orderable": false,
-						"targets": 4
-					},{
-						"orderable": false,
-						"targets": 3
+					if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+						$( "#divt" ).removeClass( "container-fluid p-5" );
 					}
 
+					$( '#tabela' ).DataTable( {
+							"bLengthChange": false,
+							"language": {
+								"zeroRecords": "Nenhum registro encontrado",
+								"info": "Mostrando página _PAGE_ de _PAGES_",
+								"infoEmpty": "Nenhum registro disponível",
+								"infoFiltered": "(filtrado de _MAX_ registro totais)",
+								"search": "Pesquisar",
+								"first": "Primeiro",
+								"pagingType": "simple",
+								"processing": "Carregando...",
+								"paginate": {
+									"last": "Último",
+									"next": "Próxima",
+									"previous": "Anterior"
+								},
+								"emptyTable": "Nenhum registro"
+
+							},
+							"responsive": true,
+							"sAjaxSource": "../lib/consulta_agendamento.php",
+							"autoWidth": false,
+							"columns": [ {
+									data: 'nome'
+								}, {
+									data: null,
+									render: function ( data, type, row ) {
+										return row.data + ' '+ row.horario + ' - ' + row.horafim
+									}
+								},
+									{
+										data: 'filial',
+										render: function ( data, type, row ) {
+											return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+										}
+									},
+									{
+										data: 'tipo'
+									},
+									{
+										data: 'status'
+									},
+									{
+										data: null,
+										render: function ( data, type, row ) {
+											return '<a title="Visualizar" href="aprovacao.php?id=' + row.id + '&tipo=' + row.tipo + '"><i class="far fa-eye"></i>'
+										}
+									} ],
+								"bProcessing": true,
+								columnDefs: [ {
+										"width": '40%',
+										"targets": 0
+									}, {
+										"width": '10%',
+										"targets": 1
+									}, {
+										"orderable": false,
+										"targets": 4
+									}
 
 
-				]});
 
-		});
+								]
+							} );
+
+					} );
 	</script>
 
 	<script>
-		function confirma(dia, horario, filial){
+		function confirma( dia, horario, filial ) {
 			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
-					window.location="../lib/deletar_evento.php?dia="+dia+"&horario="+horario+"&filial="+filial
+				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
 			} else {
 				return false
-				
+
 			}
 		}
 	</script>

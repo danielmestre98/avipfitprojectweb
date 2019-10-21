@@ -28,9 +28,7 @@
 		include('../conectar.php');
 		$query = $conn->query($sql4);
 		$num_rows += $query->num_rows;
-		
-		
-		
+
         if( $num_rows > 0 ){
            	echo "false";
         } else {

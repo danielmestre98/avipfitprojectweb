@@ -26,8 +26,9 @@ include_once( 'nav.php' );
 		<?php
 		if (isset($_GET['err'])){
 		?>
-		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
-		  <strong>Erro!</strong> Existem alunos ou colaboradores associados a esta filial.
+		<div id="filial" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Existem alunos, colaboradores ou administradores associados a esta filial. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
 		</div>
 
 		<?php }?>

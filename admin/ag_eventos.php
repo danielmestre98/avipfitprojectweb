@@ -130,9 +130,6 @@ include_once( 'nav.php' );
 					}
 				} ],
 				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
 						"width": '13%',
 						"targets": 0
 					}, {
@@ -144,9 +141,6 @@ include_once( 'nav.php' );
 					}, {
 						"width": '45%',
 						"targets": 3
-					}, {
-						"orderable": false,
-						"targets": 2
 					}, {
 						"targets": 5,
 						"orderable": false

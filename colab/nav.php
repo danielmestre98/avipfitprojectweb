@@ -70,17 +70,23 @@ else{
 
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
-								<li id="cad_aluno">
-									<a href="consulta_aluno">Aluno</a>
-								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
 								</li>
 								<li id="cad_treinamento">
 									<a href="consulta_treinamento">Treinamento</a>
 								</li>
+								<li id="cad_aluno">
+									<a href="consulta_aluno">Aluno</a>
+								</li>
 							</ul>
 						</div>
+					</li>
+					<li id="aval_fisica">
+						<a href="aval_fisica">
+                                <i class="fas fa-running"></i>
+                                <span class="menu-text">Avaliação física</span>
+                            </a>
 					</li>
 					<li id="agendamento" class="sidebar-dropdown">
 						<a href="#">
@@ -100,29 +106,17 @@ else{
 							</ul>
 						</div>
 					</li>
-					<li id="depoimentos">
-						<a href="depoimentos">
-                                <i class="far fa-comment-dots"></i>
-                                <span class="menu-text">Depoimentos</span>
-                            </a>
-					
-
-					</li>
 					<li id="mensalidades">
 						<a href="mensalidades">
                                 <i class="fas fa-dollar-sign"></i>
                                 <span class="menu-text">Mensalidades</span>
                             </a>
-					
-
 					</li>
-					<li id="aval_fisica">
-						<a href="aval_fisica">
-                                <i class="fas fa-running"></i>
-                                <span class="menu-text">Avaliação física</span>
+					<li id="depoimentos">
+						<a href="depoimentos">
+                                <i class="far fa-comment-dots"></i>
+                                <span class="menu-text">Depoimentos</span>
                             </a>
-					
-
 					</li>
 					<li id="filiais">
 						<a href="filiais">
