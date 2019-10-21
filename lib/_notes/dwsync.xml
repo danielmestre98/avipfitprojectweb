@@ -172,8 +172,8 @@
 <file name="verificaCnpj.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706017556" remote="132145849200000000" Dst="1" />
 <file name="verificaCnpjEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706027546" remote="132145849200000000" Dst="1" />
 <file name="verificaContem.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328730160" remote="132145849200000000" Dst="1" />
-<file name="verificaEvento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847326606" remote="132145849200000000" Dst="1" />
-<file name="verificaEventoEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847336599" remote="132145849200000000" Dst="1" />
+<file name="verificaEvento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161697624497812" remote="132161697600000000" Dst="1" />
+<file name="verificaEventoEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161699719393669" remote="132161699400000000" Dst="1" />
 <file name="verificaExercicioEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706027546" remote="132145849200000000" Dst="1" />
 <file name="verificaExercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328750146" remote="132145849200000000" Dst="1" />
 <file name="deletar_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132158279625404000" remote="132158279400000000" Dst="1" />
