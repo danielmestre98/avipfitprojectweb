@@ -11,14 +11,15 @@ $email = $_POST['email'];
 $filial = $_POST['filial'];
 $hora = $_POST['hora'];
 $data = explode( "/", $dia );
-
+$hora = explode(" - ", $hora);
+	list($horainicio,$horafim) = $hora;
 list( $dia, $mes, $ano ) = $data;
 $diacomp = "$dia/$mes/$ano";
 $data = "$ano-$mes-$dia";
 
 
-$sql = "INSERT INTO agendamento (data, status, horario, tipo, idFilial, descricaoCancelamento)
-		VALUES ('$data', 'Aguardando aprovação', '$hora', 'Aula Experimental', '$filial', '');";
+$sql = "INSERT INTO agendamento (data, status, horario, horafim, tipo, idFilial, descricaoCancelamento)
+		VALUES ('$data', 'Aguardando aprovação', '$horainicio', '$horafim', 'Aula Experimental', '$filial', '');";
 if ($conn->query($sql) === TRUE) {
 	$id = mysqli_insert_id($conn);
 } else {

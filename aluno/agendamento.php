@@ -102,7 +102,10 @@ include_once( 'nav.php' );
 				"columns": [{
 					data: 'dia'
 				}, {
-					data: 'horario'
+					data: null,
+					render: function ( data, type, row ) {
+							return row.horario +' - '+ row.horafim
+					}
 				},{
 					data: 'status'
 				},

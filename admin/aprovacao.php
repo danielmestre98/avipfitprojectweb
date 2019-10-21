@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 			
 				
 				
-			$sql = "SELECT a.data, a.horario, status, p.nome, f.IdFilial, a.id, p.email FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
+			$sql = "SELECT a.data, f.horario, f.horafim, status, p.nome, f.IdFilial, a.id, p.email FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
 			//$sql = "SELECT a.data, a.horario, status, p.nome FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.data = '$data' AND f.horario = '$hora'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -39,8 +39,9 @@ include_once( 'nav.php' );
 				$row = mysqli_fetch_assoc( $resulted );
 				$nome = $row['nome'];
 				$status = $row['status'];
-				$hora = $row['horario'];
+				$hora = date( "H:i", strtotime( $row[ 'horario' ] ) );
 				$data = $row['data'];
+				$horafim = date( "H:i", strtotime( $row[ 'horafim' ] ) );
 				$filial = $row['IdFilial'];
 				$id = $row['id'];
 				$email = $row['email'];
@@ -87,7 +88,7 @@ include_once( 'nav.php' );
 
 
 
-						<input type="text" required readonly value="<?=$hora?>" name="hora" class="form-control" id="hora">
+						<input type="text" required readonly value="<?=$hora?> - <?=$horafim?>" name="hora" class="form-control" id="hora">
 					</div>
 				</div>
 
@@ -178,7 +179,7 @@ include_once( 'nav.php' );
 
 
 
-						<input type="text" required name="hora" readonly value="<?=$hora?>" name="hora" class="form-control" id="hora">
+						<input type="text" required name="hora" readonly value="<?=$hora?> - <?$horafim?>" name="hora" class="form-control" id="hora">
 					</div>
 				</div>
 
@@ -267,10 +268,6 @@ include_once( 'nav.php' );
 				} else {
 					$( '#cancelar' ).show();
 				}
-			} );
-			var $CampoHora = $( "#hora" );
-			$CampoHora.mask( '00:00', {
-				reverse: false
 			} );
 		} );
 	</script>

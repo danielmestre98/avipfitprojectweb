@@ -7,14 +7,18 @@ $cpf = $_SESSION[ 'cpf' ];
 $dia = $_POST[ 'dia' ];
 $hora = $_POST[ 'hora' ];
 $filial = $_SESSION['filial'];
-$hora = $_POST['hora'];
+$hora = explode(" - ", $hora);
+list($horainicio,$horafim) = $hora;
+
+
+
 $data = explode( "/", $dia );
 
 list( $dia, $mes, $ano ) = $data;
 
 $data = "$ano-$mes-$dia";
-$sql = "INSERT INTO agendamento (data, status, horario, tipo, idFilial, descricaoCancelamento)
-		VALUES ('$data', 'Aguardando aprovação', '$hora', 'Avaliação Física', '$filial', '');";
+$sql = "INSERT INTO agendamento (data, status, horario, horafim, tipo, idFilial, descricaoCancelamento)
+		VALUES ('$data', 'Aguardando aprovação', '$horainicio', '$horafim', 'Avaliação Física', '$filial', '');";
 if ($conn->query($sql) === TRUE) {
 $id = mysqli_insert_id($conn);
 } else {

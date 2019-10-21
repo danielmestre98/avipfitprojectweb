@@ -7,12 +7,14 @@
 
 		$dia = $_POST['dia'];
 		$data = explode( "/", $dia );
-
+		$hora = explode(" - ", $hora);
+		list($horainicio,$horafim) = $hora;
+		
 		list( $dia, $mes, $ano ) = $data;
 
 		$data = "$ano-$mes-$dia";
 		
-		$sql = "SELECT * FROM agendamentoavalfisicamensal f  INNER JOIN agendamento a ON (a.id = f.id) WHERE cpf = '$cpf' AND f.data = '$data' AND f.horario = '$hora'";
+		$sql = "SELECT * FROM agendamentoavalfisicamensal f  INNER JOIN agendamento a ON (a.id = f.id) WHERE cpf = '$cpf' AND f.data = '$data' AND f.horario = '$horainicio'";
         $query = $conn->query($sql);
 		$num_rows = $query->num_rows;
         if( $num_rows > 0 ){
