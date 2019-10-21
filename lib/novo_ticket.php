@@ -3,11 +3,10 @@
 include( '../conectar.php' );
 date_default_timezone_set( 'America/Sao_Paulo' );
 //Recupera os dados dos campos
-$cpf = $_SESSION[ 'cpf' ];
 $foto = $_FILES[ "foto" ];
 $descricao = addslashes( $_POST[ 'desc' ] );
 $titulo = addslashes( $_POST[ 'nome_ticket' ] );
-$agora = date('Y-m-d H:i:s');
+$agora = date( 'Y-m-d H:i:s' );
 
 // Se a foto estiver sido selecionada
 if ( !empty( $foto[ "name" ] ) ) {
@@ -35,32 +34,28 @@ if ( !empty( $foto[ "name" ] ) ) {
 		// Faz o upload da imagem para seu respectivo caminho
 		move_uploaded_file( $foto[ "tmp_name" ], $caminho_imagem );
 	}
+}else{
+	$foto = "";
 }
 session_start();
 $email2 = $_SESSION[ 'email' ];
 $ip = $_SERVER[ 'REMOTE_ADDR' ];
 $data = date( 'Y-m-d H:i:s' );
 $datacad = date( 'Y-m-d' );
+$cpf = $_SESSION[ 'cpf' ];
 // Insere os dados no banco
-$sql = "INSERT INTO pessoa (cpf, dataNascimento, email, nome, telefone, TipoPessoa, senha, foto, cidade, estado, cep, bairro, rua, numero, inativo, cadastro)
-		VALUES ('$cpf', '$nascimento', '$email', '$nome', '$telefone', '3', '$senha2', '$nome_imagem', '$cidade', '$estado', '$cep', '$bairro', '$rua', '$numero', '0', '$datacad');";
-$sql2 = "INSERT INTO cliente (cpf, filial, sexo) VALUES ('$cpf', '$filial', '$sexo'); ";
-$sql3 = "INSERT INTO horario (cpf, segunda, terca, quarta, quinta, sexta, sabado)
-		VALUES ('$cpf', '$segunda', '$terca', '$quarta', '$quinta', '$sexta', '$sabado');";
-$sql4 = "INSERT INTO realiza (cpf, Treinamento) VALUES ('$cpf', '$treinamento');";
-$sql5 = "INSERT INTO mensalidade (cpf, valor, DataVencimento) VALUES ('$cpf', '$mensalidade', '$pagamento');";
-$hoje = date( "m/Y" );
-$sql6 = "INSERT INTO pagamentos (cpf, status, competencia) VALUES ('$cpf', 'Pendente', '$hoje')";
-
-
+$sql = "INSERT INTO ticket (titulo, classificacao, status, prioridade, usuario)
+		VALUES ('$titulo', 'Não classificado', 'Aberto', 'Não classificado', '$cpf');";
 include( '../conectar.php' );
-
 if ( $conn->query( $sql ) === TRUE ) {
-
+	$id = mysqli_insert_id( $conn );
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
+
+$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$foto', '$agora', 'User'); ";
+
 include( '../conectar.php' );
 if ( $conn->query( $sql2 ) === TRUE ) {
 
@@ -68,51 +63,26 @@ if ( $conn->query( $sql2 ) === TRUE ) {
 	echo "Error: " . $sql2 . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
-include( '../conectar.php' );
-if ( $conn->query( $sql3 ) === TRUE ) {
-
-} else {
-	echo "Error: " . $sql3 . "<br>" . $conn->error;
-}
-mysqli_close( $conn );
-include( '../conectar.php' );
-if ( $conn->query( $sql4 ) === TRUE ) {
-
-} else {
-	echo "Error: " . $sql4 . "<br>" . $conn->error;
-}
-mysqli_close( $conn );
-include( '../conectar.php' );
-if ( $conn->query( $sql5 ) === TRUE ) {
-
-
-} else {
-	echo "Error: " . $sql5 . "<br>" . $conn->error;
-}
-include( '../conectar.php' );
-
-if ( $conn->query( $sql6 ) === TRUE ) {
-
-} else {
-	echo "Error: " . $sql6 . "<br>" . $conn->error;
-}
-mysqli_close( $conn );
 
 include( '../conectar.php' );
-$sql = str_replace( "'", " ", $sql );
-$sql2 = str_replace( "'", " ", $sql2 );
-$sql3 = str_replace( "'", " ", $sql3 );
-$sql4 = str_replace( "'", " ", $sql4 );
-$sql5 = str_replace( "'", " ", $sql5 );
+$sql = addslashes($sql);
+$sql2 = addslashes($sql2);
 
-$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql $sql2 $sql3 $sql4 $sql5')";
+
+$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql $sql2')";
 
 if ( $conn->query( $log ) === TRUE ) {
 	session_start();
 	if ( $_SESSION[ 'tipoPessoa' ] == '1' ) {
-		header( 'location: ../admin/consulta_aluno' );
+		header( 'location: ../admin/tickets' );
 	} else {
-		header( 'location: ../colab/consulta_aluno' );
+		if($_SESSION['tipoPessoa'] == '2'){
+			header( 'location: ../colab/tickets' );
+		}else{
+			if($_SESSION['tipoPessoa'] == '3'){
+				header('location: ../aluno/tickets');
+			}
+		}
 	}
 
 } else {
