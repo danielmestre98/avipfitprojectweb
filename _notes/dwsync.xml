@@ -53,7 +53,7 @@
 <file name=".gitattributes" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843326161749" remote="132145849800000000" Dst="1" />
 <file name="verificaLink.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328980011" remote="132145849800000000" Dst="1" />
 <file name=".gitignore" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145005170355102" remote="132145849800000000" Dst="1" />
-<file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145865816387953" remote="132145865400000000" Dst="1" />
+<file name="conectar.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132157213569227509" remote="132161554200000000" Dst="1" />
 <file name=".htaccess" server="ftp.avipfittest.provisorio.ws/public_html/" local="132149435150834391" remote="132149434800000000" Dst="1" />
 <file name="env_email.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160007397211017" remote="132160007400000000" Dst="1" />
 <file name="nova_senha.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160740714824170" remote="132160741800000000" Dst="1" />
