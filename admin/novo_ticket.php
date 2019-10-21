@@ -22,15 +22,15 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Novo ticket</h1>
+		<div class="container-fluid p-5">
+			<h1>Novo ticket</h1>
 			<br>
 			
-			<form id="exercicio_cadastro" action="tickets" enctype="multipart/form-data" method="post">
+			<form id="new_ticket" action="../lib/novo_ticket" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nome_ticket">
-							Descrição</label>
+							<red>*</red>Título</label>
 					
 
 						<input type="text" name="nome_ticket" required class="form-control" id="nome_ticket" placeholder="Insira um título ao ticket">
@@ -38,7 +38,8 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<textarea name="" class="form-control" id="" cols="30" required placeholder="Descreva detalhadamente sobre o ticket" rows="10"></textarea>
+						<label for="desc"><red>*</red>Descrição</label>
+						<textarea name="desc" class="form-control" id="desc" cols="30" required placeholder="Descreva detalhadamente sobre o ticket" rows="10"></textarea>
 					</div>
 				</div>
 				<div class="form-row">
@@ -47,7 +48,7 @@ include_once( 'nav.php' );
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="tickets">Voltar</a>
