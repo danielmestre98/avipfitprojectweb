@@ -9,7 +9,7 @@ $hora = $_POST[ 'hora' ];
 $filial = $_SESSION['filial'];
 $hora = explode(" - ", $hora);
 list($horainicio,$horafim) = $hora;
-
+$hora = $_POST['hora'];
 
 
 $data = explode( "/", $dia );
