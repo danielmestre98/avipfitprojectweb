@@ -71,7 +71,9 @@ include_once( 'nav.php' );
 	<script src="../js/additional-methods.min.js"></script>
 	<script src="../js/valida_form.js"></script>
 	<?php 
-			$sql = "SELECT dia FROM agenda WHERE evento = 'Avaliação física' GROUP BY dia";
+			session_start();
+			$filial = $_SESSION['filial'];
+			$sql = "SELECT dia FROM agenda WHERE evento = 'Avaliação física' AND filial = '$filial' GROUP BY dia";
 			$dias = [];
 				$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 				while ( $row = mysqli_fetch_array( $result ) ) {
