@@ -62,7 +62,7 @@ include_once( 'nav.php' );
 					
 
 <input type="text" hidden="true" name="id" value="<?=$id?>">
-<input type="text" hidden="true" name="tipo" value="exp">
+<input type="text" hidden="true" name="tipo" value="aval">
 
 <input type="text" hidden="true" name="email" value="<?=$email?>">
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="">
