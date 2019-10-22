@@ -349,6 +349,7 @@ jQuery(function ($) {
 			hora: {
 				time: true,
 				required: true,
+				minlength: 5,
 				remote: {
 					url: "../lib/verificaEvento.php",
 					type: "post",
@@ -366,6 +367,7 @@ jQuery(function ($) {
 			horafim: {
 				time: true,
 				required: true,
+				minlength: 5,
 				min: function(){ 
 					return $("#hora").val()},
 				remote: {
@@ -385,10 +387,12 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse intervalo de horário."
+				remote: "Já existe um evento nesse intervalo de horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			},
 			horafim: {
-				remote: "Já existe um evento nesse intervalo de horário."
+				remote: "Já existe um evento nesse intervalo de horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			}
 		},
 		errorElement: 'span',

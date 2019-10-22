@@ -93,7 +93,8 @@ include_once( 'nav.php' );
 		?>
 	<script>
 		var today;
-		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() );
+		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1 );
+		
 		jQuery( function ( $ ) {
 			$( function () {
 				$( '[data-toggle="tooltip"]' ).tooltip()
@@ -106,6 +107,7 @@ include_once( 'nav.php' );
              				$("#exercicio_cadastro").validate().element("#datepicker");
          		},
 				minDate: today,
+				
 				locale: 'pt-br',
 				change: function ( e ) {
 					var $datepicker = $( '#datepicker' ).datepicker();

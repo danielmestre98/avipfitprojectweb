@@ -125,7 +125,7 @@ include_once( 'nav.php' );
 					$("#picker").datepicker("destroy");
 					var today;
 					var resultado = JSON.parse(data);
-					today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() );
+					today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1 );
 					$( '#picker' ).datepicker( {
 						disableDaysOfWeek: resultado,
 						uiLibrary: 'bootstrap4',
@@ -159,7 +159,7 @@ include_once( 'nav.php' );
 	<script type="text/javascript">
 		var today;
 		var $dias = [0,1,2,3,4,5,6];
-		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() );
+		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1 );
 		$( '#picker' ).datepicker( {
 			disableDaysOfWeek: $dias,
 			uiLibrary: 'bootstrap4',
