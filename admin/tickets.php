@@ -32,7 +32,7 @@ include_once( 'nav.php' );
 
 			</div>
 			<br>
-			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
+			<table data-order='[[ 0, "desc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
@@ -46,7 +46,7 @@ include_once( 'nav.php' );
 					</tr>
 				</thead>
 				<tbody>
-						<!--<td><a href="view_ticket" title="Visualizar"><i class="far fa-eye"></i></a>-->
+					<!--<td><a href="view_ticket" title="Visualizar"><i class="far fa-eye"></i></a>-->
 				</tbody>
 
 			</table>
@@ -100,8 +100,9 @@ include_once( 'nav.php' );
 				},
 				"responsive": true,
 				"sAjaxSource": "../lib/consulta_ticketUser.php",
+
 				"columns": [ {
-					data: 'id'
+					data: 'id',
 				}, {
 					data: 'titulo'
 				}, {
@@ -113,15 +114,13 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Visualizar" href="view_ticket?id=' + row.id +'"><i class="far fa-eye"></i>'
+						return '<a title="Visualizar" href="view_ticket?id=' + row.id + '"><i class="far fa-eye"></i>'
 					}
 				} ],
+
 				"autoWidth": false,
 				"bProcessing": true,
 				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
 						"width": '10%',
 						"targets": 0
 					}, {
@@ -132,10 +131,7 @@ include_once( 'nav.php' );
 						"targets": 2
 					}, {
 						"orderable": false,
-						"targets": 1
-					}, {
-						"orderable": false,
-						"targets": 2
+						"targets": 5
 					}
 
 
@@ -145,7 +141,6 @@ include_once( 'nav.php' );
 
 
 			} );
-
 
 		} );
 	</script>

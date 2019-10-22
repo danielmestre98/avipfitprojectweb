@@ -39,7 +39,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="desc"><red>*</red>Descrição</label>
-						<textarea name="desc" class="form-control" id="desc" cols="30" required placeholder="Descreva detalhadamente sobre o ticket" rows="10"></textarea>
+						<textarea name="desc" maxlength="1022" class="form-control" id="desc" cols="30" required placeholder="Descreva detalhadamente sobre o ticket" rows="10"></textarea>
 					</div>
 				</div>
 				<div class="form-row">
