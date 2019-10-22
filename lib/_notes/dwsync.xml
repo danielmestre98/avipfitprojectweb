@@ -193,4 +193,7 @@
 <file name="verificaEventoEdit.php" server="ftp.avipfit.com/public_html/" local="132161708111188770" remote="132161708400000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161728412047575" remote="132161728200000000" Dst="1" />
 <file name="consulta_ticketUser.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161732442297378" remote="132161732400000000" Dst="1" />
+<file name="novo_evento.php" server="ftp.avipfit.com/public_html/" local="132143555771854942" remote="132161800800000000" Dst="1" />
+<file name="salvar_ag_aval.php" server="ftp.avipfit.com/public_html/" local="132161707146559469" remote="132161805600000000" Dst="1" />
+<file name="salvar_ag_exp.php" server="ftp.avipfit.com/public_html/" local="132161707146579463" remote="132161805600000000" Dst="1" />
 </dwsync>
