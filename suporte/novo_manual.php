@@ -24,7 +24,7 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Upload de manuais</h1>
 			<br>
-			<form id="exercicio_cadastro" action="../lib/novo_manual" enctype="multipart/form-data" method="post">
+			<form id="novo_manual" action="../lib/novo_manual" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
@@ -35,7 +35,7 @@ include_once( 'nav.php' );
 				<div class="form-row">
 					<div class="form-group">
 						<label for="foto"><red>*</red>Arquivo (.zip)</label>
-						<input type="file" required name="foto" class="form-control-file" id="foto">
+						<input type="file" required name="foto" class="form-control-file" accept="application/x-zip-compressed, application/x-zip, application/zip" id="foto">
 					</div>
 				</div>
 				<p>Campos com <red>*</red> são obrigatórios</p>
