@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 						<th class='col'>Dia da semana</th>
 						<th class='col'>Horário</th>
 						<th class='col'>Filial</th>
-						<th class="col">Professor(a)</th>
+						<th class="col">Colaborador(a)</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>

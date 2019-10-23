@@ -114,8 +114,12 @@ include_once( 'nav.php' );
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
 						$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+						if ( mysqli_num_rows( $result ) > 0 ) {
 						while ( $row = mysqli_fetch_array( $result ) ) {
 							echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
+						}
+						}else{
+							echo '<option value = "">Nenhum treinamento cadastrado</option>';
 						}
 						mysqli_close( $conn );
 
