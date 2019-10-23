@@ -210,7 +210,7 @@ include_once( 'nav.php' );
 
 
 
-						<input type="text" required readonly value="<?=$treinamento?>" name="treinamento" class="form-control" id="descricao">
+						<input type="text" readonly value="<?=$treinamento?>" name="treinamento" class="form-control" id="descricao">
 					</div>
 				</div>
 				<div class="form-row">
