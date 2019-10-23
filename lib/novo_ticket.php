@@ -54,7 +54,7 @@ if ( $conn->query( $sql ) === TRUE ) {
 }
 mysqli_close( $conn );
 
-$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$foto', '$agora', 'User'); ";
+$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$nome_imagem', '$agora', 'User'); ";
 
 include( '../conectar.php' );
 if ( $conn->query( $sql2 ) === TRUE ) {

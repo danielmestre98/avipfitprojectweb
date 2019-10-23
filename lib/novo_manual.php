@@ -4,10 +4,7 @@ include( '../conectar.php' );
 date_default_timezone_set( 'America/Sao_Paulo' );
 //Recupera os dados dos campos
 $foto = $_FILES[ "foto" ];
-$descricao = addslashes( $_POST[ 'desc' ] );
-$titulo = addslashes( $_POST[ 'nome_ticket' ] );
-$agora = date( 'Y-m-d H:i:s' );
-
+$manual = addslashes( $_POST[ 'manual' ] );
 // Se a foto estiver sido selecionada
 if ( !empty( $foto[ "name" ] ) ) {
 
@@ -23,19 +20,17 @@ if ( !empty( $foto[ "name" ] ) ) {
 	if ( count( $error ) == 0 ) {
 
 		// Pega extensão da imagem
-		preg_match( "/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto[ "name" ], $ext );
+		preg_match( "/\.(zip){1}$/i", $foto[ "name" ], $ext );
 
 		// Gera um nome único para a imagem
 		$nome_imagem = md5( uniqid( time() ) ) . "." . $ext[ 1 ];
 
 		// Caminho de onde ficará a imagem
-		$caminho_imagem = "../tickets/" . $nome_imagem;
+		$caminho_imagem = "../manual/" . $nome_imagem;
 
 		// Faz o upload da imagem para seu respectivo caminho
 		move_uploaded_file( $foto[ "tmp_name" ], $caminho_imagem );
 	}
-}else{
-	$foto = "";
 }
 session_start();
 $email2 = $_SESSION[ 'email' ];
@@ -44,8 +39,8 @@ $data = date( 'Y-m-d H:i:s' );
 $datacad = date( 'Y-m-d' );
 $cpf = $_SESSION[ 'cpf' ];
 // Insere os dados no banco
-$sql = "INSERT INTO ticket (titulo, classificacao, status, prioridade, usuario)
-		VALUES ('$titulo', 'Não classificado', 'Aberto', 'Não classificado', '$cpf');";
+$sql = "INSERT INTO manual (nome, caminho)
+		VALUES ('$manual', '$nome_imagem');";
 include( '../conectar.php' );
 if ( $conn->query( $sql ) === TRUE ) {
 	$id = mysqli_insert_id( $conn );
@@ -54,36 +49,17 @@ if ( $conn->query( $sql ) === TRUE ) {
 }
 mysqli_close( $conn );
 
-$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$nome_imagem', '$agora', 'User'); ";
-
-include( '../conectar.php' );
-if ( $conn->query( $sql2 ) === TRUE ) {
-
-} else {
-	echo "Error: " . $sql2 . "<br>" . $conn->error;
-}
-mysqli_close( $conn );
-
 include( '../conectar.php' );
 $sql = addslashes($sql);
-$sql2 = addslashes($sql2);
 
 
-$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql $sql2')";
+
+$log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql')";
 
 if ( $conn->query( $log ) === TRUE ) {
 	session_start();
-	if ( $_SESSION[ 'tipoPessoa' ] == '1' ) {
-		header( 'location: ../admin/tickets' );
-	} else {
-		if($_SESSION['tipoPessoa'] == '2'){
-			header( 'location: ../colab/tickets' );
-		}else{
-			if($_SESSION['tipoPessoa'] == '3'){
-				header('location: ../aluno/tickets');
-			}
-		}
-	}
+	
+		header( 'location: ../suporte/manuais' );
 
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

@@ -5,7 +5,10 @@ date_default_timezone_set( 'America/Sao_Paulo' );
 //Recupera os dados dos campos
 $foto = $_FILES[ "foto" ];
 $descricao = addslashes( $_POST[ 'desc' ] );
-$titulo = addslashes( $_POST[ 'nome_ticket' ] );
+$id = $_POST['id'];
+$class = $_POST['class'];
+$prioridade = $_POST['prioridade'];
+$status = $_POST['status'];
 $agora = date( 'Y-m-d H:i:s' );
 
 // Se a foto estiver sido selecionada
@@ -44,17 +47,17 @@ $data = date( 'Y-m-d H:i:s' );
 $datacad = date( 'Y-m-d' );
 $cpf = $_SESSION[ 'cpf' ];
 // Insere os dados no banco
-$sql = "INSERT INTO ticket (titulo, classificacao, status, prioridade, usuario)
-		VALUES ('$titulo', 'Não classificado', 'Aberto', 'Não classificado', '$cpf');";
+$sql = "UPDATE ticket SET classificacao = '$class', prioridade = '$prioridade', status = '$status' WHERE id = '$id'";
+
+$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$nome_imagem', '$agora', 'Suporte'); ";
+
 include( '../conectar.php' );
 if ( $conn->query( $sql ) === TRUE ) {
-	$id = mysqli_insert_id( $conn );
+
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
-
-$sql2 = "INSERT INTO ticketRespostas (ticket, descricao, imagem, datahora, tipo) VALUES ('$id', '$descricao', '$nome_imagem', '$agora', 'User'); ";
 
 include( '../conectar.php' );
 if ( $conn->query( $sql2 ) === TRUE ) {
@@ -72,18 +75,9 @@ $sql2 = addslashes($sql2);
 $log = "INSERT INTO log (ip, data, tabela, usuario, codigo) VALUES ('$ip', '$data', 'pessoa, cliente, horario, realiza, mensalidade', '$email2', '$sql $sql2')";
 
 if ( $conn->query( $log ) === TRUE ) {
-	session_start();
-	if ( $_SESSION[ 'tipoPessoa' ] == '1' ) {
-		header( 'location: ../admin/tickets' );
-	} else {
-		if($_SESSION['tipoPessoa'] == '2'){
-			header( 'location: ../colab/tickets' );
-		}else{
-			if($_SESSION['tipoPessoa'] == '3'){
-				header('location: ../aluno/tickets');
-			}
-		}
-	}
+
+	header( 'location: ../suporte/tickets' );
+
 
 } else {
 	echo "Error: " . $log . "<br>" . $conn->error;

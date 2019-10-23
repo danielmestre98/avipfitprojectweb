@@ -16,7 +16,7 @@ $hora = explode(" - ", $hora);
 list( $dia, $mes, $ano ) = $data;
 $diacomp = "$dia/$mes/$ano";
 $data = "$ano-$mes-$dia";
-
+$hora = $_POST['hora'];
 
 $sql = "INSERT INTO agendamento (data, status, horario, horafim, tipo, idFilial, descricaoCancelamento)
 		VALUES ('$data', 'Aguardando aprovação', '$horainicio', '$horafim', 'Aula Experimental', '$filial', '');";
