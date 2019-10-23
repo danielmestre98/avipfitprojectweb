@@ -293,6 +293,8 @@ jQuery(function ($) {
 				}
 
 			},
+			min: function(){ 
+					return $("#hora").val()},
 			horafim: {
 				time: true,
 				required: true,
