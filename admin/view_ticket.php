@@ -70,14 +70,16 @@ mysqli_close( $conn );
 				if ( $row[ 'tipo' ] === 'Suporte' ) {
 					?>
 			<p>
-				<h4 align="right">Suporte - <?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
+				<h4>Suporte - <?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
 			<p>
 				<?=$row['descricao']?>
 			</p>
 			<?php if(!empty($row['imagem'])){?>
 			<p>Há um arquivo em anexo <a href="../tickets/<?=$row['imagem']?>" download>Clique aqui</a> para fazer o download.</p>
+	
 			<?php }?>
+	<br><br>
 			<?php 					}
 				}
 			}
@@ -99,15 +101,19 @@ mysqli_close( $conn );
 	
 ?>
 	<form id="new_ticket" method="post" action="../lib/responder_ticketUser" enctype="multipart/form-data" >
+		<div class="form-row">
 			<div class="form-group col-md-12">
 				<label for="">Resposta</label>
 				<textarea name="desc" class="form-control" id="desc" cols="30" rows="6" required placeholder="Digite aqui sua resposta" rows="10"></textarea>
 				<input type="text" hidden="true" name="id" value="<?=$id?>">
 			</div>
+		</div>
+		<div class="form-row">
 			<div class="form-group col-md-12">
 				<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
 				<input type="file" name="foto" class="form-control-file" id="foto">
 			</div>
+		</div>
 		<button style="float: right" type="submit" class="btn btn-primary">Enviar resposta</button>
 		</form>
 			

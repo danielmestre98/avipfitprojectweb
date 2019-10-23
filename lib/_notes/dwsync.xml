@@ -195,4 +195,5 @@
 <file name="consulta_ticketUser.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162288301475748" remote="132162288000000000" Dst="1" />
 <file name="responder_ticketUser.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162279843934167" remote="132162279600000000" Dst="1" />
 <file name="consulta_ticketSupp.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162377900017222" remote="132162377400000000" Dst="1" />
+<file name="responder_ticketSuporte.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162661345305935" remote="132162661200000000" Dst="1" />
 </dwsync>
