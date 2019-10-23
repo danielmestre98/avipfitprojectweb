@@ -130,7 +130,7 @@ include_once( 'nav.php' );
 			include ('../conectar.php');
 				
 				
-			$sql = "SELECT a.data, a.horario, status, nome, telefone, email, modalidadeTreinamento, f.IdFilial FROM agendamentoaulaexp a INNER JOIN agendamento f ON (a.id = f.id) WHERE a.id = '$id'";
+			$sql = "SELECT a.data, f.horario, f.horafim, status, nome, telefone, email, modalidadeTreinamento, f.IdFilial FROM agendamentoaulaexp a INNER JOIN agendamento f ON (a.id = f.id) WHERE a.id = '$id'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 			if ( mysqli_num_rows( $resulted ) === 1 ) {
@@ -138,8 +138,9 @@ include_once( 'nav.php' );
 				$nome = $row['nome'];
 				$filial = $row['IdFilial'];
 				$status = $row['status'];
-				$hora = $row['horario'];
+				$hora = date( "H:i", strtotime( $row[ 'horario' ] ) );
 				$data = $row['data'];
+				$horafim = date( "H:i", strtotime( $row[ 'horafim' ] ) );
 				$telefone = $row['telefone'];
 				$email = $row['email'];
 				$treinamento = $row['modalidadeTreinamento'];	
@@ -179,7 +180,7 @@ include_once( 'nav.php' );
 
 
 
-						<input type="text" required name="hora" readonly value="<?=$hora?> - <?$horafim?>" name="hora" class="form-control" id="hora">
+						<input type="text" required name="hora" readonly value="<?=$hora?> - <?=$horafim?>" name="hora" class="form-control" id="hora">
 					</div>
 				</div>
 

@@ -18,8 +18,8 @@ while ( $row = $result->fetch_array( MYSQLI_ASSOC ) ) {
 	$data[] = $row;
 }
 while ( $row2 = $result2->fetch_array( MYSQLI_ASSOC ) ) {
-	$row[ 'horario' ] = date( "H:i", strtotime( $row[ 'horario' ] ) );
-	$row[ 'horafim' ] = date( "H:i", strtotime( $row[ 'horafim' ] ) );
+	$row2[ 'horario' ] = date( "H:i", strtotime( $row2[ 'horario' ] ) );
+	$row2[ 'horafim' ] = date( "H:i", strtotime( $row2[ 'horafim' ] ) );
 	$data[] = $row2;
 }
 
