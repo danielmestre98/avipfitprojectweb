@@ -84,7 +84,7 @@
 <file name="novo_aval.php" server="ftp.avipfit.com//public_html/" local="132120843326381617" remote="132161428200000000" Dst="1" />
 <file name="novo_colaborador.php" server="ftp.avipfit.com//public_html/" local="132161274360328552" remote="132161428200000000" Dst="1" />
 <file name="novo_evento.php" server="ftp.avipfit.com//public_html/" local="132162125319263731" remote="132163224600000000" Dst="1" />
-<file name="agendamentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161422427185231" remote="132161422200000000" Dst="1" />
+<file name="agendamentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163484746997060" remote="132163484400000000" Dst="1" />
 <file name="aprovacao.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163290931097717" remote="132163290600000000" Dst="1" />
 <file name="ag_eventos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163457449418141" remote="132163457400000000" Dst="1" />
 <file name="aprovacao_dep.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160744506681523" remote="132160744200000000" Dst="1" />
@@ -118,7 +118,7 @@
 <file name="view_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162664960302520" remote="132162664800000000" Dst="1" />
 <file name="ver_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120880800000000" remote="132160741800000000" Dst="1" />
 <file name="gerenciar_mensalidade.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159992757416331" remote="132159992400000000" Dst="1" />
-<file name="manuais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120880800000000" remote="132160741800000000" Dst="1" />
+<file name="manuais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163465263538840" remote="132163465200000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159934349225649" remote="132159934200000000" Dst="1" />
 <file name="mensalidades.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160728760932752" remote="132160728600000000" Dst="1" />
 <file name="novos_dep.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160735144963472" remote="132160734600000000" Dst="1" />

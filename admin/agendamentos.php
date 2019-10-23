@@ -127,7 +127,7 @@ include_once( 'nav.php' );
 										"targets": 1
 									}, {
 										"orderable": false,
-										"targets": 4
+										"targets": 5
 									}
 
 

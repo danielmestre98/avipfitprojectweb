@@ -3,7 +3,7 @@ require('../conectar.php');
 
 
 $data = [];
-$sql = "SELECT nome, id FROM manual";
+$sql = "SELECT nome, id, caminho FROM manual";
 $result = $conn->query($sql);
 while($row = $result->fetch_array(MYSQLI_ASSOC)){
   	$data[] = $row;
