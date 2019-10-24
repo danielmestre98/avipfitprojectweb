@@ -73,7 +73,7 @@ include_once( 'nav.php' );
 					$( '#tabela' ).DataTable( {
 							"bLengthChange": false,
 							"language": {
-								"zeroRecords": "Nenhum registro encontrado",
+								"zeroRecords": "Nenhum registros encontrado",
 								"info": "Mostrando página _PAGE_ de _PAGES_",
 								"infoEmpty": "Nenhum registro disponível",
 								"infoFiltered": "(filtrado de _MAX_ registro totais)",
