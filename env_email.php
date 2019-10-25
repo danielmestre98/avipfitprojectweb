@@ -16,6 +16,11 @@ if ( mysqli_num_rows( $resulted ) == 1 ) {
 	$nome= $row['nome'];
 } else {
 	include('conectar.php');
+	$resulted = mysqli_query( $conn, "SELECT nome FROM pessoa WHERE email = '$email'") or die(mysqli_error($conn));
+	mysqli_close( $conn );
+	$row = mysqli_fetch_assoc( $resulted );
+	$nome= $row['nome'];
+	include('conectar.php');
 	$token = bin2hex( random_bytes( 25 ) );
 	date_default_timezone_set( 'America/Sao_Paulo' );
 	$data = date( 'Y-m-d H:i:s' );
