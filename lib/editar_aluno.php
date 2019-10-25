@@ -29,7 +29,7 @@ $idfilial = $_POST[ 'filial' ];
 $relat = "SELECT treinamento, id FROM relatorio WHERE id = (SELECT MAX(id) FROM relatorio WHERE cpf = '$cpfOld')";
 $resultado = mysqli_query( $conn, $relat);
 $row = mysqli_fetch_assoc( $resultado );
-if ($row['treinamento'] != $treinamento){
+if ($row['treinamento'] != $treinamento and $treinamento != "Treinamento não cadastrado"){
 	$relatorio = $row['id'];
 	$hoje = date("Y-m-d");
 	mysqli_query( $conn,"UPDATE relatorio SET datafim = '$hoje' WHERE id = '$relatorio'");
