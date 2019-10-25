@@ -26,6 +26,20 @@ $mensalidade = $_POST[ 'mensalidade' ];
 $pagamento = $_POST[ 'pagamento' ];
 $idfilial = $_POST[ 'filial' ];
 
+$relat = "SELECT treinamento, id FROM relatorio WHERE id = (SELECT MAX(id) FROM relatorio WHERE cpf = '$cpfOld')";
+$resultado = mysqli_query( $conn, $relat);
+$row = mysqli_fetch_assoc( $resultado );
+if ($row['treinamento'] != $treinamento){
+	$relatorio = $row['id'];
+	$hoje = date("Y-m-d");
+	mysqli_query( $conn,"UPDATE relatorio SET datafim = '$hoje' WHERE id = '$relatorio'");
+	mysqli_close($conn);
+	include('../conectar.php');
+	mysqli_query($conn, "INSERT INTO relatorio (cpf, IdFilial, treinamento, datainicio) VALUES ('$cpf', '$idfilial', '$treinamento', '$hoje')");
+	mysqli_close($conn);
+	include('../conectar.php');
+}
+
 
 // Se a foto estiver sido selecionada
 if ( !empty( $foto[ "name" ] ) ) {
