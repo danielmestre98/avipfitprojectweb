@@ -152,7 +152,7 @@
 <file name="editar_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847216663" remote="132145846800000000" Dst="1" />
 <file name="novo_colaborador.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524705977577" remote="132145846800000000" Dst="1" />
 <file name="novo_depoimento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151146365057662" remote="132151146000000000" Dst="1" />
-<file name="novo_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132158277610000000" remote="132158277600000000" Dst="1" />
+<file name="novo_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132164869536899711" remote="132164869200000000" Dst="1" />
 <file name="novo_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847246669" remote="132145846800000000" Dst="1" />
 <file name="novo_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225342584" remote="132145846800000000" Dst="1" />
 <file name="novo_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132151074204091735" remote="132151074000000000" Dst="1" />
@@ -176,7 +176,7 @@
 <file name="verificaEventoEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163448049649881" remote="132163449000000000" Dst="1" />
 <file name="verificaExercicioEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706027546" remote="132145849200000000" Dst="1" />
 <file name="verificaExercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328750146" remote="132145849200000000" Dst="1" />
-<file name="deletar_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132158279625404000" remote="132158279400000000" Dst="1" />
+<file name="deletar_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132164880358475365" remote="132164880000000000" Dst="1" />
 <file name="deletar_evento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225142708" remote="132145849800000000" Dst="1" />
 <file name="deletar_colaborador.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140787225738457" remote="132145849800000000" Dst="1" />
 <file name="deletar_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225152704" remote="132145849800000000" Dst="1" />

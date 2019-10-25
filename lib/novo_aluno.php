@@ -75,6 +75,8 @@ $sql3 = "UPDATE horario SET  segunda = '$segunda', terca = '$terca', quarta = '$
 $sql4 = "UPDATE realiza SET Treinamento = '$treinamento' WHERE cpf = '$cpf'";
 $sql5 = "UPDATE mensalidade SET valor = '$mensalidade', DataVencimento = '$pagamento' WHERE cpf = '$cpf'";
 $hoje = date( "m/Y" );
+$relat = date( "Y-m-d" );
+$sql7 = "INSERT INTO relatorio (cpf, IdFilial, treinamento, datainicio) VALUES ('$cpf', '$filial', '$treinamento', '$relat')";
 
 
 include( '../conectar.php' );
@@ -97,6 +99,13 @@ if ( $conn->query( $sql3 ) === TRUE ) {
 
 } else {
 	echo "Error: " . $sql3 . "<br>" . $conn->error;
+}
+mysqli_close( $conn );
+include( '../conectar.php' );
+if ( $conn->query( $sql7 ) === TRUE ) {
+
+} else {
+	echo "Error: " . $sql7 . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
 include( '../conectar.php' );
@@ -200,7 +209,10 @@ $sql3 = "INSERT INTO horario (cpf, segunda, terca, quarta, quinta, sexta, sabado
 $sql4 = "INSERT INTO realiza (cpf, Treinamento) VALUES ('$cpf', '$treinamento');";
 $sql5 = "INSERT INTO mensalidade (cpf, valor, DataVencimento) VALUES ('$cpf', '$mensalidade', '$pagamento');";
 $hoje = date( "m/Y" );
+$relat = date("Y-m-d");
 $sql6 = "INSERT INTO pagamentos (cpf, status, competencia) VALUES ('$cpf', 'Pendente', '$hoje')";
+$sql7 = "INSERT INTO relatorio (cpf, IdFilial, treinamento, datainicio) VALUES ('$cpf', '$filial', '$treinamento', '$relat')";
+
 
 
 include( '../conectar.php' );
@@ -223,6 +235,13 @@ if ( $conn->query( $sql3 ) === TRUE ) {
 
 } else {
 	echo "Error: " . $sql3 . "<br>" . $conn->error;
+}
+mysqli_close( $conn );
+include( '../conectar.php' );
+if ( $conn->query( $sql7 ) === TRUE ) {
+
+} else {
+	echo "Error: " . $sql7 . "<br>" . $conn->error;
 }
 mysqli_close( $conn );
 include( '../conectar.php' );
