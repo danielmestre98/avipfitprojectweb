@@ -20,7 +20,7 @@ if ( $diadasemana == 4 )$dias = 'Quinta';
 if ( $diadasemana == 5 )$dias = 'Sexta';
 if ( $diadasemana == 6 )$dias = 'Sábado';
 
-$sql = "SELECT horario, horafim FROM agenda WHERE dia = '$dias' AND evento = 'Avaliação física' AND filial = '$filial'";
+$sql = "SELECT horario, horafim FROM agenda WHERE dia = '$dias' AND evento = 'Avaliação física' AND filial = '$filial' ORDER BY horario";
 $result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 while ( $row = mysqli_fetch_array( $result ) ) {
 	$resultado[] = date("H:i", strtotime($row['horario'])). ' - '.date("H:i", strtotime($row['horafim']));  

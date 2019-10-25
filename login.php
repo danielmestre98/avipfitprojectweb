@@ -18,7 +18,7 @@ include_once( 'nav.php' );
 		if (isset($_GET['mail'])){
 		?>
 		<div id="new" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible fade show">
-		  <strong>E-mail enviado com sucesso!</strong>  E-mail enviado com sucesso! Por favor, siga as instruções do e-mail para prosseguir com a redefinição de senha. Verifique sua caixa de spam. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <strong>E-mail enviado com sucesso!</strong> Por favor, siga as instruções do e-mail para prosseguir com a redefinição de senha. Verifique sua caixa de spam. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 		</div>
