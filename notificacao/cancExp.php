@@ -33,9 +33,9 @@ $mailer->AddAddress( $email, $email );
 //Destinatários
 $mailer->Subject = 'Agendamento de aula experimental AVIPfit';
 $mailer->Body = '<p>Prezado(a), '.$nome.'.</p><p>Seu agendamento de aula experimental para '.$diacomp.' às '.$hora.'h, na filial '.$rua.', '.$numero.', '.$bairro.', '.$cidade.', '.$estado.' foi cancelado.</p><p>Nos desculpamos por não poder recebê-lo(a) na data do agendamento.</p><p>Acesse o site da <a href="https://www.avipfit.com">AVIPfit</a> para efetuar novo agendamento.</p><p>Esta mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
-if ( !$mailer->Send() ) {
+/*if ( !$mailer->Send() ) {
 	echo "Message was not sent";
 	echo "Mailer Error: " . $mailer->ErrorInfo;
 	exit;
-}
+}*/
 ?>
