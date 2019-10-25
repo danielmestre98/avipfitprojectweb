@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 					</div>
 					<div class="form-group col-md-3">
 						<label for="sexo"><red>*</red>Sexo</label>
-						<select class="form-control" name="sexo" required id="sexo">
+						<select class="form-control" required name="sexo" id="sexo">
 							<option hidden="true" selected value="">Selecione a opção desejada</option>
 							<option>Masculino</option>
 							<option>Feminino</option>
@@ -114,8 +114,12 @@ include_once( 'nav.php' );
 						require( '../conectar.php' );
 						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
 						$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+						if ( mysqli_num_rows( $result ) > 0 ) {
 						while ( $row = mysqli_fetch_array( $result ) ) {
 							echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
+						}
+						}else{
+							echo '<option value = "">Nenhum treinamento cadastrado</option>';
 						}
 						mysqli_close( $conn );
 
