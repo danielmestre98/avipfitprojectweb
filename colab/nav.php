@@ -54,7 +54,7 @@ else{
 				<div class="user-info">
 					<span class="user-name"><?php echo $nome ?>
                         </span>
-					<span class="user-role">Colaborador</span>
+					<span class="user-role">Colaborador(a)</span>
 
 				</div>
 			</div>

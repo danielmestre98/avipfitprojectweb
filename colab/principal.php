@@ -80,7 +80,7 @@ include_once( 'nav.php' );
           <div class="col-lg-4">
             <img class="rounded-circle" src="../img/fotoprincipal.png" alt="Generic placeholder image" width="140" height="140">
             <h2>O personal trainer</h2>
-            <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos, onde pode observar a dificuldade do alcance de resultados por parte das pessoas em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética, sem considerar a especificidade de cada biotipo.</p>
+            <p>André Viana, personal trainer e coach de emagrecimento, atua desde 2010 com treinamentos esportivos exclusivos, pois observou a dificuldade do alcance de resultados em academias convencionais, devido à incompatibilidade das metodologias adotadas com base em padrões de estética que não consideram a especificidade de cada biotipo.</p>
             
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
