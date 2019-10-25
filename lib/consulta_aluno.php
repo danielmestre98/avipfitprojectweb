@@ -2,7 +2,7 @@
 require('../conectar.php');
 
 $data = [];
-$sql = "Select nome, p.cpf, f.cidade, segunda, terca, quarta, quinta, sexta, sabado, Treinamento from pessoa p INNER JOIN cliente c ON (p.cpf = c.cpf) INNER JOIN filial f ON (c.filial = f.IdFilial) INNER JOIN horario h ON (p.cpf = h.cpf) INNER JOIN realiza r ON (p.cpf = r.cpf) where inativo = '0' and TipoPessoa = '3' ";
+$sql = "Select nome, p.cpf, f.cidade, f.rua, f.numero, f.IdFilial, f.bairro, f.estado, segunda, terca, quarta, quinta, sexta, sabado, Treinamento from pessoa p INNER JOIN cliente c ON (p.cpf = c.cpf) INNER JOIN filial f ON (c.filial = f.IdFilial) INNER JOIN horario h ON (p.cpf = h.cpf) INNER JOIN realiza r ON (p.cpf = r.cpf) where inativo = '0' and TipoPessoa = '3' ";
 $result = $conn->query($sql) or die(mysqli_error($conn));
 
 

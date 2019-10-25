@@ -37,6 +37,8 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
+						<th class='col'>Filial</th>
+						<th class='col'>Treinamento</th>
 						<th class='col'>Frequência</th>
 						<th class="col">Ações</th>
 					</tr>
@@ -99,39 +101,53 @@ include_once( 'nav.php' );
 				"bProcessing": true,
 				"sAjaxSource": "../lib/consulta_aluno.php",
 				"columns": [ {
-					data: 'nome'
-				}, 
-					{
-					data: 'null',
-					render: function ( data, type, row ) {
-						return row.segunda + row.terca + row.quarta + row.quinta + row.sexta + row.sabado;
+						data: 'nome'
+					}, {
+						data: 'filial',
+						render: function ( data, type, row ) {
+							return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+						}
+					},{
+						data: 'Treinamento'
+					}, {
+						data: 'null',
+						render: function ( data, type, row ) {
+							return row.segunda + row.terca + row.quarta + row.quinta + row.sexta + row.sabado;
+						}
+					}, {
+						data: null,
+						render: function ( data, type, row ) {
+							return '<a title="Editar" href="editar_aluno.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cpf + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+
+
+
+						}
 					}
-				},		
-				{
-					data: null,
-					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_aluno.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cpf + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
-
-
-					}
-				}
-						   
-						   ],
+				],
 				columnDefs: [ {
 						"searchable": false,
-						"targets": 2
+						"targets": 4
 					}, {
 						"orderable": false,
-						"targets": 2
+						"targets": 4
 					}, {
-						"width": '40%',
+						"width": '25%',
 						"targets": 0
 					}, {
+						"width": '30%',
+						"targets": 3
+					}, {
+						"width": '30%',
+						"targets": 1
+					},{
 						"width": '1%',
+						"targets": 4
+					}, {
+						"width": '10%',
 						"targets": 2
 					}
-							 
+							 	
 
 
 
