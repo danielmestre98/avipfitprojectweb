@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 
 
 
-			<form action="../mpdf/Relatorio.php">
+			<form method="post" target="_blank" action="../mpdf/Relatorio.php">
 				<div class="form-row">
 					<div class="form-group col-md-3" style="float: right;">
 						<label for="mes">Mês de referência</label>
@@ -41,8 +41,9 @@ include_once( 'nav.php' );
 						</select>
 					</div>
 				</div>
+				<button style="float: left" type="submit" class="btn btn-primary btn-sm">Gerar PDF</button>
 			</form>
-			<button style="float: left" type="submit" class="btn btn-primary btn-sm">Gerar PDF</button>
+			
 
 
 

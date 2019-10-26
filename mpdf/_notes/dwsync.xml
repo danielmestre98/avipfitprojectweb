@@ -4,4 +4,8 @@
 <file name="composer.lock" server="files.000webhost.com/public_html/" local="131909252340000000" remote="132127088400000000" Dst="1" />
 <file name="Relatorio.php" server="files.000webhost.com/public_html/" local="132127678155998332" remote="132127786200000000" Dst="1" />
 <file name="teste.css" server="files.000webhost.com/public_html/" local="131920253149245982" remote="132127088400000000" Dst="1" />
+<file name="composer.json" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585812743" remote="132165726000000000" Dst="1" />
+<file name="composer.lock" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585822718" remote="132165726000000000" Dst="1" />
+<file name="teste.css" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585822718" remote="132165726000000000" Dst="1" />
+<file name="Relatorio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585802768" remote="132165726000000000" Dst="1" />
 </dwsync>
