@@ -29,7 +29,7 @@ $sql->bind_result($rua, $cidade, $numero);
 				</thead>';
 
 mysqli_close($conn);
-
+include ("../conectar.php");
 
 
 $html .=  '</table>';
