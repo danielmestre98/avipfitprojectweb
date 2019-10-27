@@ -8,10 +8,10 @@ $datahj = date("y-m-d");
 
 require_once __DIR__ . '/vendor/autoload.php';
 include ("../conectar.php");
-$sql = $conn->prepare('SELECT Treinamento, count(*) FROM realiza r INNER JOIN pessoa p ON (r.cpf = p.cpf) GROUP BY Treinamento ');
-$sql->bind_param("sssss",$dti, $dtf, $ra, $lo, $nu);
+$sql = $conn->prepare('SELECT NomeTreinamento FROM treinamento ORDER BY id ');
+
 $sql-> execute();
-$sql->bind_result($id, $data, $solicitante, $ramal, $local, $numero);
+$sql->bind_result($treinamento);
 				
 				
 	$html = '
@@ -19,32 +19,15 @@ $sql->bind_result($id, $data, $solicitante, $ramal, $local, $numero);
 	<table>
 		<thead>
 							<tr>
-								<th>ID</th>
-								<th>Solicitante</th>
-								<th>Ramal</th>
-								<th>Local</th>
-								<th>Número</th>
-								<th>Data - Hora</th>
-								<th></th>
-							</tr>
-							
-					</thead>
-					<tbody>
+							<td></td>	
 							
 								';
 
-				 while($sql -> fetch()){ $html .= '<tr>
-				<td>'.$id.'</td> 
-				<td>'.$solicitante.'</td>
-				<td>'.$ramal.'</td>
-				<td>'.$local.'</td>
-				<td>'.$numero.'</td>
-				<td>'.$data.'</td>'; } $html .='				   
+				 while($sql -> fetch()){ $html .= '
+				<td>'.$treinamento.'</td>'; } $html .='				   
 				</tr>
-				<tr>
-				
-				</tr>
-				</tbody> </table>';
+				</thead>';
+$html .=  '</table>';
 
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->SetDisplayMode('fullpage');
