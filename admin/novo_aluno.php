@@ -112,7 +112,7 @@ include_once( 'nav.php' );
 						<option selected hidden="" value="">Selecione a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
-						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
+						$sql = "Select NomeTreinamento FROM treinamento WHERE inativo != '1'";
 						$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 						if ( mysqli_num_rows( $result ) > 0 ) {
 						while ( $row = mysqli_fetch_array( $result ) ) {

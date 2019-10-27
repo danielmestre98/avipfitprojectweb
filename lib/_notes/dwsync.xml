@@ -136,7 +136,7 @@
 <file name="consulta_exercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225052792" remote="132145846200000000" Dst="1" />
 <file name="consulta_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145788847325043" remote="132145846200000000" Dst="1" />
 <file name="consulta_mensalidade.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225082750" remote="132145846200000000" Dst="1" />
-<file name="consulta_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225092763" remote="132145846200000000" Dst="1" />
+<file name="consulta_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132166896570847922" remote="132166896600000000" Dst="1" />
 <file name="dadosLogin.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225112729" remote="132145846200000000" Dst="1" />
 <file name="editar_colaborador_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328620224" remote="132145846800000000" Dst="1" />
 <file name="editar_colaborador.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524705947598" remote="132145846800000000" Dst="1" />
@@ -160,11 +160,11 @@
 <file name="novo_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706007560" remote="132145846800000000" Dst="1" />
 <file name="salvar_ag_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847276627" remote="132145846800000000" Dst="1" />
 <file name="salvar_ag_exp.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847296624" remote="132145846800000000" Dst="1" />
-<file name="verificaNomeTrei.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328760142" remote="132145847400000000" Dst="1" />
-<file name="verificaTrei.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706037542" remote="132145847400000000" Dst="1" />
+<file name="verificaNomeTrei.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132166897640403043" remote="132166897200000000" Dst="1" />
+<file name="verificaTrei.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132166907502862094" remote="132166907400000000" Dst="1" />
 <file name="deletar_filial.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847206670" remote="132145849200000000" Dst="1" />
 <file name="deletar_parceiro.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225162721" remote="132145849200000000" Dst="1" />
-<file name="deletar_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132138085225182686" remote="132145849200000000" Dst="1" />
+<file name="deletar_treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132166897197366109" remote="132166897200000000" Dst="1" />
 <file name="editar_aluno.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132164896305611983" remote="132164896200000000" Dst="1" />
 <file name="editar_aluno_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328600238" remote="132145849200000000" Dst="1" />
 <file name="update_mensalidade.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132143125847306634" remote="132145849200000000" Dst="1" />

@@ -115,7 +115,7 @@ require( '../lib/editar_aluno_show.php' );
 						<option selected hidden="true" value="<?php echo $treinamento?>"><?php echo $treinamento?></option>
 								<?php
 								require( '../conectar.php' );
-								$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
+								$sql = "Select NomeTreinamento FROM treinamento WHERE inativo != '1'";
 								$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 								while ( $row = mysqli_fetch_array( $result ) ) {
 									echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';

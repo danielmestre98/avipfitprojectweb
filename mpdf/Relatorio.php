@@ -12,7 +12,7 @@ $sql = $conn->prepare('SELECT rua, cidade, numero FROM filial ORDER BY idFilial 
 
 $sql-> execute();
 $sql->bind_result($rua, $cidade, $numero);
-				
+
 				
 	$html = '
 	<h2><b>Relatório de relação de alunos</b></h2>
@@ -27,7 +27,13 @@ $sql->bind_result($rua, $cidade, $numero);
 				<td>'.$rua.', '.$numero.', '.$cidade.'</td>'; } $html .='				   
 				</tr>
 				</thead>';
+
+mysqli_close($conn);
+
+
+
 $html .=  '</table>';
+
 
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->SetDisplayMode('fullpage');

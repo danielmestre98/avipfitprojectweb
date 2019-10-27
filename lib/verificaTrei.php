@@ -4,7 +4,7 @@
     if(isset($_POST['nome'])) {
         $treinamento = $_POST['nome'];
 		$treinamentoOld = $_POST['nomeOld'];
-		$sql = "SELECT NomeTreinamento FROM treinamento WHERE NomeTreinamento = '$treinamento' AND NomeTreinamento != '$treinamentoOld'";
+		$sql = "SELECT NomeTreinamento FROM treinamento WHERE NomeTreinamento = '$treinamento' AND NomeTreinamento != '$treinamentoOld' AND inativo != '1'";
         $query = $conn->query($sql);
 		$num_rows = $query->num_rows;
         if( $num_rows > 0 ){

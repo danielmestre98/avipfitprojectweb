@@ -103,7 +103,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_treinamento.php?nome=' + data.NomeTreinamento + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.NomeTreinamento + '\',\'' + data.NomeExercicio + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Editar" href="editar_treinamento.php?nome=' + data.NomeTreinamento + '&id='+row.id+'"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.NomeTreinamento + '\',\'' + row.id + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 
@@ -133,7 +133,7 @@ include_once( 'nav.php' );
 	<script>
 		function confirma( nome, cpf ) {
 			if ( window.confirm( "Deseja deletar o treinamento " + nome + "? \nEsta ação desassociará este treinamento dos cadastros de alunos." ) ) {
-				window.location = "../lib/deletar_treinamento.php?nome=" + nome
+				window.location = "../lib/deletar_treinamento.php?nome=" + cpf + "&trei= " + nome
 			} else {
 				return false
 

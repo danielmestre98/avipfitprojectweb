@@ -1,11 +1,12 @@
 <?php
 include('../conectar.php');
 $nome = $_GET['nome'];
+$id = $_ENV['trei'];
 
 
-$sql = "DELETE FROM contem WHERE NomeTreinamento = '$nome'";
-$sql2 = "UPDATE realiza SET Treinamento = 'Treinamento não cadastrado' WHERE Treinamento = '$nome'";
-$sql3 = "DELETE FROM treinamento WHERE NomeTreinamento = '$nome'";
+$sql = "DELETE FROM contem WHERE NomeTreinamento = '$id'";
+$sql2 = "UPDATE realiza SET Treinamento = 'Treinamento não cadastrado' WHERE Treinamento = '$id'";
+$sql3 = "UPDATE treinamento SET inativo = '1' WHERE id = '$nome'";
 
 if ( $conn->query( $sql ) === TRUE ) {
 } else {

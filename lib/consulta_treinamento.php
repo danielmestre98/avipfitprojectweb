@@ -2,7 +2,7 @@
 require('../conectar.php');
 
 $data = [];
-$sql = "Select id, NomeTreinamento FROM treinamento WHERE Id != '9'";
+$sql = "Select id, NomeTreinamento FROM treinamento WHERE inativo != '1'";
 $result = $conn->query($sql);
 
 
