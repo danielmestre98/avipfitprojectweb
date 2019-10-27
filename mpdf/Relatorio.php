@@ -8,10 +8,10 @@ $datahj = date("y-m-d");
 
 require_once __DIR__ . '/vendor/autoload.php';
 include ("../conectar.php");
-$sql = $conn->prepare('SELECT NomeTreinamento FROM treinamento ORDER BY id ');
+$sql = $conn->prepare('SELECT rua, cidade, numero FROM filial ORDER BY idFilial ');
 
 $sql-> execute();
-$sql->bind_result($treinamento);
+$sql->bind_result($rua, $cidade, $numero);
 				
 				
 	$html = '
@@ -24,7 +24,7 @@ $sql->bind_result($treinamento);
 								';
 
 				 while($sql -> fetch()){ $html .= '
-				<td>'.$treinamento.'</td>'; } $html .='				   
+				<td>'.$rua.', '.$numero.', '.$cidade.'</td>'; } $html .='				   
 				</tr>
 				</thead>';
 $html .=  '</table>';
