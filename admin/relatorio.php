@@ -1,5 +1,21 @@
 <?php
 include_once( 'nav.php' );
+include( '../conectar.php' );
+$resulted = mysqli_query( $conn, "SELECT * FROM pessoa ORDER BY cadastro asc limit 1" );
+if ( mysqli_num_rows( $resulted ) === 1 ) {
+
+	$row = mysqli_fetch_assoc( $resulted );
+
+	$cadastro = $row[ 'cadastro' ];
+}
+
+$hoje = date( 'Y-m-d' );
+$start = ( new DateTime( $cadastro ) )->modify( 'first day of this month' );
+$end = ( new DateTime( $hoje ) )->modify( 'first day of next month' );
+$interval = DateInterval::createFromDateString( '1 month' );
+$period = new DatePeriod( $start, $interval, $end );
+
+
 
 ?>
 <!doctype html>
@@ -37,13 +53,17 @@ include_once( 'nav.php' );
 						<label for="mes">Mês de referência</label>
 						<select required class="form-control" name="data" id="data">
 							<option value="">Selecione o mês de referência</option>
-							<option>09/2019</option>
+							<?php
+							foreach ( $period as $dt ) {
+								echo "<option>".$dt->format( "m/Y" ) . "</option>";
+							}
+							?>
 						</select>
 					</div>
 				</div>
 				<button style="float: left" type="submit" class="btn btn-primary btn-sm">Gerar PDF</button>
 			</form>
-			
+
 
 
 
