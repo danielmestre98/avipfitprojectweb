@@ -54,7 +54,7 @@ if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
 					<span class="user-name">
 						<?php echo $nome ?>
 					</span>
-					<span class="user-role">Administrador</span>
+					<span class="user-role">Administrador(a)</span>
 
 				</div>
 			</div>

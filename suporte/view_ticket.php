@@ -86,22 +86,6 @@ mysqli_close( $conn );
 			mysqli_close( $conn );
 
 			?>
-			<?php 
-	$verificacao = "SELECT status, tipo, classificacao, prioridade FROM ticket t INNER JOIN ticketRespostas r ON (t.id = r.ticket) WHERE r.id = (SELECT MAX(id) FROM ticketRespostas WHERE ticket = '$id') ";
-	include( '../conectar.php' );
-	$result = mysqli_query( $conn, $verificacao )or die( mysqli_error( $conn ) );
-	if ( mysqli_num_rows( $resulted ) === 1 ) {
-		$row = mysqli_fetch_assoc( $result );
-		$tipo = $row['tipo'];
-		$status = $row['status'];
-		$classificacao = $row['classificacao'];
-		$prioridade = $row['prioridade'];
-		if ($status == 'Aberto'){
-		if($tipo == 'User'){
-			
-		
-	
-?>
 			<form id="new_ticket" method="post" action="../lib/responder_ticketSuporte" enctype="multipart/form-data">
 				<div class="form-row">
 					<div class="form-group col-md-4">
@@ -154,8 +138,6 @@ mysqli_close( $conn );
 				</div>
 				<button style="float: right" type="submit" class="btn btn-primary">Enviar resposta</button>
 			</form>
-
-			<?php }}}?>
 
 			<a href="tickets" class="btn btn-primary">Voltar</a>
 
