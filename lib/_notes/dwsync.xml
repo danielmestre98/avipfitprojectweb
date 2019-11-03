@@ -211,4 +211,6 @@
 <file name="aval_fisica.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172744367586666" remote="132172744200000000" Dst="1" />
 <file name="consulta_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172767853284636" remote="132172767600000000" Dst="1" />
 <file name="ver_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172881743263130" remote="132172881600000000" Dst="1" />
+<file name="editar_aval_show.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172954049430646" remote="132172953600000000" Dst="1" />
+<file name="editar_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172971667027972" remote="132172978200000000" Dst="1" />
 </dwsync>
