@@ -208,4 +208,7 @@
 <file name="novo_ticket.php" server="ftp.avipfit.com//public_html/" local="132162185628206261" remote="132164757000000000" Dst="1" />
 <file name="responder_ticketSuporte.php" server="ftp.avipfit.com//public_html/" local="132163004051294083" remote="132164757000000000" Dst="1" />
 <file name="responder_ticketUser.php" server="ftp.avipfit.com//public_html/" local="132162279843934167" remote="132164757000000000" Dst="1" />
+<file name="aval_fisica.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172744367586666" remote="132172744200000000" Dst="1" />
+<file name="consulta_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172767853284636" remote="132172767600000000" Dst="1" />
+<file name="ver_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132172881743263130" remote="132172881600000000" Dst="1" />
 </dwsync>

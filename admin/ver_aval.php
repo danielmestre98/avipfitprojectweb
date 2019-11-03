@@ -1,6 +1,6 @@
 <?php
 include_once( 'nav.php' );
-
+include ('../lib/ver_aval.php');
 ?>
 <!doctype html>
 <html>
@@ -20,25 +20,76 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Gráficos</h1>
+		<div class="container-fluid p-5">
+			<h1>Avaliação física</h1>
 			<br>
 			
-			<form id="exercicio_cadastro" action="novos_dep" enctype="multipart/form-data" method="post">
+			<form id="exercicio_cadastro" enctype="multipart/form-data">
 				
 				<div class="form-row">
-					<div class="form-group col-md-12">
-						<label for="cidade">Selecionar grafico</label>
-						<select required class="form-control" name="" id="aprovacao">
-							<option value="1">Percentual de gordura X Peso</option>
-						</select>
+					<div class="form-group col-md-2">
+						<label>Metabolismo basal (KCAL)</label>
+						<input class="form-control" type="text" disabled value="<?=$metabolismo?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Gordura (%)</label>
+						<input class="form-control" type="text" disabled value="<?=$gordura?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Gordura ideal(%)</label>
+						<input class="form-control" type="text" disabled value="<?=$ideal?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso total atual (Kg)</label>
+						<input class="form-control" type="text" disabled value="<?=$massa?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso total ideal (Kg)</label>
+						<input class="form-control" type="text" disabled value="<?=$pesoideal?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso gordo atual</label>
+						<input class="form-control" type="text" disabled value="<?=$pesogatual?>">
 					</div>
 				</div>
-
-				<p align="center"><img src="../img/grafico.png" alt=""></p>
-
+				<div class="form-row">
+					<div class="form-group col-md-2">
+						<label>Peso gordo ideal</label>
+						<input class="form-control" type="text" disabled value="<?=$pesogideal?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso magro atual</label>
+						<input class="form-control" type="text" disabled value="<?=$pesomatual?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso magro ideal</label>
+						<input class="form-control" type="text" disabled value="<?=$pesomideal?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso em excesso</label>
+						<input class="form-control" type="text" disabled value="<?=$pesoexcesso?>">
+					</div>
+				</div>
+				<h6>Metas para re-avaliação</h6>
+				<div class="form-row">
+					<div class="form-group col-md-2">
+						<label>Peso total</label>
+						<input class="form-control" type="text" disabled value="<?=$novopeso?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso gordo</label>
+						<input class="form-control" type="text" disabled value="<?=$novopesog?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Peso magro</label>
+						<input class="form-control" type="text" disabled value="<?=$novopesom?>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Meta do aluno</label>
+						<input class="form-control" type="text" disabled value="<?=$meta?>">
+					</div>
+				</div>
 				<a class="btn btn-primary" href="aval_fisica">Voltar</a>
-				<a style="float: right" href="#" class="btn btn-primary">Download <i class="fas fa-download"></i></a>
 				
 			</form>
 			
