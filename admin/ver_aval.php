@@ -23,7 +23,9 @@ include ('../lib/ver_aval.php');
 		<div class="container-fluid p-5">
 			<h1>Avaliação física</h1>
 			<br>
-			
+			<a class="btn btn-primary" href="graficos?id=<?=$id ?>">Gráficos</a> 
+			<br>
+			<br>
 			<form id="exercicio_cadastro" enctype="multipart/form-data">
 				
 				<div class="form-row">

@@ -71,5 +71,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 	$novopeso = round($massa - ($massa * 4/100), 2);
 	$novopesog = round($pesogatual - ($pesogatual * 20/100), 2);
 	$novopesom = round($pesomatual + ($pesomatual * 5/100), 2);
+	$grafico1m = ['Peso magro', $pesomatual];
+	$grafico1g = ['Peso gordo', $pesogatual];
+	$grafico1m = json_encode($grafico1m);
+	$grafico1g = json_encode($grafico1g);
 }
 ?>
