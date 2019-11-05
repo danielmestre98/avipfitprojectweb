@@ -6,6 +6,7 @@ include_once( 'nav.php' );
 <head>
 	<meta charset="utf-8">
 	<title>AVIPfit</title>
+	<link rel="stylesheet" href="../css/reddot.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -51,7 +52,7 @@ mysqli_close( $conn );
 					?>
 			<p><img src="../fotos/<?=$foto?>" alt="" width="70" height="70">
 				<h4>
-					<?=$nome?>-
+					<?=$nome?> -
 					<?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
 			<p>
@@ -89,18 +90,19 @@ mysqli_close( $conn );
 	<form id="new_ticket" method="post" action="../lib/responder_ticketUser" enctype="multipart/form-data" >
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="">Resposta</label>
-				<textarea name="desc" class="form-control" id="desc" cols="30" rows="6" required placeholder="Digite aqui sua resposta" rows="10"></textarea>
+				<label for="">Comentário</label>
+				<textarea name="desc" class="form-control" id="desc" cols="30" rows="6" required placeholder="Digite aqui seu comentário" rows="10"></textarea>
 				<input type="text" hidden="true" name="id" value="<?=$id?>">
+				<p>Os campos com <red>*</red> são obrigatórios.</p>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
+				<label for="cidade">Adicione uma imagem como evidência do ticket, os formatos admitidos são jpg, jpeg e png.</label>
 				<input type="file" name="foto" class="form-control-file" id="foto">
 			</div>
 		</div>
-		<button style="float: right" type="submit" class="btn btn-primary">Enviar resposta</button>
+		<button style="float: right" type="submit" class="btn btn-primary">Salvar</button>
 		</form>
 			
 			<a href="tickets" class="btn btn-primary">Voltar</a>
