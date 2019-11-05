@@ -75,7 +75,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					</div>
 					
 				</div>
-				<p>Campos com <red>*</red> são obrigatórios</p>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="mensalidades">Voltar</a>
