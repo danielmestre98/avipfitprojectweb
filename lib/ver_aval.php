@@ -75,5 +75,6 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 	$grafico1g = ['Peso gordo', $pesogatual];
 	$grafico1m = json_encode($grafico1m);
 	$grafico1g = json_encode($grafico1g);
+	
 }
 ?>

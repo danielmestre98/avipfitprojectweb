@@ -51,13 +51,14 @@ include( '../lib/ver_aval.php' );
 		google.charts.setOnLoadCallback( drawChart );
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable( [
-				[ "Element", "Density", {
+				[ "Elemento", "KG", {
 					role: "style"
 				} ],
-				[ "Copper", 8.94, "#b87333" ],
-				[ "Silver", 10.49, "silver" ],
-				[ "Gold", 19.30, "gold" ],
-				[ "Platinum", 21.45, "color: #e5e4e2" ]
+				["Peso total", <?=$massa?>, "purple"],
+				["Peso gordo", <?=$pesogatual?>, "yellow"],
+				["Peso magro", <?=$pesomatual?>, "green"],
+				["Peso em excesso", <?=$pesoexcesso?>, "red"],
+				["Peso ideal", <?=$pesoideal?>, "lighblue"]
 			] );
 
 			var view = new google.visualization.DataView( data );
@@ -71,7 +72,7 @@ include( '../lib/ver_aval.php' );
 			] );
 
 			var options = {
-				title: "Density of Precious Metals, in g/cm^3",
+				title: "Composição fragmentada",
 				width: '100%',
 				height: 400,
 				bar: {
@@ -86,6 +87,35 @@ include( '../lib/ver_aval.php' );
 			
 		}
 	</script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Porcentagem", { role: "style" } ],
+        ["% atual", <?=$gordura?>, "red"],
+        ["% ideal", <?=$ideal?>, "blue"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "% de gordura",
+        width: "100%",
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -105,6 +135,13 @@ include( '../lib/ver_aval.php' );
 				<div class="col-sm-6 grafico" id="chart_div"></div>
 				<div class="col-sm-6 grafico" id="columnchart_values"></div>
 			</div>
+			<div class="row">
+				<div id="barchart_values" class="col-sm-6" style="height: auto; overflow: hidden;"></div>
+			</div>
+		<div class="container-fluid p-5">
+			<a href="ver_aval?id=<?=$id?>" class="btn btn-primary">Voltar</a>
+		</div>
+		
 		
 
 	</main>
