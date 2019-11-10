@@ -23,10 +23,10 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Avaliações físicas</h1>
+			<h1>Avaliações físicas</h1>
 			<div class="form-row">
 				<div class="form-group col-md-2" style="float: right;">
-					<label for="opcao">Mês de referência</label>
+					<label for="opcao">Mês e ano de referência</label>
 					<select class="form-control" name="" id="">
 						<option value="">Janeiro</option>
 						<option value="">Fevereiro</option>
@@ -42,34 +42,30 @@ include_once( 'nav.php' );
 						<option value="">Dezembro</option>
 					</select>
 				</div>
-				<div class="form-group col-md-2" style="float: right;">
-					<label for="opcao">Ano de referência</label>
-					<select class="form-control" name="" id="">
-						<option value="">2017</option>
-						<option value="">2018</option>
-						<option selected value="">2019</option>
-					</select>
-				</div>
 				
 			</div>
+			<div id="botao_novo" align="right">
+				<a href="novo_aval" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
+			</div>
+			<br>
 			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
+						<th class="col">Data</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+<!--					<tr>
 						<td>Daniel Mestre Loureiro</td>
 						<td>
-							<a title="Novo" href="novo_aval"><i class="fas fa-plus"></i></a>
 							<a href="ver_aval" title="Ver"><i class="far fa-eye"></i></a>
 							<a href="selecionar_edit" title="Editar"><i class="fas fa-edit"></i></a>
 						</td>
-					</tr>
+					</tr>-->
 				</tbody>
 
 			</table>
@@ -108,7 +104,6 @@ include_once( 'nav.php' );
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
 					"infoFiltered": "(filtrado de _MAX_ registro totais)",
-					searchPlaceholder: "Nome, filial",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",
@@ -122,37 +117,40 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
-
+				"sAjaxSource": "../lib/consulta_aval.php",
 				"autoWidth": false,
 				"bProcessing": true,
-
+				
 				"columns": [ {
-					data: 'evento'
+					data: 'nome'
 				}, {
-					data: 'dia'
-				} ],
+					data: 'data'
+				},{
+						data: null,
+						render: function ( data, type, row ) {
+							return '<a title="Editar" href="edit_aval?id=' + data.id + '"><i class="fas fa-edit"></i></a>  <a href="ver_aval?id='+data.id+'" title="Ver"><i class="far fa-eye"></i></a>'
+						}
+				}],
 				columnDefs: [ {
 						"searchable": false,
-						"targets": 1
+						"targets": 2
 					}, {
 						"orderable": false,
-						"targets": 1
+						"targets": 2
 					}, {
 						"width": '70%',
 						"targets": 0
 					}, {
 						"width": '2%',
+						"targets": 2
+					},
+					{
+						"width": '10%',
 						"targets": 1
 					}
 
 
-				],
-				initComplete: function () {
-					$( '.dataTables_filter input[type="search"]' ).css( {
-						'width': '630px',
-						'display': 'inline-block'
-					} );
-				}
+				]
 
 
 
