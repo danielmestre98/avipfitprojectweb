@@ -4,15 +4,15 @@ include_once( 'nav.php' );
 <!doctype html>
 <html>
 <head>
-<script>
-	jQuery( function ( $ ) {
-		$( document ).ready( function () {
-			$( "#ajuda" ).addClass( "active" );
-			$( "#ajuda_drop" ).slideDown( 200 );
-			$( "#tickets" ).addClass( "bg-dark active" )
+	<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				$( "#ajuda" ).addClass( "active" );
+				$( "#ajuda_drop" ).slideDown( 200 );
+				$( "#tickets" ).addClass( "bg-dark active" )
+			} );
 		} );
-	} );
-</script>
+	</script>
 	<meta charset="utf-8">
 	<title>AVIPfit - Suporte</title>
 	<link rel="stylesheet" href="../css/datatables.min.css">
@@ -24,14 +24,15 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Suporte</h1>
+			<h1>Suporte</h1>
 			<br>
+			<h5>Consulte ou crie tickets para entrar em contato com o suporte.</h5>
 			<div id="botao_novo" align="right">
 				<a href="novo_ticket" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
 			</div>
 			<br>
-			<table data-order='[[ 0, "asc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
+			<table data-order='[[ 0, "desc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 
 				<thead>
 					<tr>
@@ -41,23 +42,16 @@ include_once( 'nav.php' );
 						<th class='col'>Status</th>
 						<th class='col'>Prioridade</th>
 						<th class='col'>Ações</th>
-				
+
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Problema</td>
-						<td>Dúvida</td>
-						<td>Aberto</td>
-						<td>Alta</td>
-						<td><a href="view_ticket" title="Visualizar"><i class="far fa-eye"></i></a></td>
-					</tr>
+					<!--<td><a href="view_ticket" title="Visualizar"><i class="far fa-eye"></i></a>-->
 				</tbody>
 
 			</table>
 			<br>
-			
+
 		</div>
 
 
@@ -83,7 +77,7 @@ include_once( 'nav.php' );
 			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
 				$( "#divt" ).removeClass( "container-fluid p-5" );
 			}
-			
+
 			$( '#tabela' ).DataTable( {
 
 				"bLengthChange": false,
@@ -105,13 +99,28 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
+				"sAjaxSource": "../lib/consulta_ticketUser.php",
+
+				"columns": [ {
+					data: 'id',
+				}, {
+					data: 'titulo'
+				}, {
+					data: 'classificacao'
+				}, {
+					data: 'status'
+				}, {
+					data: 'prioridade'
+				}, {
+					data: null,
+					render: function ( data, type, row ) {
+						return '<a title="Visualizar" href="view_ticket?id=' + row.id + '"><i class="far fa-eye"></i>'
+					}
+				} ],
 
 				"autoWidth": false,
 				"bProcessing": true,
 				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
 						"width": '10%',
 						"targets": 0
 					}, {
@@ -120,12 +129,9 @@ include_once( 'nav.php' );
 					}, {
 						"width": '20%',
 						"targets": 2
-					},{
+					}, {
 						"orderable": false,
-						"targets": 1
-					},{
-						"orderable": false,
-						"targets": 2
+						"targets": 5
 					}
 
 
@@ -136,17 +142,16 @@ include_once( 'nav.php' );
 
 			} );
 
-			
 		} );
 	</script>
 
 	<script>
-		function confirma(dia, horario, filial){
+		function confirma( dia, horario, filial ) {
 			if ( window.confirm( " Tem certeza que deseja excluir esse evento?" ) ) {
-					window.location="../lib/deletar_evento.php?dia="+dia+"&horario="+horario+"&filial="+filial
+				window.location = "../lib/deletar_evento.php?dia=" + dia + "&horario=" + horario + "&filial=" + filial
 			} else {
 				return false
-				
+
 			}
 		}
 	</script>

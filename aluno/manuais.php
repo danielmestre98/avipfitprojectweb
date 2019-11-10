@@ -24,7 +24,9 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1 align="center">Manuais</h1>
+			<h1>Download de manuais</h1>
+			<br>
+			<h5>Selecione o manual desejado e clique em download para baixar.</h5>
 			<div id="botao_novo" align="right">
 				
 
@@ -34,15 +36,11 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
-						<th class='col'>Ações</th>
+						<th class='col'>Manual</th>
+						<th class='col'>Ação</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Manual</td>
-						<td><a title="Download" href="#"><i class="fas fa-download"></i></a></td>
-					</tr>
 				</tbody>
 
 			</table>
@@ -94,6 +92,16 @@ include_once( 'nav.php' );
 
 				},
 				"responsive": true,
+				"sAjaxSource": "../lib/consulta_manual.php",
+
+				"columns": [ {
+					data: 'nome',
+				}, {
+					data: null,
+					render: function ( data, type, row ) {
+						return '<a title="Download" href="../manual/'+row.caminho+'" download><i class="fas fa-download"></i></a>'
+					}
+				} ],
 
 				"autoWidth": false,
 				"bProcessing": true

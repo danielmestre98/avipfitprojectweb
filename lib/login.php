@@ -49,6 +49,21 @@ if ( mysqli_num_rows( $resulted ) > 0 ) {
 				
 				header( 'location: ../aluno/principal' );
 			}
+			else{
+				if($row['tipoPessoa'] == 4){
+					$cpf2 = $row[ 'cpf' ];
+					mysqli_close( $conn );
+					include( '../conectar.php' );
+					$resulted2 = mysqli_query( $conn, "SELECT filial FROM cliente WHERE cpf = '$cpf2'" );
+					$row2 = mysqli_fetch_assoc( $resulted2 );
+					session_start();
+					$_SESSION[ 'filial' ] = $row2[ 'filial' ];
+					$_SESSION[ 'tipoPessoa' ] = $row[ 'tipoPessoa' ];
+					$_SESSION[ 'cpf' ] = $cpf2;
+					$_SESSION[ 'email' ] = $email;	
+					header( 'location: ../suporte/principal' );
+				}
+			}
 		}
 	}
 
