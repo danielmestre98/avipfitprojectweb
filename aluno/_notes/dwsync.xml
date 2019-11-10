@@ -33,18 +33,18 @@
 <file name="novo_dep.php" server="ftp.avipfit.com//public_html/" local="132157984065551463" remote="132161430000000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfit.com//public_html/" local="132162311351155730" remote="132164752800000000" Dst="1" />
 <file name="agendamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162618822287102" remote="132178818000000000" Dst="1" />
-<file name="aval_fisica.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120880800000000" remote="132178818000000000" Dst="1" />
+<file name="aval_fisica.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178984756517670" remote="132178984800000000" Dst="1" />
 <file name="aprovacao.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132145179187731829" remote="132178818000000000" Dst="1" />
 <file name="depoimentos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160742305794420" remote="132160741800000000" Dst="1" />
 <file name="manuais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178818260765717" remote="132178818000000000" Dst="1" />
-<file name="ver_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120880800000000" remote="132178818000000000" Dst="1" />
+<file name="ver_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178982439268285" remote="132178982400000000" Dst="1" />
 <file name="view_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178818262102354" remote="132178818000000000" Dst="1" />
 <file name="filiais.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159918378644115" remote="132159918000000000" Dst="1" />
 <file name="nav.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132155723213894677" remote="132178818000000000" Dst="1" />
 <file name="novo_dep.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132158235641480710" remote="132178818000000000" Dst="1" />
 <file name="novo_agen.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162618822297076" remote="132178818000000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159911108283134" remote="132159910800000000" Dst="1" />
-<file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132162618822297076" remote="132178818000000000" Dst="1" />
+<file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178969966417020" remote="132178969800000000" Dst="1" />
 <file name="principal.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132159998050857152" remote="132178818000000000" Dst="1" />
 <file name="tickets.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178818261493976" remote="132178818000000000" Dst="1" />
 <file name="treinamento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132160751530667952" remote="132160751400000000" Dst="1" />
@@ -57,11 +57,12 @@
 <file name="nav.php" server="ftp.avipfit.com/public_html/" local="132155723213894677" remote="132178818000000000" Dst="1" />
 <file name="novo_agen.php" server="ftp.avipfit.com/public_html/" local="132162618822297076" remote="132178818000000000" Dst="1" />
 <file name="novo_dep.php" server="ftp.avipfit.com/public_html/" local="132158235641480710" remote="132178818000000000" Dst="1" />
-<file name="novo_ticket.php" server="ftp.avipfit.com/public_html/" local="132162618822297076" remote="132178818000000000" Dst="1" />
+<file name="novo_ticket.php" server="ftp.avipfit.com/public_html/" local="132178969966417020" remote="132178969800000000" Dst="1" />
 <file name="parceiros.php" server="ftp.avipfit.com/public_html/" local="132159911108283134" remote="132178818000000000" Dst="1" />
 <file name="principal.php" server="ftp.avipfit.com/public_html/" local="132159998050857152" remote="132178818000000000" Dst="1" />
 <file name="tickets.php" server="ftp.avipfit.com/public_html/" local="132178818261493976" remote="132178818000000000" Dst="1" />
 <file name="treinamento.php" server="ftp.avipfit.com/public_html/" local="132160751530667952" remote="132178818000000000" Dst="1" />
 <file name="ver_aval.php" server="ftp.avipfit.com/public_html/" local="132120880800000000" remote="132178818000000000" Dst="1" />
 <file name="view_ticket.php" server="ftp.avipfit.com/public_html/" local="132178818262102354" remote="132178818000000000" Dst="1" />
+<file name="graficos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132178983390269580" remote="132178983000000000" Dst="1" />
 </dwsync>
