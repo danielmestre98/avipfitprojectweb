@@ -172,7 +172,7 @@
 <file name="verificaCnpj.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706017556" remote="132145849200000000" Dst="1" />
 <file name="verificaCnpjEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706027546" remote="132145849200000000" Dst="1" />
 <file name="verificaContem.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328730160" remote="132145849200000000" Dst="1" />
-<file name="verificaEvento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161768574913969" remote="132161768400000000" Dst="1" />
+<file name="verificaEvento.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132179020282259098" remote="132179020200000000" Dst="1" />
 <file name="verificaEventoEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132163448049649881" remote="132163449000000000" Dst="1" />
 <file name="verificaExercicioEdit.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140524706027546" remote="132145849200000000" Dst="1" />
 <file name="verificaExercicio.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132120843328750146" remote="132145849200000000" Dst="1" />
@@ -189,7 +189,7 @@
 <file name="verificaAgExp.php" server="ftp.avipfit.com/public_html/" local="132162618822476593" remote="132178898400000000" Dst="1" />
 <file name="deletar_aluno.php" server="ftp.avipfit.com/public_html/" local="132165717082915056" remote="132178898400000000" Dst="1" />
 <file name="novo_aluno.php" server="ftp.avipfit.com/public_html/" local="132165717082974901" remote="132178898400000000" Dst="1" />
-<file name="verificaEvento.php" server="ftp.avipfit.com/public_html/" local="132162618822486566" remote="132178898400000000" Dst="1" />
+<file name="verificaEvento.php" server="ftp.avipfit.com/public_html/" local="132179020282259098" remote="132179020800000000" Dst="1" />
 <file name="verificaEventoEdit.php" server="ftp.avipfit.com/public_html/" local="132165717083004811" remote="132178898400000000" Dst="1" />
 <file name="novo_ticket.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161728412047575" remote="132161728200000000" Dst="1" />
 <file name="consulta_ticketUser.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132161732442297378" remote="132161732400000000" Dst="1" />
