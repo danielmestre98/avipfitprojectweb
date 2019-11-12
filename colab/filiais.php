@@ -42,7 +42,6 @@ include_once( 'nav.php' );
 			mysqli_close( $conn );
 
 			?>
-			<p><img src="../img/mapa.png" width="50%" alt=""></p>
 
 		</div>
 	</main>
