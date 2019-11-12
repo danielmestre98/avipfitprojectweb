@@ -40,7 +40,9 @@ $period = new DatePeriod( $start, $interval, $end );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Relatório de relação de alunos</h1>
+			<h1>Relatório institucional</h1>
+			<br>
+			<h5>Selecione o mês/ano de referência e verifique a quantidade de alunos cadastrados às modalidades de treinamento em conformidade com as filiais.</h5>
 			<br>
 
 
