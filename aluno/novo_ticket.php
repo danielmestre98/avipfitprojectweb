@@ -25,6 +25,8 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Novo ticket</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um ticket.</h5>
+			<br>
 			
 			<form id="new_ticket" action="../lib/novo_ticket" enctype="multipart/form-data" method="post">
 				<div class="form-row">
