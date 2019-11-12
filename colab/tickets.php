@@ -26,7 +26,7 @@ include_once( 'nav.php' );
 		<div id="divt" class="container-fluid p-5">
 			<h1>Suporte</h1>
 			<br>
-			<h5>Consulte ou crie tickets para entrar em contato com o suporte.</h5>
+			<h5>Esclareça dúvidas e registre incidentes ou solicitações à equipe de suporte do sistema AVIPfit ou consulte por tickets cadastrados para atualizar informações.</h5>
 			<div id="botao_novo" align="right">
 				<a href="novo_ticket" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
