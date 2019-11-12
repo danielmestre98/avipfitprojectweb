@@ -31,7 +31,7 @@ $mailer->FromName = 'AVIPfit'; //Nome que será exibido
 $mailer->From = 'no-reply@avipfit.com'; //Obrigatório ser a mesma caixa postal configurada no remetente do SMTP
 $mailer->AddAddress( $email, $email );
 //Destinatários
-$mailer->Subject = 'Agendamento de avaliação física AVIPfit';
+$mailer->Subject = 'Agendamento de avaliação física AVIPfit cancelado';
 $mailer->Body = '<p>Prezado(a), '.$nome.'.</p><p>Seu agendamento de avaliação física para '.$diacomp.' às '.$hora.'h, na filial '.$rua.', '.$numero.', '.$bairro.', '.$cidade.', '.$estado.' foi cancelado.</p><p>Nos desculpamos por não poder recebê-lo(a) na data do agendamento.</p><p>Acesse o site da <a href="https://www.avipfit.com">AVIPfit</a> para efetuar novo agendamento.</p><p>Esta mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
 if ( !$mailer->Send() ) {
 	echo "Message was not sent";
