@@ -46,6 +46,7 @@ $ip = $_SERVER[ 'REMOTE_ADDR' ];
 $data = date( 'Y-m-d H:i:s' );
 $datacad = date( 'Y-m-d' );
 $cpf = $_SESSION[ 'cpf' ];
+require_once('../notificacao/respTicket.php');
 // Insere os dados no banco
 $sql = "UPDATE ticket SET classificacao = '$class', prioridade = '$prioridade', status = '$status' WHERE id = '$id'";
 
