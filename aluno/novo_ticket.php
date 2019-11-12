@@ -35,7 +35,7 @@ include_once( 'nav.php' );
 							<red>*</red>Título</label>
 					
 
-						<input type="text" name="nome_ticket" required class="form-control" id="nome_ticket" placeholder="Insira um título ao ticket">
+						<input type="text" name="nome_ticket" maxlength="255" required class="form-control" id="nome_ticket" placeholder="Insira um título ao ticket">
 					</div>
 				</div>
 				<div class="form-row">
@@ -46,7 +46,7 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
+						<label for="cidade">Adicione uma imagem ao registro do ticket, os formatos admitidos são jpg, jpeg e png.</label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>

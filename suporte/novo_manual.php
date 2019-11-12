@@ -23,6 +23,7 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
 			<h1>Upload de manuais</h1>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para registrar um manual.</h5>
 			<br>
 			<form id="novo_manual" action="../lib/novo_manual" enctype="multipart/form-data" method="post">
 				<div class="form-row">
@@ -33,15 +34,15 @@ include_once( 'nav.php' );
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group">
-						<label for="foto"><red>*</red>Arquivo (.zip)</label>
+					<div class="form-group col-md-12">
+						<label for="foto"><red>*</red>Adicione um arquivo ao registro do manual, o formato admitido é .zip.</label>
 						<input type="file" required name="foto" class="form-control-file" accept="application/x-zip-compressed, application/x-zip, application/zip" id="foto">
 					</div>
 				</div>
 				<p>Campos com <red>*</red> são obrigatórios</p>
 
 				<a class="btn btn-primary" href="manuais">Voltar</a>
-				<button type="submit" class="btn btn-primary float-right">Enviar</button>
+				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 
 

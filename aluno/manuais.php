@@ -24,9 +24,9 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
-			<h1>Download de manuais</h1>
+			<h1>Manuais</h1>
 			<br>
-			<h5>Selecione o manual desejado e clique em download para baixar.</h5>
+			<h5>Download de manuais do sistema.</h5>
 			<div id="botao_novo" align="right">
 				
 

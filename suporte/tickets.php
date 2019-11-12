@@ -26,7 +26,7 @@ include_once( 'nav.php' );
 		<div id="divt" class="container-fluid p-5">
 			<h1>Suporte</h1>
 			<br>
-			<h5>Responda os tickets de problemas ou dúvidas dos usuários.</h5>
+			<h5>Gerencie os tickets dos usuários.</h5>
 			<br>
 			<table data-order='[[ 0, "desc" ]]' class="table table-bordered table-striped table-hover " data-page-length='8' id="tabela">
 

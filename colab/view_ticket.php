@@ -6,6 +6,7 @@ include_once( 'nav.php' );
 <head>
 	<meta charset="utf-8">
 	<title>AVIPfit</title>
+	<link rel="stylesheet" href="../css/reddot.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -36,11 +37,6 @@ mysqli_close( $conn );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<p>
-				<h1>
-					<?=$titulo?>
-				</h1>
-			</p>
 			<br>
 			<?php
 			include( '../conectar.php' );
@@ -51,9 +47,10 @@ mysqli_close( $conn );
 					?>
 			<p><img src="../fotos/<?=$foto?>" alt="" width="70" height="70">
 				<h4>
-					<?=$nome?>-
+					<?=$nome?> -
 					<?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
+			<p><h5><?=$titulo?></h5></p>
 			<p>
 				<?=$row['descricao']?>
 			</p>
@@ -72,6 +69,7 @@ mysqli_close( $conn );
 			<p>
 				<h4>Suporte - <?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
+	<p><h5><?=$titulo?></h5></p>
 			<p>
 				<?=$row['descricao']?>
 			</p>
@@ -89,18 +87,21 @@ mysqli_close( $conn );
 	<form id="new_ticket" method="post" action="../lib/responder_ticketUser" enctype="multipart/form-data" >
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="">Resposta</label>
-				<textarea name="desc" class="form-control" id="desc" cols="30" rows="6" required placeholder="Digite aqui sua resposta" rows="10"></textarea>
+				<label for=""><red>*</red>Comentário</label>
+				<textarea name="desc" class="form-control" id="desc" cols="30" maxlength="1022" rows="6" required placeholder="Digite aqui seu comentário" rows="10"></textarea>
 				<input type="text" hidden="true" name="id" value="<?=$id?>">
+				<p>Os campos com <red>*</red> são obrigatórios.</p>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
+				<label for="cidade">Adicione uma imagem como evidência do ticket, os formatos admitidos são jpg, jpeg e png.</label>
 				<input type="file" name="foto" class="form-control-file" id="foto">
 			</div>
 		</div>
-		<button style="float: right" type="submit" class="btn btn-primary">Enviar resposta</button>
+		<br>
+		<p>Campos com <red>*</red> são obrigatórios.</p>
+		<button style="float: right" type="submit" class="btn btn-primary">Enviar comentário</button>
 		</form>
 			
 			<a href="tickets" class="btn btn-primary">Voltar</a>

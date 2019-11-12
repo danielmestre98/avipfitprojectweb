@@ -5,6 +5,7 @@ include_once( 'nav.php' );
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/reddot.css">
 	<title>AVIPfit</title>
 </head>
 <script>
@@ -19,12 +20,15 @@ include_once( 'nav.php' );
 <?php
 require( '../conectar.php' );
 $id = $_GET[ 'id' ];
-$resulted = mysqli_query( $conn, "SELECT titulo, usuario, foto, nome FROM ticket INNER JOIN pessoa ON (usuario = cpf) WHERE '$id' = id" );
+$resulted = mysqli_query( $conn, "SELECT titulo, status, prioridade, classificacao, usuario, foto, nome FROM ticket INNER JOIN pessoa ON (usuario = cpf) WHERE '$id' = id" );
 if ( mysqli_num_rows( $resulted ) === 1 ) {
 	$row = mysqli_fetch_assoc( $resulted );
 	$titulo = $row[ 'titulo' ];
 	$user = $row[ 'usuario' ];
 	$foto = $row[ 'foto' ];
+	$status = $row['status'];
+	$prioridade = $row['prioridade'];
+	$classificacao = $row['classificacao'];
 	$nome = $row[ 'nome' ];
 
 }
@@ -36,11 +40,7 @@ mysqli_close( $conn );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<p>
-				<h1>
-					<?=$titulo?>
-				</h1>
-			</p>
+
 			<br>
 			<?php
 			include( '../conectar.php' );
@@ -51,9 +51,10 @@ mysqli_close( $conn );
 					?>
 			<p><img src="../fotos/<?=$foto?>" alt="" width="70" height="70">
 				<h4>
-					<?=$nome?>-
+					<?=$nome?> -
 					<?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
+			<p><h5><?=$titulo?></h5></p>
 			<p>
 				<?=$row['descricao']?>
 			</p>
@@ -72,6 +73,7 @@ mysqli_close( $conn );
 			<p>
 				<h4>Suporte - <?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
+			<p><h5><?=$titulo?></h5></p>
 			<p>
 				<?=$row['descricao']?>
 			</p>
@@ -91,21 +93,23 @@ mysqli_close( $conn );
 					<div class="form-group col-md-4">
 						<label for="">Classificação</label>
 						<select class="form-control" required name="class" id="class">
-							<option hidden="true" selected>
-								<?=$classificacao?>
-							</option>
+							
+								<?php 
+								echo "<option hidden='true' selected>".$classificacao."</option>";
+								?>
+							
 							<option>Solicitação</option>
 							<option>Dúvida</option>
-							<option>Incidente/Erro de sistema</option>
+							<option>Incidente</option>
 
 						</select>
 					</div>
 					<div class="form-group col-md-4">
 						<label for="">Prioridade</label>
 						<select class="form-control" required name="prioridade" id="prioridade">
-							<option hidden="true">
-								<?=$prioridade?>
-							</option>
+							<?php 	
+								echo "<option hidden='true' selected>".$prioridade."</option>";
+							?>
 							<option>Baixa</option>
 							<option>Média</option>
 							<option>Alta</option>
@@ -115,10 +119,13 @@ mysqli_close( $conn );
 					<div class="form-group col-md-4">
 						<label for="">Status</label>
 						<select class="form-control" required name="status" id="status">
-							<option>
+							<option hidden="true">
 								<?=$status?>
 							</option>
-							<option>Finalizado</option>
+							<option>Aberto</option>
+							<option>Em progresso</option>
+							<option>Em revisão</option>
+							<option>Fechado</option>
 
 						</select>
 					</div>
@@ -126,17 +133,18 @@ mysqli_close( $conn );
 				<div class="form-row">
 					<input type="text" hidden="true" name="id" value="<?=$id?>">
 					<div class="form-group col-md-12">
-						<label for="">Resposta</label>
-						<textarea name="desc" class="form-control" id="desc" cols="35" rows="6" required placeholder="Digite aqui sua resposta"></textarea>
+						<label for=""><red>*</red>Comentário</label>
+						<textarea name="desc" class="form-control" id="desc" maxlength="1022" cols="35" rows="6" required placeholder="Digite aqui sua resposta"></textarea>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
+						<label for="cidade">Adicione uma imagem ao comentário do ticket, os formatos admitidos são jpg, jpeg e png.</label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
-				<button style="float: right" type="submit" class="btn btn-primary">Enviar resposta</button>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
+				<button style="float: right" type="submit" class="btn btn-primary">Enviar comentário</button>
 			</form>
 
 			<a href="tickets" class="btn btn-primary">Voltar</a>

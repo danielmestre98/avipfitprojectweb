@@ -26,7 +26,7 @@ include_once( 'nav.php' );
 		<div id="divt" class="container-fluid p-5">
 			<h1>Manuais</h1>
 			<br>
-			<h5>Adicione ou exclua manuais de usuário.</h5>
+			<h5>Registre ou pesquise manuais do sistema.</h5>
 				<div id="botao_novo" align="right">
 				<a href="novo_manual" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
 
@@ -38,7 +38,7 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
-						<th class='col'>Ação</th>
+						<th class='col'>Ações</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -100,7 +100,7 @@ include_once( 'nav.php' );
 				}, {
 					data: null,
 					render: function ( data, type, row ) {
-						return '<a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						return '<a title="Excluir" onclick ="confirma(\'' + row.id + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a> <a title="Download" href="../manual/'+row.caminho+'" download><i class="fas fa-download"></i></a>'
 					}
 				} ],
 
@@ -118,7 +118,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( nome, cpf ) {
-			if ( window.confirm( " Tem certeza que deseja deletar o manual " + cpf + "? " ) ) {
+			if ( window.confirm( " Tem certeza que deseja deletar o registro " + cpf + "? " ) ) {
 				window.location = "../lib/deletar_manual.php?id=" + nome
 			} else {
 				return false
