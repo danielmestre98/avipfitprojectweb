@@ -34,7 +34,7 @@ $sql2 = "INSERT INTO agendamentoaulaexp (data, email, IdFilial, modalidadeTreina
 
 include ('../conectar.php');
 if ($conn->query($sql2) === TRUE) {
-	include ('../notificacao/novaExp.php');
+	require ('../notificacao/novaExp.php');
 	header( 'location: ../index?suc=1' );
 } else {
     echo "Error: " . $sql2 . "<br>" . $conn->error;
