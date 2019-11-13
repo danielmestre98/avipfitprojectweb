@@ -1,16 +1,14 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
-if (isset($_SESSION['tipoPessoa'])){
-	if($_SESSION['tipoPessoa'] == 2){
-		
+if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
+	if ( $_SESSION[ 'tipoPessoa' ] == 2 ) {
+
+	} else {
+		header( 'location: ../index' );
 	}
-	else{
-		header('location: ../index');
-	}
-}
-else{
-	header('location: ../index');
+} else {
+	header( 'location: ../index' );
 }
 ?>
 <!DOCTYPE html>
@@ -51,8 +49,9 @@ else{
 					<img class="img-responsive img-rounded" src="../fotos/<?=$foto?>" alt="User picture">
 				</div>
 				<div class="user-info">
-					<span class="user-name"><?php echo $nome ?>
-                        </span>
+					<span class="user-name">
+						<?php echo $nome ?>
+					</span>
 					<span class="user-role">Colaborador(a)</span>
 
 				</div>
@@ -66,6 +65,7 @@ else{
                                 <span class="menu-text">Cadastros</span>
                             </a>
 					
+
 
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
@@ -86,6 +86,7 @@ else{
                                 <i class="fas fa-running"></i>
                                 <span class="menu-text">Avaliação física</span>
                             </a>
+					
 					</li>
 					<li id="agendamento" class="sidebar-dropdown">
 						<a href="#">
@@ -93,6 +94,7 @@ else{
                                 <span class="menu-text">Agendamentos</span>
                             </a>
 					
+
 
 						<div id="ag_drop" class="sidebar-submenu">
 							<ul>
@@ -110,12 +112,14 @@ else{
                                 <i class="fas fa-dollar-sign"></i>
                                 <span class="menu-text">Mensalidades</span>
                             </a>
+					
 					</li>
 					<li id="depoimentos">
 						<a href="depoimentos">
                                 <i class="far fa-comment-dots"></i>
                                 <span class="menu-text">Depoimentos</span>
                             </a>
+					
 					</li>
 					<li id="filiais">
 						<a href="filiais">
@@ -123,6 +127,7 @@ else{
                                 <span class="menu-text">Filiais</span>
                             </a>
 					
+
 
 					</li>
 					<li id="parceiros">
@@ -132,6 +137,7 @@ else{
                             </a>
 					
 
+
 					</li>
 					<li id="ajuda" class="sidebar-dropdown">
 						<a href="#">
@@ -139,6 +145,7 @@ else{
                                 <span class="menu-text">Ajuda</span>
                             </a>
 					
+
 
 						<div id="ajuda_drop" class="sidebar-submenu">
 							<ul>
@@ -160,7 +167,7 @@ else{
 				<a href="../lib/logout">Logout
                         <i class="fa fa-power-off"></i>
                     </a>
-			
+
 
 			</div>
 			<div class="pinned-footer">
@@ -168,6 +175,7 @@ else{
                         <i class="fa fa-power-off"></i>
                     </a>
 			
+
 			</div>
 		</div>
 
