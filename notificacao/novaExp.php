@@ -32,9 +32,9 @@ $mailer->AddAddress( $email, $email );
 //Destinatários
 $mailer->Subject = 'Agendamento de aula experimental AVIPfit registrado com sucesso';
 $mailer->Body = '<p>Prezado(a), '.$nome.'.</p><p>Seu agendamento de aula experimental para '.$diacomp.' às '.$hora.'h, na filial '.$rua.', '.$numero.', '.$bairro.', '.$cidade.', '.$estado.' foi registrado com sucesso!</p><p>Você receberá um e-mail de confirmação assim que seu agendamento for aprovado.</p><p>Esta mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
-/*if ( !$mailer->Send() ) {
+if ( !$mailer->Send() ) {
 	echo "Message was not sent";
 	echo "Mailer Error: " . $mailer->ErrorInfo;
 	exit;
-}*/
+}
 ?>
