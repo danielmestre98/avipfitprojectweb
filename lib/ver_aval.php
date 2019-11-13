@@ -9,10 +9,10 @@ $resulted = mysqli_query( $conn, "SELECT dataNascimento, abdominalPer, biceps,ma
 if ( mysqli_num_rows( $resulted ) === 1 ) {
 	setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 	$row = mysqli_fetch_assoc( $resulted );
-	if ($row['sexo'] == 'Masculino'){
-	$nascimento = $row['dataNascimento'];
 	$data = strftime('%d de %B de %Y', strtotime($row['data']));;
 	$nome = $row['nome'];
+	if ($row['sexo'] == 'Masculino'){
+	$nascimento = $row['dataNascimento'];
 	$massa = $row['massaCorporal'];
 	$estatura = $row['estatura'];
 	$biceps = $row['biceps'];
