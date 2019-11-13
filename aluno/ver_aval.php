@@ -21,10 +21,9 @@ include ('../lib/ver_aval.php');
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Avaliação física</h1>
+			<h1>Resultados de avaliação física</h1>
 			<br>
-			<a class="btn btn-primary" href="graficos?id=<?=$id ?>">Gráficos</a> 
-			<br>
+			<h5>Consulte os resultados e a análise gráfica da avaliação física de <?=$nome?> realizada em <?=$data?>.</h5>
 			<br>
 			<form id="exercicio_cadastro" enctype="multipart/form-data">
 				
@@ -92,6 +91,7 @@ include ('../lib/ver_aval.php');
 					</div>
 				</div>
 				<a class="btn btn-primary" href="aval_fisica">Voltar</a>
+				<a class="btn btn-primary" style="float: right" href="graficos?id=<?=$id ?>">Gráficos</a> 
 				
 			</form>
 			
