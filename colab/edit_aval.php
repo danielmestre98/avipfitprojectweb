@@ -22,8 +22,9 @@ include('../lib/editar_aval_show.php')
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Avaliação física</h1>
+			<h1>Edição de avaliação física</h1>
 			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para atualizar os dados da avaliação física.</h5>
 			<form id="avalfisica" action="../lib/editar_aval.php?id=<?=$_GET['id']?>" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-6">
@@ -120,14 +121,14 @@ include('../lib/editar_aval_show.php')
 						<label for="triceps"><red>*</red>Abdominal (perimetro)</label>
 						<input type="text" required name="abdominalper" value="<?=$row['abdominalPer'] ?>" class="form-control medida" id="abdominalper">
 					</div>
-
-				</div>
-				
-				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="pressao"><red>*</red>Braço relaxado direito</label>
 						<input type="text" required name="bracoreldir" value="<?=$row['bracoRD'] ?>" class="form-control medida" id="bracoreldir">
 					</div>
+
+				</div>
+				
+				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="biceps"><red>*</red>Braço relaxado esquerdo</label>
 						<input type="text" required name="bracorelesq" value="<?=$row['bracoRE'] ?>" class="form-control medida" id="bracorelesq">
@@ -140,14 +141,13 @@ include('../lib/editar_aval_show.php')
 						<label for="triceps"><red>*</red>Braço contraído esquerdo</label>
 						<input type="text" required name="bracoconesq" value="<?=$row['bracoCE'] ?>" class="form-control medida" id="bracoconesq">
 					</div>
-					
-				</div>
-				
-				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="pressao"><red>*</red>Coxa proximal</label>
 						<input type="text" required name="coxaprox" value="<?=$row['coxaProximal'] ?>" class="form-control medida" id="coxaprox">
 					</div>
+				</div>
+				
+				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="biceps"><red>*</red>Coxa medial</label>
 						<input type="text" required name="coxamed" value="<?=$row['coxaMedial'] ?>" class="form-control medida" id="coxamed">
@@ -156,11 +156,6 @@ include('../lib/editar_aval_show.php')
 						<label for="cintura"><red>*</red>Panturrilha</label>
 						<input type="text" required name="panturrilha" value="<?=$row['panturrilha'] ?>" class="form-control medida" id="panturrilha">
 					</div>
-					
-				</div>
-				
-				<div class="form-row">
-
 					<div class="form-group col-md-3">
 						<label for="triceps"><red>*</red>Gordura ideal</label>
 						<input type="text" required name="gorideal" value="<?=$row['ideal'] ?>" class="form-control medida" id="gorideal">
@@ -169,7 +164,6 @@ include('../lib/editar_aval_show.php')
 						<label for="pressao"><red>*</red>Meta esperada pelo aluno</label>
 						<input type="text" required name="meta" value="<?=$row['meta'] ?>" class="form-control medida" id="meta">
 					</div>
-					
 				</div>
 
 				<p>Campos com <red>*</red> são obrigatórios</p>

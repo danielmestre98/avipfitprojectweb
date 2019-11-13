@@ -66,7 +66,7 @@ include_once( 'nav.php' );
 				
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="descricao"><red>*</red>Massa corporal (Kg)</label>
+						<label for="descricao"><red>*</red>Massa corporal (kg)</label>
 						<input type="text" required name="massa" class="form-control medida" id="massa">
 					</div>
 					<div class="form-group col-md-3">
@@ -74,118 +74,115 @@ include_once( 'nav.php' );
 						<input type="text" required name="estatura" class="form-control" id="estatura">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="peso"><red>*</red>Cintura</label>
+						<label for="peso"><red>*</red>Cintura (cm)</label>
 						<input type="text" required name="cintura" class="form-control medida" id="cintura">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="coxa"><red>*</red>Quadril</label>
+						<label for="coxa"><red>*</red>Quadril (cm)</label>
 						<input type="text" required name="quadril" class="form-control medida" id="quadril">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="biceps"><red>*</red>Subescapular</label>
+						<label for="biceps"><red>*</red>Subescapular (mm)</label>
 						<input type="text" required name="subescapular" class="form-control medida" id="subescapular">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="cintura"><red>*</red>Tríceps</label>
+						<label for="cintura"><red>*</red>Tríceps (mm)</label>
 						<input type="text" required name="triceps" class="form-control medida" id="triceps">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="triceps"><red>*</red>Bíceps</label>
+						<label for="triceps"><red>*</red>Bíceps (mm)</label>
 						<input type="text" required name="biceps" class="form-control medida" id="biceps">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="pressao"><red>*</red>Axilar Medial</label>
+						<label for="pressao"><red>*</red>Axilar Medial (mm)</label>
 						<input type="text" required name="axilarmed" class="form-control medida" id="axilarmed">
 					</div>
 					
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="biceps"><red>*</red>Peitoral</label>
+						<label for="biceps"><red>*</red>Peitoral (mm)</label>
 						<input type="text" required name="peitoral" class="form-control medida" id="peitoral">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="cintura"><red>*</red>Supra-ilíaca</label>
+						<label for="cintura"><red>*</red>Supra-ilíaca (mm)</label>
 						<input type="text" required name="suprailiaca" class="form-control medida" id="supariliaca">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="triceps"><red>*</red>Abdominal</label>
+						<label for="triceps"><red>*</red>Abdominal (mm)</label>
 						<input type="text" required name="abdominal" class="form-control medida" id="abdominal">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="pressao"><red>*</red>Toráx</label>
+						<label for="pressao"><red>*</red>Toráx (cm)</label>
 						<input type="text" required name="torax" class="form-control medida" id="torax">
 					</div>
 					
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="biceps"><red>*</red>Antebraço esquerdo</label>
+						<label for="biceps"><red>*</red>Antebraço esquerdo (cm)</label>
 						<input type="text" required name="antesq" class="form-control medida" id="antesq">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="cintura"><red>*</red>Antebraço direito</label>
+						<label for="cintura"><red>*</red>Antebraço direito (cm)</label>
 						<input type="text" required name="antdir" class="form-control medida" id="antdir">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="triceps"><red>*</red>Abdominal (perimetro)</label>
+						<label for="triceps"><red>*</red>Perimetro abdominal (cm)</label>
 						<input type="text" required name="abdominalper" class="form-control medida" id="abdominalper">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="pressao"><red>*</red>Braço relaxado direito (cm)</label>
+						<input type="text" required name="bracoreldir" class="form-control medida" id="bracoreldir">
 					</div>
 
 				</div>
 				
 				<div class="form-row">
+					
 					<div class="form-group col-md-3">
-						<label for="pressao"><red>*</red>Braço relaxado direito</label>
-						<input type="text" required name="bracoreldir" class="form-control medida" id="bracoreldir">
-					</div>
-					<div class="form-group col-md-3">
-						<label for="biceps"><red>*</red>Braço relaxado esquerdo</label>
+						<label for="biceps"><red>*</red>Braço relaxado esquerdo (cm)</label>
 						<input type="text" required name="bracorelesq" class="form-control medida" id="bracorelesq">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="cintura"><red>*</red>Braço contraído direito</label>
+						<label for="cintura"><red>*</red>Braço contraído direito (cm)</label>
 						<input type="text" required name="bracocondir" class="form-control medida" id="bracocondir">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="triceps"><red>*</red>Braço contraído esquerdo</label>
+						<label for="triceps"><red>*</red>Braço contraído esquerdo (cm)</label>
 						<input type="text" required name="bracoconesq" class="form-control medida" id="bracoconesq">
 					</div>
-					
+					<div class="form-group col-md-3">
+						<label for="pressao"><red>*</red>Coxa proximal (cm)</label>
+						<input type="text" required name="coxaprox" class="form-control medida" id="coxaprox">
+					</div>
 				</div>
 				
 				<div class="form-row">
+					
 					<div class="form-group col-md-3">
-						<label for="pressao"><red>*</red>Coxa proximal</label>
-						<input type="text" required name="coxaprox" class="form-control medida" id="coxaprox">
-					</div>
-					<div class="form-group col-md-3">
-						<label for="biceps"><red>*</red>Coxa medial</label>
+						<label for="biceps"><red>*</red>Coxa medial (cm)</label>
 						<input type="text" required name="coxamed" class="form-control medida" id="coxamed">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="cintura"><red>*</red>Panturrilha</label>
+						<label for="cintura"><red>*</red>Panturrilha (cm)</label>
 						<input type="text" required name="panturrilha" class="form-control medida" id="panturrilha">
 					</div>
-					
-				</div>
-				
-				<div class="form-row">
-
 					<div class="form-group col-md-3">
-						<label for="triceps"><red>*</red>Gordura ideal</label>
+						<label for="triceps"><red>*</red>Gordura ideal (%)</label>
 						<input type="text" required name="gorideal" class="form-control medida" id="gorideal">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="pressao"><red>*</red>Meta esperada pelo aluno</label>
+						<label for="pressao"><red>*</red>Meta esperada pelo aluno (kg)</label>
 						<input type="text" required name="meta" class="form-control medida" id="meta">
 					</div>
 					
 				</div>
+			
 
-				<p>Campos com <red>*</red> são obrigatórios</p>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 				<a class="btn btn-primary" href="aval_fisica">Voltar</a>
 				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>

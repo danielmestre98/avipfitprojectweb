@@ -31,8 +31,7 @@ include_once( 'nav.php' );
 				<div class="form-group col-md-2" style="float: right;">
 					<label for="opcao">Mês e ano de referência</label>
 					<span id="mes"></span>
-				</div>
-				
+				</div>		
 			</div>
 			<div id="botao_novo" align="right">
 				<a href="novo_aval" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
@@ -43,8 +42,9 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
+						<th class='col'>Aluno(a)</th>
 						<th class="col">Data</th>
+						<th class="col">Filial</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>
@@ -116,6 +116,12 @@ include_once( 'nav.php' );
 				}, {
 					data: 'data'
 				},{
+					data: null,
+					render: function ( data, type, row ) {
+						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+					}
+				},
+					{
 						data: null,
 						render: function ( data, type, row ) {
 							return '<a title="Editar" href="edit_aval?id=' + data.id + '"><i class="fas fa-edit"></i></a>  <a href="ver_aval?id='+data.id+'" title="Ver"><i class="far fa-eye"></i></a>'
@@ -123,16 +129,16 @@ include_once( 'nav.php' );
 				}],
 				columnDefs: [ {
 						"searchable": false,
-						"targets": 2
+						"targets": 3
 					}, {
 						"orderable": false,
-						"targets": 2
+						"targets": 3
 					}, {
-						"width": '70%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '2%',
-						"targets": 2
+						"targets": 3
 					},
 					{
 						"width": '10%',

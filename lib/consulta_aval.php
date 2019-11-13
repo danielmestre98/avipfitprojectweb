@@ -4,7 +4,8 @@ session_start();
 $tipo = $_SESSION[ 'tipoPessoa' ];
 $filial = $_SESSION[ 'filial' ];
 $data = [];
-$sql = "SELECT p.nome, a.data, a.id FROM avalfisica a INNER JOIN pessoa p ON (p.cpf= a.cpf)";
+$sql = "SELECT p.nome, a.data, a.id, f.cidade, f.rua, f.numero, f.bairro, f.estado FROM avalfisica a INNER JOIN pessoa p ON (p.cpf= a.cpf) INNER JOIN cliente c ON (c.cpf = p.cpf) INNER JOIN filial f ON (f.IdFilial = c.filial)";
+
 $result = $conn->query( $sql );
 mysqli_close( $conn );
 

@@ -24,25 +24,14 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Avaliações físicas</h1>
+			<br>
+			<h5>Selecione mês/ano de referência para registrar uma avaliação para um aluno, analisar os resultados das avaliações físicas realizadas e verificar o comparativo de medidas por meio de análise gráfica.</h5>
+			<br>
 			<div class="form-row">
 				<div class="form-group col-md-2" style="float: right;">
 					<label for="opcao">Mês e ano de referência</label>
-					<select class="form-control" name="" id="">
-						<option value="">Janeiro</option>
-						<option value="">Fevereiro</option>
-						<option value="">Março</option>
-						<option value="">Abril</option>
-						<option value="">Maio</option>
-						<option value="">Junho</option>
-						<option value="">Julho</option>
-						<option value="">Agosto</option>
-						<option value="">Setembro</option>
-						<option value="">Outubro</option>
-						<option value="">Novembro</option>
-						<option value="">Dezembro</option>
-					</select>
-				</div>
-				
+					<span id="mes"></span>
+				</div>		
 			</div>
 			<div id="botao_novo" align="right">
 				<a href="novo_aval" class="btn btn-primary">Novo <i class="fas fa-plus"></i></a>
@@ -53,8 +42,9 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
+						<th class='col'>Aluno(a)</th>
 						<th class="col">Data</th>
+						<th class="col">Filial</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>
@@ -126,6 +116,12 @@ include_once( 'nav.php' );
 				}, {
 					data: 'data'
 				},{
+					data: null,
+					render: function ( data, type, row ) {
+						return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+					}
+				},
+					{
 						data: null,
 						render: function ( data, type, row ) {
 							return '<a title="Editar" href="edit_aval?id=' + data.id + '"><i class="fas fa-edit"></i></a>  <a href="ver_aval?id='+data.id+'" title="Ver"><i class="far fa-eye"></i></a>'
@@ -133,16 +129,16 @@ include_once( 'nav.php' );
 				}],
 				columnDefs: [ {
 						"searchable": false,
-						"targets": 2
+						"targets": 3
 					}, {
 						"orderable": false,
-						"targets": 2
+						"targets": 3
 					}, {
-						"width": '70%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '2%',
-						"targets": 2
+						"targets": 3
 					},
 					{
 						"width": '10%',
@@ -150,11 +146,37 @@ include_once( 'nav.php' );
 					}
 
 
-				]
+				],
+				initComplete: function () {
+					var column = this.api().column( 1 );
+					var select = $( '<select class= "form-control md-4"><option value="">Selecione a opção desejada</option></select>' )
+						.appendTo( $( '#mes' ).empty().text( '' ) )
+						.on( 'change', function () {
+							column
+								.search( this.value )
+								.draw();
+
+						} );
+					column.data().unique().sort( function ( a, b ) {
+						b = b.split( "/" );
+						
+						return new Date( a[ 2 ] )
+					} ).each( function ( d, j ) {
+						
+						d = d.split( "/" );
+						var c;
+						c = d[1]+"/"+d[2];
+						
+						 if (!$("#mes option[value='" + c + "']").length) {
+						select.append( '<option value="' + c + '">' + c + '</option>' );
+						 }
+					} );
+			}
 
 
 
 			} );
+
 
 
 		} );

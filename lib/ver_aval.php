@@ -5,12 +5,14 @@ $id = $_GET['id'];
 
 
 
-$resulted = mysqli_query( $conn, "SELECT dataNascimento, abdominalPer, biceps,massaCorporal, estatura, protocolo, subescapular, triceps, peitoral, axilarMedial, supraIliaca, panturrilha, abdominal, coxaProximal, ideal, meta, sexo  FROM avalfisica a INNER JOIN pessoa p ON (p.cpf = a.cpf) INNER JOIN cliente c ON (c.cpf = p.cpf) WHERE '$id' = id" );
+$resulted = mysqli_query( $conn, "SELECT dataNascimento, abdominalPer, biceps,massaCorporal, estatura, protocolo, subescapular, triceps, peitoral, axilarMedial, supraIliaca, panturrilha, abdominal, data, nome, coxaProximal, ideal, meta, sexo  FROM avalfisica a INNER JOIN pessoa p ON (p.cpf = a.cpf) INNER JOIN cliente c ON (c.cpf = p.cpf) WHERE '$id' = id" );
 if ( mysqli_num_rows( $resulted ) === 1 ) {
-	
+	setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 	$row = mysqli_fetch_assoc( $resulted );
 	if ($row['sexo'] == 'Masculino'){
 	$nascimento = $row['dataNascimento'];
+	$data = strftime('%d de %B de %Y', strtotime($row['data']));;
+	$nome = $row['nome'];
 	$massa = $row['massaCorporal'];
 	$estatura = $row['estatura'];
 	$biceps = $row['biceps'];
