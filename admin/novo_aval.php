@@ -21,7 +21,9 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
-			<h1>Avaliação física</h1>
+			<h1>Nova avaliação física</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar uma avaliação física.</h5>
 			<br>
 			<form id="avalfisica" action="../lib/aval_fisica" enctype="multipart/form-data" method="post">
 				<div class="form-row">

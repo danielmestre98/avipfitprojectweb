@@ -24,23 +24,13 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Avaliações físicas</h1>
+			<br>
+			<h5>Selecione mês/ano de referência para registrar uma avaliação para um aluno, analisar os resultados das avaliações físicas realizadas e verificar o comparativo de medidas por meio de análise gráfica.</h5>
+			<br>
 			<div class="form-row">
 				<div class="form-group col-md-2" style="float: right;">
 					<label for="opcao">Mês e ano de referência</label>
-					<select class="form-control" name="" id="">
-						<option value="">Janeiro</option>
-						<option value="">Fevereiro</option>
-						<option value="">Março</option>
-						<option value="">Abril</option>
-						<option value="">Maio</option>
-						<option value="">Junho</option>
-						<option value="">Julho</option>
-						<option value="">Agosto</option>
-						<option value="">Setembro</option>
-						<option value="">Outubro</option>
-						<option value="">Novembro</option>
-						<option value="">Dezembro</option>
-					</select>
+					<span id="mes"></span>
 				</div>
 				
 			</div>
@@ -150,11 +140,37 @@ include_once( 'nav.php' );
 					}
 
 
-				]
+				],
+				initComplete: function () {
+					var column = this.api().column( 1 );
+					var select = $( '<select class= "form-control md-4"><option value="">Selecione a opção desejada</option></select>' )
+						.appendTo( $( '#mes' ).empty().text( '' ) )
+						.on( 'change', function () {
+							column
+								.search( this.value )
+								.draw();
+
+						} );
+					column.data().unique().sort( function ( a, b ) {
+						b = b.split( "/" );
+						
+						return new Date( a[ 2 ] )
+					} ).each( function ( d, j ) {
+						
+						d = d.split( "/" );
+						var c;
+						c = d[1]+"/"+d[2];
+						
+						 if (!$("#mes option[value='" + c + "']").length) {
+						select.append( '<option value="' + c + '">' + c + '</option>' );
+						 }
+					} );
+			}
 
 
 
 			} );
+
 
 
 		} );
