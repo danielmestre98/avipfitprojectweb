@@ -1,6 +1,17 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
+if (isset($_SESSION['tipoPessoa'])){
+	if($_SESSION['tipoPessoa'] == 3){
+		
+	}
+	else{
+		header('location: ../index');
+	}
+}
+else{
+	header('location: ../index');
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +33,16 @@ require( '../lib/dadosLogin.php' );
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar"><span title="Expandir menu" class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 10"><i class="fas fa-bars"></i></span>
+	<div id="show-sidebar"><span title="Expandir menu" class="btn btn-dark" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px; position: fixed; z-index: 50"><i title="Expandir menu" class="fas fa-bars"></i></span>
 	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a href="principal" title="Página inicial">avipfit</a>
+				<a title="Página inicial" href="principal">avipfit</a>
 				<div id="close-sidebar">
-					<i class="fas fa-times" title="Recolher menu"></i>
+					<i title="Recolher menu" class="fas fa-times"></i>
 				</div>
 			</div>
 
@@ -43,24 +54,67 @@ require( '../lib/dadosLogin.php' );
 				<div class="user-info">
 					<span class="user-name"><?php echo $nome ?>
                         </span>
-					<span class="user-role">Analista</span>
+					<span class="user-role">Aluno(a)</span>
 
 				</div>
 			</div>
 			<!-- sidebar-menu  -->
 			<div class=" sidebar-item sidebar-menu">
 				<ul>
+					<li id="aval_fisica">
+						<a href="aval_fisica">
+							<i class="fas fa-address-book"></i>
+                                
+                                <span class="menu-text">Avaliação física</span>
+                            </a>
+					
+					</li>
+					<li id="treinamento">
+						<a href="treinamento">
+                                <i class="fas fa-running"></i>
+                                <span class="menu-text">Treinamento</span>
+                            </a>
+					
+					</li>
+					<li id="agendamento">
+						<a href="agendamento">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="menu-text">Agendamento</span>
+                            </a>
+					
+					</li>
+					<li id="depoimentos">
+						<a href="depoimentos">
+                                <i class="far fa-comment-dots"></i>
+                                <span class="menu-text">Depoimentos</span>
+                            </a>
+					
+					</li>
+					<li id="filiais">
+						<a href="filiais">
+                                <i class="far fa-building"></i>
+                                <span class="menu-text">Filiais</span>
+                            </a>
+					
+					</li>
+					<li id="parceiros">
+						<a href="parceiros">
+                                <i class="far fa-handshake"></i>
+                                <span class="menu-text">Parceiros</span>
+                            </a>
+					
+					</li>
 					<li id="ajuda" class="sidebar-dropdown">
 						<a href="#">
                                 <i class="far fa-question-circle"></i>
-                                <span class="menu-text">Suporte</span>
+                                <span class="menu-text">Ajuda</span>
                             </a>
 					
 
 						<div id="ajuda_drop" class="sidebar-submenu">
 							<ul>
 								<li id="tickets">
-									<a href="tickets">Tickets</a>
+									<a href="tickets">Contatar o suporte</a>
 								</li>
 								<li id="manuais">
 									<a href="manuais">Manuais</a>

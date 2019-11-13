@@ -37,9 +37,9 @@ if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a title="Página inicial" href="principal">avipfit</a>
+				<a href="principal" title="Página inicial">avipfit</a>
 				<div id="close-sidebar">
-					<i title="Recolher menu" class="fas fa-times"></i>
+					<i class="fas fa-times" title="Recolher menu"></i>
 				</div>
 			</div>
 
