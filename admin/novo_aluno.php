@@ -33,10 +33,18 @@ include_once( 'nav.php' );
 							<red>*</red>Nome</label>
 						<input type="text" name="nome" maxlength="255" required class="form-control" id="input_nome" placeholder="Nome">
 					</div>
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-3">
 						<label for="cpf">
 							<red>*</red>CPF</label>
 						<input type="text" required name="cpf" data-placement="bottom" data-animation="true" data-content="CPF inválido" class="form-control" id="input_CPF" placeholder="___.___.___-__">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="sexo"><red>*</red>Sexo</label>
+						<select class="form-control" required name="sexo" id="sexo">
+							<option hidden="true" selected value="">Selecione a opção desejada</option>
+							<option>Masculino</option>
+							<option>Feminino</option>
+						</select>
 					</div>
 				</div>
 				<div class="form-row">
@@ -104,10 +112,14 @@ include_once( 'nav.php' );
 						<option selected hidden="" value="">Selecione a opção desejada</option>
 						<?php
 						require( '../conectar.php' );
-						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
+						$sql = "Select NomeTreinamento FROM treinamento WHERE inativo != '1'";
 						$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+						if ( mysqli_num_rows( $result ) > 0 ) {
 						while ( $row = mysqli_fetch_array( $result ) ) {
 							echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
+						}
+						}else{
+							echo '<option value = "">Nenhum treinamento cadastrado</option>';
 						}
 						mysqli_close( $conn );
 
@@ -173,12 +185,12 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-4">
 						<label for="input_senha">
 							<red>*</red>Senha</label>
-						<input type="password" maxlength="16" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Mínimo de 8 caracteres">
+						<input type="password" maxlength="50" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Mínimo de 8 caracteres">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="input_confsenha">
 							<red>*</red>Confirme a senha</label>
-						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Mínimo de 8 caracteres" maxlength="16" class="form-control" id="input_confsenha">
+						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" required name="confsenha" placeholder="Mínimo de 8 caracteres" maxlength="50" class="form-control" id="input_confsenha">
 
 					</div>
 					<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>

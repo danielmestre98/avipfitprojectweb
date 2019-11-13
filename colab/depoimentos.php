@@ -27,14 +27,17 @@ include_once( 'nav.php' );
 		<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT foto, p.nome, descricao FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado'";
+			$sql2 = "SELECT foto, p.nome, descricao, data FROM depoimentos d INNER JOIN pessoa p ON (d.cpf = p.cpf) WHERE d.status = 'Aprovado' ORDER BY data ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			if ( mysqli_num_rows( $result ) < 1 ){
 				echo "Não existem depoimentos registrados.";
 			}
 			while ( $row = mysqli_fetch_array( $result ) ) {
+				$data = explode("-", $row['data']);
+				list($ano, $mes, $dia) = $data;
+				$data = "$dia/$mes/$ano";
 			?>
-				<p><img src="../fotos/<?=$row['foto']?>" width="70" height="70" alt=""> <h3><?=$row['nome']?></h3></p>
+				<p><img src="../fotos/<?=$row['foto']?>" width="70" height="70" alt=""> <h3><?=$row['nome']?> - <?=$data?></h3></p>
 				<p><?=$row['descricao']?></p>
 				<br><br>
 				

@@ -80,7 +80,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"infoFiltered": "(filtrado de _MAX_ registros totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",

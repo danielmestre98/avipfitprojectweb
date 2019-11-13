@@ -83,7 +83,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					<div class="form-group col-md-2">
 						<label for="">
 							<red>*</red>Horário de início</label>
-						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" type="text" placeholder="hh:mm">
+						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" id="hora" type="text" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="">

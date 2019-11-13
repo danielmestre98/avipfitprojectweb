@@ -3,18 +3,17 @@
         
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
-
-		$hora = date ("h:i:s", strtotime($_POST['hora']));
+		$hora = $_POST['hora'];
 		$filial = $_POST['filial'];
 		$dia = $_POST['dia'];
 		$data = explode( "/", $dia );
-
+		$hora = explode(" - ", $hora);
+		list($horainicio,$horafim) = $hora;
 		list( $dia, $mes, $ano ) = $data;
 
 		$data = "$ano-$mes-$dia";
 		
-		$sql = "SELECT * FROM agendamentoaulaexp WHERE email = '$email' AND data = '$data' AND IdFilial = '$filial' AND horario = '$hora'";
-
+		$sql = "SELECT * FROM agendamentoaulaexp f  INNER JOIN agendamento a ON (a.id = f.id) WHERE email = '$email' AND f.data = '$data' AND f.IdFilial = '$filial' AND f.horario = '$horainicio'";
         $query = $conn->query($sql);
 		$num_rows = $query->num_rows;
         if( $num_rows > 0 ){

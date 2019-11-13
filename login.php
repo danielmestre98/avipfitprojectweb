@@ -17,16 +17,19 @@ include_once( 'nav.php' );
 		<?php
 		if (isset($_GET['mail'])){
 		?>
-		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
-		  <strong>E-mail enviado com sucesso!</strong> Por favor, siga as instruções no email para prosseguir com a redefinição de senha. <strong>Verifique sua caixa de spam.</strong>
+		<div id="new" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible fade show">
+		  <strong>E-mail enviado com sucesso!</strong> Por favor, siga as instruções do e-mail para prosseguir com a redefinição de senha. Verifique sua caixa de spam. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 		</div>
 
 		<?php }?>
 		<?php
 		if (isset($_GET['inv'])){
 		?>
-		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-danger alert-dismissible">
-		  <strong>Erro!</strong> Link inválido ou expirado
+		<div id="" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> O link é inválido ou expirou. Solicite novamente a recuperação de senha. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
 		</div>
 
 		<?php }?>

@@ -17,7 +17,8 @@ include_once( 'nav.php' );
 			$( "#ger_agenda" ).addClass( "bg-dark active" );
 			var $CampoHora = $( ".hora" );
 			$CampoHora.mask( '00:00', {
-				reverse: true
+				reverse: true,
+				
 			} );
 		} );
 
@@ -84,9 +85,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						<input required class="form-control hora" type="text" id="horafim" name="horafim" placeholder="hh:mm">
 					</div>
 					<br>
-					<p>Campos com <red>*</red> são obrigatórios.</p>
+					
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="ag_eventos">Voltar</a>

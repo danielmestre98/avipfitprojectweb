@@ -20,7 +20,7 @@ $novacomp = $mes.'/'.$ano;
 	$sql3 = "SELECT * FROM pessoa WHERE cpf = '$cpf' AND inativo = '0'";
 	$query = $conn->query($sql3);
 	$num_rows = $query->num_rows;
-	if( $num_rows > 0 ){
+	if( $num_rows > 0 && $status == 'Pagamento efetuado'){
 		$sql2 = "INSERT INTO pagamentos VALUES ('$cpf', 'Pendente', '$novacomp')";
 		include('../conectar.php');
 		if ( $conn->query( $sql2 ) === TRUE ) {

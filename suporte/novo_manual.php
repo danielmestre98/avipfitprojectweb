@@ -21,27 +21,28 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Upload de manuais</h1>
+		<div class="container-fluid p-5">
+			<h1>Upload de manuais</h1>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para registrar um manual.</h5>
 			<br>
-			<form id="exercicio_cadastro" action="manuais" enctype="multipart/form-data" method="post">
+			<form id="novo_manual" action="../lib/novo_manual" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nomeExercicio">
 							<red>*</red>Nome do manual</label>
-						<input type="text" name="nomeExercicio" required class="form-control" id="nomeExercicio" placeholder="Nome">
+						<input type="text" name="manual" required class="form-control" id="manual" placeholder="Nome">
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group">
-						<label for="foto"><red>*</red>Arquivo</label>
-						<input type="file" required name="foto" class="form-control-file" id="foto">
+					<div class="form-group col-md-12">
+						<label for="foto"><red>*</red>Adicione um arquivo ao registro do manual, o formato admitido é .zip.</label>
+						<input type="file" required name="foto" class="form-control-file" accept="application/x-zip-compressed, application/x-zip, application/zip" id="foto">
 					</div>
 				</div>
 				<p>Campos com <red>*</red> são obrigatórios</p>
 
 				<a class="btn btn-primary" href="manuais">Voltar</a>
-				<button type="submit" class="btn btn-primary float-right">Enviar</button>
+				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 
 

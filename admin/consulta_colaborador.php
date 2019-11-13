@@ -82,7 +82,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"infoFiltered": "(filtrado de _MAX_ registros totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",
@@ -127,7 +127,7 @@ include_once( 'nav.php' );
 						"targets": 3
 					}, {
 						"orderable": false,
-						"targets": 1
+						"targets": 3
 					}, {
 						"width": '40%',
 						"targets": 0

@@ -40,12 +40,14 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 		<div class="container-fluid p-5">
 			<h1>Gerenciar mensalidade</h1>
 			<br>
+			<h5>Selecione o status da mensalidade e clique em Salvar. </h5>
+			<br>
 			<form id="edit_event" action="../lib/update_mensalidade.php" enctype="multipart/form-data" method="post">
 				<input type="text" hidden="true" name="cpf" value="<?=$cpf?>">
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nomeExercicio">
-							Nome</label>
+							Nome do aluno(a)</label>
 					
 						<input type="text" readonly name="nome" class="form-control" value="<?=$nome?>">
 					</div>
@@ -57,34 +59,29 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					</div>
 					<div class="form-group col-md-5">
 						<label for="">
-							<red>*</red>Status</label>
-						<?php
-						if ( $status === 'Pagamento efetuado' ) {
-							echo '<select name="" disabled class="form-control" id="">';
-						} else {
-							echo '<select name="status" class="form-control" id="">';
-						}
-						?>
+							<red>*</red>Status da mensalidade</label>
 
-						<option>
+					
+						<select name="status" class="form-control" id="">
+
+						<option hidden="true">
 							<?=$status?>
 						</option>
+						<option>Pendente</option>
 						<option>Pagamento efetuado</option>
 
 						</select>
+					
 					</div>
+					
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios</p>
 
 
 				<a class="btn btn-primary" href="mensalidades">Voltar</a>
-				<?php
-				if ( $status === 'Pagamento efetuado' ) {
+				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 
-				} else {
-					echo '<button type="submit" class="btn btn-primary float-right">Salvar</button>';
-				}
-				?>
+
 
 			</form>
 

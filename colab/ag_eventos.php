@@ -40,7 +40,7 @@ include_once( 'nav.php' );
 						<th class='col'>Dia da semana</th>
 						<th class='col'>Horário</th>
 						<th class='col'>Filial</th>
-						<th class="col">Professor(a)</th>
+						<th class="col">Colaborador(a)</th>
 						<th class='col'>Ações</th>
 					</tr>
 				</thead>
@@ -83,7 +83,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"infoFiltered": "(filtrado de _MAX_ registros totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",
@@ -130,9 +130,6 @@ include_once( 'nav.php' );
 					}
 				} ],
 				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
 						"width": '13%',
 						"targets": 0
 					}, {
@@ -144,9 +141,6 @@ include_once( 'nav.php' );
 					}, {
 						"width": '45%',
 						"targets": 3
-					}, {
-						"orderable": false,
-						"targets": 2
 					}, {
 						"targets": 5,
 						"orderable": false

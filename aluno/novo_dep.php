@@ -33,11 +33,8 @@ include_once( 'nav.php' );
 						<label for="">
 							<red>*</red>Descrição</label>
 						<textarea maxlength="1022" required name="descr" class="form-control" id="descr" cols="30" rows="10" placeholder="Escreva seu depoimento aqui..."></textarea>
-						<br>
-						<p>Campos com
-							<red>*</red> são obrigatórios.</p>
 					</div>
-
+					<p> Campos com <red>*</red> são obrigatórios.</p>
 				</div>
 
 

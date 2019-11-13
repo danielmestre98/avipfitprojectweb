@@ -83,7 +83,7 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 					<div class="form-group col-md-2">
 						<label for="">
 							<red>*</red>Horário de início</label>
-						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" type="text" placeholder="hh:mm">
+						<input required value="<?php echo $hora?>" class="form-control hora" name="hora" id="hora" type="text" placeholder="hh:mm">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="">
@@ -91,9 +91,9 @@ if ( mysqli_num_rows( $resulted ) === 1 ) {
 						<input required value="<?php echo $horafim?>" class="form-control hora" name="horafim" type="text" placeholder="hh:mm">
 					</div>
 					<br>
-					<p>Campos com <red>*</red> são obrigatórios.</p>
+					
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="ag_eventos">Voltar</a>

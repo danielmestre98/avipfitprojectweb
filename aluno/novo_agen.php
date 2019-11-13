@@ -23,22 +23,24 @@ include_once( 'nav.php' );
 		<div class="container-fluid p-5">
 			<h1>Agendamento de avaliação física</h1>
 			<br>
-			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar uma avaliação física.</h5>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar uma avaliação física. As datas em verde estão disponíveis!</h5>
 			<br>
 			<form id="exercicio_cadastro" action="../lib/salvar_ag_aval" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="nomeExercicio">
 							<red>*</red>Data do agendamento</label>
-						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" title="Datas em verde estão disponíveis!" data-placement="top" data-toggle="tooltip" readonly autocomplete="off" required name="dia" id="datepicker"/>
+						<input placeholder="dd/mm/aaaa" style="cursor:pointer; background-color: #FFFFFF" readonly autocomplete="off" required name="dia" id="datepicker"/>
 					</div>
 					<div class="form-group col-md-3">
 						<label for="descricao">
 							<red>*</red>Horário</label>
-						<select name="hora" required class="form-control" name="" id="horario">
+						<select name="hora" required class="form-control" id="horario">
 							<option value="">Selecione a opção desejada</option>
 						</select>
 					</div>
+					<?php session_start(); $cpf = $_SESSION['cpf'];?>
+					<input type="text" hidden="true" id="input_cpf" name="cpf" value="<?=$cpf?>">
 					<br>
 
 				</div>
@@ -69,7 +71,9 @@ include_once( 'nav.php' );
 	<script src="../js/additional-methods.min.js"></script>
 	<script src="../js/valida_form.js"></script>
 	<?php 
-			$sql = "SELECT dia FROM agenda WHERE evento = 'Avaliação física' GROUP BY dia";
+			session_start();
+			$filial = $_SESSION['filial'];
+			$sql = "SELECT dia FROM agenda WHERE evento = 'Avaliação física' AND filial = '$filial' GROUP BY dia";
 			$dias = [];
 				$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 				while ( $row = mysqli_fetch_array( $result ) ) {
@@ -87,11 +91,12 @@ include_once( 'nav.php' );
 				$disable = array_diff($diasn, $dias);
 				$disable = array_values($disable);
 				
-		echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
+			echo '<script type="text/javascript">var $dias='.json_encode($disable).'</script>';
 		?>
 	<script>
 		var today;
-		today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+		today = new Date( new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1 );
+		
 		jQuery( function ( $ ) {
 			$( function () {
 				$( '[data-toggle="tooltip"]' ).tooltip()
@@ -100,7 +105,11 @@ include_once( 'nav.php' );
 				disableDaysOfWeek: $dias,
 				uiLibrary: 'bootstrap4',
 				format: 'dd/mm/yyyy',
+				close: function (e) {
+             				$("#exercicio_cadastro").validate().element("#datepicker");
+         		},
 				minDate: today,
+				
 				locale: 'pt-br',
 				change: function ( e ) {
 					var $datepicker = $( '#datepicker' ).datepicker();

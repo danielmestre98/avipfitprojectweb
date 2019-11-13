@@ -104,7 +104,7 @@ include_once( 'nav.php' );
 						if ( row.url.length > 2 ) {
 							return '<a title="Ver vídeo" target="_blank" href="' + row.url + '"><i class="far fa-eye"></i></a>'
 						} else {
-							return '<i class="far fa-eye"></i>'
+							return '<i title="Não há link de vídeo disponível" class="far fa-eye"></i>'
 						}
 					}
 				} ],

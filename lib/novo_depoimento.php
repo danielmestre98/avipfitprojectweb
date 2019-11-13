@@ -6,12 +6,12 @@ session_start();
 $cpf = $_SESSION['cpf'];
 $descr = $_POST[ 'descr' ];
 
+date_default_timezone_set('America/Sao_Paulo');
+$data2 = date( 'Y-m-d' );
 
 
-
-
-$sql = "INSERT INTO depoimentos (cpf, descricao, status)
-		VALUES ('$cpf', '$descr', 'Pendente');";
+$sql = "INSERT INTO depoimentos (cpf, descricao, status, data)
+		VALUES ('$cpf', '$descr', 'Pendente', '$data2');";
 
 
 if ( $conn->query( $sql ) === TRUE ) {} else {
@@ -20,7 +20,6 @@ if ( $conn->query( $sql ) === TRUE ) {} else {
 mysqli_close( $conn );
 include('../conectar.php');
 $ip = $_SERVER[ 'REMOTE_ADDR' ];
-date_default_timezone_set('America/Sao_Paulo');
 $data = date( 'Y-m-d H:i:s' );
 $sql = addslashes($sql);
 session_start();

@@ -26,8 +26,9 @@ include_once( 'nav.php' );
 		<?php
 		if (isset($_GET['err'])){
 		?>
-		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
-		  <strong>Erro!</strong> Existem alunos ou colaboradores associados a esta filial.
+		<div id="filial" style="width: 26%; position: absolute; margin-left: 68%;" class="alert alert-danger alert-dismissible">
+		  <strong>Erro!</strong> Existem alunos, colaboradores ou administradores associados a esta filial. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
 		</div>
 
 		<?php }?>
@@ -90,7 +91,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"infoFiltered": "(filtrado de _MAX_ registros totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",

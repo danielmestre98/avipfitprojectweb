@@ -24,6 +24,7 @@ include_once( 'nav.php' );
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
+			<br>
 			<h1>Agendamentos</h1>
 			<br>
 			<h5>Registre o agendamento de uma avaliação física e verifique os detalhes dos agendamentos realizados.</h5>
@@ -101,7 +102,10 @@ include_once( 'nav.php' );
 				"columns": [{
 					data: 'dia'
 				}, {
-					data: 'horario'
+					data: null,
+					render: function ( data, type, row ) {
+							return row.horario +' - '+ row.horafim
+					}
 				},{
 					data: 'status'
 				},
@@ -111,10 +115,7 @@ include_once( 'nav.php' );
 							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.dia+'"><i class="far fa-eye"></i>'
 					}
 				}],
-				columnDefs: [ {
-						"orderable": false,
-						"targets": 1
-					}, {
+				columnDefs: [{
 						"width": '30%',
 						"targets": 0
 					}, {
@@ -126,9 +127,6 @@ include_once( 'nav.php' );
 					},{
 						"orderable": false,
 						"targets": 3
-					},{
-						"orderable": false,
-						"targets": 2
 					}
 
 

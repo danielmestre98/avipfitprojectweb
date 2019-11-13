@@ -5,7 +5,7 @@ include( 'conectar.php' );
 
 
 $email = $_POST[ 'email' ];
-$resulted = mysqli_query( $conn, "SELECT * FROM token WHERE email = '$email'") or die(mysqli_error($conn));
+$resulted = mysqli_query( $conn, "SELECT token, datahora, t.email, p.nome FROM token t INNER JOIN pessoa p ON (t.email = p.email) WHERE t.email = '$email'") or die(mysqli_error($conn));
 mysqli_close( $conn );
 if ( mysqli_num_rows( $resulted ) == 1 ) {
 
@@ -13,7 +13,13 @@ if ( mysqli_num_rows( $resulted ) == 1 ) {
 	$data = $row[ 'datahora' ];
 	$token = $row[ 'token' ];
 	$email = $row[ 'email' ];
+	$nome= $row['nome'];
 } else {
+	include('conectar.php');
+	$resulted = mysqli_query( $conn, "SELECT nome FROM pessoa WHERE email = '$email'") or die(mysqli_error($conn));
+	mysqli_close( $conn );
+	$row = mysqli_fetch_assoc( $resulted );
+	$nome= $row['nome'];
 	include('conectar.php');
 	$token = bin2hex( random_bytes( 25 ) );
 	date_default_timezone_set( 'America/Sao_Paulo' );
@@ -43,12 +49,12 @@ $mailer->SMTPAuth = true; //define se haverá ou não autenticação
 $mailer->CharSet = 'UTF-8';
 $mailer->Username = 'no-reply@avipfit.com'; //Login de autenticação do SMTP
 $mailer->Password = 'Noreply@123'; //Senha de autenticação do SMTP
-$mailer->FromName = 'AVIPfit - No reply'; //Nome que será exibido
+$mailer->FromName = 'AVIPfit'; //Nome que será exibido
 $mailer->From = 'no-reply@avipfit.com'; //Obrigatório ser a mesma caixa postal configurada no remetente do SMTP
 $mailer->AddAddress( $email, $email );
 //Destinatários
 $mailer->Subject = 'Recuperação de senha AVIPfit';
-$mailer->Body = '<p>Este é um email gerado automáticamente.</p><p>Você solicitou uma recuperação de senha no sistema da AVIPfit clique no link abaixo para ser direcionado para a página de criação da nova senha:</p><p><a href = "http://avipfittest.provisorio.ws/nova_senha?email=' . $email . '&token=' . $token . '">Clique aqui</a></p>';
+$mailer->Body = '<p>Prezado(a) '.$nome.'.</p><p>Se você solicitou a recuperação de senha no sistema AVIPfit clique no link abaixo para ser direcionado para a página de criação da nova senha.</p><p><a href = "http://avipfit.com/nova_senha?email=' . $email . '&token=' . $token . '">Clique aqui</a></p><p>Esta mensagem é automática e este e-mail não é monitorado, portanto, não deve ser respondido.</p>';
 if ( !$mailer->Send() ) {
 	echo "Message was not sent";
 	echo "Mailer Error: " . $mailer->ErrorInfo;

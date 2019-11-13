@@ -24,7 +24,7 @@ include_once( 'nav.php' );
 			<br>
 			<?php
 			require( '../conectar.php' );
-			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial ORDER BY cidade ASC";
+			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero FROM filial ORDER BY cidade ASC, rua ASC";
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
 			
 			while ( $row = mysqli_fetch_array( $result ) ) {
@@ -42,7 +42,6 @@ include_once( 'nav.php' );
 			mysqli_close( $conn );
 
 			?>
-			<p><img src="../img/mapa.png" width="50%" alt=""></p>
 
 		</div>
 	</main>

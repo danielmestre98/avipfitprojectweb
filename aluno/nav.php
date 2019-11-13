@@ -1,7 +1,6 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
-
 if (isset($_SESSION['tipoPessoa'])){
 	if($_SESSION['tipoPessoa'] == 3){
 		

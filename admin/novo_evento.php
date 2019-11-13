@@ -17,7 +17,8 @@ include_once( 'nav.php' );
 			$( "#ger_agenda" ).addClass( "bg-dark active" );
 			var $CampoHora = $( ".hora" );
 			$CampoHora.mask( '00:00', {
-				reverse: true
+				reverse: true,
+				
 			} );
 		} );
 

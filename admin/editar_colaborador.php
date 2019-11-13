@@ -43,7 +43,8 @@ include( '../lib/editar_colaborador_show.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="email"><i><red>*</red>E-mail</i></label>
+						<label for="email">
+							<red>*</red>E-mail</label>
 						<input type="email" required name="email" maxlength="50" value="<?php echo $email?>" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
@@ -82,7 +83,7 @@ include( '../lib/editar_colaborador_show.php' );
 					<div class="form-group col-md-4">
 						<label for="bairro">
 							<red>*</red>Bairro</label>
-						<input type="text" required name="bairro" maxlength="255"  placeholder="Bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
+						<input type="text" required name="bairro" maxlength="255" placeholder="Bairro" value="<?php echo $bairro?>" class="form-control" id="input_bairro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="rua">
@@ -97,28 +98,21 @@ include( '../lib/editar_colaborador_show.php' );
 				</div>
 
 
+				<div class="form-row">
 
-
-				<div class="form-group">
-					<label for="funcao">
-						<red>*</red>Função</label>
-					<select id="funcao" required name="funcao" class="form-control">
+					<div class="form-group col-md-6">
+						<label for="funcao">
+							<red>*</red>Função</label>
+						<select id="funcao" required name="funcao" class="form-control">
 						<option selected hidden="true" value="<?php echo $funcao?>"><?php echo $funcao?></option>
 						<option>Professor</option>
 						<option>Recepcionista</option>
 					</select>
-				
-				</div>
+					
 
-				<div class="form-row">
-					<div class="form-group col-md-2">
-						<label for="salario">
-							<red>*</red>Salário</label>
-						<input type="text" required name="salario" value="<?php echo $salario?>" class="form-control" id="salario" placeholder="R$">
+
 					</div>
-
-
-					<div class="form-group col-md-2">
+					<div class="form-group col-md-6">
 						<label for="filial">
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
@@ -134,14 +128,23 @@ include( '../lib/editar_colaborador_show.php' );
 
 								?>
 						</select>
+					
+
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-2">
+						<label for="salario">
+							<red>*</red>Salário</label>
+						<input type="text" required name="salario" value="<?php echo $salario?>" class="form-control" id="salario" placeholder="R$">
 					</div>
 
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-5">
 						<label for="input_senha">
 							<red></red>Senha</label>
 						<input type="password" name="senha" disabled data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 8 caracteres" value="********" class="form-control" id="senha" placeholder="Minimo 8 caracteres">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-5">
 						<label for="input_confsenha">
 							<red></red>Confirme a senha</label>
 						<input type="password" value="********" disabled data-placement="bottom" data-animation="true" data-content="As senhas não conferem" name="confsenha" class="form-control" id="input_confsenha">

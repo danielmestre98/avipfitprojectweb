@@ -109,6 +109,29 @@ jQuery(function ($) {
 			alert("Feito!");
 		}
 	});
+	$("#avalfisica").validate({
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+	
 	$("#agendamento_exp").validate({
 		rules: {
 			nome: {
@@ -184,6 +207,40 @@ jQuery(function ($) {
 		}
 
 	});
+	$("#depoimento").validate({
+		rules: {
+			descr: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			}
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+	
 	$("#login").validate({
 		rules: {
 			email: {
@@ -278,7 +335,9 @@ jQuery(function ($) {
 						id: $("#id").val(),
 						horafimold: $("#horafimold").val()
 					}
-				}
+				},			
+				min: function(){ 
+					return $("#hora").val()},
 
 			}
 		},
@@ -315,6 +374,7 @@ jQuery(function ($) {
 			hora: {
 				time: true,
 				required: true,
+				minlength: 5,
 				remote: {
 					url: "../lib/verificaEvento.php",
 					type: "post",
@@ -332,6 +392,9 @@ jQuery(function ($) {
 			horafim: {
 				time: true,
 				required: true,
+				minlength: 5,
+				min: function(){ 
+					return $("#hora").val()},
 				remote: {
 					url: "../lib/verificaEvento.php",
 					type: "post",
@@ -349,10 +412,12 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse intervalo de horário."
+				remote: "Já existe um evento nesse intervalo de horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			},
 			horafim: {
-				remote: "Já existe um evento nesse intervalo de horário."
+				remote: "Já existe um evento nesse intervalo de horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			}
 		},
 		errorElement: 'span',
@@ -404,7 +469,7 @@ jQuery(function ($) {
 		},
 		messages: {
 			email: {
-				remote: "Não existe nenhum usuário com este e-mail cadastrado."
+				remote: "E-mail inválido."
 			}
 		},
 		errorElement: 'span',
@@ -679,13 +744,11 @@ jQuery(function ($) {
 				}
 			},
 			bairro: {
-				minlength: 3,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			cidade: {
-				minlength: 5,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -696,25 +759,23 @@ jQuery(function ($) {
 			email: {
 				email: true,
 				required: true,
-				minlength: 5,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			estado: {
-				minlength: 2,
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			rua: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			numero: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -778,13 +839,13 @@ jQuery(function ($) {
 				accept: "image/jpeg, image/png, image/jpg"
 			},
 			bairro: {
-				minlength: 3,
+	
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			cidade: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -792,25 +853,25 @@ jQuery(function ($) {
 			email: {
 				email: true,
 				required: true,
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			estado: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			rua: {
-				minlength: 5,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
 			},
 			numero: {
-				minlength: 2,
+
 				normalizer: function (value) {
 					return $.trim(value);
 				}
@@ -871,6 +932,30 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
+			hora: {
+				required: true,
+				remote: {
+					url: "../lib/verificaAgFis.php",
+					type: "post",
+					data: {
+						dia: function () {
+							return $("#datepicker").val();
+						},
+						cpf: function(){
+							return $("#input_cpf").val();
+						}
+					}
+				}
+
+			},
+			cancelamento: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+				
+			},
 			descricao: {
 				required: true,
 				normalizer: function (value) {
@@ -892,6 +977,9 @@ jQuery(function ($) {
 
 		},
 		messages: {
+			hora:{
+				remote: "Agendamento já cadastrado."
+			},
 			nomeExercicio: {
 				remote: "Exercicio já cadastrado."
 			},
@@ -985,7 +1073,89 @@ jQuery(function ($) {
 
 	});
 
+	$("#new_ticket").validate({
+		rules: {
+			nome_ticket: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			desc: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			},
+			foto: {
+				accept: "image/jpeg, image/png, image/jpg"
+			}
+		},
+		messages: {
+		
+		},
 
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
+
+	$("#novo_manual").validate({
+		rules: {
+			manual: {
+				required: true,
+				normalizer: function (value) {
+					// Trim the value of the input
+					return $.trim(value);
+				}
+			}
+		},
+		messages: {
+		
+		},
+
+
+		errorElement: 'span',
+
+
+
+
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-group').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid').removeClass('is-valid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid').addClass('is-valid');
+
+		},
+		submitHandler: function (form) {
+			form.submit();
+		}
+
+	});
 	$("#aluno_cadastro").validate({
 		rules: {
 			nome: {
@@ -1317,7 +1487,7 @@ jQuery(function ($) {
 		rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
 		range: jQuery.validator.format("Please enter a value between {0} and {1}."),
 		max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
-		min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+		min: jQuery.validator.format("O horário de término deve ser posterior ao horário de início.")
 	});
 
 

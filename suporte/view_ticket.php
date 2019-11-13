@@ -5,6 +5,7 @@ include_once( 'nav.php' );
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/reddot.css">
 	<title>AVIPfit</title>
 </head>
 <script>
@@ -16,69 +17,148 @@ include_once( 'nav.php' );
 		} );
 	} );
 </script>
+<?php
+require( '../conectar.php' );
+$id = $_GET[ 'id' ];
+$resulted = mysqli_query( $conn, "SELECT titulo, status, prioridade, classificacao, usuario, foto, nome FROM ticket INNER JOIN pessoa ON (usuario = cpf) WHERE '$id' = id" );
+if ( mysqli_num_rows( $resulted ) === 1 ) {
+	$row = mysqli_fetch_assoc( $resulted );
+	$titulo = $row[ 'titulo' ];
+	$user = $row[ 'usuario' ];
+	$foto = $row[ 'foto' ];
+	$status = $row['status'];
+	$prioridade = $row['prioridade'];
+	$classificacao = $row['classificacao'];
+	$nome = $row[ 'nome' ];
+
+}
+mysqli_close( $conn );
+?>
+
 
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<p>
-				<h1 align="center">Problema</h1>
-			</p>
+		<div class="container-fluid p-5">
+
 			<br>
-
-			<p> <img src="../fotos/padrao.jpg" width="70" height="70" alt="">
-				<h4>Daniel Mestre Loureiro - 05/06/2019 16:13h</h4>
+			<?php
+			include( '../conectar.php' );
+			$sql2 = "SELECT * FROM ticketRespostas where ticket = '$id'";
+			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
+			while ( $row = mysqli_fetch_array( $result ) ) {
+				if ( $row[ 'tipo' ] === 'User' ) {
+					?>
+			<p><img src="../fotos/<?=$foto?>" alt="" width="70" height="70">
+				<h4>
+					<?=$nome?> -
+					<?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
 			</p>
-
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+			<p><h5><?=$titulo?></h5></p>
 			<p>
-				<h5>Arquivo em anexo <a href="#">Clique aqui</a> para baixar</h5>
+				<?=$row['descricao']?>
 			</p>
-			<br>
-			<div class="form-row">
-			<div class="form-group col-md-4">
-				<label for="">Classificação</label>
-				<select class="form-control" name="" id="">
-					<option value="">Solicitação</option>
-					<option selected value="">Dúvida</option>
-					<option value="">Incidente/Erro de sistema</option>
+			<?php if(!empty($row['imagem'])){?>
+			<p>Há um arquivo em anexo <a href="../tickets/<?=$row['imagem']?>" download>Clique aqui</a> para fazer o download.</p>
+			<?php }?>
+			<br><br>
 
-				</select>
-			</div>
-			<div class="form-group col-md-4">
-				<label for="">Prioridade</label>
-				<select class="form-control" name="" id="">
-					<option value="">Média</option>
-					<option value="">Baixa</option>
-					<option selected value="">Alta</option>
 
-				</select>
-			</div>
-				<div class="form-group col-md-4">
-				<label for="">Status</label>
-				<select class="form-control" name="" id="">
-					<option value="">Aberto</option>
-					<option value="">Finalizado</option>
-					
-				</select>
-			</div>
+
+
+			<?php
+			} else {
+				if ( $row[ 'tipo' ] === 'Suporte' ) {
+					?>
+			<p>
+				<h4>Suporte - <?php echo date('d/m/Y H:i', strtotime($row['datahora']));?>h</h4>
+			</p>
+			<p><h5><?=$titulo?></h5></p>
+			<p>
+				<?=$row['descricao']?>
+			</p>
+			<?php if(!empty($row['imagem'])){?>
+			<p>Há um arquivo em anexo <a href="../tickets/<?=$row['imagem']?>" download>Clique aqui</a> para fazer o download.</p>
+
+			<?php }?>
+		<br><br>
+			<?php 					}
+				}
+			}
+			mysqli_close( $conn );
+
+			?>
+			<form id="new_ticket" method="post" action="../lib/responder_ticketSuporte" enctype="multipart/form-data">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="">Classificação</label>
+						<select class="form-control" required name="class" id="class">
+							
+								<?php 
+								echo "<option hidden='true' selected>".$classificacao."</option>";
+								?>
+							
+							<option>Solicitação</option>
+							<option>Dúvida</option>
+							<option>Incidente</option>
+
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="">Prioridade</label>
+						<select class="form-control" required name="prioridade" id="prioridade">
+							<?php 	
+								echo "<option hidden='true' selected>".$prioridade."</option>";
+							?>
+							<option>Baixa</option>
+							<option>Média</option>
+							<option>Alta</option>
+
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="">Status</label>
+						<select class="form-control" required name="status" id="status">
+							<option hidden="true">
+								<?=$status?>
+							</option>
+							<option>Aberto</option>
+							<option>Em progresso</option>
+							<option>Em revisão</option>
+							<option>Fechado</option>
+
+						</select>
+					</div>
 				</div>
-			<div class="form-group col-md-12">
-				<label for="">Resposta</label>
-				<textarea name="" class="form-control" id="" cols="30" rows="6" required placeholder="Digite aqui sua resposta" rows="10"></textarea>
-			</div>
-			<div class="form-group col-md-12">
-				<label for="cidade">Anexar arquivos (Formatos: jpg, jpeg, png)</label>
-				<input type="file" name="foto" class="form-control-file" id="foto">
-			</div>
+				<div class="form-row">
+					<input type="text" hidden="true" name="id" value="<?=$id?>">
+					<div class="form-group col-md-12">
+						<label for=""><red>*</red>Comentário</label>
+						<textarea name="desc" class="form-control" id="desc" maxlength="1022" cols="35" rows="6" required placeholder="Digite aqui sua resposta"></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="cidade">Adicione uma imagem ao comentário do ticket, os formatos admitidos são jpg, jpeg e png.</label>
+						<input type="file" name="foto" class="form-control-file" id="foto">
+					</div>
+				</div>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
+				<button style="float: right" type="submit" class="btn btn-primary">Enviar comentário</button>
+			</form>
+
 			<a href="tickets" class="btn btn-primary">Voltar</a>
-			<a href="#" style="float: right" class="btn btn-primary">Enviar resposta</a>
 
 
 		</div>
 	</main>
 	<!-- page-content" -->
 	</div>
+	<script src="../js/jquery.mask.js"></script>
+
+	<script src="../js/jquery.validate.min.js"></script>
+	<script src="../js/additional-methods.min.js"></script>
+	<script src="../js/valida_form.js"></script>
 	<!-- page-content" -->
 </body>
 </html>

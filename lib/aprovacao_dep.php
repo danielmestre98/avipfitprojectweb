@@ -13,7 +13,11 @@ $sql = "UPDATE depoimentos SET status = '$status' WHERE id = '$cpf'";
 else {
 	if ($status == 'Cancelado'){
 		$sql = "DELETE FROM depoimentos WHERE id = '$cpf'";
+	}else{
+		header( 'location: ../admin/novos_dep' );
 	}
+	
+	
 }
 if ( $conn->query( $sql ) === TRUE ) {
 	header( 'location: ../admin/novos_dep' );

@@ -147,6 +147,9 @@ include_once( 'nav.php' );
 					}, {
 						"width": '1%',
 						"targets": 1
+					},{
+						"orderable": false,
+						"targets": 4
 					}
 
 

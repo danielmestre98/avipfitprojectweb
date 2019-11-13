@@ -3,16 +3,14 @@ session_start();
 require( '../lib/dadosLogin.php' );
 
 
-if (isset($_SESSION['tipoPessoa'])){
-	if($_SESSION['tipoPessoa'] == 1){
-		
+if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
+	if ( $_SESSION[ 'tipoPessoa' ] == 1 ) {
+
+	} else {
+		header( 'location: ../index' );
 	}
-	else{
-		header('location: ../index');
-	}
-}
-else{
-	header('location: ../index');
+} else {
+	header( 'location: ../index' );
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +32,8 @@ else{
 
 
 <div class="page-wrapper chiller-theme bg1">
-	<div id="show-sidebar" style="position: fixed; z-index: 50"><span title="Expandir menu" class="btn btn-dark fixed-btn" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px;"><i title="Expandir menu" class="fas fa-bars"></i></span></div>
+	<div id="show-sidebar" style="position: fixed; z-index: 50"><span title="Expandir menu" class="btn btn-dark fixed-btn" style="border-bottom-left-radius: 0; border-top-left-radius: 0; margin-top: 10px;"><i title="Expandir menu" class="fas fa-bars"></i></span>
+	</div>
 
 	<nav id="sidebar" class="sidebar-wrapper">
 		<div class="sidebar-content">
@@ -52,9 +51,10 @@ else{
 					<img class="img-responsive img-rounded" src="../fotos/<?php echo $foto?>" alt="User picture">
 				</div>
 				<div class="user-info">
-					<span class="user-name"><?php echo $nome ?>
-                        </span>
-					<span class="user-role">Administrador</span>
+					<span class="user-name">
+						<?php echo $nome ?>
+					</span>
+					<span class="user-role">Administrador(a)</span>
 
 				</div>
 			</div>
@@ -68,26 +68,34 @@ else{
                             </a>
 					
 
+
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
-								<li id="cad_aluno">
-									<a href="consulta_aluno">Aluno</a>
-									
-								</li>
-								<li id="cad_colab">
-									<a href="consulta_colaborador">Colaborador</a>
+								<li id="cad_filial">
+									<a href="consulta_filial">Filial</a>
 								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
 								</li>
-								<li id="cad_filial">
-									<a href="consulta_filial">Filial</a>
-								</li>
 								<li id="cad_treinamento">
 									<a href="consulta_treinamento">Treinamento</a>
 								</li>
+								<li id="cad_colab">
+									<a href="consulta_colaborador">Colaborador</a>
+								</li>
+								<li id="cad_aluno">
+									<a href="consulta_aluno">Aluno</a>
+
+								</li>
 							</ul>
 						</div>
+					</li>
+					<li id="aval_fisica">
+						<a href="aval_fisica">
+                                <i class="fas fa-running"></i>
+                                <span class="menu-text">Avaliação física</span>
+                            </a>
+					
 					</li>
 					<li id="agendamento" class="sidebar-dropdown">
 						<a href="#">
@@ -95,6 +103,7 @@ else{
                                 <span class="menu-text">Agendamentos</span>
                             </a>
 					
+
 
 						<div id="ag_drop" class="sidebar-submenu">
 							<ul>
@@ -107,37 +116,24 @@ else{
 							</ul>
 						</div>
 					</li>
-					<li id="depoimentos">
-						<a href="depoimentos">
-                                <i class="far fa-comment-dots"></i>
-                                <span class="menu-text">Depoimentos</span>
-                            </a>
-					
-
-					</li>
 					<li id="mensalidades">
 						<a href="mensalidades">
                                 <i class="fas fa-dollar-sign"></i>
                                 <span class="menu-text">Mensalidades</span>
                             </a>
 					
-
-					</li>
-					<li id="aval_fisica">
-						<a href="aval_fisica">
-                                <i class="fas fa-running"></i>
-                                <span class="menu-text">Avaliação física</span>
-                            </a>
-					
-
 					</li>
 					<li id="relatorio">
 						<a href="relatorio">
                                 <i class="far fa-file-alt"></i>
-                                <span class="menu-text">Relatório</span>
+                                <span class="menu-text">Relatório institucional</span>
                             </a>
-					
-
+					</li>
+					<li id="depoimentos">
+						<a href="depoimentos">
+                                <i class="far fa-comment-dots"></i>
+                                <span class="menu-text">Depoimentos</span>
+                            </a>
 					</li>
 					<li id="filiais">
 						<a href="filiais">
@@ -145,6 +141,7 @@ else{
                                 <span class="menu-text">Filiais</span>
                             </a>
 					
+
 
 					</li>
 					<li id="parceiros">
@@ -154,6 +151,7 @@ else{
                             </a>
 					
 
+
 					</li>
 					<li id="ajuda" class="sidebar-dropdown">
 						<a href="#">
@@ -161,6 +159,7 @@ else{
                                 <span class="menu-text">Ajuda</span>
                             </a>
 					
+
 
 						<div id="ajuda_drop" class="sidebar-submenu">
 							<ul>
@@ -182,7 +181,7 @@ else{
 				<a href="../lib/logout">Logout
                         <i class="fa fa-power-off"></i>
                     </a>
-			
+
 
 			</div>
 			<div class="pinned-footer">
@@ -190,6 +189,7 @@ else{
                         <i class="fa fa-power-off"></i>
                     </a>
 			
+
 			</div>
 		</div>
 

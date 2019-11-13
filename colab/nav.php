@@ -1,17 +1,14 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
+if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
+	if ( $_SESSION[ 'tipoPessoa' ] == 2 ) {
 
-if (isset($_SESSION['tipoPessoa'])){
-	if($_SESSION['tipoPessoa'] == 2){
-		
+	} else {
+		header( 'location: ../index' );
 	}
-	else{
-		header('location: ../index');
-	}
-}
-else{
-	header('location: ../index');
+} else {
+	header( 'location: ../index' );
 }
 ?>
 <!DOCTYPE html>
@@ -40,9 +37,9 @@ else{
 		<div class="sidebar-content">
 			<!-- sidebar-brand  -->
 			<div class="sidebar-item sidebar-brand">
-				<a title="Página inicial" href="principal">avipfit</a>
+				<a href="principal" title="Página inicial">avipfit</a>
 				<div id="close-sidebar">
-					<i title="Recolher menu" class="fas fa-times"></i>
+					<i class="fas fa-times" title="Recolher menu"></i>
 				</div>
 			</div>
 
@@ -52,9 +49,10 @@ else{
 					<img class="img-responsive img-rounded" src="../fotos/<?=$foto?>" alt="User picture">
 				</div>
 				<div class="user-info">
-					<span class="user-name"><?php echo $nome ?>
-                        </span>
-					<span class="user-role">Colaborador</span>
+					<span class="user-name">
+						<?php echo $nome ?>
+					</span>
+					<span class="user-role">Colaborador(a)</span>
 
 				</div>
 			</div>
@@ -68,19 +66,27 @@ else{
                             </a>
 					
 
+
 						<div id="cad_drop" class="sidebar-submenu">
 							<ul>
-								<li id="cad_aluno">
-									<a href="consulta_aluno">Aluno</a>
-								</li>
 								<li id="cad_exercicio">
 									<a href="consulta_exercicio">Exercício</a>
 								</li>
 								<li id="cad_treinamento">
 									<a href="consulta_treinamento">Treinamento</a>
 								</li>
+								<li id="cad_aluno">
+									<a href="consulta_aluno">Aluno</a>
+								</li>
 							</ul>
 						</div>
+					</li>
+					<li id="aval_fisica">
+						<a href="aval_fisica">
+                                <i class="fas fa-running"></i>
+                                <span class="menu-text">Avaliação física</span>
+                            </a>
+					
 					</li>
 					<li id="agendamento" class="sidebar-dropdown">
 						<a href="#">
@@ -88,6 +94,7 @@ else{
                                 <span class="menu-text">Agendamentos</span>
                             </a>
 					
+
 
 						<div id="ag_drop" class="sidebar-submenu">
 							<ul>
@@ -100,29 +107,19 @@ else{
 							</ul>
 						</div>
 					</li>
-					<li id="depoimentos">
-						<a href="depoimentos">
-                                <i class="far fa-comment-dots"></i>
-                                <span class="menu-text">Depoimentos</span>
-                            </a>
-					
-
-					</li>
 					<li id="mensalidades">
 						<a href="mensalidades">
                                 <i class="fas fa-dollar-sign"></i>
                                 <span class="menu-text">Mensalidades</span>
                             </a>
 					
-
 					</li>
-					<li id="aval_fisica">
-						<a href="aval_fisica">
-                                <i class="fas fa-running"></i>
-                                <span class="menu-text">Avaliação física</span>
+					<li id="depoimentos">
+						<a href="depoimentos">
+                                <i class="far fa-comment-dots"></i>
+                                <span class="menu-text">Depoimentos</span>
                             </a>
 					
-
 					</li>
 					<li id="filiais">
 						<a href="filiais">
@@ -130,6 +127,7 @@ else{
                                 <span class="menu-text">Filiais</span>
                             </a>
 					
+
 
 					</li>
 					<li id="parceiros">
@@ -139,6 +137,7 @@ else{
                             </a>
 					
 
+
 					</li>
 					<li id="ajuda" class="sidebar-dropdown">
 						<a href="#">
@@ -146,6 +145,7 @@ else{
                                 <span class="menu-text">Ajuda</span>
                             </a>
 					
+
 
 						<div id="ajuda_drop" class="sidebar-submenu">
 							<ul>
@@ -167,7 +167,7 @@ else{
 				<a href="../lib/logout">Logout
                         <i class="fa fa-power-off"></i>
                     </a>
-			
+
 
 			</div>
 			<div class="pinned-footer">
@@ -175,6 +175,7 @@ else{
                         <i class="fa fa-power-off"></i>
                     </a>
 			
+
 			</div>
 		</div>
 

@@ -39,8 +39,8 @@ include_once( 'nav.php' );
 
 			<?php
 			include( '../conectar.php' );
-			$treinamento = $_GET[ 'nome' ];
-			$resulted = mysqli_query( $conn, "SELECT NomeTreinamento FROM treinamento WHERE NomeTreinamento = '$treinamento'" )or die( mysqli_error( $conn ) );
+			$id = $_GET[ 'id' ];
+			$resulted = mysqli_query( $conn, "SELECT NomeTreinamento FROM treinamento WHERE id = '$id'" )or die( mysqli_error( $conn ) );
 			if ( mysqli_num_rows( $resulted ) === 1 ) {
 				$row = mysqli_fetch_assoc( $resulted );
 				$nome = $row[ 'NomeTreinamento' ];
@@ -86,7 +86,7 @@ include_once( 'nav.php' );
 					?>
 
 				</select>
-				<p>Campos com <red>*</red> são obrigatórios</p>
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 				<br>
 				<a href="consulta_treinamento" class="btn btn-primary">Voltar</a>
 				<button class="btn btn-primary" style="float: right" type="submit">Salvar</button>

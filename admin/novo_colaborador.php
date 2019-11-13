@@ -41,7 +41,8 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="email"><i><red>*</red>E-mail</i></label>
+						<label for="email">
+							<red>*</red>E-mail</label>
 						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
@@ -96,15 +97,34 @@ include_once( 'nav.php' );
 
 
 
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="funcao">
+							<red>*</red>Função</label>
+						<select id="funcao" required name="funcao" class="form-control">
+							<option hidden="true" value="" selected>Selecione a opção desejada</option>
+							<option>Professor(a)</option>
+							<option>Recepcionista</option>
+						</select>
 
-				<div class="form-group">
-					<label for="funcao">
-						<red>*</red>Função</label>
-					<select id="funcao" required name="funcao" class="form-control">
-						<option hidden="true" value="" selected>Selecione a opção desejada</option>
-						<option>Professor(a)</option>
-						<option>Recepcionista</option>
-					</select>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="filial">
+							<red>*</red>Filial</label>
+						<select id="filial" required name="filial" class="form-control">
+							<option value="">Selecione a opção desejada</option>
+							<?php
+							require( '../conectar.php' );
+							$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
+							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+							while ( $row = mysqli_fetch_array( $result ) ) {
+								echo '<option value="' . $row[ 'IdFilial' ] . '">' . $row[ 'rua' ] . ', ' . $row[ 'numero' ] . ', ' . $row[ 'bairro' ] . ', ' . $row[ 'cidade' ] . ', ' . $row[ 'estado' ] . '</option>';
+							}
+							mysqli_close( $conn );
+
+							?>
+						</select>
+					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-2">
@@ -112,29 +132,12 @@ include_once( 'nav.php' );
 							<red>*</red>Salário</label>
 						<input type="text" required name="salario" class="form-control" id="salario" placeholder="R$">
 					</div>
-					<div class="form-group col-md-2">
-						<label for="filial">
-							<red>*</red>Filial</label>
-						<select id="filial" required name="filial" class="form-control">
-							<option value="">Selecione a opção desejada</option>
-								<?php
-								require( '../conectar.php' );
-								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
-								$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
-								while ( $row = mysqli_fetch_array( $result ) ) {
-									echo '<option value="'.$row['IdFilial'].'">' . $row[ 'rua' ] .', '.$row['numero'].', '.$row['bairro'].', '.$row['cidade'].', '.$row['estado']. '</option>';
-								}
-								mysqli_close( $conn );
-
-								?>
-						</select>
-					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-5">
 						<label for="input_senha">
 							<red>*</red>Senha</label>
 						<input type="password" maxlength="20" required name="senha" data-placement="bottom" data-animation="true" data-content="Insira uma senha com pelo menos 6 caracteres" class="form-control" id="senha" placeholder="Mínimo de 8 caracteres">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-5">
 						<label for="input_confsenha">
 							<red>*</red>Confirme a senha</label>
 						<input type="password" data-placement="bottom" data-animation="true" data-content="As senhas não conferem" maxlength="20" required name="confsenha" placeholder="Mínimo de 8 caracteres" class="form-control" id="input_confsenha">

@@ -37,7 +37,9 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Nome</th>
-						<th class='col'>Ações</th>
+						<th class='col'>Filial</th>
+						<th class='col'>Treinamento</th>
+						<th class='col'>Frequência</th>
 						<th class="col">Ações</th>
 					</tr>
 				</thead>
@@ -80,7 +82,7 @@ include_once( 'nav.php' );
 					"zeroRecords": "Nenhum registro encontrado",
 					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Nenhum registro disponível",
-					"infoFiltered": "(filtrado de _MAX_ registro totais)",
+					"infoFiltered": "(filtrado de _MAX_ registros totais)",
 					"search": "Pesquisar",
 					"first": "Primeiro",
 					"pagingType": "simple",
@@ -99,59 +101,53 @@ include_once( 'nav.php' );
 				"bProcessing": true,
 				"sAjaxSource": "../lib/consulta_aluno.php",
 				"columns": [ {
-					data: 'nome'
-				}, 
-					{
-					data: 'cidade'
-				},		
-				{
-					data: null,
-					render: function ( data, type, row ) {
-						return '<a title="Editar" href="editar_aluno.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cpf + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
+						data: 'nome'
+					}, {
+						data: 'filial',
+						render: function ( data, type, row ) {
+							return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+						}
+					},{
+						data: 'Treinamento'
+					}, {
+						data: 'null',
+						render: function ( data, type, row ) {
+							return row.segunda + row.terca + row.quarta + row.quinta + row.sexta + row.sabado;
+						}
+					}, {
+						data: null,
+						render: function ( data, type, row ) {
+							return '<a title="Editar" href="editar_aluno.php?cpf=' + data.cpf + '"><i class="fas fa-edit"></i></a>  <a title="Excluir" onclick ="confirma(\'' + data.cpf + '\',\'' + data.nome + '\')" href="#"><i class="far fa-trash-alt"></i></a>'
 
 
 
+						}
 					}
-				},{
-					data: 'segunda'
-				},
-							{
-					data: 'terca'
-				},
-							{
-					data: 'quarta'
-				},
-							{
-					data: 'quinta'
-				},{
-					data: 'sexta'
-				},
-							{
-					data: 'sabado'
-				},{
-					data: 'cpf'
-				},{
-					data: 'Treinamento'
-				}
-						   
-						   ],
+
+				],
 				columnDefs: [ {
 						"searchable": false,
-						"targets": 2
+						"targets": 4
 					}, {
 						"orderable": false,
-						"targets": 2
+						"targets": 4
 					}, {
-						"width": '80%',
+						"width": '25%',
 						"targets": 0
 					}, {
+						"width": '30%',
+						"targets": 3
+					}, {
+						"width": '30%',
+						"targets": 1
+					},{
 						"width": '1%',
+						"targets": 4
+					}, {
+						"width": '10%',
 						"targets": 2
-					},
-							 {
-						"visible": false,
-						"targets": [1, 3,4,5,6,7,8,9,10]
 					}
+							 	
 
 
 

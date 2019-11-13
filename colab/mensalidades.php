@@ -27,9 +27,12 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div id="divt" class="container-fluid p-5">
 			<h1>Mensalidades</h1>
+			<br>
+			<h5>Selecione mês/ano de referência e status do pagamento ou utilize a pesquisa para consultar o status de mensalidade de um aluno e atualizá-lo. Mensalidades cujo pagamento não foi atualizado até a data de pagamento especificada no cadastro de aluno serão automaticamente modificadas para o status em débito.</h5>
+			<br>
 			<div class="form-row">
 				<div class="form-group col-md-3" style="float: right;">
-					<label for="mes">Mês de referência</label>
+					<label for="mes">Mês/ano de referência</label>
 					<span id="mes"></span>
 				</div>
 				<div class="form-group col-md-4">
@@ -41,8 +44,8 @@ include_once( 'nav.php' );
 
 				<thead>
 					<tr>
-						<th class='col'>Nome</th>
-						<th class='col'>Vencimento</th>
+						<th class='col'>Aluno(a)</th>
+						<th class='col'>Dia de vencimento</th>
 						<th class="col">Competência</th>
 						<th class='col'>Status</th>
 						<th class='col'>Ações</th>
@@ -144,6 +147,9 @@ include_once( 'nav.php' );
 					}, {
 						"width": '1%',
 						"targets": 1
+					},{
+						"orderable": false,
+						"targets": 4
 					}
 
 
@@ -152,7 +158,7 @@ include_once( 'nav.php' );
 				],
 				initComplete: function () {
 					var column = this.api().column( 2 );
-					var select = $( '<select class= "form-control md-4"><option value="">Selecione o mês referência</option></select>' )
+					var select = $( '<select class= "form-control md-4"><option value="">Selecione a opção desejada</option></select>' )
 						.appendTo( $( '#mes' ).empty().text( '' ) )
 						.on( 'change', function () {
 							var val = $.fn.dataTable.util.escapeRegex(

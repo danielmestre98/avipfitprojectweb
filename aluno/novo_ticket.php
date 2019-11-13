@@ -22,36 +22,39 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container">
-			<h1 align="center">Novo ticket</h1>
+		<div class="container-fluid p-5">
+			<h1>Novo ticket</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para cadastrar um ticket.</h5>
 			<br>
 			
-			<form id="exercicio_cadastro" action="tickets" enctype="multipart/form-data" method="post">
+			<form id="new_ticket" action="../lib/novo_ticket" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="nome_ticket">
-							<red>*</red>Descrição</label>
+							<red>*</red>Título</label>
 					
 
-						<input type="text" name="nome_ticket" required class="form-control" id="nome_ticket" placeholder="Insira aqui uma breve descrição sobre o problema">
+						<input type="text" name="nome_ticket" maxlength="255" required class="form-control" id="nome_ticket" placeholder="Insira um título ao ticket">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<textarea name="" class="form-control" id="" cols="30" required placeholder="Descreva detalhadamente o problema aqui" rows="10"></textarea>
+						<label for="desc"><red>*</red>Descrição</label>
+						<textarea name="desc" maxlength="1022" class="form-control" id="desc" cols="30" required placeholder="Descreva detalhadamente sobre o ticket" rows="10"></textarea>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-12">
-						<label for="cidade">Anexar arquivo (Formatos: jpg, jpeg, png)</label>
+						<label for="cidade">Adicione uma imagem ao registro do ticket, os formatos admitidos são jpg, jpeg e png.</label>
 						<input type="file" name="foto" class="form-control-file" id="foto">
 					</div>
 				</div>
-
+				<p>Campos com <red>*</red> são obrigatórios.</p>
 
 
 				<a class="btn btn-primary" href="tickets">Voltar</a>
-				<button type="submit" class="btn btn-primary float-right">Salvar</button>
+				<button type="submit" class="btn btn-primary float-right">Enviar</button>
 			</form>
 
 
