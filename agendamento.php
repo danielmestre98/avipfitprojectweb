@@ -17,11 +17,11 @@ include_once( 'nav.php' );
 	} );
 </script>
 
-<body style="background: #FCA77B">
+<body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-1 mt-3 mb-1">
-			<div class="jumbotron p-4">
+			<div class="jumbotron p-4 shadow">
 				<h5 class="display-4" style="font-size: 3.0em;">Agendamento de aula experimental</h1>
 			 <hr class="my-4">
 			<p class="lead">Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</p>
