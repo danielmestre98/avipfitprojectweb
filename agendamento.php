@@ -17,16 +17,17 @@ include_once( 'nav.php' );
 	} );
 </script>
 
-<body>
+<body style="background: #FCA77B">
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="jumbotron jumbotron-fluid">
-		  <div class="container">
-			<h1 class="display-4">Agendamento de aula experimental</h1>
+		<div class="container-fluid p-1 mt-3 mb-1">
+			<div class="jumbotron p-4">
+				<h5 class="display-4" style="font-size: 3.0em;">Agendamento de aula experimental</h1>
+			 <hr class="my-4">
 			<p class="lead">Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</p>
-		  </div>
 		</div>
-		<div class="container-fluid p-4">
+		</div>
+		<div class="container-fluid p-1 mb-5">
 			<form id="agendamento_exp" class="bg-light p-4 shadow rounded" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-4">
