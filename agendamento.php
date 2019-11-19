@@ -20,12 +20,14 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container-fluid p-5">
-			<h1>Agendamento de aula experimental</h1>
-			<br>
-			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</h5>
-			<br>
-			<form id="agendamento_exp" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
+		<div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+			<h1 class="display-4">Agendamento de aula experimental</h1>
+			<p class="lead">Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</p>
+		  </div>
+		</div>
+		<div class="container-fluid p-4">
+			<form id="agendamento_exp" class="bg-light p-4 shadow rounded" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="descricao">
