@@ -96,9 +96,12 @@ include_once( 'nav.php' );
 
 				</div>
 				<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
-
-
-				<button type="submit" class="btn btn-primary float-right">Salvar</button>
+				<br>
+				<div class="form-row justify-content-end">
+					<div class="col align-self-end">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
 			</form>
 
 
