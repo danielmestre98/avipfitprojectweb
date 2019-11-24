@@ -20,15 +20,12 @@ include_once( 'nav.php' );
 <body>
 	<main class="page-content pt-2">
 		<div id="overlay" class="overlay"></div>
-		<div class="container-fluid p-1 mt-3 mb-1">
-			<div class="jumbotron p-4 shadow">
-				<h5 class="display-4" style="font-size: 3.0em;">Agendamento de aula experimental</h1>
-			 <hr class="my-4">
-			<p class="lead">Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</p>
-		</div>
-		</div>
-		<div class="container-fluid p-1 mb-5">
-			<form id="agendamento_exp" class="bg-light p-4 shadow rounded" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
+		<div class="container-fluid p-5">
+			<h1>Agendamento de aula experimental</h1>
+			<br>
+			<h5>Preencha os campos obrigatórios e clique em Salvar para agendar sua aula experimental. As datas em verde estão disponíveis!</h5>
+			<br>
+			<form id="agendamento_exp" action="lib/salvar_ag_exp.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="descricao">
@@ -70,7 +67,6 @@ include_once( 'nav.php' );
 								echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
 							}
 							mysqli_close( $conn );
-
 							?>
 						</select>
 					</div>
@@ -96,12 +92,9 @@ include_once( 'nav.php' );
 
 				</div>
 				<label style="margin-left: 4px" for="">Campos com <red>*</red> são obrigatórios.</label>
-				<br>
-				<div class="form-row justify-content-end">
-					<div class="col align-self-end">
-						<button type="submit" class="btn btn-primary">Salvar</button>
-					</div>
-				</div>
+
+
+				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 
 
@@ -144,7 +137,6 @@ include_once( 'nav.php' );
 						change: function ( e ) {
 							var $datepicker = $( '#picker' ).datepicker();
 							$.getJSON( 'lib/consulta_ag_exp.php?dia=' + $datepicker.value()+'&filial=' + $('#filial').val(), function ( dados ) {
-
 								if ( dados.length > 0 ) {
 									$( '#horario' ).empty();
 									var option = '<option value="">Selecione a opção desejada</option>';
@@ -153,7 +145,6 @@ include_once( 'nav.php' );
 									} )
 									$( '#horario' ).html( option ).show();
 								}
-
 							} )
 						}
 					} );
@@ -178,7 +169,6 @@ include_once( 'nav.php' );
 			change: function ( e ) {
 				var $datepicker = $( '#picker' ).datepicker();
 				$.getJSON( 'lib/consulta_ag_exp.php?dia=' + $datepicker.value(), function ( dados ) {
-
 					if ( dados.length > 0 ) {
 						$( '#horario' ).empty();
 						var option = '<option value="">Selecione a opção desejada</option>';
@@ -187,7 +177,6 @@ include_once( 'nav.php' );
 						} )
 						$( '#horario' ).html( option ).show();
 					}
-
 				} )
 			}
 		} );
