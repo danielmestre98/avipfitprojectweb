@@ -37,7 +37,7 @@ include_once( 'nav.php' );
 		if (isset($_GET['suc'])){
 		?>
 		<div id="errodelete" style="width: 26%; position: absolute; margin-left: 68%; z-index: 5000" class="alert alert-success alert-dismissible">
-		  <strong>Sucesso!</strong> Senha alterada com sucesso!
+		  <strong>Sucesso!</strong> Senha alterada com sucesso! <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
 		</div>
 
 		<?php }?>
@@ -83,9 +83,6 @@ include_once( 'nav.php' );
 	<!-- page-content" -->
 	</div>
 		<script>
-		$( document ).ready( function () {
-			$('#errodelete').delay(5000).fadeOut(400);
-		});
 
 	</script>
 </body>

@@ -25,7 +25,7 @@ include_once( 'nav.php' );
 							<red>*</red>E-mail</label>
 						<input type="email" name="email" required class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
-					<p> Campos com <red>*</red> são obrigatórios</p>
+					<p> Campos com <red>*</red> são obrigatórios.</p>
 				</div>
 
 
