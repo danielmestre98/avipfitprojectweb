@@ -112,7 +112,7 @@ include_once( 'nav.php' );
 				{
 					data: null,
 					render: function ( data, type, row ) {
-							return '<a title="Visualizar" href="aprovacao.php?horario=' + row.horario + '&data='+row.dia+'"><i class="far fa-eye"></i>'
+							return '<a title="Visualizar" href="aprovacao.php?id=' + row.id + '&tipo=' + row.tipo + '"><i class="far fa-eye"></i>'
 					}
 				}],
 				columnDefs: [{

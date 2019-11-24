@@ -31,7 +31,7 @@ include_once( 'nav.php' );
 			include ('../conectar.php');
 			
 			$hora = $_GET['horario'];
-				
+			$id = $_GET['id'];
 			$data = $_GET['data'];
 			$datan = explode( "/", $data );
 
@@ -39,7 +39,7 @@ include_once( 'nav.php' );
 
 			$datan = "$ano-$mes-$dia";
 				
-			$sql = "SELECT a.data, a.horario, status, p.nome, descricaoCancelamento FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.data = '$datan' AND a.horario = '$hora'";
+			$sql = "SELECT a.data, f.horario, f.horafim, status, p.nome, f.IdFilial, a.id, p.email FROM agendamentoavalfisicamensal a INNER JOIN agendamento f ON (a.id = f.id) INNER JOIN pessoa p ON (a.cpf = p.cpf) WHERE a.id = '$id'";
 			//$sql = "SELECT a.data, a.horario, status, p.nome FROM agendamento a INNER JOIN agendamentoavalfisicamensal f ON (a.data = f.data and a.horario = f.horario) INNER JOIN pessoa p ON (f.cpf = p.cpf) WHERE f.data = '$data' AND f.horario = '$hora'";
 				
 			$resulted = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -49,6 +49,9 @@ include_once( 'nav.php' );
 				$status = $row['status'];
 				$filial = $row['IdFilial'];
 				$canc = $row['descricaoCancelamento'];
+				$horai = date( "H:i", strtotime( $row[ 'horario' ] ) );
+				$horaf = date( "H:i", strtotime( $row[ 'horafim' ] ) );
+				$data = $row['data'];
 				
 			}
 				
@@ -68,14 +71,14 @@ include_once( 'nav.php' );
 							Data do agendamento</label>
 					
 
-						<input type="text" required readonly value="<?=$data?>" name="descricao" class="form-control" id="descricao">
+						<input type="text" required readonly value="<?php echo date(" d/m/Y ", strtotime($data))?>" name="descricao" class="form-control" id="descricao">
 					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
 							Horário do agendamento</label>
 					
 
-						<input type="text" required readonly value="<?=$hora?>" name="descricao" class="form-control" id="descricao">
+						<input type="text" required readonly value="<?=$horai?> - <?=$horaf?>" name="descricao" class="form-control" id="descricao">
 					</div>
 				</div>
 				
