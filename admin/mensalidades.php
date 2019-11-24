@@ -45,6 +45,7 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Aluno(a)</th>
+						<th class="col">Filial</th>
 						<th class='col'>Dia de vencimento</th>
 						<th class="col">Competência</th>
 						<th class='col'>Status</th>
@@ -122,7 +123,12 @@ include_once( 'nav.php' );
 
 				"columns": [ {
 					data: 'nome'
-				}, {
+				},{
+						data: 'filial',
+						render: function ( data, type, row ) {
+							return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+						}
+					}, {
 					data: 'DataVencimento'
 				}, {
 					data: 'competencia'
@@ -139,19 +145,18 @@ include_once( 'nav.php' );
 					}
 				} ],
 				columnDefs: [ {
-						"width": '63%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '16%',
-						"targets": 2
+						"targets": 3
 					}, {
 						"width": '1%',
-						"targets": 1
+						"targets": 2
 					},{
 						"orderable": false,
-						"targets": 4
+						"targets": 5
 					}
-
 
 
 
