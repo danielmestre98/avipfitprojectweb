@@ -39,8 +39,8 @@ include_once( 'nav.php' );
 
 			<?php
 			include( '../conectar.php' );
-			$treinamento = $_GET[ 'nome' ];
-			$resulted = mysqli_query( $conn, "SELECT NomeTreinamento FROM treinamento WHERE NomeTreinamento = '$treinamento'" )or die( mysqli_error( $conn ) );
+			$id = $_GET[ 'id' ];
+			$resulted = mysqli_query( $conn, "SELECT NomeTreinamento FROM treinamento WHERE id = '$id'" )or die( mysqli_error( $conn ) );
 			if ( mysqli_num_rows( $resulted ) === 1 ) {
 				$row = mysqli_fetch_assoc( $resulted );
 				$nome = $row[ 'NomeTreinamento' ];

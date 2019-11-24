@@ -8,6 +8,9 @@ require( '../lib/editar_aluno_show.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit - Editar aluno</title>
 	<link rel="stylesheet" href="../css/reddot.css">
+		<link rel="stylesheet" href="../css/select2.css">
+	
+	<link rel="stylesheet" href="../css/select2-bootstrap4.min.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -216,8 +219,14 @@ require( '../lib/editar_aluno_show.php' );
 
 
 	<script src="../js/jquery.mask.js"></script>
+	<script src="../js/select2.full.min.js"></script>
 	<script>
 		jQuery( function ( $ ) {
+			$('select').select2({
+					theme: 'bootstrap4',
+					placeholder: 'Selecione a opção desejada',
+					dropdownCssClass: "myFont"
+				});
 			$( document ).ready( function () {
 				var $seuCampoCpf = $( "#input_CPF" );
 				$seuCampoCpf.mask( '000.000.000-00', {

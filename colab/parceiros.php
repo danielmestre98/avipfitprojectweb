@@ -34,9 +34,7 @@ include_once( 'nav.php' );
 			?>
 				<p><img width="70" height="70" src="../fotos/<?=$row['foto']?>" alt=""><h3><?=$row['nome'] ?></h3></p>
 				<p><?=$row['rua']?>, <?=$row['numero']?> - <?=$row['bairro']?>, <?=$row['cidade']?> - <?=$row['estado']?>, <?=$row['cep']?></p>
-				<p>Telefone: <?=$row['telefone']?></p>
-				<a class="btn btn-primary btn-sm" href="editar_parceiro?cnpj=<?=$row['cnpj']?>">Editar <i class="fas fa-edit"></i></a>
-				<button class="btn btn-primary btn-sm" onClick="confirma('<?=$row['cnpj']?>', '<?=$row['nome']?>')">Excluir <i class="far fa-trash-alt"></i></button>	
+				<p>Telefone: <?=$row['telefone']?></p>	
 				<br><br>
 					
 		
