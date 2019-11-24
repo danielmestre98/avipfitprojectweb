@@ -160,7 +160,7 @@ include_once( 'nav.php' );
 
 	<script>
 		function confirma( dia, tipo, hora, semana ) {
-			if ( window.confirm( "Deseja deletar o evento "+tipo+" para "+semana+"s as "+hora+"h? \nEsta ação impossibilitará o agendamento dos alunos para este dia da semana e horário." ) ) {
+			if ( window.confirm( "Deseja deletar o evento "+tipo+" para "+semana+"s às "+hora+"h? \nEsta ação impossibilitará o agendamento dos alunos para este dia da semana e horário." ) ) {
 				window.location = "../lib/deletar_evento.php?dia=" + dia
 			} else {
 				return false
