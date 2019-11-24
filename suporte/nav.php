@@ -75,6 +75,9 @@ if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
 								<li id="manuais">
 									<a href="manuais">Manuais</a>
 								</li>
+								<li id="backup">
+									<a href="criarbackup.php">Backup</a>
+								</li>
 							</ul>
 						</div>
 					</li>
