@@ -8,6 +8,9 @@ include_once( 'nav.php' );
 	<title>AVIPfit - Agendamento</title>
 	<link rel="stylesheet" href="css/reddot.css">
 	<link rel="stylesheet" href="css/gijgo.min.css">
+		<link rel="stylesheet" href="../css/select2.css">
+	
+	<link rel="stylesheet" href="../css/select2-bootstrap4.min.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -61,7 +64,7 @@ include_once( 'nav.php' );
 							<option value="">Selecione a opção desejada</option>
 							<?php
 							require( 'conectar.php' );
-							$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
+							$sql = "Select NomeTreinamento FROM treinamento WHERE inativo != '1'";
 							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
 							while ( $row = mysqli_fetch_array( $result ) ) {
 								echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
@@ -108,6 +111,20 @@ include_once( 'nav.php' );
 	<!-- page-content" -->
 	</div>
 	<script src="js/jquery.mask.js"></script>
+	<script src="../js/select2.full.min.js"></script>
+	
+		<script>
+		jQuery( function ( $ ) {
+			$( document ).ready( function () {
+				$('select').select2({
+					theme: 'bootstrap4',
+					placeholder: 'Selecione a opção desejada',
+					dropdownCssClass: "myFont"
+				});
+				
+			});
+		});
+	</script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/additional-methods.min.js"></script>
 	<script src="js/valida_form.js"></script>
