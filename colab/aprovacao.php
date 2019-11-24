@@ -56,7 +56,7 @@ include_once( 'nav.php' );
 			<form id="exercicio_cadastro" action="../lib/aprovacao" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<input type="text" name="filial" hidden="true" value="<?=$filial?>">
-					<div class="form-group col-md-8">
+					<div class="form-group col-md-5">
 						<label for="nomeExercicio">
 							Nome do aluno(a)</label>
 					
@@ -67,7 +67,11 @@ include_once( 'nav.php' );
 <input type="text" hidden="true" name="email" value="<?=$email?>">
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="">
 					</div>
-
+					<div class="form-group col-md-3">
+						<label for="descricao">
+							Evento</label>
+						<input type="text" required readonly value="<?=$tipo?>" name="tipo" class="form-control" id="tipo">
+					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
 							Data do agendamento</label>
@@ -82,12 +86,6 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="descricao">
 							Horário do agendamento</label>
-					
-
-
-
-
-
 						<input type="text" required readonly value="<?=$hora?> - <?=$horafim?>" name="hora" class="form-control" id="hora">
 					</div>
 				</div>
@@ -118,11 +116,11 @@ include_once( 'nav.php' );
 					</div>
 				</div>
 				<p>Campos com
-					<red>*</red> são obrigatórios</p>
+					<red>*</red> são obrigatórios.</p>
 
 
 
-				<a class="btn btn-primary" href="../admin/agendamentos">Voltar</a>
+				<a class="btn btn-primary" href="agendamentos">Voltar</a>
 				<button type="submit" class="btn btn-primary float-right">Salvar</button>
 			</form>
 			<?php }
@@ -156,14 +154,18 @@ include_once( 'nav.php' );
 			<form id="exercicio_cadastro" action="../lib/aprovacao.php" enctype="multipart/form-data" method="post">
 				<div class="form-row">
 					<input type="text" name="filial" hidden="true" value="<?=$filial?>">
-					<div class="form-group col-md-8">
+					<div class="form-group col-md-5">
 						<label for="nomeExercicio">
 							Nome do aluno(a)</label>
 						<input type="text" name="nome" readonly value="<?=$nome?>" required class="form-control" id="nomeExercicio" placeholder="Nome">
 						<input type="text" hidden="true" name="id" value="<?=$id?>">
 						<input type="text" hidden="true" name="tipo" value="exp">
 					</div>
-
+					<div class="form-group col-md-3">
+						<label for="descricao">
+							Evento</label>
+						<input type="text" required readonly value="<?=$tipo?>" name="tipo" class="form-control" id="tipo">
+					</div>
 					<div class="form-group col-md-2">
 						<label for="descricao">
 							Data do agendamento</label>
