@@ -236,7 +236,7 @@ include_once( 'nav.php' );
 
 				</div>
 				<p>Campos com
-					<red>*</red> são obrigatórios</p>
+					<red>*</red> são obrigatórios.</p>
 
 
 
