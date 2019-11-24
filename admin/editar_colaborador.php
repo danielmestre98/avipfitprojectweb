@@ -8,6 +8,9 @@ include( '../lib/editar_colaborador_show.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit - Editar colaborador</title>
 	<link rel="stylesheet" href="../css/reddot.css">
+			<link rel="stylesheet" href="../css/select2.css">
+	
+	<link rel="stylesheet" href="../css/select2-bootstrap4.min.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -38,7 +41,8 @@ include( '../lib/editar_colaborador_show.php' );
 					<div class="form-group col-md-6">
 						<label for="cpf">
 							<red>*</red>CPF</label>
-						<input type="text" required name="cpfUpdate" data-placement="bottom" data-animation="true" data-content="CPF inválido" value="<?php echo $cpf?>" class="form-control" id="input_CPF" placeholder="___.___.___-__">
+						<input type="text" required name="cpf" data-placement="bottom" data-animation="true" data-content="CPF inválido" value="<?php echo $cpf?>" class="form-control" id="input_CPF" placeholder="___.___.___-__">
+						<input type="text" hidden="true" id="cpfOLD" value="<?=$cpf?>">
 					</div>
 				</div>
 				<div class="form-row">
@@ -105,7 +109,7 @@ include( '../lib/editar_colaborador_show.php' );
 							<red>*</red>Função</label>
 						<select id="funcao" required name="funcao" class="form-control">
 						<option selected hidden="true" value="<?php echo $funcao?>"><?php echo $funcao?></option>
-						<option>Professor</option>
+						<option>Professor(a)</option>
 						<option>Recepcionista</option>
 					</select>
 					
@@ -171,9 +175,15 @@ include( '../lib/editar_colaborador_show.php' );
 
 
 	<script src="../js/jquery.mask.js"></script>
+	<script src="../js/select2.full.min.js"></script>
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
+				$('select').select2({
+					theme: 'bootstrap4',
+					placeholder: 'Selecione a opção desejada',
+					dropdownCssClass: "myFont"
+				});
 				var $seuCampoCpf = $( "#input_CPF" );
 				$seuCampoCpf.mask( '000.000.000-00', {
 					reverse: false
