@@ -162,7 +162,7 @@ include_once( 'nav.php' );
 
 				],
 				initComplete: function () {
-					var column = this.api().column( 2 );
+					var column = this.api().column( 3 );
 					var select = $( '<select class= "form-control md-4"><option value="">Selecione a opção desejada</option></select>' )
 						.appendTo( $( '#mes' ).empty().text( '' ) )
 						.on( 'change', function () {
@@ -182,7 +182,7 @@ include_once( 'nav.php' );
 						select.append( '<option value="' + d + '">' + d + '</option>' );
 					} );
 
-					var column2 = this.api().column( 3 );
+					var column2 = this.api().column( 4 );
 					var select2 = $( '<select class= "form-control"><option value="">Mostrar todos</option></select>' )
 						.appendTo( $( '#status' ).empty().text( '' ) )
 						.on( 'change', function () {

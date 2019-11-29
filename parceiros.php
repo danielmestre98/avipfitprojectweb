@@ -28,7 +28,7 @@ include_once( 'nav.php' );
 		<br>
 		<div class="form-row">
 			<?php
-			require( '../conectar.php' );
+			require( 'conectar.php' );
 			$sql2 = "SELECT telefone, cidade, cep, bairro, estado, rua, numero, nome, foto, cnpj FROM parceiro ORDER BY nome ASC";
 
 			$result = mysqli_query( $conn, $sql2 )or die( mysqli_error( $conn ) );
@@ -38,7 +38,7 @@ include_once( 'nav.php' );
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
 			<div class="form-group col-md-4">
-				<p><img class="img-thumbnail" style="max-width: 100%; height: 180px;" src="../fotos/<?=$row['foto']?>" alt="">
+				<p><img class="img-thumbnail" style="max-width: 100%; height: 180px;" src="fotos/<?=$row['foto']?>" alt="">
 					<h3>
 						<?=$row['nome'] ?>
 					</h3>
