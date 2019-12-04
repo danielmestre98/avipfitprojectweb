@@ -28,7 +28,7 @@ include_once( 'nav.php' );
 			<h5>Selecione mês/ano de referência para analisar os resultados das avaliações físicas realizadas e verificar o comparativo de medidas por meio de análise gráfica.</h5>
 			<br>
 			<div class="form-row">
-				<div class="form-group col-md-2" style="float: right;">
+				<div class="form-group col-md-3" style="float: right;">
 					<label for="opcao">Mês e ano de referência</label>
 					<span id="mes"></span>
 				</div>

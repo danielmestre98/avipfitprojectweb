@@ -130,7 +130,7 @@
 <file name="ag_eventos.php" server="ftp.avipfit.com/public_html/" local="132165717082496170" remote="132178898400000000" Dst="1" />
 <file name="aprovacao.php" server="ftp.avipfit.com/public_html/" local="132194671790569168" remote="132194671800000000" Dst="1" />
 <file name="aprovacao_dep.php" server="ftp.avipfit.com/public_html/" local="132160744506681523" remote="132178898400000000" Dst="1" />
-<file name="aval_fisica.php" server="ftp.avipfit.com/public_html/" local="132172775822893670" remote="132178898400000000" Dst="1" />
+<file name="aval_fisica.php" server="ftp.avipfit.com/public_html/" local="132199569327788111" remote="132199569600000000" Dst="1" />
 <file name="consulta_colaborador.php" server="ftp.avipfit.com/public_html/" local="132165717082526088" remote="132178898400000000" Dst="1" />
 <file name="consulta_exercicio.php" server="ftp.avipfit.com/public_html/" local="132165717082536062" remote="132178898400000000" Dst="1" />
 <file name="consulta_aluno.php" server="ftp.avipfit.com/public_html/" local="132165717082516116" remote="132178898400000000" Dst="1" />
@@ -170,5 +170,5 @@
 <file name="edit_aval.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132180792965879721" remote="132180792600000000" Dst="1" />
 <file name="graficos.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132174766060367036" remote="132174765600000000" Dst="1" />
 <file name="graficos.php" server="ftp.avipfit.com/public_html/" local="132174766060367036" remote="132178898400000000" Dst="1" />
-<file name="sobre.php" server="ftp.avipfit.com/public_html/" local="132199389413518856" remote="132199389600000000" Dst="1" />
+<file name="sobre.php" server="ftp.avipfit.com/public_html/" local="132199570695967394" remote="132199570800000000" Dst="1" />
 </dwsync>
