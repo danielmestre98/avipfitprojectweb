@@ -23,6 +23,7 @@ include_once( 'nav.php' );
 		<div id="overlay" class="overlay"></div>
 		<div class="container-fluid p-5">
 			<h1>Efetuar backup do banco de dados</h1>
+			<br>
 			<h5>Clique no botão "Baixar agora" para efetuar o download do backup do banco de dados sql</h5>
 			<br>
 				<a href="backup/backup.php" class="btn btn-primary btn-lg">Baixar agora</a>
