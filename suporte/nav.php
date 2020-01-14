@@ -1,6 +1,16 @@
 <?php
 session_start();
 require( '../lib/dadosLogin.php' );
+
+if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
+	if ( $_SESSION[ 'tipoPessoa' ] == 4 ) {
+
+	} else {
+		header( 'location: ../index' );
+	}
+} else {
+	header( 'location: ../index' );
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +74,9 @@ require( '../lib/dadosLogin.php' );
 								</li>
 								<li id="manuais">
 									<a href="manuais">Manuais</a>
+								</li>
+								<li id="backup">
+									<a href="criarbackup.php">Backup</a>
 								</li>
 							</ul>
 						</div>

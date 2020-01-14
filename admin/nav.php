@@ -172,6 +172,12 @@ if ( isset( $_SESSION[ 'tipoPessoa' ] ) ) {
 							</ul>
 						</div>
 					</li>
+					<li id="sobre">
+                            <a href="sobre">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="menu-text">Sobre</span>
+                            </a>
+                        </li>
 				</ul>
 			</div>
 		</div>

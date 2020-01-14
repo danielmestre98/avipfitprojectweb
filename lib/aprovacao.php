@@ -9,15 +9,15 @@ $status = $_POST['aprovacao'];
 $canc = addslashes($_POST['cancelamento']);
 $filial = $_POST['filial'];
 $email = $_POST['email'];
-$tipo = $_POST['tipo'];
+$evento = $_POST['evento'];
 $data = explode( "-", $data );
 
 list( $ano, $mes, $dia ) = $data;
 $diacomp = "$dia/$mes/$ano";
-
+echo $evento;
 $sql = "UPDATE agendamento SET status = '$status', descricaoCancelamento = '$canc' WHERE id = '$id'";
 
-if ($tipo == 'exp'){
+if ($evento == 'exp'){
 	
 if ( $conn->query( $sql ) === TRUE ) {
 	session_start();

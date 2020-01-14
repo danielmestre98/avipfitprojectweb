@@ -17,6 +17,7 @@ $data = explode( "/", $dia );
 list( $dia, $mes, $ano ) = $data;
 
 $data = "$ano-$mes-$dia";
+$diacomp = "$dia/$mes/$ano";
 $sql = "INSERT INTO agendamento (data, status, horario, horafim, tipo, idFilial, descricaoCancelamento)
 		VALUES ('$data', 'Aguardando aprovação', '$horainicio', '$horafim', 'Avaliação Física', '$filial', '');";
 if ($conn->query($sql) === TRUE) {

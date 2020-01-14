@@ -45,6 +45,7 @@ include_once( 'nav.php' );
 				<thead>
 					<tr>
 						<th class='col'>Aluno(a)</th>
+						<th class="col">Filial</th>
 						<th class='col'>Dia de vencimento</th>
 						<th class="col">Competência</th>
 						<th class='col'>Status</th>
@@ -122,7 +123,12 @@ include_once( 'nav.php' );
 
 				"columns": [ {
 					data: 'nome'
-				}, {
+				},{
+						data: 'filial',
+						render: function ( data, type, row ) {
+							return row.rua + ', ' + row.numero + ', ' + row.bairro + ', ' + row.cidade + ', ' + row.estado;
+						}
+					}, {
 					data: 'DataVencimento'
 				}, {
 					data: 'competencia'
@@ -139,25 +145,24 @@ include_once( 'nav.php' );
 					}
 				} ],
 				columnDefs: [ {
-						"width": '63%',
+						"width": '40%',
 						"targets": 0
 					}, {
 						"width": '16%',
-						"targets": 2
+						"targets": 3
 					}, {
 						"width": '1%',
-						"targets": 1
+						"targets": 2
 					},{
 						"orderable": false,
-						"targets": 4
+						"targets": 5
 					}
-
 
 
 
 				],
 				initComplete: function () {
-					var column = this.api().column( 2 );
+					var column = this.api().column( 3 );
 					var select = $( '<select class= "form-control md-4"><option value="">Selecione a opção desejada</option></select>' )
 						.appendTo( $( '#mes' ).empty().text( '' ) )
 						.on( 'change', function () {
@@ -177,7 +182,7 @@ include_once( 'nav.php' );
 						select.append( '<option value="' + d + '">' + d + '</option>' );
 					} );
 
-					var column2 = this.api().column( 3 );
+					var column2 = this.api().column( 4 );
 					var select2 = $( '<select class= "form-control"><option value="">Mostrar todos</option></select>' )
 						.appendTo( $( '#status' ).empty().text( '' ) )
 						.on( 'change', function () {

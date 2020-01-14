@@ -20,13 +20,14 @@ include_once( 'nav.php' );
 <?php
 require( '../conectar.php' );
 $id = $_GET[ 'id' ];
-$resulted = mysqli_query( $conn, "SELECT titulo, usuario, foto, nome FROM ticket INNER JOIN pessoa ON (usuario = cpf) WHERE '$id' = id" );
+$resulted = mysqli_query( $conn, "SELECT titulo, usuario, foto, nome, status FROM ticket INNER JOIN pessoa ON (usuario = cpf) WHERE '$id' = id" );
 if ( mysqli_num_rows( $resulted ) === 1 ) {
 	$row = mysqli_fetch_assoc( $resulted );
 	$titulo = $row[ 'titulo' ];
 	$user = $row[ 'usuario' ];
 	$foto = $row[ 'foto' ];
 	$nome = $row[ 'nome' ];
+	$status = $row['status'];
 
 }
 mysqli_close( $conn );
@@ -82,7 +83,7 @@ mysqli_close( $conn );
 				}
 			}
 			mysqli_close( $conn );
-
+			if ($status != "Fechado"){
 			?>
 	<form id="new_ticket" method="post" action="../lib/responder_ticketUser" enctype="multipart/form-data" >
 		<div class="form-row">
@@ -103,7 +104,7 @@ mysqli_close( $conn );
 		<p>Campos com <red>*</red> são obrigatórios.</p>
 		<button style="float: right" type="submit" class="btn btn-primary">Enviar comentário</button>
 		</form>
-			
+		<?php }?>	
 			<a href="tickets" class="btn btn-primary">Voltar</a>
 
 		</div>

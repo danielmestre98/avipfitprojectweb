@@ -7,6 +7,9 @@ include_once( 'nav.php' );
 	<meta charset="utf-8">
 	<title>AVIPfit - Novo aluno</title>
 	<link rel="stylesheet" href="../css/reddot.css">
+	<link rel="stylesheet" href="../css/select2.css">
+	
+	<link rel="stylesheet" href="../css/select2-bootstrap4.min.css">
 </head>
 <script>
 	jQuery( function ( $ ) {
@@ -39,7 +42,8 @@ include_once( 'nav.php' );
 						<input type="text" required name="cpf" data-placement="bottom" data-animation="true" data-content="CPF inválido" class="form-control" id="input_CPF" placeholder="___.___.___-__">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="sexo"><red>*</red>Sexo</label>
+						<label for="sexo">
+							<red>*</red>Sexo</label>
 						<select class="form-control" required name="sexo" id="sexo">
 							<option hidden="true" selected value="">Selecione a opção desejada</option>
 							<option>Masculino</option>
@@ -49,7 +53,8 @@ include_once( 'nav.php' );
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="email"><red>*</red>E-mail</label>
+						<label for="email">
+							<red>*</red>E-mail</label>
 						<input type="email" required name="email" maxlength="50" class="form-control" id="email" placeholder="exemplo@exemplo.com">
 					</div>
 					<div class="form-group col-md-4">
@@ -81,7 +86,8 @@ include_once( 'nav.php' );
 					<div class="form-group col-md-2">
 						<label for="cep">
 							CEP</label>
-						<input type="text"  name="cep" placeholder="_____-___" class="form-control" id="input_cep">
+					
+						<input type="text" name="cep" placeholder="_____-___" class="form-control" id="input_cep">
 					</div>
 				</div>
 				<div class="form-row">
@@ -104,27 +110,28 @@ include_once( 'nav.php' );
 
 
 
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="inputState">
+							<red>*</red>Treinamento</label>
+						<select id="treinamento" required name="treinamento" class="treinamento">
+							<option selected hidden="true" value="">Selecione a opção desejada</option>
+							<?php
+							require( '../conectar.php' );
+							$sql = "Select NomeTreinamento FROM treinamento WHERE inativo != '1'";
+							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+							if ( mysqli_num_rows( $result ) > 0 ) {
+								while ( $row = mysqli_fetch_array( $result ) ) {
+									echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
+								}
+							} else {
+								echo '<option value = "">Nenhum treinamento cadastrado</option>';
+							}
+							mysqli_close( $conn );
 
-				<div class="form-group">
-					<label for="inputState">
-						<red>*</red>Treinamento</label>
-					<select id="treinamento" required name="treinamento" class="form-control">
-						<option selected hidden="" value="">Selecione a opção desejada</option>
-						<?php
-						require( '../conectar.php' );
-						$sql = "Select NomeTreinamento FROM treinamento WHERE Id != '9'";
-						$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
-						if ( mysqli_num_rows( $result ) > 0 ) {
-						while ( $row = mysqli_fetch_array( $result ) ) {
-							echo '<option>' . $row[ 'NomeTreinamento' ] . '</option>';
-						}
-						}else{
-							echo '<option value = "">Nenhum treinamento cadastrado</option>';
-						}
-						mysqli_close( $conn );
-
-						?>
-					</select>
+							?>
+						</select>
+					</div>
 				</div>
 				Preencha o horário aos dias da semana em que o aluno frequentará o studio.
 				<div class="form-row">
@@ -157,16 +164,16 @@ include_once( 'nav.php' );
 							<red>*</red>Filial</label>
 						<select id="filial" required name="filial" class="form-control">
 							<option hidden="true" value="">Selecione a opção desejada</option>
-								<?php
-								require( '../conectar.php' );
-								$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
-								$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
-								while ( $row = mysqli_fetch_array( $result ) ) {
-									echo '<option value="'.$row['IdFilial'].'">' . $row[ 'rua' ] .', '.$row['numero'].', '.$row['bairro'].', '.$row['cidade'].', '.$row['estado']. '</option>';
-								}
-								mysqli_close( $conn );
+							<?php
+							require( '../conectar.php' );
+							$sql = "SELECT IdFilial, cidade, bairro, estado, rua, numero FROM filial";
+							$result = mysqli_query( $conn, $sql )or die( mysqli_error( $conn ) );
+							while ( $row = mysqli_fetch_array( $result ) ) {
+								echo '<option value="' . $row[ 'IdFilial' ] . '">' . $row[ 'rua' ] . ', ' . $row[ 'numero' ] . ', ' . $row[ 'bairro' ] . ', ' . $row[ 'cidade' ] . ', ' . $row[ 'estado' ] . '</option>';
+							}
+							mysqli_close( $conn );
 
-								?>
+							?>
 						</select>
 					</div>
 
@@ -214,18 +221,24 @@ include_once( 'nav.php' );
 
 
 	<script src="../js/jquery.mask.js"></script>
+	<script src="../js/select2.full.min.js"></script>
 	<script>
 		jQuery( function ( $ ) {
 			$( document ).ready( function () {
+				$('select').select2({
+					theme: 'bootstrap4',
+					placeholder: 'Selecione a opção desejada',
+					dropdownCssClass: "myFont"
+				});
 				var $seuCampoCpf = $( "#input_CPF" );
 				$seuCampoCpf.mask( '000.000.000-00', {
 					reverse: false
 				} );
 
-				var $datamens = $("#pagamento");
-				$datamens.mask('00',{
+				var $datamens = $( "#pagamento" );
+				$datamens.mask( '00', {
 					reverse: false
-				});
+				} );
 				var $CampoHora = $( ".hora" );
 				$CampoHora.mask( '00:00', {
 					reverse: true

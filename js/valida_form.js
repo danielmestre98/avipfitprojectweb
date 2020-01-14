@@ -297,6 +297,7 @@ jQuery(function ($) {
 			hora: {
 				time: true,
 				required: true,
+				minlength: 5,
 				remote: {
 					url: "../lib/verificaEventoEdit.php",
 					type: "post",
@@ -319,6 +320,7 @@ jQuery(function ($) {
 			horafim: {
 				time: true,
 				required: true,
+				minlength: 5,
 				remote: {
 					url: "../lib/verificaEventoEdit.php",
 					type: "post",
@@ -343,10 +345,12 @@ jQuery(function ($) {
 		},
 		messages: {
 			hora: {
-				remote: "Já existe um evento nesse horário."
+				remote: "Já existe um evento nesse horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			},
 			horafim: {
-				remote: "Já existe um evento nesse horário."
+				remote: "Já existe um evento nesse horário.",
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			}
 		},
 		errorElement: 'span',
@@ -622,12 +626,30 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
-			segunda: "time",
-			terca: "time",
-			quarta: "time",
-			quinta: "time",
-			sexta: "time",
-			sabado: "time",
+			segunda: {
+				time: true,
+				minlength: 5
+			},
+			terca: {
+				time: true,
+				minlength: 5
+			},
+			quarta: {
+				time: true,
+				minlength: 5
+			},
+			quinta: {
+				time: true,
+				minlength: 5
+			},
+			sexta: {
+				time: true,
+				minlength: 5
+			},
+			sabado: {
+				time: true,
+				minlength: 5
+			},
 			email: {
 				required: true,
 				email: true,
@@ -701,6 +723,24 @@ jQuery(function ($) {
 			cep: {
 
 				minlength: "Por favor, digite um CEP válido."
+			},
+			segunda: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			terca: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			quarta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			quinta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			sexta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			sabado: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			}
 		},
 
@@ -1202,12 +1242,30 @@ jQuery(function ($) {
 					return $.trim(value);
 				}
 			},
-			segunda: "time",
-			terca: "time",
-			quarta: "time",
-			quinta: "time",
-			sexta: "time",
-			sabado: "time",
+			segunda: {
+				time: true,
+				minlength: 5
+			},
+			terca: {
+				time: true,
+				minlength: 5
+			},
+			quarta: {
+				time: true,
+				minlength: 5
+			},
+			quinta: {
+				time: true,
+				minlength: 5
+			},
+			sexta: {
+				time: true,
+				minlength: 5
+			},
+			sabado: {
+				time: true,
+				minlength: 5
+			},
 			email: {
 				required: true,
 				email: true,
@@ -1274,7 +1332,26 @@ jQuery(function ($) {
 			cep: {
 
 				minlength: "Por favor, digite um CEP válido."
+			},
+			segunda: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			terca: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			quarta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			quinta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			sexta: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
+			},
+			sabado: {
+				minlength: "Por favor, insira um horário válido no formato hh:mm."
 			}
+			
 		},
 
 

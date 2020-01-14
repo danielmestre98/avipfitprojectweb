@@ -5,6 +5,7 @@ red{
 	font-weight: bold;
 }
 
+
 .popover {
 	background-color: tomato;
 }
@@ -21,4 +22,11 @@ red{
 
 .gj-picker-bootstrap table tr td.gj-cursor-pointer div {
     color: green;
+}
+
+.select2 {
+	width:100%!important;
+}
+.myFont{
+	font-size: 1rem!important;
 }

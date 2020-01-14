@@ -82,6 +82,12 @@ if(isset($_SESSION['tipoPessoa'])){
                                 <span class="menu-text">Parceiros</span>
                             </a>
                         </li>
+						<li id="sobre">
+                            <a href="sobre">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="menu-text">Sobre</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
