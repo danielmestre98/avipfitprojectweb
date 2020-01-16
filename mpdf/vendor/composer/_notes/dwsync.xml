@@ -18,4 +18,13 @@
 <file name="ClassLoader.php" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585832688" remote="132165726000000000" Dst="1" />
 <file name="installed.json" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585872580" remote="132165726000000000" Dst="1" />
 <file name="LICENSE" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585842663" remote="132165726000000000" Dst="1" />
+<file name="autoload_classmap.php" server="ftp.avipfit.com/public_html/" local="132140938585852638" remote="132236037000000000" Dst="0" />
+<file name="autoload_files.php" server="ftp.avipfit.com/public_html/" local="132140938585852638" remote="132236037000000000" Dst="0" />
+<file name="autoload_namespaces.php" server="ftp.avipfit.com/public_html/" local="132140938585852638" remote="132236037000000000" Dst="0" />
+<file name="autoload_psr4.php" server="ftp.avipfit.com/public_html/" local="132140938585862612" remote="132236037000000000" Dst="0" />
+<file name="autoload_static.php" server="ftp.avipfit.com/public_html/" local="132140938585862612" remote="132236037000000000" Dst="0" />
+<file name="ClassLoader.php" server="ftp.avipfit.com/public_html/" local="132140938585832688" remote="132236037000000000" Dst="0" />
+<file name="autoload_real.php" server="ftp.avipfit.com/public_html/" local="132140938585862612" remote="132236037000000000" Dst="0" />
+<file name="LICENSE" server="ftp.avipfit.com/public_html/" local="132140938585842663" remote="132236037000000000" Dst="0" />
+<file name="installed.json" server="ftp.avipfit.com/public_html/" local="132140938585872580" remote="132236037000000000" Dst="0" />
 </dwsync>

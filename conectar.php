@@ -1,8 +1,8 @@
 <?php
-$host = "aviptest.mysql.dbaas.com.br";
-$usuario = "aviptest";
-$senha = "avip#fit2019";
-$bd = "aviptest";
+$host = "avipfit.mysql.dbaas.com.br";
+$usuario = "avipfit";
+$senha = "Avip#fit2019";
+$bd = "avipfit";
 
 $conn = new mysqli($host, $usuario, $senha, $bd);
 if($conn->connect_errno)

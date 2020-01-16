@@ -14,4 +14,13 @@
 <file name="phpunit.xml" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938586869916" remote="132165726600000000" Dst="1" />
 <file name="ruleset.xml" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938586869916" remote="132165726600000000" Dst="1" />
 <file name="README.md" server="ftp.avipfittest.provisorio.ws/public_html/" local="132140938585912477" remote="132165726600000000" Dst="1" />
+<file name=".gitignore" server="ftp.avipfit.com/public_html/" local="132140938585892531" remote="132236037000000000" Dst="0" />
+<file name=".travis.yml" server="ftp.avipfit.com/public_html/" local="132140938585892531" remote="132236037000000000" Dst="0" />
+<file name="composer.json" server="ftp.avipfit.com/public_html/" local="132140938585922457" remote="132236037000000000" Dst="0" />
+<file name="CREDITS.txt" server="ftp.avipfit.com/public_html/" local="132140938585902504" remote="132236037000000000" Dst="0" />
+<file name="CHANGELOG.md" server="ftp.avipfit.com/public_html/" local="132140938585902504" remote="132236037000000000" Dst="0" />
+<file name="LICENSE.txt" server="ftp.avipfit.com/public_html/" local="132140938585912477" remote="132236037600000000" Dst="0" />
+<file name="phpunit.xml" server="ftp.avipfit.com/public_html/" local="132140938586869916" remote="132236037600000000" Dst="0" />
+<file name="README.md" server="ftp.avipfit.com/public_html/" local="132140938585912477" remote="132236037600000000" Dst="0" />
+<file name="ruleset.xml" server="ftp.avipfit.com/public_html/" local="132140938586869916" remote="132236037600000000" Dst="0" />
 </dwsync>
